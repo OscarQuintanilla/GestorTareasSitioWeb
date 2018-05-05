@@ -1,0 +1,81 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+<div class="col-lg-6 col-lg-offset-4 text-center">
+
+<center>
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="torneoForm">Atrás</a></li>
+  <li role="presentation" class="active"><a href="#">Inscripción</a></li>
+  <li role="presentation"><a href="resultados">Resultados</a></li>
+  <li role="presentation"><a href="estadisticas">Estadisticas</a></li>
+  <li role="presentation"><a href="calendario">Calendario</a></li>
+</ul>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+
+<div class="col-lg-6 col-lg-offset-3">
+
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Tabla de Goleadores</div>
+                        <div class="panel-body">
+                        
+                        	<table class="table no-margn">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Nombre</th>
+                                  <th>Goles</th>
+                                  <th>Equipo</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1</td>
+                                  <td>Fernando Llorente</td>
+                                  <td>9</td>
+                                  <td>F.C Juventus</td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>Luis Suarez</td>
+                                  <td>7</td>
+                                  <td>F.C Barcelona</td>
+                                </tr>
+                                <tr>
+                                   <td>3</td>
+                                  <td>Leonel Messi</td>
+                                  <td>7</td>
+                                  <td>F.C Barcelona</td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>Mario Gotze</td>
+                                  <td>6</td>
+                                  <td>F.C Bayern Munich</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+</center>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

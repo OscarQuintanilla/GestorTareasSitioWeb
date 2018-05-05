@@ -1,0 +1,438 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<script>
+var provincias_1=new Array("-","Ahuachapán", "Apaneca",  "Atiquizaya",  "Concepción de Ataco",  "El Refugio",  "Guaymango",  "Jujutla",  "San Francisco Menéndez",  "San Lorenzo",  "San Pedro Puxtla",  "Tacuba",  "Turín")
+var provincias_2=new Array("-","Acajutla",  "Armenia",  "Caluco",  "Cuisnahuat",  "Izalco",  "Juayúa",  "Nahuizalco",  "Nahulingo",  "Salcoatitán",  "San Antonio del Monte",  "San Julián",  "Santa Catarina Masahuat",  "Santa Isabel Ishuatán",  "Santo Domingo", "Guzmán"  ,"Sonsonate" ,"Sonzacate") 
+var provincias_3=new Array("-","Candelaria de la Frontera",  "Chalchuapa",  "Coatepeque",  "El Congo",  "El Porvenir",  "Masahuat",  "Metapán",  "San Antonio Pajonal",  "San Sebastián Salitrillo",  "Santa Ana",  "Santa Rosa Guachipilín",  "Santiago de la Frontera", "Texistepeque") 
+var provincias_4=new Array("-","Cinquera",  "Dolores",  "Guacotecti",  "Ilobasco",  "Jutiapa",  "San Isidro",  "Sensuntepeque",  "Tejutepeque", "Victoria")
+var provincias_5=new Array("-","Agua Caliente",  "Arcatao",  "Azacualpa",  "Chalatenango (ciudad)",  "Comalapa",  "Citalá",  "Concepción Quezaltepeque",  "Dulce Nombre de María",  "El Carrizal",  "El Paraíso",  "La Laguna",  "La Palma",  "La Reina",  "Las Vueltas",  "Nueva Concepción",  "Nueva Trinidad",  "Nombre de Jesús",  "Ojos de Agua",  "Potonico",  "San Antonio de la Cruz",  "San Antonio Los Ranchos",  "San Fernando",  "San Francisco Lempa",  "San Francisco Morazán",  "San Ignacio",  "San Isidro Labrador",  "San José Cancasque",  "San José Las Flores",  "San Luis del Carmen",  "San Miguel de Mercedes",  "San Rafael",  "Santa Rita",  "Tejutla")
+var provincias_6=new Array("-","Candelaria",  "Cojutepeque",  "El Carmen",  "El Rosario",  "Monte San Juan",  "Oratorio de Concepción",  "San Bartolomé Perulapía",  "San Cristóbal",  "San José Guayabal",  "San Pedro Perulapán",  "San Rafael Cedros",  "San Ramón",  "Santa Cruz Analquito",  "Santa Cruz Michapa",  "Suchitoto", "Tenancingo")
+var provincias_7=new Array("-","Antiguo Cuscatlán",  "Chiltiupán",  "Ciudad Arce",  "Colón",  "Comasagua",  "Huizúcar",  "Jayaque",  "Jicalapa",  "La Libertad",  "Nueva San Salvador (Santa Tecla)",  "Nuevo Cuscatlán",  "San Juan Opico",  "Quezaltepeque",  "Sacacoyo",  "San José Villanueva",  "San Matías",  "San Pablo Tacachico",  "Talnique",  "Tamanique",  "Teotepeque",  "Tepecoyo", "Zaragoza")
+var provincias_8=new Array("-","Cuyultitán",  "El Rosario",  "Jerusalén",  "Mercedes La Ceiba",  "Olocuilta",  "Paraíso de Osorio",  "San Antonio Masahuat",  "San Emigdio",  "San Francisco Chinameca",  "San Juan Nonualco",  "San Juan Talpa",  "San Juan Tepezontes",  "San Luis Talpa",  "San Luis La Herradura",  "San Miguel Tepezontes",  "San Pedro Masahuat",  "San Pedro Nonualco",  "San Rafael Obrajuelo",  "Santa María Ostuma",  "Santiago Nonualco",  "Tapalhuaca", "Zacatecoluca")
+var provincias_9=new Array("-","Aguilares",  "Apopa",  "Ayutuxtepeque",  "Cuscatancingo",  "Ciudad Delgado",  "El Paisnal",  "Guazapa",  "Ilopango",  "Mejicanos",  "Nejapa",  "Panchimalco",  "Rosario de Mora",  "San Marcos",  "San Martín",  "San Salvador",  "Santiago Texacuangos",  "Santo Tomás",  "Soyapango", "Tonacatepeque")
+var provincias_10=new Array("-","Apastepeque",  "Guadalupe",  "San Cayetano Istepeque",  "San Esteban Catarina",  "San Ildefonso",  "San Lorenzo",  "San Sebastián",  "San Vicente",  "Santa Clara",  "Santo Domingo",  "Tecoluca",  "Tepetitán", "Verapaz")
+var provincias_11=new Array("-","Alegría",  "Berlín",  "California",  "Concepción Batres",  "El Triunfo",  "Ereguayquín",  "Estanzuelas",  "Jiquilisco",  "Jucuapa",  "Jucuarán",  "Mercedes Umaña",  "Nueva Granada",  "Ozatlán",  "Puerto El Triunfo",  "San Agustín",  "San Buenaventura",  "San Dionisio",  "San Francisco Javier",  "Santa Elena",  "Santa María",  "Santiago de María",  "Tecapán", "Usulután")
+var provincias_12=new Array("-","Carolina",  "Chapeltique",  "Chinameca",  "Chirilagua",  "Ciudad Barrios",  "Comacarán",  "El Tránsito",  "Lolotique",  "Moncagua",  "Nueva Guadalupe",  "Nuevo Edén de San Juan",  "Quelepa",  "San Antonio del Mosco",  "San Gerardo",  "San Jorge",  "San Luis de la Reina",  "San Miguel",  "San Rafael Oriente",  "Sesori", "Uluazapa")
+var provincias_13=new Array("-","Arambala",  "Cacaopera",  "Chilanga",  "Corinto",  "Delicias de Concepción",  "El Divisadero",  "El Rosario",  "Gualococti",  "Guatajiagua",  "Joateca",  "Jocoaitique",  "Jocoro",  "Lolotiquillo",  "Meanguera",  "Osicala",  "Perquín",  "San Carlos",  "San Fernando",  "San Francisco Gotera",  "San Isidro",  "San Simón",  "Sensembra",  "Sociedad",  "Torola",  "Yamabal", "Yoloaiquín")
+var provincias_14=new Array("-","Anamorós",  "Bolivar",  "Concepción de Oriente",  "Conchagua",  "El Carmen",  "El Sauce",  "Intipucá",  "La Unión",  "Lislique",  "Meanguera del Golfo",  "Nueva Esparta",  "Pasaquina",  "Polorós",  "San Alejo",  "San José",  "Santa Rosa de Lima",  "Yayantique",  "Yucuaiquín")
+
+
+//Codigo de cambio de select
+
+function cambia_provincia(){ 
+    //tomo el valor del select del pais elegido 
+    var pais 
+    pais = document.f1.pais[document.f1.pais.selectedIndex].id 
+    //miro a ver si el pais está definido 
+    if (pais != 0) { 
+        //si estaba definido, entonces coloco las opciones de la provincia correspondiente. 
+        //selecciono el array de provincia adecuado 
+        mis_provincias=eval("provincias_" + pais) 
+        //calculo el numero de provincias 
+        num_provincias = mis_provincias.length 
+        //marco el número de provincias en el select 
+        document.f1.provincia.length = num_provincias 
+        //para cada provincia del array, la introduzco en el select 
+        for(i=0;i<num_provincias;i++){ 
+          document.f1.provincia.options[i].id=mis_provincias[i] 
+          document.f1.provincia.options[i].text=mis_provincias[i] 
+        } 
+    }else{ 
+        //si no había provincia seleccionada, elimino las provincias del select 
+        document.f1.provincia.length = 1 
+        //coloco un guión en la única opción que he dejado 
+        document.f1.provincia.options[0].id = "-" 
+        document.f1.provincia.options[0].text = "-" 
+    } 
+    //marco como seleccionada la opción primera de provincia 
+    document.f1.provincia.options[0].selected = true 
+}
+
+
+</script>
+
+  <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Clientes</h4>
+          <a href="cliente" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Clientes</a>
+          <a href="agregar-Cli" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Cliente</a>
+              </div></center><!-- /showback -->
+
+  <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-user-plus fa-4x"></i><span class='social'>Clientes</a>
+</div>
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Clientes</h2>
+
+</div>
+
+<form name="f1" action="registroCliente" method="post">  
+
+        <fieldset><br/>
+
+    <?
+      $sucursal=Session::get('id_sucursal');
+      
+    ?>
+      <input type="hidden" name="sucursal" value=<?php echo $sucursal; ?>>
+
+  <br>Nombre<br/>
+<input type="text" name="nombre"> 
+
+Codigo<br/>
+<input type="text" name="codigo"> 
+
+        <table>
+              <thead>
+                      <tr>
+
+                        <td style="padding-right:5px;">Nombre Comercial <input type="text" name="nComercial"></td>
+
+                        <td style="padding-right:5px;">Registro Fiscal <input type="text" name="rFiscal"></td>
+                        </tr>
+
+                        <tr>
+
+                        <td style="padding-right:5px;">NIT<input type="text"  name="nit"></td>
+
+                         <td> DUI <input type="text"  name="dui"></td>
+                            </tr>
+                        <tr>
+                        <td style="padding-right:5px;">Telefono
+                          <input type="text" name="telefono"></td>
+
+                        <td>Email
+                          <input type="text" name="email"></td>
+                    </tr>
+              </thead>
+        </table>
+  Limite Credito<br/>
+<input type="text" name="lcredito">
+
+Pais<br/>
+<select name="paises">
+                      <option value="Elegir" id="AF">Elegir Pais</option>
+                      <option value="Afganistán" id="AF">Afganistán</option>
+                      <option value="Albania" id="AL">Albania</option>
+                      <option value="Alemania" id="DE">Alemania</option>
+                      <option value="Andorra" id="AD">Andorra</option>
+                      <option value="Angola" id="AO">Angola</option>
+                      <option value="Anguila" id="AI">Anguila</option>
+                      <option value="Antártida" id="AQ">Antártida</option>
+                      <option value="Antigua y Barbuda" id="AG">Antigua y Barbuda</option>
+                      <option value="Antillas holandesas" id="AN">Antillas holandesas</option>
+                      <option value="Arabia Saudí" id="SA">Arabia Saudí</option>
+                      <option value="Argelia" id="DZ">Argelia</option>
+                      <option value="Argentina" id="AR">Argentina</option>
+                      <option value="Armenia" id="AM">Armenia</option>
+                      <option value="Aruba" id="AW">Aruba</option>
+                      <option value="Australia" id="AU">Australia</option>
+                      <option value="Austria" id="AT">Austria</option>
+                      <option value="Azerbaiyán" id="AZ">Azerbaiyán</option>
+                      <option value="Bahamas" id="BS">Bahamas</option>
+                      <option value="Bahrein" id="BH">Bahrein</option>
+                      <option value="Bangladesh" id="BD">Bangladesh</option>
+                      <option value="Barbados" id="BB">Barbados</option>
+                      <option value="Bélgica" id="BE">Bélgica</option>
+                      <option value="Belice" id="BZ">Belice</option>
+                      <option value="Benín" id="BJ">Benín</option>
+                      <option value="Bermudas" id="BM">Bermudas</option>
+                      <option value="Bhután" id="BT">Bhután</option>
+                      <option value="Bielorrusia" id="BY">Bielorrusia</option>
+                      <option value="Birmania" id="MM">Birmania</option>
+                      <option value="Bolivia" id="BO">Bolivia</option>
+                      <option value="Bosnia y Herzegovina" id="BA">Bosnia y Herzegovina</option>
+                      <option value="Botsuana" id="BW">Botsuana</option>
+                      <option value="Brasil" id="BR">Brasil</option>
+                      <option value="Brunei" id="BN">Brunei</option>
+                      <option value="Bulgaria" id="BG">Bulgaria</option>
+                      <option value="Burkina Faso" id="BF">Burkina Faso</option>
+                      <option value="Burundi" id="BI">Burundi</option>
+                      <option value="Cabo Verde" id="CV">Cabo Verde</option>
+                      <option value="Camboya" id="KH">Camboya</option>
+                      <option value="Camerún" id="CM">Camerún</option>
+                      <option value="Canadá" id="CA">Canadá</option>
+                      <option value="Chad" id="TD">Chad</option>
+                      <option value="Chile" id="CL">Chile</option>
+                      <option value="China" id="CN">China</option>
+                      <option value="Chipre" id="CY">Chipre</option>
+                      <option value="Colombia" id="CO">Colombia</option>
+                      <option value="Comores" id="KM">Comores</option>
+                      <option value="Congo" id="CG">Congo</option>
+                      <option value="Corea" id="KR">Corea</option>
+                      <option value="Corea del Norte" id="KP">Corea del Norte</option>
+                      <option value="Costa del Marfíl" id="CI">Costa del Marfíl</option>
+                      <option value="Costa Rica" id="CR">Costa Rica</option>
+                      <option value="Croacia" id="HR">Croacia</option>
+                      <option value="Cuba" id="CU">Cuba</option>
+                      <option value="Dinamarca" id="DK">Dinamarca</option>
+                      <option value="Djibouri" id="DJ">Djibouri</option>
+                      <option value="Dominica" id="DM">Dominica</option>
+                      <option value="Ecuador" id="EC">Ecuador</option>
+                      <option value="Egipto" id="EG">Egipto</option>
+                      <option value="El Salvador" id="SV" selected>El Salvador</option>
+                      <option value="Emiratos Arabes Unidos" id="AE">Emiratos Arabes Unidos</option>
+                      <option value="Eritrea" id="ER">Eritrea</option>
+                      <option value="Eslovaquia" id="SK">Eslovaquia</option>
+                      <option value="Eslovenia" id="SI">Eslovenia</option>
+                      <option value="España" id="ES">España</option>
+                      <option value="Estados Unidos" id="US">Estados Unidos</option>
+                      <option value="Estonia" id="EE">Estonia</option>
+                      <option value="c" id="ET">Etiopía</option>
+                      <option value="Filipinas" id="PH">Filipinas</option>
+                      <option value="Finlandia" id="FI">Finlandia</option>
+                      <option value="Francia" id="FR">Francia</option>
+                      <option value="Gabón" id="GA">Gabón</option>
+                      <option value="Gambia" id="GM">Gambia</option>
+                      <option value="Georgia" id="GE">Georgia</option>
+                      <option value="Ghana" id="GH">Ghana</option>
+                      <option value="Gibraltar" id="GI">Gibraltar</option>
+                      <option value="Granada" id="GD">Granada</option>
+                      <option value="Grecia" id="GR">Grecia</option>
+                      <option value="Groenlandia" id="GL">Groenlandia</option>
+                      <option value="Guadalupe" id="GP">Guadalupe</option>
+                      <option value="Guam" id="GU">Guam</option>
+                      <option value="Guatemala" id="GT">Guatemala</option>
+                      <option value="Guayana" id="GY">Guayana</option>
+                      <option value="Guayana francesa" id="GF">Guayana francesa</option>
+                      <option value="Guinea" id="GN">Guinea</option>
+                      <option value="Guinea Ecuatorial" id="GQ">Guinea Ecuatorial</option>
+                      <option value="Guinea-Bissau" id="GW">Guinea-Bissau</option>
+                      <option value="Haití" id="HT">Haití</option>
+                      <option value="Holanda" id="NL">Holanda</option>
+                      <option value="Honduras" id="HN">Honduras</option>
+                      <option value="Hong Kong R. A. E" id="HK">Hong Kong R. A. E</option>
+                      <option value="Hungría" id="HU">Hungría</option>
+                      <option value="India" id="IN">India</option>
+                      <option value="Indonesia" id="ID">Indonesia</option>
+                      <option value="Irak" id="IQ">Irak</option>
+                      <option value="Irán" id="IR">Irán</option>
+                      <option value="Irlanda" id="IE">Irlanda</option>
+                      <option value="Isla Bouvet" id="BV">Isla Bouvet</option>
+                      <option value="Isla Christmas" id="CX">Isla Christmas</option>
+                      <option value="Islandia" id="IS">Islandia</option>
+                      <option value="Islas Caimán" id="KY">Islas Caimán</option>
+                      <option value="Islas Cook" id="CK">Islas Cook</option>
+                      <option value="Islas Faroe" id="FO">Islas Faroe</option>
+                      <option value="Islas Fiyi" id="FJ">Islas Fiyi</option>
+                      <option value="Islas Marshall" id="MH">Islas Marshall</option>
+                      <option value="Islas Palau" id="PW">Islas Palau</option>
+                      <option value="Islas Salomón" d="SB">Islas Salomón</option>
+                      <option value="Islas Tokelau" id="TK">Islas Tokelau</option>
+                      <option value="Israel" id="IL">Israel</option>
+                      <option value="Italia" id="IT">Italia</option>
+                      <option value="Jamaica" id="JM">Jamaica</option>
+                      <option value="Japón" id="JP">Japón</option>
+                      <option value="Jordania" id="JO">Jordania</option>
+                      <option value="Kazajistán" id="KZ">Kazajistán</option>
+                      <option value="Kenia" id="KE">Kenia</option>
+                      <option value="Kirguizistán" id="KG">Kirguizistán</option>
+                      <option value="Kiribati" id="KI">Kiribati</option>
+                      <option value="Kuwait" id="KW">Kuwait</option>
+                      <option value="Laos" id="LA">Laos</option>
+                      <option value="Lesoto" id="LS">Lesoto</option>
+                      <option value="Letonia" id="LV">Letonia</option>
+                      <option value="Líbano" id="LB">Líbano</option>
+                      <option value="Liberia" id="LR">Liberia</option>
+                      <option value="Libia" id="LY">Libia</option>
+                      <option value="Liechtenstein" id="LI">Liechtenstein</option>
+                      <option value="Lituania" id="LT">Lituania</option>
+                      <option value="Luxemburgo" id="LU">Luxemburgo</option>
+                      <option value="Macao R. A. E" id="MO">Macao R. A. E</option>
+                      <option value="Madagascar" id="MG">Madagascar</option>
+                      <option value="Malasia" id="MY">Malasia</option>
+                      <option value="Malawi" id="MW">Malawi</option>
+                      <option value="Maldivas" id="MV">Maldivas</option>
+                      <option value="Malí" id="ML">Malí</option>
+                      <option value="Malta" id="MT">Malta</option>
+                      <option value="Marruecos" id="MA">Marruecos</option>
+                      <option value="Martinica" id="MQ">Martinica</option>
+                      <option value="Mauricio" id="MU">Mauricio</option>
+                      <option value="Mauritania" id="MR">Mauritania</option>
+                      <option value="Mayotte" id="YT">Mayotte</option>
+                      <option value="México" id="MX">México</option>
+                      <option value="Micronesia" id="FM">Micronesia</option>
+                      <option value="Moldavia" id="MD">Moldavia</option>
+                      <option value="Mónaco" id="MC">Mónaco</option>
+                      <option value="Mongolia" id="MN">Mongolia</option>
+                      <option value="Montserrat" id="MS">Montserrat</option>
+                      <option value="Mozambique" id="MZ">Mozambique</option>
+                      <option value="Namibia" id="NA">Namibia</option>
+                      <option value="Nauru" id="NR">Nauru</option>
+                      <option value="Nepal" id="NP">Nepal</option>
+                      <option value="Nicaragua" id="NI">Nicaragua</option>
+                      <option value="Níger" id="NE">Níger</option>
+                      <option value="Nigeria" id="NG">Nigeria</option>
+                      <option value="Niue" id="NU">Niue</option>
+                      <option value="Norfolk" id="NF">Norfolk</option>
+                      <option value="Noruega" id="NO">Noruega</option>
+                      <option value="Nueva Caledonia" id="NC">Nueva Caledonia</option>
+                      <option value="Nueva Zelanda" id="NZ">Nueva Zelanda</option>
+                      <option value="Omán" id="OM">Omán</option>
+                      <option value="Panamá" id="PA">Panamá</option>
+                      <option value="Papua Nueva Guinea" id="PG">Papua Nueva Guinea</option>
+                      <option value="Paquistán" id="PK">Paquistán</option>
+                      <option value="Paraguay" id="PY">Paraguay</option>
+                      <option value="Perú" id="PE">Perú</option>
+                      <option value="Pitcairn" id="PN">Pitcairn</option>
+                      <option value="Polinesia francesa" id="PF">Polinesia francesa</option>
+                      <option value="Polonia" id="PL">Polonia</option>
+                      <option value="Portugal" id="PT">Portugal</option>
+                      <option value="Puerto Rico" id="PR">Puerto Rico</option>
+                      <option value="Qatar" id="QA">Qatar</option>
+                      <option value="Reino Unido" id="UK">Reino Unido</option>
+                      <option value="República Checa" id="CZ">República Checa</option>
+                      <option value="Sudáfrica" id="ZA">Sudáfrica</option>
+                      <option value="República Dominicana" id="DO">República Dominicana</option>
+                      <option value="Reunión" id="RE">Reunión</option>
+                      <option value="Ruanda" id="RW">Ruanda</option>
+                      <option value="Rumania" id="RO">Rumania</option>
+                      <option value="Rusia" id="RU">Rusia</option>
+                      <option value="Samoa" id="WS">Samoa</option>
+                      <option value="Samoa occidental" id="AS">Samoa occidental</option>
+                      <option value="San Kitts y Nevis" id="KN">San Kitts y Nevis</option>
+                      <option value="San Marino" id="SM">San Marino</option>
+                      <option value="Santa Helena" id="SH">Santa Helena</option>
+                      <option value="Santa Lucía" id="LC">Santa Lucía</option>
+                      <option value="Senegal" id="SN">Senegal</option>
+                      <option value="Serbia y Montenegro" id="YU">Serbia y Montenegro</option>
+                      <option value="Sychelles" id="SC">Seychelles</option>
+                      <option value="Sierra Leona" id="SL">Sierra Leona</option>
+                      <option value="Singapur" id="SG">Singapur</option>
+                      <option value="Siria" id="SY">Siria</option>
+                      <option value="Somalia" id="SO">Somalia</option>
+                      <option value="Sri Lanka" id="LK">Sri Lanka</option>
+                      <option value="Suazilandia" id="SZ">Suazilandia</option>
+                      <option value="Sudán" id="SD">Sudán</option>
+                      <option value="Suecia" id="SE">Suecia</option>
+                      <option value="Suiza" id="CH">Suiza</option>
+                      <option value="Surinam" id="SR">Surinam</option>
+                      <option value="Svalbard" id="SJ">Svalbard</option>
+                      <option value="Tailandia" id="TH">Tailandia</option>
+                      <option value="Taiwán" id="TW">Taiwán</option>
+                      <option value="Tanzania" id="TZ">Tanzania</option>
+                      <option value="Tayikistán" id="TJ">Tayikistán</option>
+                      <option value="Timor Oriental" id="TP">Timor Oriental</option>
+                      <option value="Togo" id="TG">Togo</option>
+                      <option value="Tonga" id="TO">Tonga</option>
+                      <option value="Trinidad y Tobago" id="TT">Trinidad y Tobago</option>
+                      <option value="Túnez" id="TN">Túnez</option>
+                      <option value="Turkmenistán" id="TM">Turkmenistán</option>
+                      <option value="Turquía" id="TR">Turquía</option>
+                      <option value="Tuvalu" id="TV">Tuvalu</option>
+                      <option value="Ucrania" id="UA">Ucrania</option>
+                      <option value="Uganda" id="UG">Uganda</option>
+                      <option value="Uruguay" id="UY">Uruguay</option>
+                      <option value="Uzbekistán" id="UZ">Uzbekistán</option>
+                      <option value="Vanuatu" id="VU">Vanuatu</option>
+                      <option value="Venezuela" id="VE">Venezuela</option>
+                      <option value="Vietnam" id="VN">Vietnam</option>
+                      <option value="Wallis y Futuna" id="WF">Wallis y Futuna</option>
+                      <option value="Yemen" id="YE">Yemen</option>
+                      <option value="Zambia" id="ZM">Zambia</option>
+                      <option value="Zimbabue" id="ZW">Zimbabue</option>
+</select><br/><br/>
+
+Departamento<br/>
+  <select name=pais onchange="cambia_provincia()"> 
+    <option id="0" selected>Seleccione... 
+    <option id="1" value="Ahuachapán">Ahuachapán 
+    <option id="2" value="Sonsonate">Sonsonate
+    <option id="3" value="Santa Ana">Santa Ana
+    <option id="4" value="Cabañas">Cabañas
+    <option id="5" value="Chalatenango">Chalatenango 
+    <option id="6" value="Cuscatlán">Cuscatlán
+    <option id="7" value="La Libertad">La Libertad
+    <option id="8" value="La Paz">La Paz
+    <option id="9" value="San Salvador">San Salvador
+    <option id="10" value="San Vicente">San Vicente
+    <option id="11" value="Usulután">Usulután
+    <option id="12" value="San Miguel">San Miguel
+    <option id="13" value="Morazán">Morazán
+    <option id="14" value="La Unión">La Unión
+  </select><br/><br/>
+
+Municipios<br/>
+  <select name=provincia> 
+    <option value="-">Municipio 
+  </select> <br/><br/>
+
+  Direccion<br/>
+  <input type="text" name="direccion">
+  <br><br>
+  Vendedor <?php echo Form::select('vendedor', $combobox2, $selected2); ?>
+
+<br>
+        <table>
+                    <tr>                      <br>
+                    <p align="center">Recomendado Por</p>
+                    <td style="padding-right:5px;">Nombre <input type="text" name="recomendado"></td>
+                    <td style="padding-right:5px;">Telefono<input type="text" name="telefonor"></td>
+                    </tr>
+      </table>
+
+  <table>
+          <thead>
+              <tr>
+            <fieldset>
+              <p align="center">Recomendaciones Familiares</p>
+              </tr>
+              <tr>
+              <td style="padding-right:5px;">Nombre<input type="text"  name="nombre1"></td>
+
+               <td> Telefono <input type="text"  name="telefono1"></td>
+               </tr>
+              <tr>
+               <td style="padding-right:5px;">Nombre<input type="text"  name="nombre2"></td>
+
+               <td> Telefono <input type="text"  name="telefono2"></td>
+                  
+                  </tr>
+            </thead>
+          </fieldset>
+  </table>
+<fieldset>
+          <table>
+                <thead>
+                  <tr>
+                    <fieldset>
+                      <p align="center">Recomendaciones Personales</p>
+                      </tr>
+                      <tr>
+                      <td style="padding-right:5px;">Nombre<input type="text"  name="nombre3"></td>
+
+                       <td> Telefono <input type="text"  name="telefono3"></td>
+                       </tr>
+                      <tr>
+                       <td style="padding-right:5px;">Nombre<input type="text"  name="nombre4"></td>
+
+                       <td> Telefono <input type="text"  name="telefono4"></td>
+                      </fieldset>
+                      </tr>
+                      
+              </thead>
+        </table>
+
+  <input type="submit" value="Enviar" id="submit">
+  </fieldset>
+</form>
+
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

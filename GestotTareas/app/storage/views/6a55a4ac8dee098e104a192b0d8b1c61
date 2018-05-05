@@ -1,0 +1,286 @@
+<?php
+
+    //traemos los datos de la liquidacion
+
+    $LiquidationData = Liquidacion::find($liquidacion_id);
+
+    //traemos los datos de los productos de la liquidacion
+
+    $ProdLiq = ProductosLiquidacion::where("id_liquidacion","=",$liquidacion_id)->get();
+
+
+
+    $fecha = $LiquidationData->updated_at;
+
+    $numLiq = $LiquidationData->codigo_liquidacion;
+
+
+
+    //data clietne
+
+    $dataCliente = Cliente::where("codigo",$LiquidationData->id_cliente)->get();
+
+
+
+    foreach($dataCliente as $c){
+
+        $nombreC = $c->nombre;
+
+        $codigo = $c->codigo;
+
+    }
+
+    $dataCuentaC = CuentaCobrar::where("cliente",$codigo)->get();
+    foreach($dataCuentaC as $dcc)
+    {
+        $montoCC = $dcc->monto;
+    }
+
+
+
+?>
+
+
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <?php echo HTML::style('css/consignacion.css'); ?>
+
+
+<body>
+
+    <script type="text/javascript">
+
+        print();
+
+    </script>
+
+    <table class="tabla1">
+
+    <tr>
+
+        <td><?php echo HTML::image('img/zirconia.png'); ?></td>
+
+        <td><div id="divf" style="height: auto;"><center>Comprobante de liquidacion</center>
+
+                            <center>(L)</center>
+
+                            <center>N=<?php echo $numLiq; ?></center></div></td>
+
+    </tr>
+
+    <tr>
+
+        <td></br>Código: <?php echo $codigo; ?></td>
+
+        <td></td>
+
+        <td>Fecha: <?php echo $fecha; ?></td>
+
+    </tr>
+
+    <tr>
+
+        <td></br>Cliente: <?php echo $nombreC; ?></td>
+
+        <td></td>
+
+    </tr>
+
+    </table>
+
+    </br>
+
+    <table class="tabla" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+
+        <th style="width:15%;">Codigo</th>
+
+        <th style="width:35%;">Descripcion Articulo</th>
+
+        <th style="width:15%;">Consignacion</th>
+
+        <th style="width:15%;">Devuelve</th>
+
+        <th style="width:15%;">Precio Unitario</th>
+
+        <th style="width:15%;">Monto</th>
+
+      </tr>
+
+    <?php
+
+        //cuerpo
+
+        $devuelve = 0;
+
+        $perdidas = 0;
+
+        $subTotalPro = 0;
+
+        $totalPrecioUnitario = 0;
+
+        foreach($ProdLiq as $pl){
+          $totalPrecioUnitario += $pl->precio;
+
+          $devuelve += $pl->devuelve;
+
+          $calculoPerPro = $pl->devuelve * $pl->precio;
+
+          $perdidas += $calculoPerPro;
+
+          $subTotalPro = $pl->cantidad * $pl->precio;
+
+          echo  "<tr>
+
+                          <td>$pl->codigo_producto</td>
+
+                          <td>$pl->descripcion</td>
+
+                          <td>$pl->cantidad</td>
+
+                          <td>$pl->devuelve</td>
+
+                          <td>$ $pl->precio</td>
+
+                          <td> $ $subTotalPro </td>
+
+                        </tr>";
+
+        }
+
+        $subTotalPro = 0;
+
+    ?>
+    <tr>
+
+      <td colspan="2"> Sumas </td>
+
+      <td style="width:15%;"><?php echo $LiquidationData->cant_pro; ?></td>
+
+      <td style="width:15%;"><?php echo $devuelve; ?></td>
+
+      <td style="width:15%;">$ <?php echo $totalPrecioUnitario; ?></td>
+
+      <td style="width:15%;">$ <?php echo $LiquidationData->total; ?></td>
+
+      <?php
+      require app_path().'/controllers/convertidor.php';
+
+      $cantLetras = numtoletras($LiquidationData->total);
+
+      ?>
+      <tr>
+        <td colspan="6">
+          Son: <?php echo $cantLetras; ?>
+
+        </td>
+      </tr>
+      <tr>
+          <td colspan="6" style="width:15%;">Monto Faltante ($) :  <?php echo $LiquidationData->deuda;; ?></td>
+           <?php if($montoCC < 0): ?>
+          <td colspan="6" style="width:15%;">Monto Sobrante($): <?php echo $montoCC * -1; ?>  </td>
+            <?php endif; ?>
+      </tr>
+
+    </table>
+
+    </br>
+
+    </br>
+
+    <!--<table class="tabla3" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+
+        <td style="width:35%;">Entregado:  <?php echo $LiquidationData->cant_pro; ?></td>
+
+        <td style="width:15%;">Total($): <?php echo $LiquidationData->total; ?></td>
+
+        <td style="width:15%;">Devuelve: <?php echo $devuelve; ?></td>
+
+      </tr>
+
+    </table>-->
+
+    <br>
+
+    <!--<table class="tabla3" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+
+        <td style="width:35%;">Monto Recibido($):  <?php echo $LiquidationData->montoR; ?></td>
+
+
+        <td style="width:15%;">Total devueltos($): <?php echo $perdidas; ?></td>
+    </tr>
+
+    <tr>
+        <?php if($montoCC < 0): ?>
+            <td style="width:15%;">Monto Sobrante($): <?php echo $montoCC * -1; ?>  </td>
+        <?php endif; ?>
+
+        <td style="width:15%;">Monto Faltante ($) :  <?php echo $LiquidationData->deuda;; ?></td>
+
+      </tr>
+
+    </table>-->
+
+    <table class="tabla2">
+
+    <tr>
+
+        <td></td>
+
+        <td></br>Entregado Por</td>
+
+        <td></td>
+
+        <td></td>
+
+        <td></br>Recibido Por</td>
+
+        <td></td>
+
+    </tr>
+
+        <tr>
+
+            <td></br>Firma</td>
+
+            <td>_________________________</td>
+
+            <td></td>
+
+            <td></br>Firma</td>
+
+            <td>_________________________</td>
+
+        </tr>
+
+        <tr>
+
+            <td></br>Nombre</td>
+
+            <td>_________________________</td>
+
+            <td></td>
+
+            <td></br>Nombre</td>
+
+            <td>_________________________</td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+</head>
+
+</html>

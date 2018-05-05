@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form action="registrar-usuario" method="post">
+		<center>
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td><input type="text" name="nombre"></td>
+			</tr>
+			<tr>
+				<td>Apellidos</td>
+				<td><input type="text" name="apellidos"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Registrar usuario"></center></td>
+			</tr>
+		</table>
+		</center>
+	</form>
+</body>
+</html>

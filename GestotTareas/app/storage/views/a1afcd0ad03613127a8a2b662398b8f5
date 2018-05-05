@@ -1,0 +1,108 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+        <div class="warper container-fluid">            
+            
+            <div class="row">
+            
+              <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">Días que más se ocupan las canchas</div>
+                        <div class="panel-body">
+                          <div id="bar-chart" style="height:250px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">Equipos</div>
+                        <div class="panel-body">
+                          <div id="side-by-side-bar" style="height:250px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            </div>
+            
+            
+            
+            
+            <div class="row">
+            
+              
+            
+              <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">Paises</div>
+                        <div class="panel-body">
+                          <div id="stacked-bar" style="height:250px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">Jugadores</div>
+                        <div class="panel-body">
+                          <div id="barwidth-bar" style="height:250px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            </div>
+            
+                        
+            <div class="page-header"><h3>Graficos de <small>Pastel</small></h3></div>
+            
+            
+            <div class="row">
+
+              <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">Pastel</div>
+                        <div class="panel-body">
+                          <div id="pie-chart" style="height:250px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">Equipos</div>
+                        <div class="panel-body">
+                          <div id="doughnut-chart" style="height:250px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

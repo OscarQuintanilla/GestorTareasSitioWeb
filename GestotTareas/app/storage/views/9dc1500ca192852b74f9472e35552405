@@ -1,0 +1,52 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Clientes</h2>
+
+</div>
+
+<form action="" method="post">  
+
+  Codigo<input type="text" name="codigo">
+
+  Nombre<input type="text" name="nombre">    
+
+  Apellido<input type="text" name="apellido">  
+
+  Telefono<input type="text" name="Telefono">
+
+  Nombre Comercial<input type="text" name="nComercial">
+
+  NIT<input type="text" name="nit">    
+
+  DUI<input type="text" name="dui">  
+
+  Telefono<input type="text" name="telefono">
+
+  Email<input type="text" name="email">
+
+  Direccion<input type="text" name="direccion">
+
+  Ciudad<input type="text" name="ciudad">
+
+  <input type="submit" value="Enviar" id="submit">
+
+</form>
+
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,92 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+		  <?php if(Session::has('c')): ?>
+                <div class="alert alert-success" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('c'); ?></strong>
+                </div>
+        <?php endif; ?>
+        <?php if(Session::has('m')): ?>
+                <div class="alert alert-info" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('m'); ?></strong>
+                </div>
+        <?php endif; ?>
+        <?php if(Session::has('e')): ?>
+                <div class="alert alert-danger" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('e'); ?></strong>
+                </div>
+        <?php endif; ?>
+         <?php if(Session::has('pass')): ?>
+                <div class="alert alert-danger" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('pass'); ?></strong>
+                </div>
+        <?php endif; ?>
+       
+  <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Usuarios</h4>
+          		<a href="usuarios" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Usuarios</a>
+          		<a href="crear-usuario" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Usuario</a>   
+            </div></center><br/><!-- /showback -->
+
+<div class="row">        
+  	        <div class="col-md-12">
+            <div class="content-panel">
+                            <h4><i class="fa fa-angle-right"></i>Lista Usuarios</h4>
+		<table class="table table-hover">				<thead>
+				<tr>
+					<th>Nombre usuario</th>
+					<th>Tipo</th>
+					<th colspan="2">Acciones</th>
+				</tr>
+				</thead>
+				<tbody>
+					<?php foreach($usuarios as $user): ?>
+					<tr>
+						<td><?php echo $user->username; ?></td>
+						<?php if($user->tipo == 'supervisor'): ?>
+							<td><span class="label label-primary"><?php echo $user->tipo; ?></span></td>
+						<?php endif; ?>
+						<?php if($user->tipo == 'vendedor'): ?>
+							<td><span class="label label-success"><?php echo $user->tipo; ?></span></td>
+						<?php endif; ?>
+						<?php if($user->tipo == 'SuperAdmin'): ?>
+							<td><span class="label label-danger"><?php echo $user->tipo; ?></span></td>
+						<?php endif; ?>
+
+						<?php echo Form::open(array('url'=>'modify-usuario')); ?>
+
+							<?php echo Form::hidden('id',$user->id); ?>
+
+							<td><button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></td>
+						<?php echo Form::close(); ?>
+
+
+						<?php if(Session::get('id_usuario') != $user->id): ?>
+							<?php echo Form::open(array('url'=>'eliminar-usuario')); ?>
+
+								<?php echo Form::hidden('id',$user->id); ?>
+
+								<td><button type="submit" class="btn btn-danger btn-xs del" ><i class="fa fa-trash-o "></i></button></td>
+							<?php echo Form::close(); ?>
+
+						<?php endif; ?>
+					</tr>
+					<?php endforeach; ?>
+				</tbody>
+		</table>
+ </div><!-- /content-panel -->
+                  </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla1', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

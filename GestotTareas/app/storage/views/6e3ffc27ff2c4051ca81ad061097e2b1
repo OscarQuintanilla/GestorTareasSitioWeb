@@ -1,0 +1,25 @@
+;
+
+<?php $__env->startSection("menu"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("content"); ?>
+	<div style="margin-top:7%;" class="col-lg-12" >
+
+   			<div class="col-lg-12 text-center">
+	            <h2 class="section-heading" style="color:#FD61E3;">Bienvenido al CPanel</h2>
+	        </div>
+
+	</div>
+
+	<br><br><br><br><br><br><br>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("footer"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make("vistasAdmin.masterAdmin", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,351 @@
+
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $("#agregarExperienciaLaboral").click(function(){
+
+            var empresa = $("#empresa").val();
+            var distrito_provincia = $("#distrito_provincia").val();
+            var sector_empresa = $("#sector_empresa").val();
+            var cargo = $("#cargo").val();
+            var area_empresa = $("#area_empresa").val();
+            var funciones = $("#funciones").val();
+            var periodo = $("#periodo").val();
+
+            $.post("registrarExperienciaLaboral", {empresa : empresa, distrito_provincia : distrito_provincia, sector_empresa : sector_empresa, cargo : cargo, area_empresa : area_empresa, funciones : funciones, periodo : periodo}, function(data){
+
+                $("#empresa").val("");
+                $("#distrito_provincia").val("");
+                $("#sector_empresa").val("");
+                $("#cargo").val("");
+                $("#area_empresa").val("");
+                $("#funciones").val("");
+                $("#periodo").val("");
+                
+                $("#cajas_experiencia_laboral").html(data);
+
+            });
+
+        });
+
+        $("#modificarExperienciaLaboral").click(function(){
+
+            var id_expe_lab = $("#id_expe_lab").val();
+            var empresa = $("#empresa").val();
+            var distrito_provincia = $("#distrito_provincia").val();
+            var sector_empresa = $("#sector_empresa").val();
+            var cargo = $("#cargo").val();
+            var area_empresa = $("#area_empresa").val();
+            var funciones = $("#funciones").val();
+            var periodo = $("#periodo").val();
+
+            $('#agregarExperienciaLaboral').css('display','block');
+            $('#modificarExperienciaLaboral').css('display','none');
+
+
+            $.post("modificarExperienciaLaboral", {id_expe_lab : id_expe_lab, empresa : empresa, distrito_provincia : distrito_provincia, sector_empresa : sector_empresa, cargo : cargo, area_empresa : area_empresa, funciones : funciones, periodo : periodo}, function(data){
+
+                $("#empresa").val("");
+                $("#distrito_provincia").val("");
+                $("#sector_empresa").val("");
+                $("#cargo").val("");
+                $("#area_empresa").val("");
+                $("#funciones").val("");
+                $("#periodo").val("");
+
+                $("#cajas_experiencia_laboral").html(data);
+
+            });
+
+        });
+    });
+
+</script>
+        <section class="contact" id="ofertas">
+        <div class="noticias">
+
+                    <div class="row">
+                <center>
+                    <div class="col-lg-6 col-lg-offset-3">
+                    <img class="img-responsive" src="img/vista2.jpg" alt="logo"><br>
+                    </div>
+  <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">
+                    <h5>Perfil Profesional</h5>
+            </div>
+            <form action="registrarPerfilProfesional" method="post">
+            <div class="panel-body">
+                Cargo o título breve del currículum:<input type="text" class="form-control" name="titulo_perfil" placeholder="Título">
+                Descripción breve de tu perfil profesional:<input type="text" class="form-control" name="descripcion_perfil" placeholder="Descripción">
+            </div>
+        </div>
+      </center>
+      </div>
+          <div class="row">
+              <center>
+    <div class="col-lg-4 col-lg-offset-4">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">
+                    <h5>Experiencias Profesional</h5>
+                </div>
+            <div class="panel-body">
+                        <input type="checkbox" >No tengo ninguna experiencia<br>
+                <i class="fa fa-plus"><a href="#" id="ocultar-cajita">Agregar Experiencia Laboral</i></a>
+
+            </div>
+            <!--Div Oculto-->
+        <div class="panel-body" id="panel-oculto" style="display:none;">
+            Empresa:<input type="text" class="form-control" name="empresa" id="empresa" placeholder="Empresa">
+            Distrito / Provincia:<div class="form-group">
+                          <select class="form-control" name="distrito_provincia" id="distrito_provincia">
+                            <option>San Salvador</option>
+                            <option>La Libertad</option>
+                            <option>Santa Ana</option>
+                            <option>San Miguel</option>
+                            <option>Morazán</option>
+                            <option>Cabañas</option>
+                            <option>Ahuachapán</option>
+                            <option>Sonsonate</option>
+                            <option>Chalatenango</option>
+                            <option>La Paz</option>
+                            <option>Usulután</option>
+                            <option>San Vicente</option>
+                            <option>Cabañas</option>
+                            <option>Cuscatlán</option>
+                          </select>
+                    </div>
+            Sector de empresa:<div class="form-group">
+                                      <select class="form-control" name="sector_empresa" id="sector_empresa">
+                                        <option value="0">Seleccione</option>
+                                        <option value="Publicidad / RRPP">Publicidad / RRPP</option>
+                                        <option value="Agricultura / Pesca / Ganadería">Agricultura / Pesca / Ganadería</option>
+                                        <option value="Informática / Hardware">Informática / Hardware</option>
+                                        <option value="Informática / Software">Informática / Software</option>
+                                        <option value="Construcción / Obras">Construcción / Obras</option>
+                                        <option value="Venta al consumidor">Venta al consumidor</option>
+                                        <option value="Educacón">Educacón</option>
+                                        <option value="Energía">Energía</option>
+                                        <option value="Entretenimiento / Deportes">Entretenimiento / Deportes</option>
+                                        <option value="Finanzas / Banca">Finanzas / Banca</option>
+                                        <option value="Salud / Medicina">Salud / Medicina</option>
+                                        <option value="Hostelería / Turismo">Hostelería / turismo</option>
+                                        <option value="Internet">Internet</option>
+                                        <option value="Medios de comunicación">Medios de comunicación</option>
+                                        <option value="Fabricación">Fabricación</option>
+                                        <option value="Gobierno / No lucro">Gobierno / no lucro</option>
+                                        <option value="Servicios profesionales">Servicios profesionales</option>
+                                        <option value="Materias primas">Materias primas</option>
+                                        <option value="RRHH / Personal">RRHH / Personal</option>
+                                        <option value="Venta al por mayor">Venta al por mayor</option>
+                                        <option value="Telecomunicaciones">Telecomunicaciones</option>
+                                        <option value="Transporte">Transporte</option>
+                                        <option value="Legal / Asesoría">Legal / Asesoría</option>
+                                      </select>
+                                </div>
+            Cargo:<input type="text" class="form-control" name="cargo" id="cargo" placeholder="Cargo">
+
+            Área:<div class="form-group">
+                                      <select class="form-control" name="area" id="area_empresa">
+                                        <option value="0">Seleccione</option>
+                                        <option value="Administración / Oficina">Administración / Oficina</option>
+                                        <option value="Almacén / Logística">Almacén / Logística</option>
+                                        <option value="Atención a clientes">Atención a clientes</option>
+                                        <option value="Call center / Telemercado">Call center / Telemercado</option>
+                                        <option value="Compras / Comercio exterior">Compras / Comercio exterior</option>
+                                        <option value="Construcción y obra">Construcción y obra</option>
+                                        <option value="Contabilidad / Finanzas">Contabilidad / Finanzas</option>
+                                        <option value="Dirección / Gerencia">Dirección / Gerencia</option>
+                                        <option value="Diseño / Artes gráficas">Diseño / Artes gráficas</option>
+                                        <option value="Docencia">Docencia</option>
+                                        <option value="Hostelería / Turismo">Hostelería / Turismo</option>
+                                        <option value="Informática / Telecomunicaciones">Informática / Telecomunicaciones</option>
+                                        <option value="Ingeniería">Ingeniería</option>
+                                        <option value="Investigación y calidad">Investigación y calidad</option>
+                                        <option value="Legal / Asesoría">Legal / Asesoría</option>
+                                        <option value="Mantenimiento y reparaciones técnicas">Mantenimiento y reparaciones técnicas</option>
+                                        <option value="Márketin / Ventas">Márketin / Ventas</option>
+                                        <option value="Medicina / Salud">Medicina / Salud</option>
+                                        <option value="Mercadeo / Publicidad / Comunicación">Mercadeo / Publicidad / Comunicación</option>
+                                        <option value="Producción / Operaciones">Producción / Operaciones</option>
+                                        <option value="Recursos / Humanos">Recursos / Humanos</option>
+                                        <option value="Servicios generales / Aseo / Seguridad">Servicios generales / Aseo / Seguridad</option>
+                                      </select>
+                                </div>
+           
+            Funciones del cargo:<input type="text" class="form-control" name="funciones" id="funciones" placeholder="Funciones"><br>
+            Experiencia:<div class="form-group">
+                                      <select class="form-control" name="periodo" id="periodo">
+                                        <option value="1 año">1 año</option>
+                                        <option value="2 años">2 años</option>
+                                        <option value="3 años">3 años</option>
+                                        <option value="4 años">4 años</option>
+                                        <option value="5 años">5 años</option>
+                                        <option value="6 años">6 años</option>
+                                        <option value="7 años">7 años</option>
+                                        <option value="8 años">8 años</option>
+                                        <option value="9 años">9 años</option>
+                                        <option value="10 años">10 años</option>
+                                        <option value="11-15 años">11-15 años</option>
+                                        <option value="16-20 años">16-20 años</option>
+                                        <option value="Más de 20 años">Más de 20 años</option>
+                                      </select>
+                                </div>
+            <input type="hidden" class="form-control" name="id_expe_lab" id="id_expe_lab">
+            <button type="button" class="btn btn-primary btn-md" id="agregarExperienciaLaboral">Añadir</button>
+            <button type="button" class="btn btn-primary btn-md" id="modificarExperienciaLaboral" style="display:none;">Modificar</button>
+            
+                    </div>
+      </div>
+            </center>
+                </div>
+
+            <div id="cajas_experiencia_laboral">
+
+            </div>
+              
+            <div class="row">
+                <center>
+                <div class="col-lg-4 col-lg-offset-4">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            <h5>Preferencias de trabajo</h5>
+                        </div>
+                            <div class="panel-body">
+                                Situacion actual:<div class="form-group">
+                                      <select class="form-control" name="situacion_actual" id="situacion_actual">
+                                        <option>No tengo empleo</option>
+                                        <option>Estoy buscando empleo activamente</option>
+                                        <option>Estoy trabajando actualmente</option>
+                                        <option>No busco trabajo pero estoy dispuesto a escuchar ofertas</option>
+                                        <option>No tengo interes en un empleo nuevo</option>
+                                      </select>
+                                </div>
+                                
+                                Puesto de trabajo deseado:<input type="text" class="form-control" name="puesto_deseado" id="puesto_deseado" placeholder="Puesto de trabajo deseado">
+                                
+                                Primera Industria:<div class="form-group">
+                                                  <select class="form-control" name="primera_industria" id="primera_industria">
+                                                        <option value="">Seleccione una industria</option> 
+                                                        <option value="Salud / Medicina">Salud / Medicina</option>
+                                                        <option value="Banca / Finanzas">Banca / Finanzas</option>
+                                                        <option value="Entretenimiento / Deportes">Entretenimiento / Deportes</option>
+                                                        <option value="Energía">Energía</option>
+                                                        <option value="Educación">Educación</option>
+                                                        <option value="Venta al Consumidor">Venta al Consumidor</option>
+                                                        <option value="Construcción / Obras">Construcción / Obras</option>
+                                                        <option value="Informática / Software">Informática / Software</option>
+                                                        <option value="Informática / Hardware">Informática / Hardware</option>
+                                                        <option value="Agricultura / Pesca / Ganadería">Agricultura / Pesca / Ganadería</option>
+                                                        <option value="Hostelería / Turismo">Hostelería / Turismo</option>
+                                                        <option value="Internet">Internet</option>
+                                                        <option value="Legal / Asesoría">Legal / Asesoría</option>
+                                                        <option value="Transporte">Transporte</option>
+                                                        <option value="Telecomunicaciones">Telecomunicaciones</option>
+                                                        <option value="Venta al por Mayor">Venta al por Mayor</option>
+                                                        <option value="RRHH / Personal">RRHH / Personal</option>
+                                                        <option value="Materias Primas">Materias Primas</option>
+                                                        <option value="Servicios Profesionales">Servicios Profesionales</option>
+                                                        <option value="Gobierno / ONG's">Gobierno / ONG's</option>
+                                                        <option value="Fabricación">Fabricación</option>
+                                                        <option value="Medios de Comunicación">Medios de Comunicación</option>
+                                                        <option value="Publicidad / RRPP">Publicidad / RRPP</option>
+                                                        <option value="Otros">Otros</option>
+                                                  </select>
+                                            </div>
+
+                                Segunda Industria:<div class="form-group">
+                                                  <select class="form-control" name="segunda_industria" id="segunda_industria">
+                                                        <option value="">Seleccione una industria</option>
+                                                        <option value="Salud / Medicina">Salud / Medicina</option>
+                                                        <option value="Banca / Finanzas">Banca / Finanzas</option>
+                                                        <option value="Entretenimiento / Deportes">Entretenimiento / Deportes</option>
+                                                        <option value="Energía">Energía</option>
+                                                        <option value="Educación">Educación</option>
+                                                        <option value="Venta al Consumidor">Venta al Consumidor</option>
+                                                        <option value="Construcción / Obras">Construcción / Obras</option>
+                                                        <option value="Informática / Software">Informática / Software</option>
+                                                        <option value="Informática / Hardware">Informática / Hardware</option>
+                                                        <option value="Agricultura / Pesca / Ganadería">Agricultura / Pesca / Ganadería</option>
+                                                        <option value="Hostelería / Turismo">Hostelería / Turismo</option>
+                                                        <option value="Internet">Internet</option>
+                                                        <option value="Legal / Asesoría">Legal / Asesoría</option>
+                                                        <option value="Transporte">Transporte</option>
+                                                        <option value="Telecomunicaciones">Telecomunicaciones</option>
+                                                        <option value="Venta al por Mayor">Venta al por Mayor</option>
+                                                        <option value="RRHH / Personal">RRHH / Personal</option>
+                                                        <option value="Materias Primas">Materias Primas</option>
+                                                        <option value="Servicios Profesionales">Servicios Profesionales</option>
+                                                        <option value="Gobierno / ONG's">Gobierno / ONG's</option>
+                                                        <option value="Fabricación">Fabricación</option>
+                                                        <option value="Medios de Comunicación">Medios de Comunicación</option>
+                                                        <option value="Publicidad / RRPP">Publicidad / RRPP</option>
+                                                        <option value="Otros">Otros</option>
+                                                  </select>
+                                                </div>
+
+                                Distrito / Provincia:<div class="form-group">
+                                              <select class="form-control" name="distrito_provincia2" id="distrito_provincia2">
+                                                <option>San Salvador</option>
+                                                <option>La Libertad</option>
+                                                <option>Santa Ana</option>
+                                                <option>San Miguel</option>
+                                                <option>Morazán</option>
+                                                <option>Cabañas</option>
+                                                <option>Ahuachapán</option>
+                                                <option>Sonsonate</option>
+                                                <option>Chalatenango</option>
+                                                <option>La Paz</option>
+                                                <option>Usulután</option>
+                                                <option>San Vicente</option>
+                                                <option>Cabañas</option>
+                                                <option>Cuscatlán</option>
+                                              </select>
+                                        </div>
+
+                                Monto salarial:<input type="text" class="form-control" name="monto_salarial" id="monto_salarial" placeholder="Monto Salarial ($)">
+
+                                Tipo de salario:<div class="form-group">
+                                              <select class="form-control" name="tipo_salario" id="tipo_salario">
+                                                <option value="Por Hora">Por Hora</option>
+                                                <option value="Por Día">Por Día</option>
+                                                <option value="Por Semana">Por Semana</option>
+                                                <option value="Por Quincena" selected>Por Quincena</option>
+                                                <option value="Por Mes">Por Mes</option>
+                                                <option value="Por Año">Por Año</option>
+                                              </select>
+                                        </div>  
+
+                                Disponibilidad a viajar:<div class="form-group">
+                                              <select class="form-control" name="disponibilidad_viajar" id="disponibilidad_viajar">
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                              </select>
+                                        </div> 
+                                                    <button type="submit" class="btn btn-primary btn-md" id="aceptarPerfilProfesional">Aceptar</button>
+
+                                    </div>
+                            </div> 
+                    </div>
+              </center>
+              </div>
+              
+                </form>
+              
+            </div>
+</section>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

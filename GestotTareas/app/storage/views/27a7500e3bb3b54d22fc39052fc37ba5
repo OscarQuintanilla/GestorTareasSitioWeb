@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Profesionall - Página de inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
+	<meta name="description" content="Ofertas de empleo">
+	<meta name="author" content="Profesionall">
+	<!--Add css lib--> 
+	<link rel="stylesheet" type="text/css" href="css/style-main.css">  
+  	<link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Arimo:500,300,700,400' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:500,300,700,400' rel='stylesheet' type='text/css'>
+
+  	<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style-main.css">  
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:500,300,700,400' rel='stylesheet' type='text/css'>
+
+  	<script type="text/javascript" src="js/jquery/jquery-1.11.3.min.js"></script> 
+	<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script> 
+    <script type="text/javascript" src="js/doughnutit.js"></script> 
+	<script type="text/javascript" src="js/slideshow/jquery.themepunch.revolution.js"></script>   
+	<script type="text/javascript" src="js/slideshow/jquery.themepunch.plugins.min.js"></script>  
+    <script type="text/javascript" src="js/theme-home.js"></script>  
+
+</head>
+<body>
+
+
+	<!--Header: Begin-->
+	<header>
+		<!--Top Header: Begin-->
+		<section id="top-header" class="clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="top-links col-lg-7 col-md-6 col-sm-5 col-xs-6">
+						<ul>
+							<li class="hidden-xs">
+								<a href="https://www.facebook.com/profesionallsv/?fref=ts" target="_Blank">
+									<i class="fa fa-facebook"></i>
+									<!-- Connect with facebook -->
+								</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="#">
+									<i class="fa fa-twitter"></i> 
+								</a>
+							</li>
+						
+							<li class="hidden-xs">
+								<a href="#">
+									<i class="fa fa-linkedin"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="top-header-right f-right col-lg-5 col-md-6 col-sm-7 col-xs-6">
+						<div class="w-header-right">
+							 <div id="navbar" class="navbar-collapse collapse">
+				            <ul class="nav navbar-nav navbar-right">
+				              <li class="dropdown">
+				                  <a style="color:white;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="letter-spacing: 1px;">
+				                    <?php echo Session::get("nombre_usuario"); ?><span class="caret" style="margin-left:10px;"></span></a>
+				                  <ul class="dropdown-menu">
+				                    <li><a href="mi-curriculum"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="margin-right:10px;"></span>Actualizar Curriculum</a></li>
+				                    <li role="separator" class="divider"></li>
+				                    <li><a href="cerrar-sesion-usuario"><span class="glyphicon glyphicon-log-out" aria-hidden="true" style="margin-right:10px;"></span>Cerrar sesion</a></li>
+				                  </ul>
+				              </li>
+				            </ul>
+				          </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--Top Header: End-->
+
+		<?php $__env->startSection('menu'); ?>
+		<!--Main Header: Begin-->
+		<section class="main-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-2 col-sm-4 col-xs-5 w-logo">
+						<div class="logo hd-pd ">
+							<a href="inicio-candidato">
+								<img src="img/logo.png" alt="printshop logo" style="height: 40px; width: 150px;">
+							</a>
+						</div>	
+					</div>
+					<div class="col-lg-7 col-md-8 visible-md visible-lg">
+						<nav id="main-menu" class="main-menu clearfix">
+							<ul>
+								<li class="level0 hd-pd">
+									<a href="inicio-candidato" title="Candidato">Mi Área</a>
+								</li>
+								<li class="level0 hd-pd">
+									<a href="mi-curriculum" title="Empresa">Mi Curriculum</a>
+								</li>
+								<li class="level0 hd-pd">
+									<a href="mis-postulaciones" title="Empresa">Mis Postulaciones</a>
+								</li>
+								<li class="level0 hd-pd">
+									<a href="postularme" title="Candidato">Ofertas de trabajo</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-sm-1 col-sm-offset-5 col-xs-offset-2 col-xs-2 visible-sm visible-xs mbmenu-icon-w">
+						<span class="mbmenu-icon hd-pd">
+							<i class="fa fa-bars"></i>
+						</span>
+					</div>
+	
+					</div>
+				</div>
+			</div>
+		</section><!--Main Header: End-->
+		<?php echo $__env->yieldSection(); ?>
+	</header><!--Header: End-->
+
+	<!--Main index : Begin-->
+	<main class="main index">
+	
+
+		<!--Home out recent : Begin -->
+		<section class="home-out-recent" style="background-color:#F7F5F5;">
+			<div class="container" style="background-color:white;border-style:solid;border-color:#F9F5F5;border-width:0.5px;border-radius:6px;">
+				<div class="col-lg-12">
+					<br>
+					<?php echo $__env->yieldContent('content'); ?>
+				</div>
+			</div>
+		</section>
+
+	</main>  
+
+	<?php $__env->startSection('footer'); ?>
+	<!--Footer : Begin-->
+	<footer>
+		<div class="footer-main">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-4 col-xs-12 about-us footer-col">
+						<h2>Nosotros</h2>
+						<div class="footer-content">
+							<a href="#" title="Cmsmart logo footer" class="logo-footer">
+								
+							</a>
+							<ul class="info">
+								<li>
+									<i class="fa fa-home"></i>
+									<span>San Salvador</span>
+								</li>
+								
+								<li>
+									<i class="fa fa-envelope-o"></i>
+									<span><a href="mailto:support@netbaseteam.net" title="send mail to Cmsmart">sv@profesionall.com</a></span>
+								</li>
+							</ul>
+							<ul class="footer-social">
+								<li>
+									<a href="https://www.facebook.com/profesionallsv/?fref=ts" title="Facebook" target="_Blank">
+										<i class="fa fa-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="Twiter">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="Google plus">
+										<i class="fa fa-google-plus"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--<div class="col-md-3 col-sm-4 col-xs-12 corporate footer-col">
+						<h2>Candidato</h2>
+						<div class="footer-content">
+							<ul>
+								<li>
+									<a href="#" title="About us">Registro</a>
+								</li>
+								<li>
+									<a href="#" title="Green">Ver ofertas</a>
+								</li>
+								<li>
+									<a href="#" title="Afiliates">Postularme</a>
+								</li>
+								<li>
+									<a href="#" title="Non-profits and Government">Me siento con suerte</a>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12 support footer-col">
+						<h2>Empresa</h2>
+						<div class="footer-content">
+							<ul>
+								<li>
+									<a href="myaccount-information.html" title="My Account">Registro</a>
+								</li>
+								<li>
+									<a href="#" title="Design Guide">Publicar oferta</a>
+								</li>
+								<li>
+									<a href="faq.html" title="Candidatos sobresalientes">Candidatos sobresalientes</a>
+								</li>
+								<li>
+									<a href="#" title="Comparativas">Com´parativas</a>
+								</li>
+							
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-12 other-info footer-col hidden-sm">
+						<h2>Pagos y publicidad</h2>
+						<div class="footer-content">
+							<p>
+								Puedes hacer pago ya sea para convertirte en una cuenta pro o para publicidad por cualquiera de estos métodos.
+							</p>
+							<img src="img/footer-payment.png" alt="Payment method">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copy-right">Derechos reservados © 2016 <a href="#" title="">profesionall.com</a></p>
+						<a href="#" id="back-to-top">
+							<i class="fa fa-chevron-up"></i>
+							Inicio
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<?php echo $__env->yieldSection(); ?>
+
+	<div id="sitebodyoverlay"></div>
+	<nav id="mb-main-menu" class="main-menu">
+		<div class="mb-menu-title">
+			<h3>Menú</h3>
+			<span id="close-mb-menu">
+				<i class="fa fa-times-circle"></i>
+			</span>
+		</div>
+		<ul>
+			<li class="level0 hd-pd">
+				<a href="inicio-candidato" title="Candidato">Mi Área</a>
+			</li>
+			<li class="level0 hd-pd">
+				<a href="mi-curriculum" title="Empresa">Mi Curriculum</a>
+			</li>
+			<li class="level0 hd-pd">
+				<a href="mis-postulaciones" title="Empresa">Mis Postulaciones</a>
+			</li>
+			<li class="level0 hd-pd">
+				<a href="postularme" title="Candidato">Ofertas de trabajo</a>
+			</li>
+		</ul>
+	</nav> 
+	<!--Add js lib-->
+	
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+</body>
+</html>

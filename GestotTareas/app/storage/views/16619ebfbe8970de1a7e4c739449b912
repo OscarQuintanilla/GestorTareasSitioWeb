@@ -1,0 +1,42 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+  <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Productos</h4>
+          <a href="producto" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Productos</a>
+          <a href="agregar-Pro" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Producto</a>
+              </div></center><!-- /showback -->
+              
+<div id="envelope">
+<div id="enve">
+
+    <h2>Productos</h2>
+
+</div>
+
+<?php echo Form::open(array('url'=>'modificar-Pro')); ?>
+
+
+	<?php echo Form::hidden('idPro',$pro->id); ?>
+
+  <fieldset><br/>
+
+  Codigo<input type="text" name="codigo" value="<?php echo $pro->codigo; ?>">
+  Nombre Producto<input type="text" name="nomProducto" value="<?php echo $pro->nombre_producto; ?>">
+  Descripcion<input type="text" name="descripcion" value="<?php echo $pro->descripcion; ?>">    
+  Precio<input type="text" name="precio" value="<?php echo $pro->precio; ?>">  
+  Precio Unitario<input type="text" name="precioUnitario" value="<?php echo $pro->precio_unitario; ?>">
+  Precio Mayoreo<input type="text" name="precioMayoreo" value="<?php echo $pro->precio_mayoria; ?>"> 
+  <?php echo Form::submit('Modificar',array('class'=>'')); ?>
+
+</fieldset>
+
+      <?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

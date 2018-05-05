@@ -1,0 +1,94 @@
+<?php
+ //traigo los clientes
+ $clientes = Cliente::all();
+
+
+?>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+    <?php echo HTML::style('css/consignacion.css'); ?>
+
+
+<body>
+	<script type="text/javascript">
+
+        print();
+
+    </script>
+
+	<table class="tabla1">
+
+    <tr>
+
+        <td><?php echo HTML::image('img/zirconia.png'); ?></td>
+
+        <td><div id="divf">
+        		<center>Resumen de saldos por cliente</center>
+              </div>
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td></br>Fecha de emision: <?php echo date("Y")."/".date("m")."/".date("d"); ?></td>
+
+        <td></td>
+
+        <td>Hora de emision: <?php echo date("H").":".date("i").":".date("s"); ?></td>
+
+    </tr>
+
+    </table>
+
+    <table class="tabla" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+
+        <th style="width:15%;">Codigo</th>
+
+       <th style="width:15%;">Nombre</th>
+
+       <th style="width:15%;">Cargos ($)</th>
+
+       <th style="width:15%;">Saldo ($)</th>
+
+      </tr>
+	
+     <?php
+     	foreach($clientes as $c){
+     		$html = "";
+     		$html.= "<tr>
+					<td>$c->codigo</td>
+					<td>$c->nombre</td>";
+
+			//movimientos por abono
+			$moviAbo = MovimientosCC::where("codigo_cliente",$c->codigo)->where("tipo","Cargo")->sum("monto");
+
+			$html .= "<td> $moviAbo </td>";
+
+			//cuenta por cobrar
+			$dataCC = CuentaCobrar::where("cliente",$c->codigo)->get();
+
+			if(count($dataCC) == 0){
+				$html .= "<td> 0 </td>";
+			}else{
+				foreach($dataCC as $dcc){
+					$html .= "<td> $dcc->monto </td>";
+				}
+			}
+
+			$html .= "</tr>";
+
+			echo $html;
+     	}
+
+     ?>
+       </table>
+
+    </br>

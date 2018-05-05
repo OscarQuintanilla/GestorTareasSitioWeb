@@ -1,0 +1,73 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+		<?php if(Session::has('ui')): ?>
+                <div class="alert alert-info" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('ui'); ?></strong>
+                </div>
+        <?php endif; ?>
+        <?php if(Session::has('elim')): ?>
+                <div class="alert alert-danger" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('elim'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+              <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Supervisores</h4>
+          <a href="supervisor" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Supervisores</a>
+          <a href="agregar-Sup" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Supervisor</a>
+              </div></center><br/><!-- /showback -->
+<div class="row">        
+  	        <div class="col-md-12">
+            <div class="content-panel">
+                            <h4><i class="fa fa-angle-right"></i>Supervisores</h4>
+		<table class="table table-hover">				
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Código</th>
+					<th>Teléfono</th>
+					<th>Email</th>
+					<th>Sucursal</th>
+					<th colspan="2">Acciones</th>
+				</tr>
+				</thead>
+				<tbody>
+					<?php foreach($supervisor as $sup): ?>
+					<tr>
+						<td><?php echo $sup->nombre; ?></td>
+						<td><?php echo $sup->codigoSup; ?></td>
+						<td><?php echo $sup->telefono; ?></td>
+						<td><?php echo $sup->email; ?></td>
+						<td><?php echo $sup->idSucursal; ?></td>
+						<?php echo Form::open(array('url'=>'take-Sup')); ?>
+
+						<?php echo Form::hidden('idS',$sup->id); ?>
+
+						<td><button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></td>
+						<?php echo Form::close(); ?>
+
+						<?php echo Form::open(array('url'=>'eliminar-Sup')); ?>
+
+						<?php echo Form::hidden('idS',$sup->id); ?>
+
+						<td><button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></td>
+						<?php echo Form::close(); ?>
+
+					</tr>
+					<?php endforeach; ?>
+				</tbody>
+		</table>
+		</div><!-- /content-panel -->
+                  </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

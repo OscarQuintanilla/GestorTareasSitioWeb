@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prontotrabajo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="326355519779-c6efnsep1a2gostta9nr8dvcafuua4if.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/stilee.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancers.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styless.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css" />
+
+    <!-- Timeline CSS-->
+    <link href="css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <link href="css/style_login.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>    <!--<div id="column-left">Publicidad</div>
+
+    <div id="fixed">Publicidad</div> -->
+    
+
+    <div class="container">
+      <div class="header clearfix">
+    
+<body id="page-top" class="index">
+
+
+                        <!-- Modal -->
+                        <div class="col-lg-4">
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <center><h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4></center>
+                              </div>
+                              <div class="modal-body">
+                                    <p class="centered"><img class="img-circle" width="100" height="75" src="img/bazuca.jpg"></p>
+                                    <form action="ingreso" method="post">
+                                        <span style="font-size:12pt;">Email:</br></span><input type="txt" style="width: 100%; height: 40px;" autocomplete="off" name="email">
+                                        <span style="font-size:12pt;">Contraseña:</span><input type="password" style="width: 100%; height: 40px;" name="password"  autocomplete="off">
+                                      </div>
+                                      <div class="modal-footer centered">
+                                          <button class="btn btn-default" type="submit">Iniciar sesión</button> <p>¿Eres nuevo en Prontotrabajo?</p> <a href="#registro" style="font-size:13pt;">Suscríbete ahora</a>
+                                      </div>
+                                    </form>
+                                       
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+
+                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <center><h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4></center>
+                              </div>
+                              <div class="modal-body">
+                                    <p class="centered"><img class="img-circle" width="75" height="75" src="img/user.png"></p>
+                                    <form action="ingreso" method="post">
+                                        <span style="font-size:12pt;">Usuario:</br></span><input type="txt" style="width: 100%; height: 40px;" autocomplete="off" name="email">
+                                        <span style="font-size:12pt;">Contraseña:</span><input type="password" style="width: 100%; height: 40px;" name="pass"  autocomplete="off">
+                                      </div>
+                                      <div class="modal-footer centered">
+                                          <input type="submit" class="btn btn-primary" value="Acceder">
+                                      </div>
+                                    </form>
+                                       
+                              </div>
+                            </div>
+                          </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top"><img class="img-responsive" src="img/logoPronto_opt.png" alt="logo"></a></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#ofertas">Encuentra las mejores ofertas en El Salvador</a>
+                    </li>
+                    <li  class="page-scroll" id="registbo">
+                        <!-- Login Starts Here -->
+
+            <!-- Login Ends Here -->
+                    </li>
+               </ul>
+    </nav>
+
+    <!-- Header -->
+    </div>
+    </div>
+    </nav>
+    <header>
+        <div class="container" id="inicio">
+                    <div class="row">
+
+    <div class="row">
+                <center>
+  <div class="col-lg-4 col-lg-offset-4">
+        <?php if(Session::has('ui')): ?>
+                <div class="alert alert-success" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('ui'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+         <?php if(Session::has('sr')): ?>
+                <div class="alert alert-success" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('sr'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+         <?php if(Session::has('sc')): ?>
+                <div class="alert alert-danger" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('sc'); ?></strong>
+                </div>
+        <?php endif; ?>
+                    </div>
+        </center></div>
+        </div>
+        </div>
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+    <section class="contact" id="noticias">
+        <div class="noticias">
+            <div class="row">
+                <div class="col-lg-6">
+<div class="panel panel-default" style="opacity: 0.89;">
+<h4>Inserta tu currículum aquí</h4>
+  
+  <form action="registrar" method="post">
+  <div class="panel-footer">
+  <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-user"></i>
+      </span>
+      <input type="text" class="form-control" placeholder="Nombre" aria-label="..." name="nombre">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+<i class="fa fa-user"></i>
+      </span>
+      <input type="text" class="form-control" placeholder="Apellido" aria-label="..." name="apellidos">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+</div>
+          <div class="panel-footer">
+  <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <input type="text" class="form-control" placeholder="Correo" aria-label="..." name="correo">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+<i class="fa fa-key"></i>
+      </span>
+      <input type="password" class="form-control" placeholder="Contraseña" aria-label="..." name="contraseña">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<br>
+
+ <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-folder-open"></i>
+      </span>
+      <select class="form-control" name="categoria">
+        <option value="" selected="selected">Selecciona una categoría</option>
+        <?php foreach($categorias as $categoria): ?>                    
+          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+        <?php endforeach; ?>                 
+      </select>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+<i class="fa fa-map-marker"></i>
+      </span>
+      <select class="form-control" name="distrito">
+        <option value="" selected="selected">Selecciona un distrito</option>
+        <?php foreach($distritos as $distrito): ?>                    
+          <option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+        <?php endforeach; ?>                 
+      </select>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<br>
+
+<div class="btn-group">
+  <button type="submit" class="btn btn-danger">Continuar</button>
+</div>
+</form>
+<br>
+<br>
+<p>Al crear una cuenta, aceptas las <a>Condiciones legales, Reglamento de Prestación de servicios</a> y <a>la Política de privacidad</a> de Profesionales. </p>
+
+        </div>
+</div>                </div>
+                <div class="col-lg-6">
+                <div class="panel panel-default" style="background-color:green; color:white; opacity: 0.65; border-color:green;">
+                    <h3>El trabajo que buscas está con nosotros</h3> 
+                  
+                    <ul style="text-align:justify;margin-top:25px;">
+                      <li><h4>Postúlate a las mejores ofertas</h4></li>
+                      <li><h4>Sé visible para miles de empresas</h4></li>
+                      <li><h4>Recibe ofertas adecuadas a tu perfil</h4></li>
+                      <li><h4>Sigue el estado de tus postulaciones</h4></li>
+                      <li><h4>Compárate con los demás inscritos</h4></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+                </div>
+                        </div>
+
+    </header>    
+    <!-- Noticias -->
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Dirección</h3>
+                        <p>Santa Tecla<br>La Libertad<br>El Salvador</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Buscanos En:</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/elsalvador.prontotrabajo" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/101595784736378794552/posts" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/ProntoTrabajoSV" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter" target="_blank"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/prontotrabajo-com" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h3>Información</h3>
+                        <p>Puedes ver lo que ProntoTrabajo.com puede hacer por tu empresa a través del siguiente enlace <a href="https://youtu.be/t1uMmheIn3s">Youtube</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Prontotrabajo 2015 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Ingreso Administradores</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+        </section>
+        </nav>
+    </div>
+    </div>
+    </header>
+</html>
+
+       <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/alert.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
+    <script src="js/login.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+        
+        $('#mostrar_contra').click(function(){
+
+            if($('#mostrar_contra').is(':checked')) {
+                $('#contraseña').attr('type', 'text');
+            }else {
+                $('#contraseña').attr('type', 'password');
+            }
+        });
+
+      });
+
+    </script>
+
+    <script type="text/javascript">
+
+        document.getElementById('candidato').addEventListener('click',function(evento){
+
+            var confirmacion = confirm("Se registrará en ProntoTrabajo como candidato. ¿Está seguro de continuar?");
+
+            if(confirmacion != true){
+
+                evento.preventDefault();
+            }
+        });
+
+        document.getElementById('empresa').addEventListener('click',function(evento){
+
+            var confirmacion = confirm("Se registrará en ProntoTrabajo como empresa. ¿Está seguro de continuar?");
+
+            if(confirmacion != true){
+
+                evento.preventDefault();
+            }
+
+        });
+
+    </script>
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      //document.getElementById('status').innerHTML = 'Please log ' +
+        //'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      //document.getElementById('status').innerHTML = 'Please log ' +
+        //'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1643609942558439',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.id);
+      document.getElementById('statusId').innerHTML =response.id;
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =response.name;
+    });
+  }
+</script>
+<script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+		document.getElementById('statusId').innerHTML =profile.getId();
+        document.getElementById('status').innerHTML = profile.getName();
+		document.getElementById('statusMail').innerHTML = profile.getEmail();
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        //console.log("ID Token: " + id_token);
+      };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+*{
+	user-select: none;		outline: none;
+	-webkit-transition: all 1s;
+}
+body{
+	background-color: white;	animation: starting 2s;
+	opacity: 1;
+	overflow-y: scroll;
+}
+body::-webkit-scrollbar{
+	width: 0px;
+}
+@-webkit-keyframes starting{
+	0%{
+		opacity: 0;		background-color: purple;
+	}
+}
+#wall{
+	background: url("../img/wall.jpg")no-repeat fixed center center #5e35b1;
+	background-size: cover;
+	position: fixed;	width: 110%;	height: 110%;	top: -5%;	left: -5%;
+	opacity: 0.4;	z-index: -10;	filter: blur(1px);
+}

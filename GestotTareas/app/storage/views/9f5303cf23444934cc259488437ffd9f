@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bolsa trabajo | Empresa</title>
+  <link rel="icon" href="">
+  <?php echo HTML::style("css/bootstrap.css"); ?>
+
+  <?php echo HTML::style("css/ie10-viewport-bug-workaround.css"); ?>
+
+  <?php echo HTML::style("css/carousel.css"); ?>
+
+
+  <script type="text/javascript" src="js/jquery/jquery-1.11.3.min.js"></script> 
+  <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script> 
+    <script type="text/javascript" src="js/doughnutit.js"></script> 
+  <script type="text/javascript" src="js/slideshow/jquery.themepunch.revolution.js"></script>   
+  <script type="text/javascript" src="js/slideshow/jquery.themepunch.plugins.min.js"></script>  
+    <script type="text/javascript" src="js/theme-home.js"></script>  
+
+
+  <style media="screen">
+  .footer-options{
+    list-style: none;
+    overflow: hidden;
+  }
+  .footer-options li{
+    float: left;
+    padding: 10px;
+  }
+  .social tr>td>a>img:hover{
+    opacity: 0.5;
+  }
+  </style>
+</head>
+<body>
+
+  <?php $__env->startSection('menu'); ?>
+ 
+  <?php echo $__env->yieldSection(); ?>
+
+  <?php $__env->startSection('carousel'); ?>
+  
+  <?php echo $__env->yieldSection(); ?>
+
+
+  <!-- Inicio del Contenedor Principal -->
+  <div class="container marketing">
+    <?php echo $__env->yieldContent('content'); ?>
+  </div>
+
+  <br>
+
+  <?php $__env->startSection('footer'); ?>
+  <!-- FOOTER -->
+  <footer style="padding:40px; background-color:#e5f2f7; color:#333;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="page-header text-center">
+            <ul class="footer-options">
+              <div class="th-hotline">
+              
+                <span style="font-size: 15.5px;">sv@profesionall.com</span>
+              </div> 
+            </ul>
+          </div>
+          <hr style="border-color: rgba(0,0,0,0.1);">
+          </ul>
+        </div>
+
+        <div class="col-md-offset-4 col-md-4">
+          <div class="page-header text-center">
+            <h4>Siguenos en nuestras redes sociales</h4><hr style="border-color: rgba(0,0,0,0.1);margin: 28px 0 0px;">
+          </div>
+          <table style="margin: 0px auto;" class="social">
+            <tr>
+              <td style="padding: 10px;"><a href="https://www.facebook.com/profesionallsv/?fref=ts" target="_Blank"><img src="http://media.infojobs.net/appgrade/icons/ico-social-face-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-twitter-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-gplus-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <?php echo $__env->yieldSection(); ?>
+
+  <?php $__env->startSection('modal'); ?>
+  
+  <?php echo $__env->yieldSection(); ?>
+
+
+</body>
+</html>

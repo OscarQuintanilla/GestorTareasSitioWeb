@@ -1,0 +1,42 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('contenedor'); ?>
+	<br>
+	<br>
+	<center>
+	<?php if(Session::has("msj")): ?>
+     <div class="alert alert-danger" role="alert" style="width: 100%; margin-top:-2%;">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <strong><?php echo Session::get("msj"); ?></strong>
+     </div>
+   	<?php endif; ?>
+	<br>
+	<br>
+	<h2>Login</h2>
+	<form action="login" method="POST">
+		<table>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" id="email" name="email" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" id="password" name="password" class="form-control"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="Login" name="login" id="login" class="btn btn-primary">
+	</form>
+	</center>
+	<br>
+	<br>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('masterBladePublica', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

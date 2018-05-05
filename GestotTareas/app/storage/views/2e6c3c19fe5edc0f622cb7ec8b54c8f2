@@ -1,0 +1,273 @@
+;
+<style type="text/css">
+  
+  td{
+    padding:5px;
+  }
+
+  input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+  }
+
+</style>
+<?php $__env->startSection("menu"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("content"); ?>
+	<div style="margin-top:7%;" class="col-lg-12">
+
+    <?php if(Session::has("msj")): ?>
+     <div id="msj" class="alert alert-primary" role="alert" style="width: 100%; margin-top:-2%;">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <strong><?php echo Session::get("msj"); ?></strong>
+     </div>
+    <?php endif; ?>
+
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading" style="color:#FD61E3;">Crear Perfil Scort</h2>
+    </div>
+
+    <div class="col-lg-9" style="background-color:#F8F9FA;margin:auto;padding:2%;border-style:solid; border-color:gray; border-width:1px;border-radius:15px;">
+    
+      <form action="crear-perfil-scort" method="post" enctype="multipart/form-data">
+        <center>
+          <table>
+            <tr>
+              <th>Tipo:</th>
+              <td class="col-lg-12">
+                  <select name="tipo" id="tipo" class="form-control">
+                    <option value="VIP">VIP</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Gold">Gold</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Nombre:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+              </td>
+            </tr>
+            <tr>
+              <th>Ubicación:</th>
+              <td class="col-lg-12">
+                  <select name="ubicacion" id="ubicacion" class="form-control">
+                    <option value="Seleccione una ubicación">Seleccione una ubicación</option>
+                    <option value="Todo el país">Todo el país</option>
+                    <option value="Ahuachapán">Ahuachapán</option>
+                    <option value="Sonsonate">Sonsonate</option>
+                    <option value="Santa Ana">Santa Ana</option>
+                    <option value="Cabañas">Cabañas</option>
+                    <option value="Chalatenango">Chalatenango</option>
+                    <option value="Cuscatlán">Cuscatlán</option>
+                    <option value="La Libertad">La Libertad</option>
+                    <option value="La Paz">La Paz</option>
+                    <option value="San Salvador">San Salvador</option>
+                    <option value="San Vicente">San Vicente</option>
+                    <option value="Morazán">Morazán</option>
+                    <option value="San Miguel">San Miguel</option>
+                    <option value="Usulután">Usulután</option>
+                    <option value="La Unión">La Unión</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Teléfono:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="00000000">
+              </td>
+            </tr>
+            <tr>
+              <th>Edad:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="edad" id="edad" placeholder="Edad">
+              </td>
+            </tr>
+            <tr>
+              <th>Peso:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="peso" id="peso" placeholder="En libras">
+              </td>
+            </tr>
+            <tr>
+              <th>Estatura:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="estatura" id="estatura" placeholder="En metros">
+              </td>
+            </tr>
+            <tr>
+              <th>Medidas:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="medidas" id="medidas" placeholder="00-00-00">
+              </td>
+            </tr>
+            <tr>
+              <th>Depilación:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="depilacion" id="depilacion">
+                    <option value="Completa">Completa</option>
+                    <option value="Parcial">Parcial</option>
+                    <option value="Natural">Natural</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Color de piel:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="colorPiel" id="colorPiel">
+                    <option value="Blanca">Blanca</option>
+                    <option value="Trigueña">Trigueña</option>
+                    <option value="Morena">Morena</option>
+                    <option value="Negra">Negra</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Color de pelo:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="colorPelo" id="colorPelo">
+                    <option value="Rubio">Rubio</option>
+                    <option value="Pelirrojo">Pelirrojo</option>
+                    <option value="Castaño">Castaño</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Morado">Morado</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Descripción:</th>
+              <td class="col-lg-12">
+                  <textarea class="form-control" rows="6" name="descripcion" id="descripcion"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th>Media hora:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="mediaHora" id="mediaHora" placeholder="Media hora">
+              </td> 
+            </tr>
+            <tr>
+              <th>40 minutos:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="cuarentaMinutos" id="cuarentaMinutos" placeholder="Cuarenta minutos">
+              </td> 
+            </tr>
+            <tr>
+              <th>Una hora:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="unaHora" id="unaHora" placeholder="Una hora">
+              </td> 
+            </tr>
+            <tr>
+              <th>Dos horas:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="dosHoras" id="dosHoras" placeholder="Dos horas">
+              </td> 
+            </tr>
+            <tr>
+              <th>Tres horas:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="tresHoras" id="tresHoras" placeholder="Tres horas">
+              </td> 
+            </tr>
+            <tr>
+              <th>La noche:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="laNoche" id="laNoche" placeholder="La noche">
+              </td> 
+            </tr>
+            <tr>
+              <th>Servicios:</th>
+              <td class="col-lg-12">
+                  Sexo vaginal <input type="checkbox" value="Sexo vaginal" name="servicios[]"><br><br>
+                  Sexo oral <input type="checkbox" value="Sexo oral" name="servicios[]"><br><br>
+                  Sexo anal <input type="checkbox" value="Sexo anal" name="servicios[]"><br><br>
+                  Acabar en boca <input type="checkbox" value="Acabar en boca" name="servicios[]"><br><br>
+                  Acabar en cara <input type="checkbox" value="Acabar en cara" name="servicios[]"><br><br>
+                  Acabar en pechos <input type="checkbox" value="Acabar en pechos" name="servicios[]"><br><br>
+                  Sexo lésbico <input type="checkbox" value="Sexo lésbico" name="servicios[]"><br><br>
+                  Sexo en grupos <input type="checkbox" value="Sexo en grupos" name="servicios[]"><br><br>
+                  Trato de novia <input type="checkbox" value="Trato de novia" name="servicios[]"><br>              
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto banner:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoBanner" id="fotoBanner">
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto perfil:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoPerfil" id="fotoPerfil">
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto 1:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto1" id="foto1">
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto 2:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto2" id="foto2">
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto 3:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto3" id="foto3">
+              </td> 
+            </tr> 
+            <tr>
+              <th>Foto 4:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto4" id="foto4">
+              </td> 
+            </tr> 
+            <tr>
+              <th>Foto 5:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto5" id="foto5">
+              </td> 
+            </tr> 
+            <tr>
+              <th>Foto 6:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto6" id="foto6">
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto portada 1:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoPortada1" id="fotoPortada1">
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto portada 2:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoPortada2" id="fotoPortada2">
+              </td> 
+            </tr>
+          </table>
+            
+        </center>
+        <br>
+        <center><button type="submit" class="btn btn-lg btn-primary">Crear</button></center>
+
+      </form>
+
+    </div>
+  </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("footer"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make("vistasAdmin.masterAdmin", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

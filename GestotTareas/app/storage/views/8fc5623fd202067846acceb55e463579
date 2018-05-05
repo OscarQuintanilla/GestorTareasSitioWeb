@@ -1,0 +1,532 @@
+
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#inicio").addClass("active");
+  });
+</script>
+
+<style media="screen">
+  .servicio{
+    background-color: rgb(245, 245, 245);
+    width: 300px;
+    height: 180px;
+    position: relative;
+    text-align: center;
+  }
+  .titlec{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #cc181e;
+    color: white;
+  }
+  .contentc{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+  }
+
+  #caja-1{
+
+    width: 100%;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+
+  }
+
+  #cabeza{
+
+    background-color: #0277bd;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+
+  }
+
+  #cuerpo{
+
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #0277bd;
+
+  }
+
+
+  #izquierda{
+    display: inline-block;
+    width: 30%;
+    border-right: 1px dashed #0277bd;
+    margin-right: 20px;
+  }
+
+  #derecha{
+    display: inline-block;
+    width: 60%;
+
+  }
+
+  #img-candidato, #img-candidato2{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 128px;
+    width: 128px;
+  }
+
+  @media (max-width: 991px){
+    #img-candidato{
+
+      height: 68px;
+      width: 68px;
+    }
+
+
+  }
+
+  @media (max-width: 767px){
+    #img-candidato, #img-candidato2{
+
+      height: 84px;
+      width: 84px;
+    }
+
+
+  }
+
+  @media (max-width: 417px){
+    #img-candidato, #img-candidato2{
+
+      height: 68px;
+      width: 68px;
+    }
+
+
+  }
+  
+  .lbl-oferta{
+    margin-top: 20px;
+    font-size: 16px;
+    color: #757575;
+  }
+
+  #descripcion-oferta{
+    font-size: 17.5px;
+  }
+
+  #h2-titulo{
+    color: #0277BD;
+    font-size: 22px;
+    margin-top: -10px;
+  }
+
+  #nombre-empresa{
+
+    font-size: 15px;
+  }
+
+
+  #contenedor-info{
+
+    height: 350px;
+    background-color: white;
+    border: 3px solid white;
+    margin-top: 35px;
+    width: 105%;
+    padding: 25px;
+
+  }
+
+  #panel-contenedor{
+
+    border: 1px solid #BDBDBD;
+    height: 100px;
+    padding: 25px;
+    margin: 0 auto;
+    height: 300px;
+  }
+
+  .box:hover{
+    background: rgb(245, 245, 245); /* make this whatever you want */
+  }
+</style>
+
+</script>
+
+
+
+<br><br>
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Oferta: <?php echo $oferta->categoria; ?> - <?php echo $oferta->titulo_oferta; ?></h3>
+  </div>
+
+
+
+   <?php try {?>
+  <div class="list-group">
+ 
+    <?php foreach($postulaciones as $postulacion): ?>
+    <?php 
+    $dataPersonal = DataPersonal::where('id_usuario','=',$postulacion->id_usuario)->get();
+    $perfilProfesional = PerfilProfesional::where('id_usuario','=',$postulacion->id_usuario)->get();
+    $experiencias = ExperienciaLaboral::where('id_usuario','=',$postulacion->id_usuario)->get();
+    $formacionAcademica = PerfilAcademico::where('id_usuario','=',$postulacion->id_usuario)->get();
+    $idiomas = Idioma::where('id_usuario','=',$postulacion->id_usuario)->get();
+    $programas = ConocimientoInformatico::where('id_usuario','=',$postulacion->id_usuario)->get();
+    $usuario= Usuario::where('id','=',$postulacion->id_usuario)->get();
+    $empleo = EmpleoDeseado::where('id_usuario','=',$postulacion->id_usuario)->get();
+    if ($usuario==null) {
+      echo "<script> alert('Error');</script>";
+    }
+
+    ?>
+
+    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+      <a href="#" id="id<?php echo $usuario[0]->id; ?>" data-toggle="modal" data-target="#expLaboralModal"  class="box">
+       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <div class="col-lg-5 col-md-5 col-sm-3 col-xs-3">
+          <img src="../../<?php echo $usuario[0]->url_foto; ?>"  class="img-circle" id="img-candidato">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-9 col-xs-8">
+          <label class="lbl-oferta"><?php echo $usuario[0]->apellidos; ?> <br class="hidden-xs"><?php echo $usuario[0]->nombre; ?></label>
+          <h4 class="hidden-xs hidden-md hidden-sm"><small> Inscrito: <?php echo $postulacion->created_at; ?> </small></h4>
+          <h4 class="hidden-lg hidden-md hidden-sm">Ingeniero en sistemas</h4>
+        </div>
+        <div class="hidden-lg hidden-md hidden-sm col-xs-1">
+          <br>
+          <br>
+          <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-5 col-sm-12 hidden-xs">
+        <form action="ver_detalle_oferta" method="POST">
+          <h3>Ingeniero en sistemas <small> (Tecnico PILET)</small></h3>
+          <h4>10 años de experiencia <small> nivel de estudios</small></h4>
+          <h4><?php echo $usuario[0]->distrito; ?> <small> <?php echo $usuario[0]->distrito; ?></small></h4>
+
+          <script type="text/javascript">
+           $("#id<?php echo $usuario[0]->id; ?>").click(function(){
+            var id_ = <?php echo $usuario[0]->id; ?>;
+            //Ponienda estado como visto (si es que no esta asi)
+            $.post("setEstadoPostulacion", {id : <?php echo $postulacion->id; ?>, estado:"Visto"}, function(data){ });
+
+         
+            $("#img-candidato2").attr("src","../../<?php echo $usuario[0]->url_foto; ?>");
+            
+
+            //Filtrando los datos del panel lateral
+            $("#nombreCompleto").html("<?php echo $usuario[0]->nombre; ?> <?php echo $usuario[0]->apellidos; ?>"); 
+            var html="";
+            html+='     <h4>';
+                      html+='   <span class="glyphicon glyphicon-link"></span> Estado civil <br><small> <?php echo $dataPersonal[0]->estado_civil; ?></small></h4>';
+                      html+='    <h4><span class="glyphicon glyphicon-education"></span>';
+                      html+='    nivel de estudios<br><small> 10 años de experiencia </small></h4>';
+                      html+='    <h4><span class="glyphicon glyphicon-map-marker"></span>';
+                      html+='    <?php echo $usuario[0]->distrito; ?> <br><small> <?php echo $usuario[0]->distrito; ?></small></h4>';
+                      html+='    <h4><span class="glyphicon glyphicon-envelope"></span> ';
+                     html+='       Correo';
+                      html+='      <br><small> <?php echo $usuario[0]->email; ?></small>';
+                      html+='    </h4>';
+                      html+='    <h4><span class="glyphicon glyphicon-earphone"></span> Telefono';
+ 
+                      html+='      <br><small> <?php echo $dataPersonal[0]->telefono; ?></small>';
+                      html+='    </h4>';
+                      html+='    <h4><span class="glyphicon glyphicon-hourglass"></span> Edad';
+                         
+                      html+='      <br><small> <?php echo $dataPersonal[0]->fecha_nacimiento; ?> </small>';
+                      html+='    </h4>';
+           $("#Caja1").html(html); 
+
+           //Filtrando los datos del titulo
+           $("#idTituloHeader").html("<?php echo $perfilProfesional[0]->titulo_profesional; ?>");
+           $("#descripcionTitulo").html("<?php echo $perfilProfesional[0]->descripcion_profesional; ?>");
+
+
+           //Filtrando las experiencias
+           html="";
+           <?php foreach($experiencias as $experiencia): ?>
+              html+="<b><?php echo $experiencia->cargo; ?></b>";
+              html+="<br><p><?php echo $experiencia->empresa; ?> (<?php echo $experiencia->sector_empresa; ?>)<br>";
+              html+="<?php echo $experiencia->periodo_inicio; ?> - <?php echo $experiencia->periodo_fin; ?> <br> ";
+               html+="Funciones/Logros: <br><?php echo $experiencia->funciones_logros; ?> </p> ";
+            <?php endforeach; ?>
+            $("#idExperiencia").html(html); 
+            //Filtrando la formacion Academica
+               html="";
+           <?php foreach($formacionAcademica as $form): ?>
+              html+="<b><?php echo $form->institucion; ?></b> (<?php echo $form->nivel; ?>)";
+              html+="<br><p><?php echo $form->area; ?> (<?php echo $form->estado; ?>)<br>";
+              html+="<?php echo $form->periodo_inicio; ?> - <?php echo $form->periodo_fin; ?> <br> ";
+            <?php endforeach; ?>
+            $("#idFormacion").html(html); 
+             //Filtrando los Conocimientos de Programas
+               html="";
+           <?php foreach($programas as $programa): ?>
+              html+="<?php echo $programa->tipo; ?> - ";
+            <?php endforeach; ?>
+          
+            $("#idOfimatica").html(html); 
+             //Filtrando los idiomas
+           html="";
+           <?php foreach($idiomas as $idioma): ?>
+              html+="<?php echo $idioma->idioma; ?>(<?php echo $idioma->nivel; ?>) -";
+            <?php endforeach; ?>
+           
+            $("#id_idiomas").html(html); 
+            //Cargando los datos que solo los iconos importan
+                html="";
+                html+='<div class="col-lg-12 hidden-md hidden-sm col-xs-12">';
+                  html+='<hr style="border-color: rgba(0,0,0,0.1);">';
+                html+='</div>';
+
+                html+='<h4><span class="glyphicon glyphicon-ok"></span> Trabajo Actualmente</h4>';
+                html+='<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
+                  html+='<hr style="border-color: rgba(0,0,0,0.1);">';
+                html+='</div>';
+                if("<?php echo $dataPersonal[0]->vehiculo_propio; ?>" =="Si"){
+                  html+='<h4><span class="glyphicon glyphicon-remove"></span> Carnet de conducir</h4>';
+                }else{
+                  html+='<h4><span class="glyphicon glyphicon-ok"></span> Carnet de conducir</h4>'
+                }
+                html+='<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
+                  html+='<hr style="border-color: rgba(0,0,0,0.1);">';
+                html+='</div>';
+                if("<?php echo $dataPersonal[0]->vehiculo_propio; ?>" =="Si"){
+                  html+='<h4><span class="glyphicon glyphicon-ok"></span> Vehiculo Propio</h4>';
+                }else{
+                  html+='<h4><span class="glyphicon glyphicon-remove"></span> Vehiculo Propio</h4>';
+                }
+                html+='<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
+                  html+='<hr style="border-color: rgba(0,0,0,0.1);">';
+                html+='</div>';
+
+                html+='<h4><span class="glyphicon glyphicon-remove"></span> Cambio Residencia</h4>';
+                html+='<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
+                  html+='<hr style="border-color: rgba(0,0,0,0.1);">';
+                html+='</div>';
+
+                html+='<h4><span class="glyphicon glyphicon-usd"></span> <?php echo $empleo[0]->salario_minimo; ?></h4>';
+              $("#Caja2").html(html); 
+
+              html= '<a class="btn btn-primary btn-lg" class="contactar" id="contactar<?php echo $usuario[0]->id; ?>" style="margin-top: 15px;width: 180px; background-color:#337ab7; border- color:#337ab7;"> Contactar</a>';
+              html+='<script>';
+               html+= '$("#contactar<?php echo $usuario[0]->id; ?>").click(function(){';
+               html+= 'var id_ = "<?php echo $usuario[0]->email; ?>";';
+               html+= 'alert("<?php echo $usuario[0]->email; ?>");';
+               html+= '$.post("enviarConfirmacion", {correo : id_ }, function(data){ alert(data); });';
+               html+= '$.post("setEstadoPostulacion", {id : <?php echo $postulacion->id; ?>, estado:"Finalista"}, function(data){ });';
+               html+= '});';
+
+
+               html+='</scrip'+'t>';
+               html+=' <a class="btn btn-primary btn-lg" id="ignorar<?php echo $usuario[0]->id; ?>" style="margin-top: 15px;width: 180px; background-color:#cc181e; border-color:#cc181e;"> Ignorar </a>';
+                 html+='<script>';
+               html+= '$("#ignorar<?php echo $usuario[0]->id; ?>").click(function(){';
+                html+= 'alert("Ignorar");';
+               html+= '$.post("setEstadoPostulacion", {id : <?php echo $postulacion->id; ?>, estado:"Cancelado"}, function(data){ });';
+               html+= '});';
+               $("#cajabtn").html(html); 
+
+          });
+        </script>
+      </form>
+    </div>
+    <div class="col-lg-2 col-md-2 hidden-xs  hidden-sm">
+    <h4><small>Proceso:</small></h4>
+   <?php if($postulacion->estado==="Sin revisar"): ?>
+     <div class="c100 p00 small green">
+      <span>Recibido</span>
+      <div class="slice">
+        <div class="bar "></div>
+        <div class="fill"></div>
+      </div>
+    </div>
+   <?php elseif($postulacion->estado==="Visto"): ?>
+    <div class="c100 p25 small green">
+      <span>Visto</span>
+      <div class="slice">
+        <div class="bar "></div>
+        <div class="fill"></div>
+      </div>
+    </div>
+    <?php elseif($postulacion->estado==="Finalista"): ?>
+    <div class="c100 p100 small green">
+      <span>Finalista</span>
+      <div class="slice">
+        <div class="bar "></div>
+        <div class="fill"></div>
+      </div>
+    </div>
+    <?php elseif($postulacion->estado==="Cancelado"): ?>
+    <div class="c100 p100 small orange">
+      <span>Ignorado</span>
+      <div class="slice">
+        <div class="bar "></div>
+        <div class="fill"></div>
+      </div>
+    </div>
+   <?php endif; ?>
+
+  </div>
+</a>
+
+</div>
+<?php endforeach; ?>
+
+
+<!-- Inicio del Modal -->
+<div class="modal fade" id="expLaboralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document" style="width: 90%;">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Visor de Curriculos</h4>
+
+      </div>
+      <br>
+
+      <form action="contactar" id="allforms" method="post">
+
+        <!--  PANEL DE VISIBILIDAD -->
+        <div class="panel panel-default" style="opacity: 0.89;">
+          <h3 class="text-center"><b>Curriculum de Usuario</b></h3>
+          <div class="panel-footer">
+            <div class="row">
+              <!--  Lateral -->
+              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <a href="#" id="id<?php echo $usuario[0]->id; ?>" data-toggle="modal" data-target="#expLaboralModal"  class="box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-5 col-md-5 col-sm-3 col-xs-3">
+                      <img src="../../<?php echo $usuario[0]->url_foto; ?>"  class="img-circle" id="img-candidato2">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-9 col-xs-8">
+                      <label class="lbl-oferta" id="nombreCompleto"><?php echo $usuario[0]->apellidos; ?> <?php echo $usuario[0]->nombre; ?></label>
+                     
+                      <h4 class="hidden-lg hidden-md hidden-sm">Ingeniero en sistemas</h4>
+                    </div>
+                    <div class="hidden-lg hidden-md hidden-sm col-xs-1">
+                      <br>
+                      <br>
+                      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form action="ver_detalle_oferta" method="POST">
+                      <div id="Caja1" class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                      
+                      </div>
+                      <div id="Caja2" class="col-lg-12 col-md-12 col-sm-6 col-sm-6">
+                       
+                      </div>
+
+                      
+                  </form>
+                </div>
+
+              </a>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <hr style="border-color: rgba(0,0,0,0.1);">
+              </div>
+            </div>
+            <!--  Termina Lateral -->
+
+             <!--  Contenido General -->
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+
+              <!--  Barra de progreso  -->
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 33%">
+                      <span>Recibido</span>
+                    </div>
+                    <div id="spnEvaluar" class="progress-bar" style="width: 33%">
+                      <span>Visto</span>
+                    </div>
+                    <div id="spnSeleccionar" class="progress-bar progress-bar " style="width: 34%">
+                      <span>Finalista</span>
+                    </div>
+                  </div>
+              </div>
+
+              <!--  Cajas de contenido -->
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="bs-callout bs-callout-danger" id="callout-navbar-js"> 
+                  <h4><b id="idTituloHeader">Titulo</b></h4> 
+                  <blockquote>
+
+                    <p id="descripcionTitulo">
+                     
+                    </p> 
+                    </blockquote>
+                </div>
+                <div class="bs-callout bs-callout-danger" id="callout-navbar-js"> 
+                  <h4><b>Experiencia Profesional</b></h4> 
+                  <blockquote id="idExperiencia">
+
+                    </blockquote>
+                  </div>
+                  <div class="bs-callout bs-callout-danger" id="callout-navbar-js"> 
+                    <h4><b>Formación</b></h4> 
+                      <blockquote id="idFormacion">
+                    
+                      </blockquote>
+                    </div>
+                    <div class="bs-callout bs-callout-danger" id="callout-navbar-js"> 
+                      <h4><b>Habilidades y conocimientos</b></h4> 
+                      <blockquote>
+                      <b>Ofimatica</b>
+                      <p id="idOfimatica">
+                     
+                      </p> 
+                      <b>Idiomas</b>
+                      <p id="id_idiomas">
+                     
+                      </p>
+
+                
+                      </blockquote>
+
+                      <div class="bs-callout bs-callout-danger" id="cajabtn"> 
+
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Termina Panel de  visibilidad de la oferta -->
+          </form>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Fin del Modal -->
+   <?php 
+    } catch (Exception $e) {
+     echo 'string"';
+    }
+    ?>
+
+
+    <br>
+
+    <br>
+
+  </div>
+</div>
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('bolsa-trabajo/empresa.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

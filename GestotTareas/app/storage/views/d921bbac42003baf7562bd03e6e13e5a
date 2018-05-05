@@ -1,0 +1,91 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div class="col-lg-6 col-lg-offset-4 text-center">
+
+<center>
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="torneoForm">Atrás</a></li>
+  <li role="presentation" class="active"><a href="#">Inscripción</a></li>
+  <li role="presentation"><a href="resultados">Resultados</a></li>
+  <li role="presentation"><a href="estadisticas">Estadisticas</a></li>
+  <li role="presentation"><a href="goleadores">Goleadores</a></li>
+</ul>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+
+<div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Calendario Torneo</div>
+                        <div class="panel-body">
+                        
+                        	<table class="table no-margn">
+                              <thead>
+                                <tr>
+                                  <th>Fecha</th>
+                                  <th>Hora</th>
+                                  <th>Equipo</th>
+                                  <th>VRS</th>
+                                  <th>Equipo</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="active">
+                                  <td>12/07/2015</td>
+                                  <td>9:40am</td>
+                                  <td>Galaxy F.C</td>
+                                  <td>VRS</td>
+                                  <td>NY City</td>
+                                </tr>
+                                <tr class="success">
+                                  <td>12/07/2015</td>
+                                  <td>10:20am</td>
+                                  <td>F.C Barcelona</td>
+                                  <td>VRS</td>
+                                  <td>F.C Porto</td>
+                                </tr>
+                                <tr class="info">
+                                  <td>13/07/2015</td>
+                                  <td>11:10am</td>
+                                  <td>Real Madrid</td>
+                                  <td>VRS</td>
+                                  <td>Deportivo</td>
+                                </tr>
+                                <tr class="warning">
+                                  <td>14/07/2015</td>
+                                  <td>6:00pm</td>
+                                  <td>Atlético de Madrid</td>
+                                  <td>VRS</td>
+                                  <td>F.C Juventus</td>
+                                </tr>
+                                <tr class="danger">
+                                  <td>13</td>
+                                  <td>8:45am</td>
+                                  <td>Valencia</td>
+                                  <td>VRS</td>
+                                  <td>Sevilla</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        
+                        </div>
+                    </div>
+                </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

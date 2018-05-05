@@ -1,0 +1,87 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+    <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Proveedores</h4>
+          <a href="proveedor" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Proveedores</a>
+          <a href="agregar-Prov" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Proveedor</a>
+              </div></center><!-- /showback -->
+
+  <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-child fa-4x"></i><span class='social'>Proveedor</a>
+</div>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Proveedores</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'registro-Prov')); ?>
+
+
+        <fieldset><br/>
+    Registro Fiscal<br/>
+    <input type="text" name="registro_fiscal" />
+
+    Codigo<br/>
+    <input type="text" name="codigo_prov" />
+
+    Nombre Proveedor<br/>
+    <input type="text" name="nombre" />
+
+    NIT<br/>
+    <input type="text" name="nit" />
+
+    Teléfono<br/>
+    <input type="text" name="telefono" />
+
+    Fecha <br/>
+    <input type="date" name="fecha" step="2015-03-12"  /><br/>
+
+    País<br/>  
+            <input type="text" name="pais" /><br/>
+
+	Departamento<br/>  
+			<input type="text" name="departamento" />
+
+	Municipio<br/>
+    <input type="text" name="municipio"/><br/>
+
+    Dirección<br/>
+    <input type="text" name="direccion" /><br/>
+
+    Giro Negocio<br/>
+    <input type="text" name="giro_negocio" /><br/>
+
+    Contacto<br/>
+    <input type="text" name="contacto" /><br/>
+
+    </fieldset>
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+
+      <?php echo Form::close(); ?>
+
+      
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

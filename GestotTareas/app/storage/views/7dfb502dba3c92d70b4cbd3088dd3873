@@ -1,0 +1,55 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<center>
+	<div class="col-lg-6 col-lg-offset-3">
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="saldoForm">Ver Saldo Disponible</a></li>
+</ul>
+
+        <h4><i class="fa fa-angle-right"></i>Datos usuario:</h4>
+		<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>Usuario</th>
+						<th>Email</th>
+						<th>Dirección</th>
+						<th>Teléfono</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach($usuario as $user): ?>
+					<tr>
+						<td><?php echo $user->nombre; ?></td>
+						<td><?php echo $user->apellido; ?></td>
+						<td><?php echo $user->usuario; ?></td>
+						<td><?php echo $user->email; ?></td>
+						<td><?php echo $user->direccion; ?></td>
+						<td><?php echo $user->telefono; ?></td>
+						<?php echo Form::open(array('url'=>'take-Cli')); ?>
+
+						<?php echo Form::hidden('idCli',$user->id); ?>
+
+						<?php echo Form::close(); ?>
+
+					</tr>
+					<?php endforeach; ?>
+				</tbody>
+		</table>
+	</div>
+</center>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

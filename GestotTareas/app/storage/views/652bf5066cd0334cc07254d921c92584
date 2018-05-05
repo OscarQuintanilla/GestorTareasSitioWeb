@@ -1,0 +1,89 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Ver Saldo Disposible</a></li>
+  <li role="presentation"><a href="#">Modificar Datos</a></li>
+</ul>
+		<div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Modificar Datos</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                            <p>Modifique sus datos</p>
+                            <form action="registro" method="post">
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nombre:</label>
+                                <input type="text" class="form-control" placeholder="Nombres" id="nombre" name="nombre" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Apellidos:</label>
+                                <input type="text" class="form-control" placeholder="Apellidos" id="apellido" name="apellido" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Usuario</label>
+                                <input type="text" class="form-control" placeholder="Usuario" id="usuario" name="usuario" required data-validation-required-message="Por favor ingrese su usuario">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>E-Mail</label>
+                                <input type="tel" class="form-control" placeholder="E-Mail" id="email" name="email" required data-validation-required-message="Por favor ingrese su Correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Dirección</label>
+                                <input type="tel" class="form-control" placeholder="Dirección" id="direccion" name="direccion" required data-validation-required-message="Por favor ingrese su Correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Teléfono</label>
+                                <input type="tel" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" required data-validation-required-message="Por favor ingrese su Correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Contraseña</label>
+                                <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password" required data-validation-required-message="Por favor ingrese su correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Registrarme</button>
+                            </div>
+                        </div>
+                    </form>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

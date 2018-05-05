@@ -1,0 +1,30 @@
+<?php if(Session::has("idEm")): ?>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title><?php echo Session::get("nameE"); ?> | Home</title>
+    <style media="screen">
+      html{
+        padding: 5px;
+        font-family: sans-serif;
+      }
+      table{
+
+        margin: 30px auto;
+      }
+      h2{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><?php echo Session::get("nameE"); ?></h1><hr>
+    <ul>
+      <li><?php echo HTML::link("actualizarE","Actualizar informacion"); ?></li>
+      <li><a href="#">Publicar oferta</a></li>
+      <li><a href="#">Cerrar sesion</a></li>
+    </ul>
+  </body>
+  </html>
+<?php endif; ?>

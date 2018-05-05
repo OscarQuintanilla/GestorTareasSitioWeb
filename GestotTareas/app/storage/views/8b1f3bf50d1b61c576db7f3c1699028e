@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<center>
+		<table>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Email</th>
+				<th>Password</th>
+			</tr>
+			<?php foreach($usuarios as $usuario): ?>
+				<tr>
+					<td><?php echo $usuario->nombre; ?></td>
+					<td><?php echo $usuario->apellidos; ?></td>
+					<td><?php echo $usuario->email; ?></td>
+					<td><?php echo $usuario->password; ?></td>
+				</tr>	
+			<?php endforeach; ?>
+		</table>
+	</center>
+</body>
+</html>

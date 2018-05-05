@@ -1,0 +1,149 @@
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#inicio").addClass("active");
+  });
+</script>
+
+<style media="screen">
+
+#izquierda{
+  border: none;
+  width: 45%;
+}
+
+
+#derecha{
+  width: 50%;
+  }
+
+
+#contenedor-oferta{
+
+  border-right: 4px solid #4caf50;
+  background-color: #EEEEEE;
+  margin-top: 1%;
+  padding: 25px;
+
+}
+
+article{
+  display: inline-block;
+  background-color: #DBDBDB;
+  padding: 10px;
+  color: #424242;
+  font-size: 16px;
+  margin-top: -15px;
+
+}
+
+article.estado-activo{
+  background-color: #4caf50;
+  display: inline-block;
+  color: white;
+}
+
+  #contenedor-info{
+    display: none;
+  }
+  
+</style>
+
+<script type="text/javascript">
+  //Agregando un idioma
+
+  $(document).ready(function(){
+
+  //Agregando un idioma
+  
+     
+});
+
+
+</script>
+
+  <br/>
+ 
+  <div class="row">
+
+      <div class="col-md-12 col-sm-12 col-xs-12 block-recent" style="padding: 20px;">
+
+        <div class="panel-group">
+
+          <h2 style="font-size: 30px;" align="center">Mis postulaciones</h2><br/>
+
+	  <?php foreach($postulaciones as $postulaciones): ?> 
+        
+
+          <section id="contenedor-oferta">
+
+         <div class="row">
+             
+           <div class="col-md-5 col-sm-12 col-xs-12 block-recent">
+
+               <h2 id="h2-titulo" style="font-size: 15px; display: inline-block; color: #0277BD;"><?php echo $postulaciones->titulo_oferta; ?></h2> - 
+              <p id="descripcion-oferta" style="display: inline-block;"><?php echo $postulaciones->ciudad; ?></p>
+
+           </div>
+
+            <div class="col-md-5 col-sm-12 col-xs-12 block-recent"><br/>
+
+             <input type="hidden" value="<?php echo $postulaciones->id; ?>"></b>
+
+              <article><?php echo $postulaciones->created_at; ?></article>
+      
+             
+
+              <?php if($postulaciones->estado == 'Sin revisar'): ?>
+          <article class="estado-activo">Recibido</article>
+          <?php else: ?>
+           <article>Recibido</article>
+           <?php endif; ?>
+
+          <?php if($postulaciones->estado == 'Visto'): ?>
+            <article class="estado-activo">Visto</article>
+          <?php else: ?>
+           <article>Visto</article>
+             <?php endif; ?>
+
+          <?php if($postulaciones->estado == 'Finalista'): ?>
+            <article class="estado-activo">Finalista</article>
+          <?php else: ?>
+           <article>Finalista</article>
+          <?php endif; ?>
+
+           </div>
+
+
+           <div class="col-md-2 col-sm-12 col-xs-12 block-recent"><br/>
+
+  
+            <button class="btn btn-danger" style="float: right; display: inline-block;">Eliminar</button> 
+
+
+           </div>
+
+
+        </div>
+
+          </section>
+
+
+<?php endforeach; ?>
+
+   </div>
+
+  </div>
+
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('bolsa-trabajo/candidato.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

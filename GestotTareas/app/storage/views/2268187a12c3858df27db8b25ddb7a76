@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prontotrabajo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="326355519779-c6efnsep1a2gostta9nr8dvcafuua4if.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/stilee.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styless.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css" />
+
+    <!-- Timeline CSS -->
+    <link href="css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <link href="css/style_login.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>    <!--<div id="column-left">Publicidad</div>
+
+    <div id="fixed">Publicidad</div> -->
+    
+
+    <div class="container">
+      <div class="header clearfix">
+    
+<body id="page-top" class="index">
+
+
+                        <!-- Modal -->
+                        <div class="col-lg-4">
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <center><h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4></center>
+                              </div>
+                              <div class="modal-body">
+                                    <p class="centered"><img class="img-circle" width="100" height="75" src="img/bazuca.jpg"></p>
+                                    <form action="ingreso" method="post">
+                                        <span style="font-size:12pt;">Email:</br></span><input type="txt" style="width: 100%; height: 40px;" autocomplete="off" name="email">
+                                        <span style="font-size:12pt;">Contraseña:</span><input type="password" style="width: 100%; height: 40px;" name="password"  autocomplete="off">
+                                      </div>
+                                      <div class="modal-footer centered">
+                                          <button class="btn btn-default" type="submit">Iniciar sesión</button> <p>¿Eres nuevo en Prontotrabajo?</p> <a href="#registro" style="font-size:13pt;">Suscríbete ahora</a>
+                                      </div>
+                                    </form>
+                                       
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+
+                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <center><h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4></center>
+                              </div>
+                              <div class="modal-body">
+                                    <p class="centered"><img class="img-circle" width="75" height="75" src="img/user.png"></p>
+                                    <form action="ingreso" method="post">
+                                        <span style="font-size:12pt;">Usuario:</br></span><input type="txt" style="width: 100%; height: 40px;" autocomplete="off" name="email">
+                                        <span style="font-size:12pt;">Contraseña:</span><input type="password" style="width: 100%; height: 40px;" name="pass"  autocomplete="off">
+                                      </div>
+                                      <div class="modal-footer centered">
+                                          <input type="submit" class="btn btn-primary" value="Acceder">
+                                      </div>
+                                    </form>
+                                       
+                              </div>
+                            </div>
+                          </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top"><img class="img-responsive" src="img/logoPronto_opt.png" alt="logo"></a></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#ofertas">Empleo</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#formacion">Formación</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#freelancer">Freelance</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#empresas">Empresa</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#consejos">Consejos</a>
+                    </li>
+                    <li class="page-scroll" id="registli">
+                        <a href="loginmovil">Login</a>
+                    </li>
+                    <li  class="page-scroll" id="registbo">
+                        <!-- Login Starts Here -->
+
+            <div id="loginContainer">
+                <a href="#" id="loginButton"><span>Login</span><em></em></a>
+                <div id="loginBox">                
+                    <form id="loginForm" action="login" method="post">
+                        <fieldset id="body">
+                            <fieldset>
+                                <label for="email">Correo</label>
+                                <input type="text" name="email" id="email" />
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Contraseña</label>
+                                <input type="password" name="pass" id="password" />
+                            </fieldset>
+                            <input type="submit" id="login" value="Login" />
+                            <label for="checkbox"><input type="checkbox" id="checkbox" />Recordame</label>
+                        </fieldset>
+                        <span><a href="#">¿Olvido su contraseña?</a></span>
+                        <span><a href="registro">¿No estás registrado? Registrate</a></span>
+                        <span><a href="#">Inicia sesion con redes sociales</a></span>
+                        
+                        <span style="margin-left:-160px;"><fb:login-button size="medium"scope="public_profile,email" onlogin="checkLoginState();">
+  Conectar con Facebook
+</fb:login-button></span>
+                                                <ul class="list-inline">
+
+                            <li>
+                               <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                            </li>
+                           <!-- <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>-->
+                        </ul>
+                    </form>
+                </div>
+            </div>
+            <!-- Login Ends Here -->
+                    </li>
+               </ul>
+    </nav>
+
+    <!-- Header -->
+    </div>
+    </div>
+    </nav>
+    <header>
+        <div class="container" id="inicio">
+                    <div class="row">
+
+    <div class="row">
+                <center>
+  <div class="col-lg-4 col-lg-offset-4">
+        <?php if(Session::has('ui')): ?>
+                <div class="alert alert-success" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('ui'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+         <?php if(Session::has('sr')): ?>
+                <div class="alert alert-success" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('sr'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+         <?php if(Session::has('sc')): ?>
+                <div class="alert alert-danger" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('sc'); ?></strong>
+                </div>
+        <?php endif; ?>
+                    </div>
+        </center></div>
+        </div>
+        </div>
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="col-md-3 col-lg-offset-0">
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                <i class="fa fa-user fa-3x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>90000</div>
+                                    <div>Visitas diarias</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.col-md-4-->
+
+                <div class="col-md-3">
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                <i class="fa fa-suitcase fa-3x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>55000</div>
+                                    <div>Ofertas empleo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.col-md-4-->
+                <div class="col-md-3">
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                <i class="fa fa-building fa-3x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>1000</div>
+                                    <div>Empresas nuevas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.col-md-4-->
+                        <div class="col-md-2">
+                            <a type="submit"  style="padding:10px 18px" class="btn btn-primary btn-md" href="acceso" ">Sube tu currículum</a>
+            </form>
+
+                        </div>
+                </div>
+                        </div>
+                       <!-- <br><br>
+    <div id="cajitaform">
+   <div id="cajitaforms"></div>
+    <div class="row">
+        <h4>Registrate en ProntoTrabajo</h4>
+            <form action="registrar" method="post">
+                <div class="col-md-3 col-lg-offset-2">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-envelope"></i></button>
+                        </span>
+                          <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo" required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" title="Ingrese una dirección de correo valida">
+                    </div>¡
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-key"></i></button>
+                        </span>
+                          <input type="password" class="form-control" placeholder="Contraseña" name="contraseña" id="contraseña" required>
+                    </div>
+                    <span>Ver contraseña<input type="checkbox" class="btn btn-default" id="mostrar_contra" title="ver contraseña"></span>
+                </div>
+
+                        <div class="col-md-2">
+                            <button type="submit"  style="padding:10px 18px" class="btn btn-primary btn-md" id="candidato" onclick="candidato()">Sube tu currículum</button>
+                            <button type="submit" class="btn btn-primary btn-md" style="margin:2px;" id="empresa">Registra tu empresa</button>
+                            <div id="status"></div>
+                            <div id="statusId"></div>
+            </form>
+
+                        </div>
+    </div>
+        <div class="row">
+                <h4>Ingresa con tus redes</h4>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/elsalvador.prontotrabajo" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                        </ul>
+        </div>
+                        </div>
+            </div>
+        </div>-->
+    </header>    
+    <!-- Noticias -->
+    <section class="contact" id="ofertas">
+        <div class="noticias">
+ <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Oferta de Empleos</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <center>
+  <div class="col-sm-4 col-md-4">
+      
+    <h5>Últimas Ofertas</h5><br>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <a href="#">Programador Senior</a><br><a href="#">Banco Agricola</a>| San Salvador|Hace 5min
+            </div>
+                <div class="panel-footer">Graduado o estudiante de las carreras: técnico, licenciatura o Ingenieria en computación <br> Tiempo Completo | Salario No Especificado</a>
+                </div>
+        </div>
+                    
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <a href="#">Diseñador/a grafico</a><br><a href="#">Avianca</a>| La Libertad|Hace 10min
+            </div>
+                <div class="panel-footer">Graduado o estudiante de las carreras: técnico o licenciatura en comunicaciones, arquitectura, mercadeo, diseño<br> Medio Tiempo | $300 al mes</a>
+                </div>
+        </div>
+      
+      <button type="submit" class="btn btn-primary btn-lg">Ver todas las ofertas</button>
+  </div>
+
+    <div class="col-sm-4 col-md-4">
+    <h5>Categorías Destacadas</h5><br>
+
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-calculator fa-4x"></i>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div>Administración</div>
+                                    <div>10,200 Ofertas de empleo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+
+
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-desktop fa-4x"></i>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div>Apoyo de Oficina</div>
+                                    <div>4,000 Ofertas de empleo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+        
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-database fa-4x"></i>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div>Informática | Internet</div>
+                                    <div>6,000 Ofertas de empleo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+        
+                    <a href="#">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-money fa-4x"></i>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div>Mercadeo | Ventas</div>
+                                    <div>2,000 Ofertas de empleo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+        
+        
+      <button type="submit" class="btn btn-primary btn-lg">Ver Todas Las Categorías</button>
+
+
+
+  </div>
+     <div class="col-sm-4 col-md-4">
+         
+<h5>Ofertas en General</h5><br>
+            <div class="panel-body">
+                Tipo de Contratación
+            </div>
+                     <div class="form-group">
+                          <select class="form-control" id="sel1">
+                            <option>Tiempo Completo</option>
+                            <option>Medio Tiempo</option>
+                            <option>Por Horas</option>
+                          </select>
+                    </div>
+         
+         
+            <div class="panel-body">
+                Ofertas por Ubicación
+            </div>
+                        <div class="form-group">
+                          <select class="form-control" id="sel1">
+                            <option>San Salvador</option>
+                            <option>La Libertad</option>
+                            <option>Santa Ana</option>
+                            <option>San Miguel</option>
+                            <option>Morazán</option>
+                            <option>Cabañas</option>
+                            <option>Ahuachapán</option>
+                            <option>Sonsonate</option>
+                            <option>Chalatenango</option>
+                            <option>La Paz</option>
+                            <option>Usulután</option>
+                            <option>San Vicente</option>
+                            <option>Cabañas</option>
+                            <option>Cuscatlán</option>
+                          </select>
+                    </div>
+        </div>
+      <button type="submit" class="btn btn-primary btn-lg">Ver más</button>
+
+  </div>
+
+            </div>
+    </section>
+    
+    <!-- Freelancer -->
+    <section class="formacion" id="formacion">
+        <div class="container">
+<div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2>Formación</h2><br>
+                    <h3>Encuentra cursos por tématicas</h3>
+                    <a style="color: white;" href="#">Explora todas las tématicas</a>
+                </div>
+            </div>
+            <br>
+            <br>
+
+<div class="row">
+                <center>
+  <div class="col-md-3 col-lg-offset-1">
+                    
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-cube"></i><a href="#">Profeciones, artes y oficios</a></div>
+                <div class="panel-footer">
+                    <a href="#">Agricultura y jardineria</a><br>
+                    <a href="#">Artes gráficas</a><br>
+                    <a href="#">Artesanía</a><br>
+                    <a href="#">Carpintería</a><br>
+                </div>
+        </div>
+      
+            <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-signal"></i><a href="#">Informática & Tecnología</a>
+            </div>
+                <div class="panel-footer">
+                    <a href="#">Administración de sistemas</a><br>
+                    <a href="#">Bases de datos</a><br>
+                    <a href="#">Certificaciones</a><br>
+                </div>
+        </div>
+      
+      <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-plane"></i><a href="#">Sectores Industriales</a></div>
+                <div class="panel-footer">
+                    <a href="#">Aeronáutico y Naval</a><br>
+                    <a href="#">Almacén</a><br>
+                    <a href="#">Automoción y Mecánica</a><br>
+                    <a href="#">Electrónica</a><br>
+                </div>
+        </div>
+      </div>
+
+  <div class="col-md-3">
+      <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-heart"></i><a href="#">Salud</a>
+            </div>
+                <div class="panel-footer">
+                    <a href="#">Auxiliar enfermería</a><br>
+                    <a href="#">Dietética y nutrición</a><br>
+                    <a href="#">Enfermería</a><br>
+                    <a href="#">Farmacia</a><br>
+                </div>
+        </div>
+                    
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-building-o"></i><a href="#">Hostelería</a></div>
+                <div class="panel-footer">
+                    <a href="#">Restauración</a><br>
+                    <a href="#">Cocina</a><br>
+                    <a href="#">Turismo</a><br>
+                </div>
+        </div>
+      
+            <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-usd"></i><a href="#">Comercial y ventas</a>
+            </div>
+                <div class="panel-footer">
+                    <a href="#">Acción comercial y ventas</a><br>
+                    <a href="#">Atención al cliente</a><br>
+                    <a href="#">Comercial</a><br>
+                    <a href="#">Comercio Internacional</a><br>
+                </div>
+        </div>
+      </div>
+                    
+                      <div class="col-md-3">
+      <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-area-chart"></i><a href="#">Marketing</a>
+            </div>
+                <div class="panel-footer">
+                    <a href="#">Desarrollo de marca y producto</a><br>
+                    <a href="#">Dirección de marketing</a><br>
+                    <a href="#">E-business</a><br>
+                    <a href="#">Estrategia de ventas</a><br>
+
+                </div>
+        </div>
+                    
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-users"></i><a href="#">RRHH</a></div>
+                <div class="panel-footer">
+                    <a href="#">Prevención de riesgos laborales</a><br>
+                    <a href="#">Relaciones laborales</a><br>
+                    <a href="#">Selección de personal</a><br>
+                </div>
+        </div>
+                          
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <i class="fa fa-newspaper-o"></i><a href="#">Ciencias sociales</a>
+            </div>
+                <div class="panel-footer">
+                    <a href="#">Cultura y humanidades</a><br>
+                    <a href="#">Política</a><br>
+                    <a href="#">Psicología</a><br>
+                    <a href="#">Sociología</a><br>
+                </div>
+        </div>
+      </div>
+</div>
+        </div>
+            </center>
+    </section>
+    
+    <!-- Consejos -->
+    
+    <section class="freelancer" id="freelancer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Freelancer</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <center>
+                <div class="col-lg-4 col-lg-offset-2">
+    <p>Contratar a un Freelance</p>
+                          <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-search fa-4x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div class="huge">Contratar Freelancers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  </div>
+
+                <div class="col-lg-4">
+                    <p>Registrate como Freelance</p>
+                             <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-user fa-4x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div class="huge">Registro Gratuito</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  </div>
+
+            </div>
+                </div>
+    </section>
+        
+                <!-- About Section -->
+    <section class="empresa" id="empresas">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Empresas</h3><br>
+                </div>
+            </div>
+                        <div class="row">
+                <div class="col-md-2 col-lg-offset-2">
+                    <a href="#">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-comment fa-2x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>Una</div>
+                                    <div>Publicación gratis</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.col-md-4-->
+                <div class="col-md-2">
+                    <a href="#">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-user fa-2x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>Encuentra</div>
+                                    <div>Tu candidato</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.col-md-4-->
+                <div class="col-md-2">
+                    <a href="#">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-search fa-2x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>¿Quieres</div>
+                                    <div>Un Freelancer?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.col-md-4-->
+                            <center>
+                        <div class="col-md-2">
+                        <button type="button" class="btn btn-primary btn-md">Registra tu empresa</button>
+<button type="button" style="padding:10px 18px" class="btn btn-default btn-md">Ingresa a tu cuenta</button>
+                    </div></center>
+            </div>
+        </div>
+    </section>
+        
+            <!-- Ventajas -->
+    <section class="ventajas" id="ventajas">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Ventajas</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <center>
+     <div class="col-md-2 col-lg-offset-2">
+    <p>Registro 100% gratuito</p>
+                          <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-thumbs-up fa-3x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>Registro Gratuito</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  </div>
+
+     <div class="col-md-2">
+    <p>Nuevas ofertas de empleo diarias</p>
+                            <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-suitcase fa-3x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>Ofertas Diarias</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  </div>
+     <div class="col-md-2">
+<p>Envió de ofertas a tu correo.</p>
+                             <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <i class="fa fa-tag fa-3x"></i>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <div>Ofertas a tu correo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  </div>
+                                            <div class="col-md-2">
+                                                <p>Disfruta de todas estas ventajas</p>
+                        <button type="button" class="btn btn-primary btn-md">Registrate</button>
+                    </div>
+
+            </div>
+        </div>
+            </center>
+    </section>
+     
+      <section class="registrate" id="consejos">
+             <div class="container">
+<div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Consejos</h3><br>
+                </div>
+            </div>
+</div>
+                        <!-- /.panel -->
+        <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-clock-o fa-fw"></i> Orientación Laboral
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+<div class="container">
+    <ul class="timeline">
+        <li>
+          <div class="timeline-badge info"><i class="fa fa-smile-o"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">¿SABES QUÉ LENGUAJE DEBES UTILIZAR EN UNA ENTREVISTA?</h4>
+            </div>
+            <div class="timeline-body">
+              <p>Todo lo que imaginamos, pensamos y sentimos se refleja a través de nosotros mediante el lenguaje (verbal y no verbal). Cada persona desarrolla un mapa lingüístico único en su interacción con los demás.<a href="#"> Leer más </a></p>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="timeline-badge primary"><i class="fa fa-star-o"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Emprender: ¿es una opción viable?</h4>
+            </div>
+            <div class="timeline-body">
+<p>El emprender un proyecto como negocio es una opción que se plantean personas que no encuentran...<a href="#">Leer más</a></p>            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">7 consejos para encontrar trabajo en las redes sociales</h4>
+            </div>
+            <div class="timeline-body">
+              <p>¿Por qué buscar trabajo en redes sociales? Progresivamente aumenta el número de reclutadores que recurren al buscador para saber más sobre los candidatos, observan sus perfiles en redes sociales y blogs para encontrar talento o para desestimar candidaturas.<a href="#">Leer más</a></p>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">La entrevista por competencias: cómo prepararla</h4>
+            </div>
+            <div class="timeline-body">
+              <p>Identificar qué competencias son importantes para el puesto y poner ejemplos de cómo las has desarrollado en tus anteriores trabajos te permitirá demostrar al entrevistador tu valía para el nuevo cargo.<a href="#">Leer más</a></p>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="timeline-badge success"><i class="fa fa-check-circle-o"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Como redactar un CV</h4>
+            </div>
+            <div class="timeline-body">
+              <p>ProntoTrabajo, te da unos consejos para que redacter de mejor manera tu currículum y tengas mejor opciones de quedarte con la plaza a la que aplicas. <a href="#">Leer más</a></p>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="timeline-badge default"><i class="fa fa-frown-o"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Cómo resolver situaciones comprometidas en una entrevista</h4>
+            </div>
+            <div class="timeline-body">
+              <p>La entrevista es un momento crucial en el proceso de búsqueda de empleo. Por un lado, significa que... <a href="#">Leer más</a></p>
+            </div>
+          </div>
+        </li>
+    </ul>
+</div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+    </div>
+                 
+            </div>
+    </section>
+     
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Dirección</h3>
+                        <p>Santa Tecla<br>La Libertad<br>El Salvador</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Buscanos En:</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/elsalvador.prontotrabajo" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/101595784736378794552/posts" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/ProntoTrabajoSV" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter" target="_blank"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/prontotrabajo-com" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h3>Información</h3>
+                        <p>Puedes ver lo que ProntoTrabajo.com puede hacer por tu empresa a través del siguiente enlace <a href="https://youtu.be/t1uMmheIn3s">Youtube</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Prontotrabajo 2015 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Ingreso Administradores</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+        </section>
+        </nav>
+    </div>
+    </div>
+</html>
+
+       <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/alert.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
+    <script src="js/login.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+        
+        $('#mostrar_contra').click(function(){
+
+            if($('#mostrar_contra').is(':checked')) {
+                $('#contraseña').attr('type', 'text');
+            }else {
+                $('#contraseña').attr('type', 'password');
+            }
+        });
+
+      });
+
+    </script>
+
+    <script type="text/javascript">
+
+        document.getElementById('candidato').addEventListener('click',function(evento){
+
+            var confirmacion = confirm("Se registrará en ProntoTrabajo como candidato. ¿Está seguro de continuar?");
+
+            if(confirmacion != true){
+
+                evento.preventDefault();
+            }
+        });
+
+        document.getElementById('empresa').addEventListener('click',function(evento){
+
+            var confirmacion = confirm("Se registrará en ProntoTrabajo como empresa. ¿Está seguro de continuar?");
+
+            if(confirmacion != true){
+
+                evento.preventDefault();
+            }
+
+        });
+
+    </script>
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      //document.getElementById('status').innerHTML = 'Please log ' +
+        //'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      //document.getElementById('status').innerHTML = 'Please log ' +
+        //'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1643609942558439',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.id);
+      document.getElementById('statusId').innerHTML =response.id;
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =response.name;
+    });
+  }
+</script>
+<script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+		document.getElementById('statusId').innerHTML =profile.getId();
+        document.getElementById('status').innerHTML = profile.getName();
+		document.getElementById('statusMail').innerHTML = profile.getEmail();
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        //console.log("ID Token: " + id_token);
+      };
+    </script>
+</body>
+
+</html>

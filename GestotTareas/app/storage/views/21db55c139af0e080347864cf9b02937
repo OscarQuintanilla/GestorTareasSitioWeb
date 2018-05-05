@@ -1,0 +1,65 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+<div class="row">        
+  	        <div class="col-md-12">
+  	       <div class="panel panel-default">
+
+  	        <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Torneo</h4>
+              <a href="listaTorneo" role="button" class="btn btn-info"><i class="fa fa-tag"></i>Lista de Torneos</a>
+              <a href="crearTorneo" role="button" class="btn btn-info"><i class="fa fa-check"></i>Crear Torneo</a>   
+            </div></center><br/><!-- /showback -->
+        </div>
+
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Lista Torneo</div>
+                        <div class="panel-body">
+		<table class="table table-hover">				
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>Número de equipos</th>
+					<th colspan="2">Acciones</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Torneo Sabatino</td>
+					<td>12</td>
+					<td><button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></td>
+					<td><button type="submit" class="btn btn-danger btn-xs del" ><i class="fa fa-trash-o "></i></button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Torneo Copa Oro</td>
+					<td>8</td>
+					<td><button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></td>
+					<td><button type="submit" class="btn btn-danger btn-xs del" ><i class="fa fa-trash-o "></i></button></td>
+				</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

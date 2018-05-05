@@ -1,0 +1,120 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<?php
+
+  $id_inventario = Inventario::where('id_sucursal','=',Session::get('id_sucursal'))->get();
+
+?>
+
+  <center><div class="showback">
+
+    <h4><i class="fa fa-angle-right"></i>Menú Reportes Inventario</h4>
+          <a href="inventario" role="button" class="btn btn-themeRep"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp</span>Reporte general de Inventario</a>
+          <a href="reporteSuc" role="button" class="btn btn-themeRep"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp</span>Reporte por Sucursal</a>
+          <a href="precioCosto" role="button" class="btn btn-themeRep"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp</span>Reporte por Precio de Costo</a>
+          <a href="precioUnit" role="button" class="btn btn-themeRep"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp</span>Reporte por Precio Unitario</a>
+          <a href="precioMay" role="button" class="btn btn-themeRep"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp</span>Reporte por Precio Mayoreo</a>
+              </div></center>
+          </br>
+      <div class="row">        
+        <div class="col-md-12">
+          <div id="ContenedorPM">
+            <div class="content-panel">
+
+              <h4><i class="fa fa-angle-right"></i>Reportes por Precio Mayoreo
+                 <button type="button" class="btn btn-success" id="busquedaGen" style="float:right; margin-right:10px;" data-toggle="modal" data-target="#busqueda_gral"><span class="glyphicon glyphicon-search" aria-hidden="true">&nbspBusqueda</button></span>                
+              </h4>
+              <br/>
+
+    <table class="table table-hover">
+        <tr>
+          <th>Producto</th>
+          <th>Descripción</th>
+          <th>Cantidad en Stock</th>
+          <th>Precio Mayoreo</th>
+        </tr>
+        </thead>
+        <tbody>
+          <?php foreach($reportePM as $rep): ?>
+          <tr>
+            <td><?php echo $rep->nombre_producto; ?></td>
+            <td><?php echo $rep->descripcion; ?></td>
+            <td><?php echo $rep->cantidad_stock; ?></td>
+            <td>$ <?php echo $rep->precio_mayoria; ?></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+      <div class="paginado">
+        <?php echo $reportePM->links(); ?>
+
+      </div>
+      <a href="precioMayoreoExcel" role="button" class="btn btn-themeRep"><span class="glyphicon glyphicon-list-alt" aria-hidden="true">&nbsp</span>Exportar a Excel</a>
+          <!-- Modal -->
+      <div id="busqueda_gral" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Realizar Busqueda</h4>
+            </div>
+            <div class="modal-body">
+              <label>Buscar por:</label><br>
+              <select id="tipo_busqueda_general">
+                <option value="Codigo">Codigo</option>
+                <option value="Nombre">Nombre</option>
+                <option value="Precio">Precio</option>
+              </select>
+              <br>
+              <br>
+              <label>Texto de Busqueda</label><br>
+              <input type="text" id="textoBusqueda">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="boton_busqueda" data-dismiss="modal">Buscar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+<script type="text/javascript">
+  $('#boton_busqueda').click(function(){
+
+    var tipoBpm = $("#tipo_busqueda_general option:selected").html();
+    var textBpm = $('#textoBusqueda').val();
+
+      $.post('reporte_PrecioMayoreoB', {tipoBpm: tipoBpm, textBpm: textBpm}, function(data){
+
+        $('#textoBusqueda').val('');
+        $("#ContenedorPM").html(data);
+        
+      });
+
+  });
+
+</script>
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('footer'); ?>
+
+  @parent
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

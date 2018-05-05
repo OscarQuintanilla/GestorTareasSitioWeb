@@ -1,0 +1,28 @@
+<?php $__env->startSection('header'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="col-md-12">
+	<div class="showback">
+						<div class="alert alert-info">
+						  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						  <strong>Bienvenido</strong> a sistema Zirconia Joyería y Más.
+						</div>      				
+      				</div><!-- /showback -->
+<br>
+<img src="http://www.progartisan.com/Zirconia/zirconia/public/img/blue.jpg" class="img-responsive">
+</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+@parent
+  </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

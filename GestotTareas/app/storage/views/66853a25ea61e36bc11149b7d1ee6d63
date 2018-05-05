@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <?php echo HTML::style('css/consignacion.css'); ?>
+
+<body>
+    <script type="text/javascript">
+        print();
+    </script>
+    <table class="tabla1">
+    <tr>
+        <td><?php echo HTML::image('img/zirconia.png'); ?></td>
+        <td><div id="divf"><center>Traslado de mercaderia</center>
+                            <center>N: <?php echo $numConsigna; ?></center></div></td>
+    </tr>
+        <tr>
+            <td></br>Sucursal Envia <?php echo $cliente[0]->codigo; ?></td>
+            <td></td>
+            <td>Fecha: <?php echo $fecha; ?></td>
+        </tr>
+        <tr>
+            <td></br>Sucursal Recibe: <?php echo $cliente[0]->nombre; ?></td>
+            <td></td>
+            <td>Recibido por: <?php echo $tipoSalida; ?></td>  
+        </tr>
+        <tr>
+            <td></br>Hecho por <?php echo $cliente[0]->direccion; ?></td>
+        </tr>
+    
+    </table>
+    </br>
+    <table class="tabla" border=1 cellspacing=0  bordercolor="000">
+  <tr>
+    <td style="width:15%;">Código</td>
+    <td style="width:35%;">Descripción</td>
+    <td style="width:15%;">Cantidad</td>
+    <td style="width:15%;">Precio Unitario</td>
+    <td style="width:15%;">Monto</td> 
+  </tr>
+  <?php foreach($detalleConsigna as $detalle): ?>
+    <tr>
+        <td><?php echo $detalle->codigo_producto; ?></td>
+        <td><?php echo $detalle->descripcion; ?></td>
+        <td><?php echo $detalle->cantidad; ?></td>
+        <td><?php echo $detalle->precio; ?></td>
+        <td><?php echo $detalle->total; ?></td>
+    </tr>
+  <?php endforeach; ?>
+</table>
+</br>
+</br>
+<table class="tabla3" border=1 cellspacing=0  bordercolor="000">
+  <tr>
+    <td style="width:35%;">Sumas: <?php echo $cadena; ?></td>
+    <td style="width:15%;"><?php echo $items; ?></td>
+    <td style="width:15%;"></td>
+    <td style="width:15%;">$<?php echo $totalFinal; ?></td>
+  </tr>
+</table>
+    
+</body>
+</head>
+</html>

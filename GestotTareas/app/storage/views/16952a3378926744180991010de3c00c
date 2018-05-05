@@ -1,0 +1,204 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row  mt">       
+  <div class="col-lg-7 col-md-6 col-sm-12"> 
+    <div class="content-panel">
+
+      <div  id="divBusqueda">
+        <h4><i class="fa fa-angle-right"></i>Reactivacion de liquidacion</h4>
+        <table class="table table-striped table-advance table-hover">       
+          <tr>  
+            <th> Busqueda<br/><input type="text" name="busqueda" id="searchLiquidation"></th>
+          </tr>
+          <tr id="nuevoFiltro" style="display:none">
+            <td><button id="nuevaBusqueda">Nueva Busqueda</button></td>
+          </tr> 
+        </table> 
+        <?php if(Session::has('LLE')): ?>
+          <div class="alert alert-info" style="text-align:center;">
+            <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong><?php echo Session::get('LLE'); ?></strong>
+          </div>
+        <?php endif; ?>
+        <div class="alert alert-info" style="text-align:center; display:none" id="msjLT">
+          <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Liquidacion realizada exitsamente</strong>
+        </div>
+      </div>
+  
+      <div id="clientes" style="display:none">
+        <h4><i class="fa fa-angle-right"></i>Resultado de busqueda:<span style="float: right; margin-right: 15px;"></h4>
+        <div class="tablaClientes"></div>
+      </div>
+
+      <div class="dataCliente" style="display:none;">
+        <h4><i class="fa fa-angle-right"></i>Pertenece a:</h4>
+        <table class="table table-striped table-advance table-hover">       
+          <tr>
+            <td>Cliente:</td>
+            <td><span class="nameCliente" style="color: #0088ce;"></span></td>
+            <td>Codigo:</td>
+            <td><span class="codCliente" style="color: #0088ce;"></span></td>
+            <td>Fecha:</td>
+            <td><span class="fechaCliente" style="color: #0088ce;"></span></td>
+          </tr>
+          <tr>
+            <td>Liquidacion #: </td>
+            <td><input type="text" readonly="readonly" readonly="readonly" id="numLiqEdit" /></td>
+            <td>Cod. Liquidacion: </td>
+            <td colspan="3"><input type="text"  id="codLiquidacionEdit" readonly="readonly" /></td>
+          </tr>
+        </table>
+      </div>
+
+      <!--<div id="consignacionesPendientes" style="display:none">
+        <h4><i class="fa fa-angle-right"></i>Consignaciones Pendiente <span style="float: right; margin-right: 15px;">
+          <button class="btn btn-success" onclick="checkConsig()">Agregar</button></span>
+        </h4>
+        <div class="consigP"></div>
+      </div>
+
+      <div id="consignacionesAgregadas" style="display:none">
+        <h4><i class="fa fa-angle-right"></i>Consignaciones Agregadas <span style="float: right; margin-right: 15px;">
+          <button class="btn btn-danger" id="removerConsignacionbtn" onclick="removeConsig()">Remover</button></span>
+        </h4>
+        <div class="consigA"></div>
+      </div>-->
+
+      <div id="liquidacion" style="display:none">
+        <h4><i class="fa fa-angle-right"></i>Detalle Liquidacion:<span style="float: right; margin-right: 15px;"></h4>
+        <div class="tablaLiquidacion"></div>
+        <table class="table table-striped table-advance table-hover">
+          <tr>
+            <th>Remover Productos</th>
+            <th> Cod. Producto:<input type="text" style="width:25%;" name="removerPro" id="removerPro"></th>
+            <th>Agregar Productos</th>
+            <th> Cod. Producto:<input type="text" style="width:25%;" name="agregarPro" id="agregarPro"></th>
+          </tr>
+          <?php echo Form::open(array("url" => "liquidar", "method" => "POST")); ?>
+
+                    <!--<tr>
+                      <th>Liquidacion #: </th>
+                      <th><input type="text" name="numLiquidacion" id="numLiquidacion" readonly="readonly" value=""/></th>
+                      <th>Cod. Liquidacion: </th>
+                      <th><input type="text" name="codLiquidacion" id="codLiquidacion" readonly="readonly" value="" /></th>
+                    </tr>-->
+          <tr>
+            <th> Cuenta por cobrar ($):<input type="text" name="Ncc" style="width:25%;" id="cuentaxC"  value="" readonly="readonly" /></th>
+            <th>Monto a cancelar ($):<input type="text" style="width:35%;" name="montoC" readonly="readonly" value="" id="TotalCL" required/></th>
+            <th colspan="2">Sumar cuenta por cobrar:<input type="checkbox" name="canCC" value="si" id="TCC"/></th>
+          </tr>
+          <tr>
+            <th colspan="2">Monto Recibido ($):</td>
+            <th colspan="2"><input type="text" name="montoR" id="montoReci" required/></th>
+          </tr>
+          <tr>
+            <td colspan="4">
+            <input type="hidden" id="clienteLA"  name="clienteLA" value="" />
+            <input type="hidden" id="reactivacion"  name="reactivacion" value="si" />
+            <input type="hidden" id="auxCantDev"  name="auxCantDev" value="0" />
+            <input type="hidden" id="liquidacionLA"  name="liquidacionLA" value="" />
+            <input type="hidden" name="codLiquidacion" id="codLiquidacion" value="" />
+            <?php echo Form::submit("Procesar"); ?>
+
+          <?php echo Form::close(); ?>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="col-lg-5 col-md-6 col-sm-12"> 
+    <div class="content-panel" id="contentConsign" style="display:none;">
+          <div id="consignacionesPendientes">
+            <h4><i class="fa fa-angle-right"></i>Consignaciones Pendiente <span style="float: right; margin-right: 15px;">
+              <button class="btn btn-success" onclick="checkConsig()">Agregar</button></span>
+            </h4>
+            <div class="consigP"></div>
+          </div>
+
+
+          <div id="consignacionesAgregadas">
+            <h4><i class="fa fa-angle-right"></i>Consignaciones Agregadas <span style="float: right; margin-right: 15px;">
+              <button class="btn btn-danger" id="removerConsignacionbtn" onclick="removeConsig()">Remover</button></span>
+            </h4>
+            <div class="consigA"></div>
+          </div>
+    </div> 
+  </div>
+  
+</div>
+  
+
+  
+
+<input type="hidden" value="" id="idLiq" />
+<input type="hidden" value="" id="codC" />
+<input type="hidden" value="" id="pRem" />
+<div id="fixed"></div>
+  <div id="modalC">
+    <h4>Resultado de busqueda:</h4><hr>
+    <div class="contentM"></div>
+    <button id="cerrarModal">Cerrar</button>
+  </div>
+
+<?php echo HTML::script("js/reactivacion.js"); ?>
+
+
+<style type="text/css">
+	#fixed{
+      position: fixed;
+      z-index: 5000;
+      background-color: black;
+      display: none;
+      opacity: 0.6;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    #modalC{
+      z-index: 5001;
+      display: none;
+      background-color: white;
+      box-sizing: border-box;
+      border-radius: 5px;
+      height: 400px;
+      width: 600px;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      bottom: 210px;
+      position: absolute;
+      padding: 10px;
+    }
+
+    #modalC .contentM{
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 250px;
+      width: 550px;
+      margin:0px auto;
+    }
+
+    #modalC #cerrarModal{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+</style>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

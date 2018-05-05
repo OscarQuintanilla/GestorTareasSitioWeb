@@ -1,0 +1,186 @@
+<?php if(isset($dataG)): ?>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title><?php echo Session::get("nameE"); ?> | Actualizar datos</title>
+    <style media="screen">
+      html{
+        padding: 5px;
+        font-family: sans-serif;
+      }
+      table{
+
+        margin: 30px auto;
+      }
+      h2{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- actualizar -->
+
+    <h2>Actualizar informacion</h2>
+    <hr>
+    <!-- apertura Form -->
+    <?php echo Form::open(array("url" => "updateDataE", "enctype" => "multipart/form-data")); ?>
+
+    <?php echo Form::hidden("idemp",$dataG->id); ?>
+
+        <!-- datos acceso -->
+        <table>
+          <tr>
+            <th>Datos de acceso</th>
+          </tr>
+          <tr>
+            <td>E-mail:</td>
+            <td><?php echo Form::text("mailE", $dataG->mail); ?></td>
+          </tr>
+          <tr>
+            <td>Contraseña</td>
+            <td><?php echo Form::password("passE",""); ?></td>
+          </tr>
+          <tr>
+            <td>Confirmar contraseña:</td>
+            <td><?php echo Form::password("passCE",""); ?></td>
+          </tr>
+        </table>
+
+        <!-- datos empresa -->
+        <table>
+          <tr>
+            <th>Datos Empresa</th>
+          </tr>
+          <tr>
+            <td>Nombre de la empresa:</td>
+            <td><?php echo Form::text("nombreE",$dataG->nombre); ?></td>
+          </tr>
+          <tr>
+            <td>Raz&oacute;n social:</td>
+            <td><?php echo Form::text("razonE",$dataG->razon_social); ?></td>
+          </tr>
+          <tr>
+            <td>NIF/NIT</td>
+            <td><?php echo Form::text("nitE",$dataG->nit); ?></td>
+          </tr>
+          <tr>
+            <td>Pais:</td>
+            <td><?php echo Form::text("paisE",$dataG->pais); ?></td>
+          </tr>
+          <tr>
+            <td>Region:</td>
+            <td><?php echo Form::text("regionE",$dataG->region); ?></td>
+          </tr>
+          <tr>
+            <td>Ciudad:</td>
+            <td><?php echo Form::text("ciudadE",$dataG->ciudad); ?></td>
+          </tr>
+          <tr>
+            <td>C&oacute;digo Postal:</td>
+            <td><?php echo Form::text("codigopE",$dataG->cod_postal); ?></td>
+          </tr>
+          <tr>
+            <td>Direcci&oacute;n:</td>
+            <td><?php echo Form::text("direccionE",$dataG->direccion); ?></td>
+          </tr>
+          <tr>
+            <td>Sector Empresarial:</td>
+            <td><?php echo Form::text("sectorE",$dataG->sector); ?></td>
+          </tr>
+          <tr>
+            <td>N&uacute;mero de trabajadores:</td>
+            <td><?php echo Form::text("numtraE",$dataG->num_trabajadores); ?></td>
+          </tr>
+        </table>
+
+        <!-- tipo empresa -->
+        <?php foreach($dataT as $e2): ?>
+        <?php echo Form::hidden("idTip",$e2->id); ?>
+
+        <table>
+          <tr>
+            <th>Tipo de empresa</th>
+          </tr>
+          <tr>
+            <td>Tipolog&iacute;a:</td>
+            <?php if($e2->tipo == "Empleador directo"): ?>
+                <td><input type="radio" name="tipoE" value="Empleador directo" checked="true">Empleador directo</td>
+            <?php else: ?>
+                <td><input type="radio" name="tipoE" value="Empleador directo">Empleador directo</td>
+            <?php endif; ?>
+            <?php if($e2->tipo == "Agencia de reclutamiento"): ?>
+                <td><input type="radio" name="tipoE" value="Agencia de reclutamiento" checked="true">Agencia de reclutamiento</td>
+            <?php else: ?>
+                <td><input type="radio" name="tipoE" value="Agencia de reclutamiento">Agencia de reclutamiento</td>
+            <?php endif; ?>
+            <?php if($e2->tipo == "Servicios temporales"): ?>
+                <td><input type="radio" name="tipoE" value="Servicios temporales" checked="true">Servicios temporales</td>
+            <?php else: ?>
+                <td><input type="radio" name="tipoE" value="Servicios temporales">Servicios temporales</td>
+            <?php endif; ?>
+          </tr>
+          <tr>
+            <td>Descripci&oacute;n de la empresa:</td>
+            <td colspan="3">
+              <textarea rows="4" cols="50" name="descripcionE">
+                  <?php echo $e2->descripcion; ?>
+
+              </textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>P&aacute;gina web de la empresa:</td>
+            <td colspan="3"><?php echo Form::text("paginaE",$e2->url); ?></td>
+          </tr>
+          <tr>
+            <td>Logo de la empresa:</td>
+            <td colspan="3"><input type="file" name="logoE" /></td>
+          </tr>
+        </table>
+        <?php endforeach; ?>
+
+        <?php foreach($dataC as $e3): ?>
+        <?php echo Form::hidden("idCon",$e3->id); ?>
+
+        <!-- data person contact -->
+        <table>
+          <tr>
+            <th>Data de persona de contacto</th>
+          </tr>
+          <tr>
+            <td>Nombres:</td>
+            <td><?php echo Form::text("nombrecE",$e3->nombre); ?></td>
+          </tr>
+          <tr>
+            <td>Apellidos:</td>
+            <td><?php echo Form::text("apellidocE",$e3->apellido); ?></td>
+          </tr>
+          <tr>
+            <td>Cargo:</td>
+            <td><?php echo Form::text("cargocE",$e3->cargo); ?></td>
+          </tr>
+          <tr>
+            <td>Telefono:</td>
+            <td><?php echo Form::text("tel1",$e3->telefono1); ?></td>
+          </tr>
+          <tr>
+            <td>Telefono 2:</td>
+            <td><?php echo Form::text("tel2",$e3->telefono2); ?></td>
+          </tr>
+        </table>
+        <?php endforeach; ?>
+
+        <table>
+          <tr>
+            <th><?php echo Form::submit("Actualizar"); ?></th>
+          </tr>
+        </table>
+
+
+    <!-- cierre form -->
+    <?php echo Form::close(); ?>
+
+  </body>
+  </html>
+<?php endif; ?>

@@ -1,0 +1,106 @@
+<?php
+	//traigo la data del movimiento
+	$dataMovi = MovimientosCC::find($idMov);
+
+	
+	$idCC = $dataMovi->id_cc;
+	
+
+	//traigo la cc
+	$dataCC = CuentaCobrar::find($idCC);
+
+
+
+?>
+
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+    <?php echo HTML::style('css/consignacion.css'); ?>
+
+
+<body>
+
+    <script type="text/javascript">
+
+        print();
+
+    </script>
+
+    <table class="tabla1">
+
+    <tr>
+
+        <td><?php echo HTML::image('img/zirconia.png'); ?></td>
+
+        <td><div id="divf"><center>Comprobante de abono</center>
+
+                            <center>(A)</center>
+
+                            <center>N=<?php echo $dataMovi->num_factura; ?></center></div></td>
+
+    </tr>
+
+    <tr>
+
+        <td></br>Código: <?php echo $dataMovi->codigo_cliente; ?></td>
+
+        <td></td>
+
+        <td>Fecha: <?php echo $dataMovi->created_at; ?></td>
+
+    </tr>
+
+    <tr>
+
+        <td></br>Cliente: <?php echo $dataMovi->cliente; ?></td>
+
+        <td></td> 
+
+    </tr>
+
+    </table>
+
+    </br>
+
+     <table class="tabla" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+
+        <th style="width:35%;">Abono realizado ($)</th>
+
+       <th style="width:15%;"><?php echo $dataMovi->monto; ?></th>
+
+      </tr>
+
+     
+
+       </table>
+
+    </br>
+
+    </br>
+
+    <table class="tabla3" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+		
+        <td style="width:35%;">Total restante ($):  <?php echo $dataCC->monto; ?></td>  
+
+      </tr>
+
+    </table>
+
+    <br>
+
+    
+
+</body>
+
+</head>
+
+</html>

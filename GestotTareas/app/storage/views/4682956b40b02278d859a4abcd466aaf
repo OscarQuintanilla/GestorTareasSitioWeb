@@ -1,0 +1,215 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">       
+  <div class="col-md-6 col-md-offset-3"> 
+    <div class="content-panel">
+    	<!--select-->
+		<h4><i class="fa fa-angle-right"></i><span class="titleIngreso">Cuenta por cobrar</span></h4>
+        <table class="table table-striped table-advance table-hover">       
+          <tr>  
+            <th> Tipo: </th>
+            <td>
+                  <select id="tipoIngreso">
+                    <option value="0">-- Seleccione una opcion --</option>
+                    <option value="abo">Abono</option>
+                    <option value="car">Cargo</option>
+                    <option value="con">Consulta</option>
+                    <option value="repor1">Resumen de saldos por cliente</option>
+                    <option value="reporteRango">Resumen de saldos por rango de fecha</option>
+                    <option value="reporteAbo">Movimientos por abono</option>
+                    <option value="reporteCar">Movimientos por cargo</option>
+                  </select>
+            </td>
+          </tr>
+          <tr id="nuevoFiltro" style="display:none">
+              <td colspan="2"><button id="nuevaBusqueda">Nueva Busqueda</button></td>
+            </tr> 
+        </table>
+         <?php if(Session::has('ME')): ?>
+		
+			<?php if(Session::get("ME") == "cargo"): ?>
+				<div class="alert alert-info" style="text-align:center;">
+		          <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+		          <button type="button" class="close" data-dismiss="alert">&times;</button>
+		          <strong>Cargo realizado exitosamente</strong>
+		        </div>
+
+			<?php else: ?>
+				<div class="alert alert-info" style="text-align:center;">
+		          <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+		          <button type="button" class="close" data-dismiss="alert">&times;</button>
+		          <strong>Abono realizado exitosamente</strong>
+		        </div>
+		        
+		        <table class='table table-striped table-advance table-hover'> 
+		            <tr>
+		                <td>
+		                    <?php echo HTML::link("imprimirMov/".Session::get("ME"),"Imprimir Factura",array("target" => "_blank", "style" => "color:darkblue;")); ?>
+
+		                </td>
+		            </tr>
+		        </table> 
+			<?php endif; ?>
+         
+      <?php endif; ?>
+
+
+        <!-- busqueda -->
+      	<div id="busquedaCliente" style="display:none">
+            <h4><i class="fa fa-angle-right"></i>Busqueda:<span style="float: right; margin-right: 15px;"></h4>
+            <table class="table table-striped table-advance table-hover">
+                <tr>
+                    <td>Codigo o nombre de cliente:
+					<input type="text" id="busquedaCliTxt" value="" /></td>
+                </tr>
+            </table>
+      	</div>
+
+      	<!-- consulta -->
+		<div id="consultaCC" style="display:none">
+            <h4><i class="fa fa-angle-right"></i>Consulta Cuenta por cobrar:<span style="float: right; margin-right: 15px;"></h4>
+            <div class="dataDcc"></div>
+      	</div>
+
+
+      	<!-- cargo -->
+		<div id="formMovimientoCC" style="display:none;">
+			<h4><i class="fa fa-angle-right"></i><span id="titleM">Cargo Cuenta por cobrar:</span><span style="float: right; margin-right: 15px;"></h4>
+			<table class="table table-striped table-advance table-hover">
+				<?php echo Form::open(array("url"=>"procesarCargoCC")); ?>
+
+				<tr>
+					<td>Codigo:</td>
+					<td><input type="text" readonly="readonly" id="codigoCCC" name="codigoCCC" value="" /></td>
+					<td>Nombre:</td>
+					<td><input type="text" readonly="readonly" id="nombreCCC" name="nombreCCC" value="" /></td>
+					<?php
+						$date = date("Y")."/".date("m")."/".date("d");
+					?>
+					<td>Fecha:</td>
+					<td><input type="text" readonly="readonly" id="fechaCCC" name="fechaCCC" value="<?php echo $date; ?>" /></td>
+				</tr>
+				<tr>
+					<td>Correlativo:</td>
+					<td><input type="text" readonly="readonly" id="correlativoCCC" name="correlativoCCC" value="" /></td>
+					<td>Num. Factura:</td>
+					<td><input type="text"  id="numFacturaCCC" name="numFacturaCCC" value="" /></td>
+					<td>Vendedor:</td>
+					<td><input type="text" readonly="readonly" id="vendedorCCC" name="vendedorCCC" value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="1">Notas:</td>
+					<td colspan="5"><textarea name="notasCCC" ></textarea></td>
+				</tr>
+				<tr>
+					<td>Monto ($):</td>
+					<td><input type="text"  id="montoCCC" name="montoCCC" value="" /></td>
+					<td colspan="4"></td>
+				</tr>
+				<tr>
+					<input type="hidden" name="tipoMovimientoCCF" id="tipoMovimientoCCF" value="" />
+					<input type="hidden" name="idVendedor" id="idVendedor" value="" />
+					<td colspan="6"><?php echo Form::submit("Procesar"); ?></td>
+				</tr>
+				<?php echo Form::close(); ?>
+
+			</table>
+		</div>
+
+
+    <!-- reporte por rango de fecha -->
+    <div id="reporteRangoFecha" style="display:none;">
+      <h4><i class="fa fa-angle-right"></i><span id="titleM">Reporte rango por fecha:</span><span style="float: right; margin-right: 15px;"></h4>
+      <table class="table table-striped table-advance table-hover">
+        <?php echo Form::open(array("url"=>"reporteRangoFecha", "target" => "_blank")); ?>
+
+        <tr>
+          <td>Codigo:</td>
+          <td><input type="text" readonly="readonly" id="codigoCCCReport2" name="codigoCCCReport2" value="" /></td>
+          <td>Nombre:</td>
+          <td><input type="text" readonly="readonly" id="nombreCCCReport2" name="nombreCCCReport2" value="" /></td>
+        </tr>
+        <tr>
+          <td>Fecha Inicio:</td>
+          <td><input type="date"  id="fechaInicio" name="fechaInicio" value="" /></td>
+          <td>Fecha Fin:</td>
+          <td><input type="date"  id="fechaFin" name="fechaFin" value="" /></td>
+        </tr>
+        <tr>
+          <td colspan="4"><?php echo Form::submit("Generar"); ?></td>
+        </tr>
+        <?php echo Form::close(); ?>
+
+      </table>
+
+    </div>
+
+   </div>
+  </div>
+</div>
+
+  <!-- modal -->
+  <div id="fixed"></div>
+  <div id="modalC">
+    <h4>Resultado de busqueda:</h4><hr>
+    <div class="contentM"></div>
+    <button id="cerrarModal">Cerrar</button>
+  </div>
+
+<input type="hidden" id="tipoMovimiento" value="" />
+<?php echo HTML::script("js/cc.js"); ?>
+
+
+ <style type="text/css">
+  #fixed{
+      position: fixed;
+      z-index: 5000;
+      background-color: black;
+      display: none;
+      opacity: 0.6;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    #modalC{
+      z-index: 5001;
+      display: none;
+      background-color: white;
+      box-sizing: border-box;
+      border-radius: 5px;
+      height: 400px;
+      width: 600px;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      bottom: 210px;
+      position: absolute;
+      padding: 10px;
+    }
+
+    #modalC .contentM{
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 250px;
+      width: 550px;
+      margin:0px auto;
+    }
+
+    #modalC #cerrarModal{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+</style>
+
+<?php $__env->stopSection(); ?>    	
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ProntoTrabajo</title>
+
+<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/styless.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style6.css" />
+        <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
+
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <?php echo HTML::script('js/jquery.js'); ?>
+
+    <?php echo HTML::script('js/jquery-1.8.3.min.js'); ?>
+
+
+</head>
+
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top"><img class="img-responsive" src="img/logoPronto_opt.png" alt="logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="ver-canchas"><?php echo Session::get('nombre_usuario'); ?></a>
+                    </li>
+                     <li  class="page-scroll">
+                        <form action="logout" method="get">
+                            <button class="btn btn-theme03" type="submit" style="margin-top:9px;">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+    </nav>
+</div>
+</div>
+    <!-- Header -->   
+    <form>
+        <section class="contact" id="ofertas">
+        <div class="noticias">
+ <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Primera vez en ProntoTrabajo? Sube tu currículum gratis y postúlate a las ofertas de trabajo:</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <center>
+  <div class="col-lg-4 col-lg-offset-3">
+      
+    <h5>Datos Personales</h5>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                Nombre: <input type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+                Apellidos:<input type="text" class="form-control" name="apellidos" placeholder="Apellidos" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+            </div>
+        </div>
+      
+        <h5>Área de Interés</h5>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                Categoría:<div class="form-group">
+                          <select class="form-control" name="categoria" id="sel1">
+                            <option>Administración/Oficina</option>
+                            <option>Almacén/Lógistica</option>
+                            <option>Atención a clientes</option>
+                            <option>Informática/Telecomunicaciones</option>
+                            <option>Ingenieriá</option>
+                            <option>Legal/Asesoría</option>
+                            <option>Márketing/Ventas</option>
+                            <option>Sonsonate</option>
+                          </select>
+                    </div>
+                Estado:<div class="form-group">
+                          <select class="form-control" name="estado" id="sel1">
+                            <option>San Salvador</option>
+                            <option>La Libertad</option>
+                            <option>Santa Ana</option>
+                            <option>San Miguel</option>
+                            <option>Morazán</option>
+                            <option>Cabañas</option>
+                            <option>Ahuachapán</option>
+                            <option>Sonsonate</option>
+                            <option>Chalatenango</option>
+                            <option>La Paz</option>
+                            <option>Usulután</option>
+                            <option>San Vicente</option>
+                            <option>Cabañas</option>
+                            <option>Cuscatlán</option>
+                          </select>
+                    </div>
+            </div>
+                <div class="panel-footer"><input type="checkbox" aria-label="...">
+He leído y aceptado las Condiciones Legales, Reglamento de Prestación de Servicios y la Política de Privacidad de ProntoTrabajo.
+                </div>
+        </div>
+      
+      <button type="submit" class="btn btn-primary btn-lg">Aceptar</button>
+  </div>
+            <div class="col-lg-2">
+                <h3>¿Ya estás registrado en ProntoTrabajo?</h3>
+                        <div class="panel panel-primary">
+            <div class="panel-body">
+                Correo:<input type="email" class="form-control" placeholder="Correo">
+                Contraseña:<input type="password" class="form-control" placeholder="Contraseña">
+
+            </div>
+                <div class="panel-footer">      
+                    <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+
+                </div>
+        </div>
+            </div>
+  </div>
+                
+    <div class="row">
+                <center>
+  <div class="col-lg-4 col-lg-offset-3">
+      
+          <h5>Datos Personales</h5>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                Tipo de identificación: <br>
+                <table>
+                <tr>
+                    <th>
+                        <div class="form-group">
+                          <select class="form-control" name="identificacionse" id="sel1">
+                            <option>DUI</option>
+                            <option>Pasaporte</option>
+                            <option>NIT</option>
+                          </select>
+                        </div>
+                    </th>
+                    <th><input type="text" class="form-control" name="identificacion" required></th>
+                </tr>
+                </table>
+                Fecha de Nacimiento:<input type="date" class="form-control" name="fnacimiento" placeholder="Día/Mes/Año">
+                Estado Civil: <div class="form-group">
+                                  <select class="form-control" name="estadoc" id="sel1">
+                                    <option>Soltero(a)</option>
+                                    <option>Casado(a)</option>
+                                    <option>Viudo(a)</option>
+                                    <option>Separado(a)/Divorciado(a)</option>
+                                    <option>Unión libre</option>
+                                  </select>
+                                </div>
+                Teléfono:<input type="text" class="form-control" name="telefono">
+                País:<input type="text" class="form-control" name="pais" placeholder="Pais" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+                Departamento:<input type="text" class="form-control" name="departamento" placeholder="Departamento" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+                Municipio:<input type="text" class="form-control" name="municipio" placeholder="Municipio" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+                Código Postal: <input type="text" class="form-control" name="cpostal" placeholder="Código Postal">
+                Dirección: <input type="text" class="form-control" name="direccion" placeholder="Dirección">
+                Licencia de Conducir: <input type="text" class="form-control" name="lconducir" placeholder="Licencia de conducir">
+                Dispone de Vehículo propio: <br>
+                <table>
+                    <tr>
+                        <th>Si <input type="radio" name="si"></th>
+                        <th>No <input type="radio" name="no"></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      
+      
+      </div>
+        </center>
+                </div>
+                
+        <div class="row">
+                <center>
+  <div class="col-lg-4 col-lg-offset-3">
+      
+    <h5>Perfil Profesional</h5>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                Cargo o título breve del currículum<input type="text" class="form-control" name="titulo" placeholder="Título">
+                Descripción breve de tu perfil profesional:<input type="text" class="form-control" name="descripción" placeholder="Descripción">
+            </div>
+        </div>
+      </center>
+      </div>
+          <div class="row">
+              <center>
+    <div class="col-lg-4 col-lg-offset-3">
+      
+    <h5>Experiencias Profesional</h5>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                        <input type="checkbox" >No tengo ninguna experiencia<br>
+                <i class="fa fa-plus"><a href="#" id="ocultar-cajita">Agregar Experiencia Laboral</i></a>
+
+            </div>
+            <!--Div Oculto-->
+        <div class="panel-body" id="panel-oculto" style="display:none;">
+            Empresa<input type="text" class="form-control" name="empresa" placeholder="Empresa">
+            Estado<div class="form-group">
+                          <select class="form-control" name="estado" id="sel1">
+                            <option>San Salvador</option>
+                            <option>La Libertad</option>
+                            <option>Santa Ana</option>
+                            <option>San Miguel</option>
+                            <option>Morazán</option>
+                            <option>Cabañas</option>
+                            <option>Ahuachapán</option>
+                            <option>Sonsonate</option>
+                            <option>Chalatenango</option>
+                            <option>La Paz</option>
+                            <option>Usulután</option>
+                            <option>San Vicente</option>
+                            <option>Cabañas</option>
+                            <option>Cuscatlán</option>
+                          </select>
+                    </div>
+            Sector de la empresa<div class="form-group">
+                                      <select class="form-control" name="estado" id="sel1">
+                                        <option>Informatica/Telecomunicaciones</option>
+                                        <option>Agricola</option>
+                                        <option>Industria</option>
+                                        <option>Educación</option>
+                                        <option>Servicios Profecionales</option>
+                                        <option>Construción</option>
+                                      </select>
+                                </div>
+            Periodo
+            <table>
+            <tr>
+                <th><input type="date" class="form-control" name="finicio" placeholder=" Fecha Inicio D/M/A"></th>
+                <th><input type="date" class="form-control" name="ffin" placeholder=" Fecha Fin D/M/A"></th>
+                <th>Actualmente <input type="checkbox" ></th>
+            </tr>
+            </table>
+            Funciones del cargo<input type="text" class="form-control" name="funciones" placeholder="Funciones"><br>   
+                <button type="submit" class="btn btn-primary btn-lg">Añadir</button>
+
+        </div>
+      </div>
+            </center>
+                </div>
+                </div>
+            <div class="row">
+                <center>
+                        <div class="col-lg-4 col-lg-offset-3">
+                    <h5>Formación academica</h5>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                Institución<input type="text" class="form-control" name="institución" placeholder="Institución">
+                Nivel de Estudios<div class="form-group">
+                                      <select class="form-control" name="estado" id="sel1">
+                                        <option>Educación Básica Primaria</option>
+                                        <option>Educación Básica Secundaria</option>
+                                        <option>Bachillerato/Educación Media</option>
+                                        <option>Educación Técnica/Profesional</option>
+                                        <option>Universidad</option>
+                                        <option>Postgrado</option>
+                                      </select>
+                                </div>
+                Área de estudio<input type="text" class="form-control" name="areaestudio" placeholder="Área Estudio">
+                Estado 
+                <table>
+                    <tr>
+                    <th>Culminado<input type="radio" ></th>
+                    <th>Cursando <input type="radio" ></th>
+                    <th>Abandonado<input type="radio" ></th>
+                    </tr>
+                
+                </table>
+            Periodo
+            <table>
+            <tr>
+                <th><input type="date" class="form-control" name="finicio" placeholder=" Fecha Inicio D/M/A"></th>
+                <th><input type="date" class="form-control" name="ffin" placeholder=" Fecha Fin D/M/A"></th><br>
+            </tr>
+            </table><br>
+                                <button type="submit" class="btn btn-primary btn-lg">Añadir</button>
+
+            </div>
+        </div>
+            </div>
+                    </center>
+                </div>
+            <div class="row">
+                <center>
+                    <div class="col-lg-4 col-lg-offset-3">
+                        <h5>Idioma</h5>
+                            <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        Idiomas
+                                        <table>
+            <tr>
+                <th><input type="text" class="form-control" name="idioma" placeholder="Idioma"></th>
+                <th><div class="form-group">
+                                      <select class="form-control" name="nivel" id="sel1">
+                                        <option>Basico</option>
+                                        <option>Intermedio</option>
+                                        <option>Avanzado</option>
+                                        <option>Nativo</option>
+                                      </select>
+                                </div></th>
+            </tr>
+            </table>
+                                        <table>
+            <tr>
+                <th><input type="text" class="form-control" name="idioma" placeholder="Idioma"></th>
+                <th><div class="form-group">
+                                      <select class="form-control" name="nivel" id="sel1">
+                                        <option>Basico</option>
+                                        <option>Intermedio</option>
+                                        <option>Avanzado</option>
+                                        <option>Nativo</option>
+                                      </select>
+                                </div></th>
+            </tr>
+            </table>
+                                    </div>
+                            </div> 
+                    </div>
+                </center>
+            </div>
+            
+            <div class="row">
+                <center>
+                    <div class="col-lg-4 col-lg-offset-3">
+                        <h5>Conocimientos Informaticos</h5>
+                            <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        Conocimientos<input type="text" class="form-control" name="conocimientosinfo" placeholder="Divida con una , todos los conocimientos informaticos"><br>
+                    <button type="submit" class="btn btn-primary btn-lg">Siguiente</button>
+
+                                    </div>
+                            </div> 
+                    </div>
+                </center>
+            </div>
+                        <div class="row">
+                <center>
+                    <div class="col-lg-4 col-lg-offset-3">
+                        <h5>Competencias y habilidades</h5>
+                            <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                         Escribe tus Conocimientos<input type="text" class="form-control" name="conocimientos" placeholder="Divida con una , todos los conocimientos que tienes">
+
+                                    </div>
+                            </div> 
+                    </div>
+                    
+                    <div class="col-lg-4 col-lg-offset-3">
+                        <h5>Preferencias de trabajo</h5>
+                            <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                         Situacion actual<div class="form-group">
+                                      <select class="form-control" name="nivel" id="sel1">
+                                        <option>No tengo empleo</option>
+                                        <option>Estoy buscando empleo activamente</option>
+                                        <option>Estoy trabajando actualmente</option>
+                                        <option>No busco trabajo pero estoy dispuesto a escuchar ofertas</option>
+                                        <option>No tengo interes en un empleo nuevo</option>
+                                      </select>
+                                </div>
+                                        Puesto de trabajo deseado<input type="text" class="form-control" name="puesto" placeholder="Puesto de trabajo deseado">
+                                        Área<div class="form-group">
+                                      <select multiple class="form-control" name="nivel" id="sel1">
+                                        <option>Informática / Telecomunicaciones</option>
+                                        <option>Producción / Operaciones</option>
+                                        <option>Recursos Humanos</option>
+                                        <option>Mercadeo / Publicidad / Comunicación</option>
+                                        <option>Administración / Oficina</option>
+                                      </select>
+                                </div>
+                                        Salario mínimo aceptado<input type="text" class="form-control" name="salariom" placeholder="Neto mensual">
+                                        Estado<div class="form-group">
+                                      <select multiple class="form-control" name="nivel" id="sel1">
+                                        <option>San Salvador</option>
+                                        <option>La Libertad</option>
+                                        <option>Santa Ana</option>
+                                        <option>San Miguel</option>
+                                        <option>Chalatenango</option>
+                                      </select>
+                                </div>
+                                        Disponibilidad de viajar
+                                        <table>
+                                        <tr>
+                                            <th>Si<input type="radio"></th> 
+                                            <th>No<input type="radio"> </th>
+                                        </tr>
+                                        </table>
+                                        
+                                        Disponibilidad de cambiar de residencia
+                                        <table>
+                                        <tr>
+                                            <th>Si<input type="radio"></th> 
+                                            <th>No<input type="radio"> </th>
+                                        </tr>
+                                        </table>
+                                    </div>
+                            </div> 
+                    </div>
+                </center>
+            </div>
+                        <div class="row">
+                <center>
+                    <div class="col-lg-4 col-lg-offset-3">
+                        <h5>Perfil Profesional</h5>
+                            <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        Puedes copiar y pegar aquí tu currículum desde Word, PDF o escribir un Currículum indicando la información más relevante.<textarea class="form-control" rows="3"></textarea><br>
+                    <button type="submit" class="btn btn-primary btn-lg">Finalizar</button>
+
+                                    </div>
+                            </div> 
+                    </div>
+                </center>
+            </div>
+
+</form></div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Dirección</h3>
+                        <p>Santa Tecla<br>La Libertad<br>El Salvador</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Buscanos En:</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/elsalvador.prontotrabajo" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-3">
+                        <h3>Información</h3>
+                        <p>Puedes ver lo que ProntoTrabajo.com puede hacer por tu empresa a través del siguiente enlace <a href="https://youtu.be/t1uMmheIn3s">Youtube</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; ProntoTrabajo 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+        </section>
+        </nav>
+    </div>
+    </div>
+
+       <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/script.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/alert.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

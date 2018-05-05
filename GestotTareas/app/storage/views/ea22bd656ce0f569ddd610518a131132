@@ -1,0 +1,928 @@
+
+
+<style media="screen">
+	
+	  #contenedor-info{
+  	display: none;
+  }
+  
+</style>
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	<script type="text/javascript">
+		
+	    $(document).ready(function(){
+
+	    	//Carga de ciudades por departamento
+	    	$("#distrito_provincia").change(function(){
+
+	    		var distrito = $("#distrito_provincia").val();
+
+	    		$.post("cargar-ciudades-distrito", {distrito : distrito}, function(data){
+
+	    			var datos = eval(data);
+	    			var tamaño = datos.length;
+	    			var i = 0;
+
+	    			$('#ciudad').empty();
+
+	    			for(i=0;i<tamaño;i++){
+	    				$('#ciudad').append(new Option(datos[i], datos[i]));
+	    			}
+
+
+	    		});
+
+	    	});
+
+	    	//Desactivando controles para agregar una experiencia laboral actualmente
+	    	$("#actualmente").change(function(){
+
+	    		if(this.checked){
+
+	    			$("#mes_experiencia_fin").val('Mes');
+	    			$("#año_experiencia_fin").val('Año');
+	    			$("#mes_experiencia_fin").prop('disabled', true);
+	    			$("#año_experiencia_fin").prop('disabled', true);
+	    			$("#actualmente").val('actualmente');
+
+	    		}else{
+
+	    			$("#mes_experiencia_fin").prop('disabled', false);
+	    			$("#año_experiencia_fin").prop('disabled', false);
+	    			$("#actualmente").val('');
+
+	    		}
+	    	});
+
+	    	$("#actualmenteM").change(function(){
+
+	    		if(this.checked){
+
+	    			$("#mes_experiencia_finM").val('Mes');
+	    			$("#año_experiencia_finM").val('Año');
+	    			$("#mes_experiencia_finM").prop('disabled', true);
+	    			$("#año_experiencia_finM").prop('disabled', true);
+	    			$("#actualmenteM").val('actualmente');
+
+	    		}else{
+
+	    			$("#mes_experiencia_finM").prop('disabled', false);
+	    			$("#año_experiencia_finM").prop('disabled', false);
+	    			$("#actualmenteM").val('');
+
+	    		}
+	    	});
+
+
+	        $("#agregarExperienciaLaboral").click(function(){
+
+	            var empresa = $("#empresa").val();
+	            var departamento = $("#departamento").val();
+	            var sector_empresa = $("#sector_empresa").val();
+	            var cargo = $("#cargo").val();
+	            var area_empresa = $("#area_empresa").val();
+	            var funciones_logros = $("#funciones_logros").val();
+	            var mes_experiencia_inicio = $("#mes_experiencia_inicio").val();
+	            var año_experiencia_inicio = $("#año_experiencia_inicio").val();
+	            var mes_experiencia_fin = $("#mes_experiencia_fin").val();
+	            var año_experiencia_fin = $("#año_experiencia_fin").val();
+	            var actualmente = $("#actualmente").val();
+
+	            $.post("registrarExperienciaLaboral", {empresa : empresa, departamento : departamento, sector_empresa : sector_empresa, cargo : cargo, area_empresa : area_empresa, funciones_logros : funciones_logros, mes_experiencia_inicio : mes_experiencia_inicio, año_experiencia_inicio : año_experiencia_inicio, mes_experiencia_fin : mes_experiencia_fin, año_experiencia_fin : año_experiencia_fin, actualmente : actualmente}, function(data){
+	                
+	                $("#cajas_experiencia_laboral").html(data);
+
+					$('#empresa').val("");
+					$('#departamento').val("Selecciona un distrito");
+					$('#sector_empresa').val("");
+					$('#cargo').val("");
+					$('#area_empresa').val("");
+					$('#mes_experiencia_inicio').val("Mes");
+					$('#año_experiencia_inicio').val("Año");
+					$('#mes_experiencia_fin').val("Mes");
+					$('#año_experiencia_fin').val("Año");
+					$('#funciones_logros').val("");
+					$('#actualmente').prop("checked", false);
+					$("#mes_experiencia_fin").prop('disabled', false);
+	    			$("#año_experiencia_fin").prop('disabled', false);
+
+	            });
+	        });
+		
+
+	    	$("#modificarExperienciaLaboral").click(function(){
+
+	            var id_expe_lab = $("#id_expe_lab").val();
+	            var empresa = $("#empresaM").val();
+	            var departamento = $("#departamentoM").val();
+	            var sector_empresa = $("#sector_empresaM").val();
+	            var cargo = $("#cargoM").val();
+	            var area_empresa = $("#area_empresaM").val();
+	            var funciones_logros = $("#funciones_logrosM").val();
+	            var mes_experiencia_inicio = $("#mes_experiencia_inicioM").val();
+	            var año_experiencia_inicio = $("#año_experiencia_inicioM").val();
+	            var mes_experiencia_fin = $("#mes_experiencia_finM").val();
+	            var año_experiencia_fin = $("#año_experiencia_finM").val();
+	            var actualmente = $("#actualmenteM").val();
+
+
+	            $.post("modificarExperienciaLaboral", {id_expe_lab : id_expe_lab, empresa : empresa, departamento : departamento, sector_empresa : sector_empresa, cargo : cargo, area_empresa : area_empresa, funciones_logros : funciones_logros, mes_experiencia_inicio : mes_experiencia_inicio, año_experiencia_inicio : año_experiencia_inicio, mes_experiencia_fin : mes_experiencia_fin, año_experiencia_fin : año_experiencia_fin, actualmente : actualmente}, function(data){
+
+	                $("#cajas_experiencia_laboral").html(data);
+
+	            });
+
+	        });
+			
+			//desactivando periodo de formaciones
+			$("#estado_formacion").change(function(){
+
+				estado_formacion = $("#estado_formacion").val();
+
+	    		if(estado_formacion == "Culminado"){
+
+	    			$("#mes_formacion_fin").prop('disabled', false);
+	    			$("#año_formacion_fin").prop('disabled', false);
+
+	    		}else if(estado_formacion == "Cursando"){
+	    			
+	    			$("#mes_formacion_fin").prop('disabled', true);
+	    			$("#año_formacion_fin").prop('disabled', true);
+	    			$("#mes_formacion_fin").val("Mes");
+	    			$("#año_formacion_fin").val("Año");
+
+	    		}else if(estado_formacion == "Abandonado|Aplazado"){
+
+	    			$("#mes_formacion_fin").prop('disabled', false);
+	    			$("#año_formacion_fin").prop('disabled', false);
+
+	    		}
+	    	});
+
+	    	//Agregando una formacion
+	    	$("#agregarFormacion").click(function(){
+
+	    		var institucion = $("#institucion").val();
+	    		var nivel_estudios = $("#nivel_estudios").val();
+	    		var estado_formacion = $("#estado_formacion").val();
+	    		var mes_formacion_inicio = $("#mes_formacion_inicio").val();
+	    		var año_formacion_inicio = $("#año_formacion_inicio").val();
+	    		var mes_formacion_fin = $("#mes_formacion_fin").val();
+	    		var año_formacion_fin = $("#año_formacion_fin").val();
+	    		var area = $("#area").val();
+
+
+	    		$.post("registrarEducacion", {institucion : institucion, nivel_estudios : nivel_estudios, area : area, estado_formacion : estado_formacion, mes_formacion_inicio : mes_formacion_inicio, año_formacion_inicio : año_formacion_inicio, mes_formacion_fin : mes_formacion_fin, año_formacion_fin : año_formacion_fin}, function(data){
+
+	    			$("#cajas_formacion").html(data);
+
+	    			$("#institucion").val("");
+	    			$("#nivel_estudios").val("Nivel de estudios");
+	    			$("#area").val("");
+	    			$("#estado_formacion").val("Selecciona un estado");
+	    			$("#mes_formacion_inicio").val("Mes");
+	    			$("#año_formacion_inicio").val("Año");
+	    			$("#mes_formacion_fin").val("Mes");
+	    			$("#año_formacion_fin").val("Año");
+	    			$("#mes_formacion_fin").prop('disabled', false);
+	    			$("#año_formacion_fin").prop('disabled', false);
+
+	    		});
+
+	    	});
+
+			//modificando una formacion
+
+			$("#modificarFormacion").click(function(){
+
+				var id_formacion = $("#id_formacion").val();
+	    		var institucion = $("#institucion").val();
+	    		var nivel_estudios = $("#nivel_estudios").val();
+	    		var estado_formacion = $("#estado_formacion").val();
+	    		var mes_formacion_inicio = $("#mes_formacion_inicio").val();
+	    		var año_formacion_inicio = $("#año_formacion_inicio").val();
+	    		var mes_formacion_fin = $("#mes_formacion_fin").val();
+	    		var año_formacion_fin = $("#año_formacion_fin").val();
+	    		var area = $("#area").val();
+
+	    		$.post("modificarEducacion", {id_formacion : id_formacion, institucion : institucion, nivel_estudios : nivel_estudios, area : area, estado_formacion : estado_formacion, mes_formacion_inicio : mes_formacion_inicio, año_formacion_inicio : año_formacion_inicio, mes_formacion_fin : mes_formacion_fin, año_formacion_fin : año_formacion_fin}, function(data){
+
+	    			$("#cajas_formacion").html(data);
+
+	    			$("#agregarFormacion").show();
+	    			$("#modificarFormacion").hide();
+
+	    			$("#institucion").val("");
+	    			$("#nivel_estudios").val("Nivel de estudios");
+	    			$("#area").val("");
+	    			$("#estado_formacion").val("Selecciona un estado");
+	    			$("#mes_formacion_inicio").val("Mes");
+	    			$("#año_formacion_inicio").val("Año");
+	    			$("#mes_formacion_fin").val("Mes");
+	    			$("#año_formacion_fin").val("Año");
+	    			$("#mes_formacion_fin").prop('disabled', false);
+	    			$("#año_formacion_fin").prop('disabled', false);
+
+	    		});
+
+	    	});
+
+			//Agregando un idioma
+			$("#agregarIdioma").click(function(){
+
+				var idioma = $("#idioma").val();
+	    		var nivel_idioma = $("#nivel_idioma").val();
+	    
+	    		$.post("agregarIdioma", {idioma : idioma, nivel_idioma : nivel_idioma}, function(data){
+
+	    			$("#cajas_idioma").html(data);
+
+	    			$("#idioma").val("Idiomas");
+	    			$("#nivel_idioma").val("Nivel");
+	    			
+	    		});
+
+	    	});
+
+	    	//Agregando un conocimiento informatico
+			$("#agregarConocimientoInformatico").click(function(){
+
+				var conocimiento_informatico = $("#conocimiento_informatico").val();
+	    
+	    		$.post("registrarConocimientoInformatico", {conocimiento_informatico : conocimiento_informatico}, function(data){
+
+	    			$("#cajas_conocimiento_informatico").html(data);
+
+	    			$("#conocimiento_informatico").val("Conocimiento Informático");
+	    		});
+	    	});
+
+	    });
+
+	</script>
+
+	<style type="text/css">
+
+		table td{
+
+			padding: 6px;
+			width: 250px;
+		}
+
+		#paso1{
+
+			color:gray;
+			height:60px; 
+			background-color: #dddddd;
+			border-style: solid;
+			border-width: 1px;
+			border-color: white;
+
+		}
+
+		#paso2{
+
+			color:white;
+			height:60px; 
+			background-color: skyblue;
+			border-style: solid;
+			border-width: 1px;
+			border-color: white;
+		
+		}
+
+
+		#paso3{
+			color:gray;
+			height:60px; 
+			background-color: #dddddd;
+			border-style: solid;
+			border-width: 1px;
+			border-color: white;
+		}
+
+		h4{
+			font-size: 14pt;
+		}
+
+	</style>
+	<?php if(Session::has("msj")): ?>
+     <div class="alert alert-warning" role="alert" style="margin-top:10px; width: 100%;">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <strong><?php echo Session::get("msj"); ?></strong>
+     </div>
+   <?php endif; ?>
+	<b style="font-size:13pt;">Paso 2: Registra tu curriculum para que seas visible ante miles de empresas</b>
+	<br>
+	<br>
+	<form action="registrarDataPersonal" method="post" enctype="multipart/form-data">
+            	
+	                <center>
+
+	                	<div class="col-lg-10 col-lg-offset-1">
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Datos Personales</h4>
+	                        	</div>
+	                            <div class="panel-body">
+
+	                            	<table>
+
+	                            		<tr>
+	                            			<th>Identificación:</th>
+	                            			<td><select class="form-control" name="tipo_identificacion" id="tipo_identificacion">
+								                    <option value="" selected="selected">Selecciona</option>
+								                    <option value="DUI">DUI</option>
+								                    <option value="Pasaporte">Pasaporte</option>
+								                    <option value="NIT">NIT</option>
+								                </select></td>
+								            <td colspan="2">
+						                		<input type="text" class="form-control" name="numero_identificacion" placeholder="Número identificación" required>
+								            </td>
+
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Fecha de Nacimiento:</th>
+	                            			<td><select class="form-control" name="dia_nacimiento" id="sel1">
+	                            					<option selected="selected">Día</option>
+						                            <?php
+						                            	for($i=1;$i<=31;$i++){
+						                            		echo "<option value=".$i.">".$i."</option>";
+						                            	}
+						                            ?>
+					                        </select></td>
+					                        <td><select class="form-control" name="mes_nacimiento" id="sel1">
+	                            					<option selected="selected">Mes</option>
+	                            					<option value="Enero">Enero</option>
+	                            					<option value="Febrero">Febrero</option>
+	                            					<option value="Marzo">Marzo</option>
+	                            					<option value="Abril">Abril</option>
+	                            					<option value="Mayo">Mayo</option>
+	                            					<option value="Junio">Junio</option>
+	                            					<option value="Julio">Julio</option>
+	                            					<option value="Agosto">Agosto</option>
+	                            					<option value="Septiembre">Septiembre</option>
+	                            					<option value="Octubre">Octubre</option>
+	                            					<option value="Noviembre">Noviembre</option>
+	                            					<option value="Diciembre">Diciembre</option>
+					                        	</select></td>
+					                        <td><select class="form-control" name="año_nacimiento" id="sel1">
+	                            					<option selected="selected">Año</option>
+						                            <?php
+						                            	for($i=2016;$i>=1920;$i--){
+						                            		echo "<option value=".$i.">".$i."</option>";
+						                            	}
+						                            ?>
+					                        </select></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Estado civil:</th>
+	                            			<td colspan="2"><select class="form-control" name="estado_civil" id="sel1">
+						                             <option value="Soltero(a)">Soltero(a)</option>
+						                             <option value="Casado(a)">Casado(a)</option>
+						                             <option value="Viudo(a)">Viudo(a)</option>
+						                             <option value="Separado(a)/Divorciado(a)">Separado(a)/Divorciado(a)</option>
+						                             <option value="Unión libre">Unión libre</option>
+					                        	</select></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Teléfono:</th>
+	                            			<td><select class="form-control" name="tipo_telefono" id="sel1">
+						                             <option value="">Selecciona</option>
+						                             <option value="Celular">Celular</option>
+						                             <option value="Fijo">Fijo</option>
+						                             <option value="Oficina">Oficina</option>
+					                        	</select></td>
+	                            			<td colspan="2"><input type="text" class="form-control" name="telefono" placeholder="Teléfono"></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>País:</th>
+	                            			<td colspan="3"><input type="text" class="form-control" name="pais" placeholder="País"></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Distrito/Provincia:</th>
+	                            			<td colspan="2"><select class="form-control" name="distrito_provincia" id="distrito_provincia">
+										                        <option value="" selected="selected">Selecciona un distrito</option>
+										                        <?php foreach($distritos as $distrito): ?>                    
+										                          <option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+										                        <?php endforeach; ?>                 
+										                      </select>
+										    </td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Ciudad:</th>
+	                            			<td colspan="2"><select class="form-control" name="ciudad" id="ciudad">
+	                            								<option>Ciudades</option>
+	                            							</select>
+	                            							
+	                            			</td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Código postal:</th>
+	                            			<td><input type="text" class="form-control" name="codigo_postal" placeholder="Código Postal"></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Dirección:</th>
+	                            			<td colspan="3"><input type="text" class="form-control" name="direccion" placeholder="Dirección"></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Nacionalidad:</th>
+	                            			<td colspan="3"><input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad"></td>
+	                            		</tr>
+	                            	</table>
+	                            	<br>
+						      		<b>Licencia de conducir:</b><br>
+	                            	<div class="col-lg-offset-3">
+	                            	
+						                <table>
+						                    <tr>
+						                        <td>Licencia Particular</td>
+						                        <td><input type="checkbox" name="licencia[]" value="Licencia Particular"></td>
+						                    </tr>
+						                    <tr>
+						                        <td>Licencia Liviana</td>
+						                        <td><input type="checkbox" name="licencia[]" value="Licencia Liviana"></td>
+						                    </tr>
+						                    <tr>
+						                        <td>Licencia Pesada</td>
+						                        <td><input type="checkbox" name="licencia[]" value="Licencia Pesada"></td>
+						                    </tr>
+						                    <tr>
+						                        <td>Licencia Motocicleta</td>
+						                        <td><input type="checkbox" name="licencia[]" value="Licencia Motocicleta"></td>
+						                    </tr>
+						                </table>
+						               	<br>
+	                            	</div>
+						           
+                					<b>Dispone de vehículo propio:</b><br><br> <div class="form-group">
+									                                <select class="form-control" name="vehiculo_propio" id="sel1" style="width:50%;">
+									                                    <option value="Si">Si</option>
+									                                    <option value="No">No</option>
+									                                </select>
+									                            </div>           
+	                            </div>
+	                        </div>
+
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Perfil profesional</h4>
+	                        	</div>
+	                            <div class="panel-body">
+	                            	<b>Cargo o título breve del currículum:</b><input type="text" class="form-control" name="titulo_profesional" placeholder="Ej. Analista y programdor web">
+                					<br>
+                					<b>Descripción breve de tu perfil profesional:</b><textarea rows="5" class="form-control" name="descripcion_profesional" placeholder="Ej. Amplia experiencia en el area de progrmación (Enfasis en manejo de lenguajes, aplicación y uso de frameworks, uso de estandares como mvc) Analisis de proyectos para una formulacion de propuesta al desarrollo de una solución viable a la problemática o necesidad del cliente, Desarrollo optimo y vanguardista."></textarea>
+                				</div>
+                			</div>
+
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Experiencias profesionales</h4>
+	                        	</div>
+	                            <div class="panel-body">
+	                            	<input type="checkbox">No tengo ninguna experiencia<br>
+                					<a href="#" id="ocultar-cajita" data-toggle="modal" data-target="#expLaboralModal"><b><h6 style="font-size:12pt;">Agregar Experiencia Laboral</h6><b></i></a>
+	                         	</div>
+
+	                         	<div id="cajas_experiencia_laboral">
+	                         		
+           						</div>
+	                        </div>
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Formación</h4>
+	                        	</div>
+	                            <div class="panel-body">
+	                            	<table>
+	                            		<tr>
+	                            			<td><input type="hidden" name="id_formacion" id="id_formacion"></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Institución:</th>
+	                            			<td colspan="4"><input type="text" class="form-control" name="institucion" id="institucion" placeholder="Institución"></td>
+	                            		</tr>
+	                            		<tr>
+	                            			<th>Nivel de estudios:</th>
+	                            			<td colspan="4"><select class="form-control" name="nivel_estudios" id="nivel_estudios">
+	                            					<option selected="selected" value="Nivel de estudios">Nivel de estudios</option>
+	                            					<option value="Educación Básica Primaria">Educación Básica Primaria</option>
+	                            					<option value="Educación Básica Secundaria">Educación Básica Secundaria</option>
+	                            					<option value="Bachillerato / Educación Media">Bachillerato / Educación Media</option>
+	                            					<option value="Educación Técnico / Profesional">Educación Técnico / Profesional</option>
+	                            					<option value="Universidad">Universidad</option>
+	                            					<option value="Postgrado">Postgrado</option>
+					                        </select></td>
+					                    </tr>
+					                    <tr>
+					                    	<th>Área de estudio:</th>
+	                            			<td colspan="4"><input type="text" class="form-control" name="area" id="area" placeholder="Área de estudio"></td>
+					                    </tr>
+					                    <tr>
+					                    	<th>Estado:</th>
+					                    	<td colspan="2"><select class="form-control" name="estado_formacion" id="estado_formacion">
+								                    <option selected="selected" value="Selecciona un estado">Selecciona un estado</option>
+								                    <option value="Culminado">Culminado</option>
+								                    <option value="Cursando">Cursando</option>
+								                    <option value="Abandonado|Aplazado">Abandonado|Aplazado</option>
+								            </select></td>
+					                    </tr>
+					                    <tr>
+											<th>Periodo:</th>
+						          			<td><select class="form-control" name="mes_formacion_inicio" id="mes_formacion_inicio">
+							                        <option selected="selected" value="Mes">Mes</option>
+							                        <option value="Enero">Enero</option>
+							                        <option value="Febrero">Febrero</option>
+							                        <option value="Marzo">Marzo</option>
+							                        <option value="Abril">Abril</option>
+							                        <option value="Mayo">Mayo</option>
+							                        <option value="Junio">Junio</option>
+							                        <option value="Julio">Julio</option>
+							                        <option value="Agosto">Agosto</option>
+							                        <option value="Septiembre">Septiembre</option>
+							                        <option value="Octubre">Octubre</option>
+							                        <option value="Noviembre">Noviembre</option>
+							                        <option value="Diciembre">Diciembre</option>
+											    </select></td>
+						          			<td><select class="form-control" name="año_formacion_inicio" id="año_formacion_inicio">
+							                        <option selected="selected" value="Año">Año</option>
+												        <?php
+												         	for($i=2016;$i>=1920;$i--){
+												          		echo "<option value=".$i.">".$i."</option>";
+												         	}
+												        ?>
+											    </select></td>
+											
+						          			<td><select class="form-control" name="mes_formacion_fin" id="mes_formacion_fin">
+							                        <option selected="selected" value="Mes">Mes</option>
+							                        <option value="Enero">Enero</option>
+							                        <option value="Febrero">Febrero</option>
+							                        <option value="Marzo">Marzo</option>
+							                        <option value="Abril">Abril</option>
+							                        <option value="Mayo">Mayo</option>
+							                        <option value="Junio">Junio</option>
+							                        <option value="Julio">Julio</option>
+							                        <option value="Agosto">Agosto</option>
+							                        <option value="Septiembre">Septiembre</option>
+							                        <option value="Octubre">Octubre</option>
+							                        <option value="Noviembre">Noviembre</option>
+							                        <option value="Diciembre">Diciembre</option>
+											    </select></td>
+						          			<td><select class="form-control" name="año_formacion_fin" id="año_formacion_fin">
+							                        <option selected="selected" value="Año">Año</option>
+												        <?php
+												         	for($i=2016;$i>=1920;$i--){
+												          		echo "<option value=".$i.">".$i."</option>";
+												         	}
+												        ?>
+											</select></td>
+					                    </tr>
+					                </table>
+					                <br>
+            						<a id="agregarFormacion" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a>
+            						<a id="modificarFormacion" class="btn btn-primary" style="display:none;background-color:#FFA500;border-color:#FFA500;">Modificar</a>
+	                         		
+	                         	</div>
+
+	                         	<div id="cajas_formacion">
+	                         		
+           						</div>
+	                        </div>
+
+
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Idiomas</h4>
+	                        	</div>
+	                            <div class="panel-body">
+	                            	<table>
+	                            		<tr>
+	                            			<th>Idiomas:</th>
+	                            			<td><select class="form-control" name="idioma" id="idioma">
+	                            					<option selected="selected" value="Idiomas">Idiomas</option>
+	                            					<option value="Español">Español</option>
+	                            					<option value="Inglés">Ingles</option>
+	                            					<option value="Frances">Frances</option>
+	                            					<option value="Portugués">Portugués</option>
+
+					                        </select></td>
+					                        <th>Nivel:</th>
+					                    	<td colspan="2"><select class="form-control" name="nivel_idioma" id="nivel_idioma">
+								                    <option selected="selected" value="Nivel">Nivel</option>
+								                    <option value="Múy Básico">Múy Básico</option>
+								                    <option value="Básico">Básico</option>
+								                    <option value="Intermedio">Intermedio</option>
+								                    <option value="Avanzado">Avanzado</option>
+								                    <option value="Nativo">Nativo</option>
+								            </select></td>
+					                    </tr>
+					                </table>
+					                <br>
+            						<a id="agregarIdioma" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a>
+					            </div> 
+					            <div id="cajas_idioma">
+	                         		
+           						</div>
+           						<br>
+	                        </div>
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Conocimientos Informáticos</h4>
+	                        	</div>
+	                            <div class="panel-body">
+	                            	<table>
+	                            		<tr>
+	                            			<th>Programas informáticos:</th>
+	                            			<td><select class="form-control" name="conocimiento_informatico" id="conocimiento_informatico">
+	                            					<option selected="selected" value="Conocimiento Informático">Conocimiento Informático</option>
+	                            					<option value="LibreOffice">LibreOffice</option>
+	                            					<option value="Microsoft Access">Microsoft Access</option>
+	                            					<option value="Microsoft Excel">Microsoft Excel</option>
+	                            					<option value="Microsoft Outlook">Microsoft Outlook</option>
+	                            					<option value="Microsoft PowerPoint">Microsoft PowerPoint</option>
+	                            					<option value="Microsoft Word">Microsoft Word</option>
+	                            					<option value="Open Office">Open Office</option>
+	                            					<option value="StarOffice">StarOffice</option>
+	                            					<option value="Pages">Pages</option>
+	                            					<option value="Numbers">Numbers</option>
+	                            					<option value="Keynote">Keynote</option>
+					                        </select></td>
+					                    </tr>
+					                </table>
+					                <br>
+            						<a id="agregarConocimientoInformatico" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a>
+					            </div> 
+					            <div id="cajas_conocimiento_informatico">
+	                         		
+           						</div>
+           						<br>
+           						<button type="submit" id="siguiente" class="btn btn-primary" style="background-color:#2C3E50;border-color:#2C3E50;font-size:16pt;padding:10px;">Siguiente <li class="glyphicon glyphicon-arrow-right"></li></button>
+	                        	<br>
+	                        	<br>
+	                        </div>
+
+            				
+            				<br>
+            				<br>
+            				
+	                    </div>
+	                </center>
+            	</div>
+            </form>
+        </div>
+	</section>
+
+
+	<!-- Inicio del Modal -->
+  <div class="modal fade" id="expLaboralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Experiencia profesional</h4>
+        </div>
+        <br>
+
+        <form class="form-horizontal" method="POST">
+          <div class="modal-body">
+
+          	<table>
+          		<tr>
+          			<td>Empresa:</td>
+          			<td colspan="4"><input type="text" name="empresa" id="empresa" class="form-control"></td>
+          		</tr>
+          		<tr>
+          			<td>Distrito:</td>
+          			<td colspan="2"><select class="form-control" name="departamento" id="departamento">
+						<option value="Selecciona un distrito" selected="selected">Selecciona un distrito</option>
+						<?php foreach($distritos as $distrito): ?>                    
+							<option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+						<?php endforeach; ?>                 
+					</select></td>
+          		</tr>
+          		<tr>
+          			<td>Sector de empresa:</td>
+          			<td colspan="2"><input type="text" name="sector_empresa" id="sector_empresa" class="form-control"></td>
+          		</tr>
+          		<tr>
+          			<td>Cargo:</td>
+          			<td colspan="4"><input type="text" name="cargo" id="cargo" class="form-control"></td>
+          		</tr>
+          		<tr>
+          			<td>Área:</td>
+          			<td colspan="3"><select class="form-control" name="area_empresa" id="area_empresa">
+                        <option value="" selected="selected">Selecciona una categoría</option>
+                        <?php foreach($categorias as $categoria): ?>                    
+                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+                        <?php endforeach; ?>                 
+                    </select></td>
+          		</tr>
+          		<tr>
+          			<td>Periodo:</td>
+          			<td><select class="form-control" name="mes_experiencia_inicio" id="mes_experiencia_inicio">
+	                        <option selected="selected" value="Mes">Mes</option>
+	                        <option value="Enero">Enero</option>
+	                        <option value="Febrero">Febrero</option>
+	                        <option value="Marzo">Marzo</option>
+	                        <option value="Abril">Abril</option>
+	                        <option value="Mayo">Mayo</option>
+	                        <option value="Junio">Junio</option>
+	                        <option value="Julio">Julio</option>
+	                        <option value="Agosto">Agosto</option>
+	                        <option value="Septiembre">Septiembre</option>
+	                        <option value="Octubre">Octubre</option>
+	                        <option value="Noviembre">Noviembre</option>
+	                        <option value="Diciembre">Diciembre</option>
+					    </select></td>
+          			<td><select class="form-control" name="año_experiencia_inicio" id="año_experiencia_inicio">
+	                        <option selected="selected" value="Año">Año</option>
+						        <?php
+						         	for($i=2016;$i>=1920;$i--){
+						          		echo "<option value=".$i.">".$i."</option>";
+						         	}
+						        ?>
+					    </select></td>
+					
+          			<td><select class="form-control" name="mes_experiencia_fin" id="mes_experiencia_fin">
+	                        <option selected="selected" value="Mes">Mes</option>
+	                        <option value="Enero">Enero</option>
+	                        <option value="Febrero">Febrero</option>
+	                        <option value="Marzo">Marzo</option>
+	                        <option value="Abril">Abril</option>
+	                        <option value="Mayo">Mayo</option>
+	                        <option value="Junio">Junio</option>
+	                        <option value="Julio">Julio</option>
+	                        <option value="Agosto">Agosto</option>
+	                        <option value="Septiembre">Septiembre</option>
+	                        <option value="Octubre">Octubre</option>
+	                        <option value="Noviembre">Noviembre</option>
+	                        <option value="Diciembre">Diciembre</option>
+					    </select></td>
+          			<td><select class="form-control" name="año_experiencia_fin" id="año_experiencia_fin">
+	                        <option selected="selected" value="Año">Año</option>
+						        <?php
+						         	for($i=2016;$i>=1920;$i--){
+						          		echo "<option value=".$i.">".$i."</option>";
+						         	}
+						        ?>
+					    </select></td>
+          		</tr>
+          		<tr>
+          			<td></td>
+          			<td>Actualmente <input type="checkbox" name="actualmente" id="actualmente"></td>
+          		</tr>
+          		<tr>
+          			<td>Funciones y logros del cargo:</td>
+          			<td colspan="4"><textarea rows="4" name="funciones_logros" id="funciones_logros" class="form-control" ></textarea></td>
+          		</tr>
+
+          	</table>
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <a id="agregarExperienciaLaboral" data-dismiss="modal" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Ingresar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   <!-- Fin del Modal -->
+
+
+
+
+   <!-- Inicio del Modal Modificar -->
+  <div class="modal fade" id="expLaboralModifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Experiencia profesional</h4>
+        </div>
+        <br>
+
+        <form class="form-horizontal" method="POST">
+          <div class="modal-body">
+
+          	<table>
+          		<input type="hidden" id="id_expe_lab" name="id_expe_lab">
+          		<tr>
+          			<td>Empresa:</td>
+          			<td colspan="4"><input type="text" name="empresaM" id="empresaM" class="form-control"></td>
+          		</tr>
+          		<tr>
+          			<td>Distrito:</td>
+          			<td colspan="2"><select class="form-control" name="departamentoM" id="departamentoM">
+						<option value="" selected="selected">Selecciona un distrito</option>
+						<?php foreach($distritos as $distrito): ?>                    
+							<option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+						<?php endforeach; ?>                 
+					</select></td>
+          		</tr>
+          		<tr>
+          			<td>Sector de empresa:</td>
+          			<td colspan="2"><input type="text" name="sector_empresaM" id="sector_empresaM" class="form-control"></td>
+          		</tr>
+          		<tr>
+          			<td>Cargo:</td>
+          			<td colspan="4"><input type="text" name="cargoM" id="cargoM" class="form-control"></td>
+          		</tr>
+          		<tr>
+          			<td>Área:</td>
+          			<td colspan="3"><select class="form-control" name="area_empresaM" id="area_empresaM">
+                        <option value="" selected="selected">Selecciona una categoría</option>
+                        <?php foreach($categorias as $categoria): ?>                    
+                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+                        <?php endforeach; ?>                 
+                    </select></td>
+          		</tr>
+          		<tr>
+          			<td>Periodo:</td>
+          			<td><select class="form-control" name="mes_experiencia_inicioM" id="mes_experiencia_inicioM">
+	                        <option selected="selected" value="Mes">Mes</option>
+	                        <option value="Enero">Enero</option>
+	                        <option value="Febrero">Febrero</option>
+	                        <option value="Marzo">Marzo</option>
+	                        <option value="Abril">Abril</option>
+	                        <option value="Mayo">Mayo</option>
+	                        <option value="Junio">Junio</option>
+	                        <option value="Julio">Julio</option>
+	                        <option value="Agosto">Agosto</option>
+	                        <option value="Septiembre">Septiembre</option>
+	                        <option value="Octubre">Octubre</option>
+	                        <option value="Noviembre">Noviembre</option>
+	                        <option value="Diciembre">Diciembre</option>
+					    </select></td>
+          			<td><select class="form-control" name="año_experiencia_inicioM" id="año_experiencia_inicioM">
+	                        <option selected="selected" value="Año">Año</option>
+						        <?php
+						         	for($i=2016;$i>=1920;$i--){
+						          		echo "<option value=".$i.">".$i."</option>";
+						         	}
+						        ?>
+					    </select></td>
+					
+          			<td><select class="form-control" name="mes_experiencia_finM" id="mes_experiencia_finM">
+	                        <option selected="selected" value="Mes">Mes</option>
+	                        <option value="Enero">Enero</option>
+	                        <option value="Febrero">Febrero</option>
+	                        <option value="Marzo">Marzo</option>
+	                        <option value="Abril">Abril</option>
+	                        <option value="Mayo">Mayo</option>
+	                        <option value="Junio">Junio</option>
+	                        <option value="Julio">Julio</option>
+	                        <option value="Agosto">Agosto</option>
+	                        <option value="Septiembre">Septiembre</option>
+	                        <option value="Octubre">Octubre</option>
+	                        <option value="Noviembre">Noviembre</option>
+	                        <option value="Diciembre">Diciembre</option>
+					    </select></td>
+          			<td><select class="form-control" name="año_experiencia_finM" id="año_experiencia_finM">
+	                        <option selected="selected" value="Año">Año</option>
+						        <?php
+						         	for($i=2016;$i>=1920;$i--){
+						          		echo "<option value=".$i.">".$i."</option>";
+						         	}
+						        ?>
+					    </select></td>
+          		</tr>
+          		<tr>
+          			<td></td>
+          			<td>Actualmente <input type="checkbox" name="actualmenteM" id="actualmenteM"></td>
+          		</tr>
+          		<tr>
+          			<td>Funciones y logros del cargo:</td>
+          			<td colspan="4"><textarea rows="4" name="funciones_logrosM" id="funciones_logrosM" class="form-control" ></textarea></td>
+          		</tr>
+
+          	</table>
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <a id="modificarExperienciaLaboral" data-dismiss="modal" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Modificar</a>
+          </div>
+        </form>
+     
+   <!-- Fin del Modal -->
+
+	<?php $__env->startSection('footer'); ?>
+		@parent
+	<?php $__env->stopSection(); ?>
+	
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('bolsa-trabajo.candidato.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

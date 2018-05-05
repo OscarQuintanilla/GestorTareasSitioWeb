@@ -1,0 +1,33 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-6 col-lg-offset-4 text-center">
+
+<center>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Inscripción</a></li>
+  <li role="presentation"><a href="goleadores">Goleadores</a></li>
+  <li role="presentation"><a href="estadisticas">Estadisticas</a></li>
+  <li role="presentation"><a href="resultados">Resultados</a></li>
+  <li role="presentation"><a href="calendario">Calendario</a></li>
+</ul>
+</div>
+</br>
+</br>
+</br>
+<center><h1>Así quedaron los 4tos de final del torneo sabatino</h1></center>
+<img src="img/galeria/cuartos.jpg" class="img-responsive img-centered" alt="">
+</center>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

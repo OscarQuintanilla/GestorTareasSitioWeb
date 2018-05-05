@@ -1,0 +1,93 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#sucursal").change(function (){
+      $("#sucursal option:selected").each(function (){
+        var id_sucursal = $(this).val();
+        $.post("cargar-usuarios", {id : id_sucursal}, function(data){
+          $("#tipo").html(data);
+        });
+      });
+    });
+  });
+</script>
+
+        <?php if(Session::has('pass')): ?>
+                <div class="alert alert-danger" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('pass'); ?></strong>
+                </div>
+        <?php endif; ?>
+        <?php if(Session::has('repetido')): ?>
+                <div class="alert alert-info" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('repetido'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+ <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Usuarios</h4>
+              <a href="usuarios" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Usuarios</a>
+              <a href="crear-usuario" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Usuario</a>   
+            </div></center><br/><!-- /showback -->
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Usuarios</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'guardar-usuario')); ?>
+
+
+        Username<?php echo Form::text('user',''); ?>
+
+
+        Contraseña<?php echo Form::password('pass',''); ?>
+
+
+        Confirmar contraseña<?php echo Form::password('passconfirm',''); ?><br/>
+
+        <table>
+              <thead>
+                      <tr>
+                         <td style="padding-right:5px;">Seleccionar sucursal<br/> <select name="sucursal" id="sucursal">  
+                                <option value="nada">-- --</option>                      
+                                <?php foreach($sucursales as $sucursal): ?>
+                                     <option value="<?php echo $sucursal->id; ?>"><?php echo $sucursal->nombre; ?></option>
+                                <?php endforeach; ?>
+                            </select></td>
+
+                            <td style="padding-right:15px;">Tipo Usuario <br/><select name="tipo" id="tipo"></select></td>
+
+                        </tr>
+              </thead>
+        </table>
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+      <?php echo Form::close(); ?>
+
+      
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla1', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

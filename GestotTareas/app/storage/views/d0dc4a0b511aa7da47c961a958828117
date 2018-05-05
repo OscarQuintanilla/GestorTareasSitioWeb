@@ -1,0 +1,88 @@
+<?php $__env->startSection('content'); ?>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#inicio").addClass("active");
+    });
+  </script>
+
+  <style media="screen">
+    .servicio{
+      background-color: rgb(245, 245, 245);
+      width: 300px;
+      height: 180px;
+      position: relative;
+      text-align: center;
+    }
+    .titlec{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      background-color: #cc181e;
+      color: white;
+    }
+    .contentc{
+      position: absolute;
+      top: 50px;
+      left: 0px;
+      right: 0px;
+    }
+  </style>
+
+  <div class="page-header">
+    <h3>
+      <span class="glyphicon glyphicon-home" aria-hidden="true" style="margin-right:10px;"></span>
+      Inicio
+    </h3>
+  </div>
+
+  
+      
+  <div class="row" style="padding:10px;">
+    <div class="col-lg-4 text-center" style="border: 1px solid #eee;padding:10px;">
+      <div class="page-header">
+        <h3 style="color:#428bca;"><?php echo Session::get("nombreEm"); ?></h3>
+      </div>
+      <img src="http://theoneflooring.com/profesionallnew/public/<?php echo Session::get("logoEm"); ?>" alt="" width="180px;" height="180px;" style="border:2px silver solid">
+      <hr>
+      <a href="actualizar" class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="margin-right:10px;"></span> Actualizar informacion</a>
+    </div>
+    <div class="col-lg-8" style="border: 1px solid #eee;">
+      <div class="page-header">
+        <h3 style="color:#428bca;">Optimiza tus procesos de selecci&oacute;n con nuestros servicios</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-1 col-md-5">
+          <div class="servicio">
+            <div class="titlec">
+              <h4>Servicio avanzado 6 meses</h4>
+            </div>
+            <div class="contentc">
+              <h4 style="color:gray;">US $ 35 / mes</h4>
+              <button class="btn btn-primary btn-lg" style="margin-top: 15px;width: 180px; background-color:#cc181e; border-color:#cc181e;">Contratar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="servicio">
+            <div class="titlec" style="background-color:#2c3e50;">
+              <h4>Servicio avanzado 3 meses</h4>
+            </div>
+            <div class="contentc">
+              <h4 style="color:gray;">US $ 37 / mes</h4>
+              <button class="btn btn-primary btn-lg" style="margin-top: 15px;width: 180px; background-color:#cc181e; border-color:#cc181e;">Contratar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="margin-top:10px; padding: 17px;">
+          <p style="text-align: justify;">
+            <strong>Ventajas del servicio avanzado:</strong> Publicacion ilimitadas de ofertas, logo de empresa en oferta, actualizar ofertas cada 3 dias, empresas y ofertas destacadas, curriculums ilimitados en base de datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('bolsa-trabajo/empresa.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

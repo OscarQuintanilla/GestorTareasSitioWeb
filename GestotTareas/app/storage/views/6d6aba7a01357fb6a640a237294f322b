@@ -1,0 +1,254 @@
+
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#inicio").addClass("active");
+  });
+</script>
+
+<style media="screen">
+  .servicio{
+    background-color: rgb(245, 245, 245);
+    width: 300px;
+    height: 180px;
+    position: relative;
+    text-align: center;
+  }
+  .titlec{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #cc181e;
+    color: white;
+  }
+  .contentc{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+  }
+
+  #caja-1{
+
+    width: 100%;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+
+  }
+
+  #cabeza{
+
+    background-color: #0277bd;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+
+  }
+
+  #cuerpo{
+
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #0277bd;
+
+  }
+
+
+  #izquierda{
+    display: inline-block;
+    width: 30%;
+    border-right: 1px dashed #0277bd;
+    margin-right: 20px;
+  }
+
+  #derecha{
+    display: inline-block;
+    width: 60%;
+
+  }
+
+  #img-candidato{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 128px;
+    width: 128px;
+  }
+
+  @media (max-width: 991px){
+    #img-candidato{
+      
+      height: 68px;
+      width: 68px;
+    }
+
+
+  }
+
+   @media (max-width: 767px){
+    #img-candidato{
+      
+      height: 84px;
+      width: 84px;
+    }
+
+
+  }
+
+  @media (max-width: 417px){
+    #img-candidato{
+      
+      height: 68px;
+      width: 68px;
+    }
+
+
+  }
+  
+  .lbl-oferta{
+    margin-top: 20px;
+    font-size: 16px;
+    color: #757575;
+  }
+
+  #descripcion-oferta{
+    font-size: 17.5px;
+  }
+
+  #h2-titulo{
+    color: #0277BD;
+    font-size: 22px;
+    margin-top: -10px;
+  }
+
+  #nombre-empresa{
+
+    font-size: 15px;
+  }
+
+
+  #contenedor-info{
+
+    height: 350px;
+    background-color: white;
+    border: 3px solid white;
+    margin-top: 35px;
+    width: 105%;
+    padding: 25px;
+
+  }
+
+  #panel-contenedor{
+
+    border: 1px solid #BDBDBD;
+    height: 100px;
+    padding: 25px;
+    margin: 0 auto;
+    height: 300px;
+  }
+
+  .box:hover{
+    background: rgb(245, 245, 245); /* make this whatever you want */
+    }
+</style>
+
+</script>
+
+                
+
+<br><br>
+ <form action="modificar-oferta" id="allforms" method="post">
+            
+                <!--  PANEL DE VISIBILIDAD -->
+                <div class="panel panel-default" style="opacity: 0.89;">
+                  <h3 class="text-center"><b>Visibilidad de la oferta</b></h3>
+                  <div class="panel-footer">
+                    <div class="row">
+
+                    <!-- inicio -->
+                        <div class="col-lg-3 col-md-12 col-sm-6 col-xs-12">
+                          <a href="#" id="id" data-toggle="modal" data-target="#expLaboralModal"  class="box">
+                         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                          <div class="col-lg-4 col-md-5 col-sm-3 col-xs-3">
+                            <img src="http://theoneflooring.com/profesionall/public/img/perfil.png"  class="img-circle" id="img-candidato">
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-9 col-xs-8">
+                            <label class="lbl-oferta">apellido <br class="hidden-xs">nombre</label>
+                            <h4 class="hidden-xs hidden-md hidden-sm"><small> 19 años</small></h4>
+                            <h4 class="hidden-lg hidden-md hidden-sm">Ingeniero en sistemas</h4>
+                          </div>
+                            <div class="hidden-lg hidden-md hidden-sm col-xs-1">
+                            <br>
+                            <br>
+                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-5 col-sm-12 hidden-xs">
+                          <form action="ver_detalle_oferta" method="POST">
+                            <h3>Ingeniero en sistemas <small> (Tecnico PILET)</small></h3>
+                            <h4>10 años de experiencia <small> nivel de estudios</small></h4>
+                            <h4>ciudad <small> municipio</small></h4>
+                            
+                          
+                          </form>
+                        </div>
+                        <div class="col-lg-2 col-md-2 hidden-xs  hidden-sm">
+                           <h4><small>Perfil Buscado</small></h4>
+                            <div class="c100 p90 small green">
+                                <span>90% </span>
+                                <div class="slice">
+                                    <div class="bar "></div>
+                                    <div class="fill"></div>
+                                </div>
+                              </div>
+                          </div>
+                           </a>
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <hr style="border-color: rgba(0,0,0,0.1);">
+                          </div>
+                      </div>
+                    <!-- fin caja 1 -->
+
+                      <div class="col-lg-9 col-md-12 col-sm-6 col-xs-12">
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width: 35%">
+                              <span >Competencia 1</span>
+                            </div>
+                            <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                              <span >Competencia 2</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger" style="width: 10%">
+                              <span >Competencia 3</span>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 35%">
+                              <span >Competencia 3</span>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-9 col-md-12 col-sm-6 col-xs-12">
+                          <div class="bs-callout bs-callout-danger" id="callout-navbar-js"> <h4>Requires JavaScript plugin</h4> <p>If JavaScript is disabled and the viewport is narrow enough that the navbar collapses, it will be impossible to expand the navbar and view the content within the <code>.navbar-collapse</code>.</p> <p>The responsive navbar requires the <a href="../javascript/#collapse">collapse plugin</a> to be included in your version of Bootstrap.</p> </div>
+                      </div>
+
+                  </div>
+
+                </div>
+                </div>
+
+                <!-- Termina Panel de  visibilidad de la oferta -->
+
+               
+               
+    
+   
+            </form>
+
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('bolsa-trabajo/empresa.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

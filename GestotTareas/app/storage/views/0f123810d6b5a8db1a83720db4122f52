@@ -1,0 +1,92 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+<div class="col-lg-6 col-lg-offset-4 text-center">
+
+<center>
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="torneoForm">Atrás</a></li>
+  <li role="presentation" class="active"><a href="#">Inscripción</a></li>
+  <li role="presentation"><a href="goleadores">Goleadores</a></li>
+  <li role="presentation"><a href="estadisticas">Estadisticas</a></li>
+  <li role="presentation"><a href="calendario">Calendario</a></li>
+</ul>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+
+<div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Torneo Sabatino</div>
+                        <div class="panel-body">
+                        
+                        	<table class="table no-margn">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Equipo</th>
+                                  <th>Goles</th>
+                                  <th>Equipo</th>
+                                  <th>Goles</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="active">
+                                  <td>1</td>
+                                  <td>Galaxy F.C</td>
+                                  <td>2</td>
+                                  <td>NY City</td>
+                                  <td>4</td>
+                                </tr>
+                                <tr class="success">
+                                  <td>2</td>
+                                  <td>F.C Barcelona</td>
+                                  <td>1</td>
+                                  <td>F.C Porto</td>
+                                  <td>0</td>
+                                </tr>
+                                <tr class="info">
+                                  <td>3</td>
+                                  <td>Real Madrid</td>
+                                  <td>2</td>
+                                  <td>Deportivo</td>
+                                  <td>2</td>
+                                </tr>
+                                <tr class="warning">
+                                  <td>4</td>
+                                  <td>Atlético de Madrid</td>
+                                  <td>3</td>
+                                  <td>F.C Juventus</td>
+                                  <td>2</td>
+                                </tr>
+                                <tr class="danger">
+                                  <td>5</td>
+                                  <td>Valencia</td>
+                                  <td>1</td>
+                                  <td>Sevilla</td>
+                                  <td>2</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        
+                        </div>
+                    </div>
+                </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

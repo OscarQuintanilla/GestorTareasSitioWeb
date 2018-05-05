@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Profesional</title>
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/carousel.css">
+  <style media="screen">
+
+  body{
+     overflow-x: hidden;
+  }
+
+  .thumbnail {
+    position:relative;
+    overflow:hidden;
+    width: 260.075px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .thumbnail img{
+    width: 260.075px;
+    height: 190px;
+  }
+
+  .caption {
+      position:absolute;
+      top:-100%;
+      right:0;
+      background:rgba(66, 139, 202, 0.75);
+      width:100%;
+      height:100%;
+      padding:2%;
+      text-align:center;
+      color:#fff !important;
+      z-index:2;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+  }
+  .thumbnail:hover .caption {
+      top:0%;
+  }
+  .pro{
+    position: relative;
+    margin: 15px auto;
+    box-shadow: 2px 2px 1px silver;
+    width: 220px;
+    height: 350px;
+  }
+  .pro .picturepro{
+    background-color: skyblue;
+    width: 220px;
+    height: 130px;
+  }
+  .pro .picturepro img{
+    width: 220px;
+    height: 130px;
+    opacity: 0.65;
+  }
+  .pro .avatar{
+    position: absolute;
+    border: 2px solid white;
+    width: 110px;
+    height: 110px;
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+  }
+  .pro .avatar img{
+    border: 1px solid white;
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+
+  }
+  .dataP{
+    position: absolute;
+    top: 160px;
+    text-align: center;
+    width: 220px;
+    height: 190px;
+  }
+  .dataP button{
+    border-radius: 0px;
+    width: 220px;
+    height: 55px;
+  }
+  .footer-options{
+    list-style: none;
+    overflow: hidden;
+  }
+  .footer-options li{
+    float: left;
+    padding: 10px;
+  }
+  .social tr>td>a>img:hover{
+    opacity: 0.5;
+  }
+
+  #bannerEquipo{
+    background-image: url("http://www.sv.computrabajo.com/c/ct/img/bg_home.jpg");
+    height: 225px;
+    margin-top: 150px;
+    background-repeat: no-repeat;
+  }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Inicio del Espacio publicitario Vertical -->
+  <div class="col-lg-offset-0 col-lg-2 text-center" style="height:485px; border-style:solid; position:fixed; margin-top:-150px; border-width:1px; border-color:silver;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h2>Espacio publicitario</h2>
+  </div>
+  <!-- Fin del Espacio publicitario Vertical -->
+
+
+  <!-- Fin del Espacio publicitario Horizontal -->
+   <div class="col-lg-offset-2 col-lg-10 text-center" style="height:100px; border-style:solid; margin-top:-150px; border-width:1px; border-color:silver;">
+      <h2>Espacio publicitario</h2>
+  </div>
+  <!-- Fin del Espacio publicitario Horizontal -->
+
+
+  <!-- Inicio del Menú -->
+  <div class="navbar-wrapper" style="margin-top:99px;">
+      <nav class="navbar navbar-inverse col-lg-offset-2 col-lg-10">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="inicio">Profesional</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="inicio">Inicio</a></li>
+              <li class="active"><a href="bolsa-trabajo">Bolsa de Trabajo</a></li>
+              <li><a href="#">Freelance</a></li>
+              <li><a href="#">Formaciones</a></li>
+            </ul>
+            <div class="col-lg-offset-3 col-lg-2">Ingresar</div>
+            <div class="col-lg-offset-4 col-lg-2">Ingresar</div>
+
+          </div>
+        </div>
+      </nav>
+  </div>
+  <!-- Fin del Menú -->
+
+
+  <!-- Inicio del banner -->
+  <div class="col-lg-offset-2 col-leg-10" id="bannerEquipo">
+
+  </div>
+  <!-- Fin del banner -->
+
+
+  <!-- Inicio del formulario de búsqueda -->
+    <div class="row text-center">
+      <div class="col-lg-offset-3 col-lg-8" style="margin-top:-170px;">
+        <form class="form-inline" style="background-color: aliceblue;padding: 35px;border-radius: 0px;border: 0.1px solid aliceblue;box-shadow: 2px 2px 2px silver; opacity: 0.9;">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+            <input type="text" class="form-control input-lg" id="cargoBusqueda" name="cargoBusqueda" placeholder="Cargo o Area profesional">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></div>
+            <select name="" id="" class="form-control input-lg">
+              <option value="">-- Selecione area de busqueda --</option>
+              <option value="">Bolsa de trabajo</option>
+              <option value="">Freelance</option>
+              <option value="">Formacion</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></div>
+            <select name="" id="" class="form-control input-lg">
+              <option value="">-- Ciudad --</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+        </form>
+      </div>
+    </div>
+    <!-- Fin del formulario de búsqueda -->
+
+
+     <!-- Inicio de estadísticas -->
+    <div class="row row col-lg-offset-2">
+      <div class="col-md-4">
+        <div class="page-header text-center">
+          <h3 style="color:#1e82c4"><span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="margin-right:7px;"></span>1,200 Ofertas de empleos</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="page-header text-center">
+          <h3 style="color:orange"><span class="glyphicon glyphicon-user" aria-hidden="true" style="margin-right:7px;"></span>676 Profesionales registrados</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="page-header text-center">
+          <h3 style="color:#353e4a"><span class="glyphicon glyphicon-book" aria-hidden="true" style="margin-right:7px;"></span>358 Cursos publicados</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Fin de estadísticas -->
+
+
+  <!-- Inicio del Contenedor Principal -->
+  <div class="container marketing col-lg-offset-2">
+    <!-- Inicio de Empresas que estan contratando -->
+    <div class="page-header text-center">
+      <h2>Empresas que están contratando </h2>
+    </div>
+    <div class="row">
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>Avanade. Ofertas <span class="badge">12</span></h4>
+                  <p>Proveedor de soluciones tecnológicas y servicios gestionados</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa2.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>MultiDemis Ofertas <span class="badge">24</span></h4>
+                  <p>Gestion de proyectos internacionales</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa3.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>Sopra. Ofertas <span class="badge">6</span></h4>
+                  <p>Empresa dedicada a la implementación de nuevas tecnologías</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa4.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>Grupo Spark. Ofertas <span class="badge">8</span></h4>
+                  <p>Expertos en la protección financiera y activos</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa5.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>Microsoft. Ofertas <span class="badge">4</span></h4>
+                  <p>Empresa desarroladora de software</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa6.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>Unisono. Ofertas <span class="badge">17</span></h4>
+                  <p>Consultoría, integración de sistemas y paquetes de software</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa7.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>GoDesarrollo. Ofertas <span class="badge">5</span></h4>
+                  <p>Líderes en gestion y atención a clientes</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa8.jpg" alt="...">
+            </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4>AOmediaDevelopers. Ofertas <span class="badge">19</span></h4>
+                  <p>Empresa encargada del desarrollo de aplicaciones móviles</p>
+                  <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+              </div>
+                <img src="http://theoneflooring.com/profesionall/public/img/empresa9.jpg" alt="...">
+            </div>
+        </div>
+    </div>
+    <!-- Fin de empresas que estan contratando -->
+
+    <br>
+    <!-- inicio profesionales -->
+    <div class="row">
+      <div class="page-header text-center">
+        <h2>Profesionales destacados </h2>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pro">
+          <div class="picturepro">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="avatar">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="dataP">
+            <div class="page-header text-center">
+              <h5 style="color:#1e82c4; font-weight: bold;">Karla Lopez</h5>
+              <small>Komlep - Partners de Nubelo / Desarrollo de Startups </small>
+            </div>
+            <button type="button" name="button" class="btn btn-info btn-md">Ver perfil</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pro">
+          <div class="picturepro">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="avatar">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="dataP">
+            <div class="page-header text-center">
+              <h5 style="color:#1e82c4; font-weight: bold;">Karla Lopez</h5>
+              <small>Komlep - Partners de Nubelo / Desarrollo de Startups </small>
+            </div>
+            <button type="button" name="button" class="btn btn-info btn-md">Ver perfil</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pro">
+          <div class="picturepro">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="avatar">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="dataP">
+            <div class="page-header text-center">
+              <h5 style="color:#1e82c4; font-weight: bold;">Karla Lopez</h5>
+              <small>Komlep - Partners de Nubelo / Desarrollo de Startups </small>
+            </div>
+            <button type="button" name="button" class="btn btn-info btn-md">Ver perfil</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pro">
+          <div class="picturepro">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="avatar">
+            <img src="http://cdn.nubelo.com/files/uploadResources/0000072394/profilePhotos/thumbnails/thumb_profile_000007239420160302223604.jpg" alt="" />
+          </div>
+          <div class="dataP">
+            <div class="page-header text-center">
+              <h5 style="color:#1e82c4; font-weight: bold;">Karla Lopez</h5>
+              <small>Komlep - Partners de Nubelo / Desarrollo de Startups </small>
+            </div>
+            <button type="button" name="button" class="btn btn-info btn-md">Ver perfil</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin profesionales -->
+    <br>
+    <!-- formacion -->
+    <div class="row">
+      <div class="page-header text-center">
+        <h2>Centros de formaci&oacute;n </h2>
+      </div>
+          <!-- Empresa -->
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <div class="thumbnail">
+                <div class="caption">
+                    <h4>Avanade. Cursos <span class="badge">12</span></h4>
+                    <p>Proveedor de soluciones tecnológicas y servicios gestionados</p>
+                    <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+                </div>
+                  <img src="http://theoneflooring.com/profesionall/public/img/empresa2.jpg" alt="...">
+              </div>
+          </div>
+
+          <!-- Empresa -->
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <div class="thumbnail">
+                <div class="caption">
+                    <h4>MultiDemis Cursos <span class="badge">24</span></h4>
+                    <p>Gestion de proyectos internacionales</p>
+                    <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+                </div>
+                  <img src="http://theoneflooring.com/profesionall/public/img/empresa3.jpg" alt="...">
+              </div>
+          </div>
+
+          <!-- Empresa -->
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <div class="thumbnail">
+                <div class="caption">
+                    <h4>Sopra. Cursos <span class="badge">6</span></h4>
+                    <p>Empresa dedicada a la implementación de nuevas tecnologías</p>
+                    <p><a href="" class="btn btn-md btn-primary">Aplicar</a>
+                </div>
+                  <img src="http://theoneflooring.com/profesionall/public/img/empresa4.jpg" alt="...">
+              </div>
+          </div>
+    </div>
+
+    <!--fin formacion -->
+    <br>
+
+    <!--Inicio de ayuda -->
+    <div class="row">
+      <div class="page-header text-center">
+        <h2>¿Como me puede ayudar Profesional?</h2>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" src="http://media.infojobs.net/appgrade/pictures/pic-value-offers.png" alt="Generic placeholder image" height="140" width="140">
+        <h2>Ofertas para ti cada dia</h2>
+        <p>Dinos el trabajo que buscas y te enviamos las mejores ofertas.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="http://media.infojobs.net/appgrade/pictures/pic-value-visibility.png" alt="Generic placeholder image" height="140" width="140">
+        <h2>Deja que te encuentren</h2>
+        <p>Regístrate, sube tu CV y hazte visible a miles de empresas.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="http://media.infojobs.net/appgrade/pictures/pic-value-hired.png" alt="Generic placeholder image" height="140" width="140">
+        <h2>Tu nuevo trabajo, aqu&iacute;</h2>
+        <p>7 de cada 10 ofertas de empleo en Internet están en Profeisionall</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <!-- Fin de ayuda -->
+
+  </div><!-- Fin del contenedor principal -->
+    <br>
+    <!-- FOOTER -->
+    <footer style="padding:40px; background-color:#e5f2f7; color:#333;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="page-header text-center">
+              <ul class="footer-options">
+                <li><a href="">Soporte</a></li>
+                <li><a href="">Equipo</a></li>
+                <li><a href="">Colaboraciones</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>
+            </div>
+            <hr style="border-color: rgba(0,0,0,0.1);">
+            </ul>
+          </div>
+
+          <div class="col-md-offset-4 col-md-4">
+            <div class="page-header text-center">
+              <h4>MANTENTE CONECTADO</h4><hr style="border-color: rgba(0,0,0,0.1);margin: 28px 0 0px;">
+            </div>
+            <table style="margin: 0px auto;" class="social">
+              <tr>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-face-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-twitter-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-gplus-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/holder.js"></script>
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <svg style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;" preserveAspectRatio="none" viewBox="0 0 500 500" height="500" width="500" xmlns="http://www.w3.org/2000/svg">
+  <defs><style type="text/css"></style></defs>
+  <text style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif" y="25" x="0">500x500</text>
+</body>
+</html>

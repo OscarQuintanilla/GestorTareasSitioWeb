@@ -1,0 +1,97 @@
+<?php
+
+	//los movimientos de abono en ese rango de fecha
+	$moviAbo = MovimientosCC::where("codigo_cliente",$codigo)->where("tipo","Abono")->whereBetween("updated_at",array($fechaI,$fechaF))->sum("monto");
+
+	//los movimientos de abono en ese rango de fecha
+	$moviCar = MovimientosCC::where("codigo_cliente",$codigo)->where("tipo","Cargo")->whereBetween("updated_at",array($fechaI,$fechaF))->sum("monto");
+
+	//cuenta por cobrar
+	$dataCC = CuentaCobrar::where("cliente",$codigo)->get();
+
+	if(count($dataCC) == 0){
+		$cuenta = 0;
+	}else{
+		foreach($dataCC as $dcc){
+			$cuenta = $dcc->monto;
+		}
+	}
+?>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+    <?php echo HTML::style('css/consignacion.css'); ?>
+
+
+<body>
+	<script type="text/javascript">
+
+        print();
+
+    </script>
+
+	<table class="tabla1">
+
+    <tr>
+
+        <td><?php echo HTML::image('img/zirconia.png'); ?></td>
+
+        <td><div id="divf">
+        		<center>Resumen de saldos por cliente</center>
+              </div>
+        </td>
+
+    </tr>
+
+     <tr>
+
+        <td></br>Fecha inicial: <?php echo $fechaI; ?></td>
+
+        <td></td>
+
+        <td>Fecha final: <?php echo $fechaF; ?></td>
+
+    </tr>
+
+     <tr>
+
+        <td></br>Fecha de emision: <?php echo date("Y")."/".date("m")."/".date("d"); ?></td>
+
+        <td></td>
+
+        <td>Hora de emision: <?php echo date("H").":".date("i").":".date("s"); ?></td>
+
+    </tr>
+
+    </table>
+
+     <table class="tabla" border=1 cellspacing=0  bordercolor="000">
+
+      <tr>
+
+        <th style="width:15%;">Codigo</th>
+
+       <th style="width:15%;">Nombre</th>
+
+       <th style="width:15%;">Cargos ($)</th>
+
+       <th style="width:15%;">Abonos ($)</th>
+
+       <th style="width:15%;">Saldo ($)</th>
+
+      </tr>
+
+      <tr>
+      	<td><?php echo $codigo; ?></td>
+      	<td><?php echo $cliente; ?></td>
+      	<td><?php echo $moviCar; ?></td>
+      	<td><?php echo $moviAbo; ?></td>
+      	<td><?php echo $cuenta; ?></td>
+      </tr>
+
+      </table>
+

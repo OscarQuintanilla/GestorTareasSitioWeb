@@ -1,0 +1,820 @@
+;
+<style type="text/css">
+
+	td{
+		padding: 3px;
+	}
+
+	.bordes{
+		border-style:solid; 
+		border-color:gray; 
+		border-width:1px;
+		border-radius:15px;	
+	}
+
+	#ubicacionNombreScort{
+		position: absolute;
+		margin-left: 2%;
+		width:100%;
+	}
+
+	#nombreScort{
+		color:white;
+		background-color:#1A1A1A;
+		opacity: 0.7;
+		padding: 5px;
+	}
+
+	#ubicacionRateScort{
+		position: absolute;
+		margin-left: 67.5%;
+		margin-top: 12%;
+		width:34%;
+	}
+
+	#rate{
+		color:white;
+		background-color:#1A1A1A;
+		opacity: 0.7;
+		padding: 10px;
+	} 
+	
+	#rate2{
+		color:white;
+		background-color:#1A1A1A;
+		opacity: 0.7;
+		padding: 10px;
+		margin-left: 1%;
+	} 
+
+
+
+	input.star { display: none; }
+
+	label.star {
+	  float: right;
+	  padding: 5px;
+	  font-size: 30px;
+	  color: #444;
+	  transition: all .2s;
+	}
+
+	input.star:checked ~ label.star:before {
+	  content: '\f005';
+	  color: #FD4;
+	  transition: all .25s;
+	}
+
+	input.star-5:checked ~ label.star:before {
+	  color: #FE7;
+	  text-shadow: 0 0 20px #952;
+	}
+
+	input.star-1:checked ~ label.star:before { color: #F62; }
+
+	label.star:hover { transform: rotate(-10deg) scale(1.3); }
+
+	label.star:before {
+	  content: '\f006';
+	  font-family: FontAwesome;
+	}
+
+
+
+	input.starBanner { display: none; }
+
+	label.starBanner {
+	  float: right;
+	  padding: 5px;
+	  font-size: 30px;
+	  color: #444;
+	  transition: all .2s;
+	}
+
+	input.starBanner:checked ~ label.starBanner:before {
+	  content: '\f005';
+	  color: #FD4;
+	  transition: all .25s;
+	}
+
+	label.starBanner:before {
+	  content: '\f006';
+	  font-family: FontAwesome;
+	}
+
+	#contenido{
+		background-color: #1A1A1A;
+	}
+
+	p{
+		color:gray;
+	}
+
+</style>
+<?php $__env->startSection("menu"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("content"); ?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$("#fotoPerfil").click(function(){
+				$("#cfotoPerfil").addClass("active");
+				$("#cfoto1").removeClass("active");
+				$("#cfoto2").removeClass("active");
+				$("#cfoto3").removeClass("active");
+				$("#cfoto4").removeClass("active");
+				$("#cfoto5").removeClass("active");
+				$("#cfoto6").removeClass("active");
+			});
+
+			$("#foto1").click(function(){
+				$("#cfoto1").addClass("active");
+				$("#cfotoPerfil").removeClass("active");
+				$("#cfoto2").removeClass("active");
+				$("#cfoto3").removeClass("active");
+				$("#cfoto4").removeClass("active");
+				$("#cfoto5").removeClass("active");
+				$("#cfoto6").removeClass("active");
+			});
+
+			$("#foto2").click(function(){
+				$("#cfoto2").addClass("active");
+				$("#cfotoPerfil").removeClass("active");
+				$("#cfoto1").removeClass("active");
+				$("#cfoto3").removeClass("active");
+				$("#cfoto4").removeClass("active");
+				$("#cfoto5").removeClass("active");
+				$("#cfoto6").removeClass("active");
+			});
+
+			$("#foto3").click(function(){
+				$("#cfoto3").addClass("active");
+				$("#cfotoPerfil").removeClass("active");
+				$("#cfoto2").removeClass("active");
+				$("#cfoto1").removeClass("active");
+				$("#cfoto4").removeClass("active");
+				$("#cfoto5").removeClass("active");
+				$("#cfoto6").removeClass("active");
+			});
+
+			$("#foto4").click(function(){
+				$("#cfoto4").addClass("active");
+				$("#cfotoPerfil").removeClass("active");
+				$("#cfoto2").removeClass("active");
+				$("#cfoto3").removeClass("active");
+				$("#cfoto1").removeClass("active");
+				$("#cfoto5").removeClass("active");
+				$("#cfoto6").removeClass("active");
+			});
+
+			$("#foto5").click(function(){
+				$("#cfoto5").addClass("active");
+				$("#cfotoPerfil").removeClass("active");
+				$("#cfoto2").removeClass("active");
+				$("#cfoto3").removeClass("active");
+				$("#cfoto4").removeClass("active");
+				$("#cfoto1").removeClass("active");
+				$("#cfoto6").removeClass("active");
+			});
+
+			$("#foto6").click(function(){
+				$("#cfoto6").addClass("active");
+				$("#cfotoPerfil").removeClass("active");
+				$("#cfoto2").removeClass("active");
+				$("#cfoto3").removeClass("active");
+				$("#cfoto4").removeClass("active");
+				$("#cfoto5").removeClass("active");
+				$("#cfoto1").removeClass("active");
+			});
+
+			$("#portada1").click(function(){
+				$("#cportada1").addClass("active");
+				$("#cportada2").removeClass("active");
+			});
+
+			$("#portada2").click(function(){
+				$("#cportada2").addClass("active");
+				$("#cportada1").removeClass("active");
+			});
+
+			$("#starBanner-4").attr("checked",true);
+
+		});
+	</script>
+	<script>new Swipe(document.getElementById('carousel-inner'));</script>
+	<div style="margin-top:7%;" class="col-lg-12" id="contenido">
+
+        <div class="row">
+
+        	<?php if(Session::has('comentar')): ?>
+        		<script>
+				   $(document).ready(function(){
+				      $("#agregarComentario").modal("show");
+				   });
+				</script>
+        	<?php endif; ?>
+
+        	<?php if(Session::has('emailRepetido')): ?>
+        		<script>
+				   $(document).ready(function(){
+				      $("#emailRepetido").modal("show");
+				   });
+				</script>
+        	<?php endif; ?>
+
+        	<!--<div class="col-lg-12 text-center">
+	            <h2 class="section-heading" style="color:#FD61E3;">Scort VIP</h2>
+	        </div>-->
+
+	        <div class="col-sm-12" style="padding:0px;">
+
+	        	<div class="row" id="ubicacionNombreScort">
+	        		<div>
+	        			<h4 class="service-heading" id="nombreScort"><?php echo $scort->nombre; ?></h4>
+	        		</div>
+ 
+	        		<div style="margin-left:0.3%;">
+	        			<h4 class="service-heading" style="color:#EFC503;font-size:12pt;padding:9px;" id="nombreScort"><?php echo $scort->ubicacion; ?></h4>
+	        		</div>
+	        	</div>
+
+	        	<div class="row" id="ubicacionRateScort">
+
+	        		<div id="rate" style="font-size:14pt;" >
+	        			Calificación<br>
+	        			<center>9.0</center>
+	        		</div>
+
+	        		<div id="rate2" >
+					    <form action="">
+					      <input class="starBanner starBanner-5" id="starBanner-5" type="radio" disabled name="starBanner"/>
+					      <label class="starBanner starBanner-5" for="starBanner-5"></label>
+					      <input class="starBanner starBanner-4" id="starBanner-4" type="radio" disabled name="starBanner"/>
+					      <label class="starBanner starBanner-4" for="starBanner-4"></label>
+					      <input class="starBanner starBanner-3" id="starBanner-3" type="radio" disabled name="starBanner"/>
+					      <label class="starBanner starBanner-3" for="starBanner-3"></label>
+					      <input class="starBanner starBanner-2" id="starBanner-2" type="radio" disabled name="starBanner"/>
+					      <label class="starBanner starBanner-2" for="starBanner-2"></label>
+					      <input class="starBanner starBanner-1" id="starBanner-1" type="radio" disabled name="starBanner"/>
+					      <label class="starBanner starBanner-1" for="starBanner-1"></label>
+					    </form>
+					</div>
+	        	</div>
+
+    			<img src="<?php echo $scort->fotoBanner; ?>" width="100%">
+
+    		</div>
+
+	        <div class="col-md-4" >
+	          	
+            	<a href="#" id="fotoPerfil"><img  src="<?php echo $scort->fotoPerfil; ?>" width="100%" data-toggle="modal" href="#portfolioModal1" style="margin-top:4%;border-radius:10px;"></a>
+            	
+            	<br>
+            	<br>
+            	
+            	<center>
+            	<table>
+            		<tr>
+            			<td><a href="#" data-toggle="modal" id="foto1"><img src="<?php echo $scort->foto1; ?>" width="100%" height="135px" data-toggle="modal" href="#portfolioModal1" style="border-radius:10px;"></a><td>
+            			<td><a href="#" data-toggle="modal" id="foto2"><img src="<?php echo $scort->foto2; ?>" width="100%" height="135px" data-toggle="modal" href="#portfolioModal1" style="border-radius:10px;"></a><td>
+            			<td><a href="#" data-toggle="modal" id="foto3"><img src="<?php echo $scort->foto3; ?>" width="100%" height="135px" data-toggle="modal" href="#portfolioModal1" style="border-radius:10px;"></a><td>	
+            		</tr>
+            		<tr>
+            			<td></td>
+            			<td></td>
+            		</tr>
+            		<tr>
+            			<td><a href="#" data-toggle="modal" id="foto4"><img src="<?php echo $scort->foto4; ?>" width="100%" height="135px" data-toggle="modal" href="#portfolioModal1" style="border-radius:10px;"></a><td>
+            			<td><a href="#" data-toggle="modal" id="foto5"><img src="<?php echo $scort->foto5; ?>" width="100%" height="135px" data-toggle="modal" href="#portfolioModal1" style="border-radius:10px;"></a><td>
+            			<td><a href="#" data-toggle="modal" id="foto6"><img src="<?php echo $scort->foto6; ?>" width="100%" height="135px" data-toggle="modal" href="#portfolioModal1" style="border-radius:10px;"></a><td>
+            		</tr>
+            	</table>
+            	</center>
+
+            	<div class="col-sm-12">
+        			<h4 class="service-heading text-center" style="color:#E0006C;">Calificar</h4>
+        		</div>
+
+            	<div style="float:left;margin-top:-6px;margin-left:20%;">
+            		<form action="">
+				      <input class="star star-5" id="star-5" type="radio" name="star"/>
+				      <label class="star star-5" for="star-5"></label>
+				      <input class="star star-4" id="star-4" type="radio" name="star"/>
+				      <label class="star star-4" for="star-4"></label>
+				      <input class="star star-3" id="star-3" type="radio" name="star"/>
+				      <label class="star star-3" for="star-3"></label>
+				      <input class="star star-2" id="star-2" type="radio" name="star"/>
+				      <label class="star star-2" for="star-2"></label>
+				      <input class="star star-1" id="star-1" type="radio" name="star"/>
+				      <label class="star star-1" for="star-1"></label>
+				    </form>
+            	</div>
+            	<br>
+            	<br>
+            	
+            	<?php if(Session::has('loginUser')): ?>
+            		<div class="col-sm-12">
+        				<a href="#" data-toggle="modal" style="text-decoration:none;"><h4 data-toggle="modal" href="#agregarComentario" class="service-heading text-center" style="color:#E0006C;">Comentarios <i class="fa fa-plus-circle"></i></h4></a>
+        			</div>
+            	<?php else: ?>
+            		<div class="col-sm-12">
+        				<a href="#" data-toggle="modal" style="text-decoration:none;"><h4 data-toggle="modal" href="#login" class="service-heading text-center" style="color:#E0006C;">Comentarios <i class="fa fa-plus-circle"></i></h4></a>
+        			</div>
+            	<?php endif; ?>
+
+           
+            	<div class="col-lg-12">
+					<div>
+						<p><span style="color:#EFC503;"><i class="fa fa-user-circle"> gabrielRico065: </i></span></p>
+						<p style="text-align:justify;"> Una mamasita rica para follar unas diez veces.</p>
+
+						<p><span style="color:#EFC503;"><i class="fa fa-user-circle"> peneGrande12: </i></span></p>
+						<p style="text-align:justify;"> La mejor experiencia de mi vida, es una diosa en la cama.</p>
+
+						<p><span style="color:#EFC503;"><i class="fa fa-user-circle"> pornoGuy: </i></span></p>
+						<p style="text-align:justify;"> La quiero solamente para mi, muy cariñosa y loca en el sexo.</p>
+					</div>
+
+            	</div>
+            	
+          	</div>
+
+        	<div class="col-md-6" >
+        		<div class="row">
+
+        			<div class="col-sm-12">
+        				<h4 class="service-heading text-center" style="color:#E0006C;">Datos personales</h4>
+        			</div>
+        		
+	        		<div class="col-sm-6">
+	        			<p><b>Teléfono:</b> <span style="color:#EFC503;">+503 <?php echo $scort->telefono; ?></span></p>
+		        		<p><b>Peso:</b> <?php echo $scort->peso; ?> lbs.</p>
+		        		<p><b>Color de piel:</b> <?php echo $scort->colorPiel; ?></p>
+		        		<p><b>Medidas:</b> <?php echo $scort->medidas; ?>.</p>
+	        		</div>
+
+	        		<div class="col-sm-6">
+	        			<p><b>Edad:</b> <?php echo $scort->edad; ?> años.</p>
+		        		<p><b>Estatura:</b> <?php echo $scort->estatura; ?> mts.</p>
+		        		<p><b>Color de pelo:</b> <?php echo $scort->colorPelo; ?></p>
+		        		<p><b>Depilación:</b> <?php echo $scort->depilacion; ?>.</p>
+	        		</div>
+
+	        		<div class="col-sm-12">
+	        			<p style="text-align:justify;"><b>Descripción:</b> <br><?php echo $scort->descripcion; ?></p>
+        			</div>
+
+        			<div class="col-sm-12">
+        				<h4 class="service-heading text-center" style="color:#E0006C;">Tarifas</h4>
+        			</div>
+
+        			<div class="col-sm-6">
+	        			<p><b>Media hora:</b> <span style="color:#EFC503;">$<?php echo $scort->mediaHora; ?></span></p>
+        				<p><b>Cuarenta minutos:</b> <span style="color:#EFC503;">$<?php echo $scort->cuarentaMinutos; ?></span></p>
+        				<p><b>Una hora:</b> <span style="color:#EFC503;">$<?php echo $scort->unaHora; ?></span></p>
+	        		</div>
+
+	        		<div class="col-sm-6">
+        				<p><b>Dos horas:</b> <span style="color:#EFC503;">$<?php echo $scort->dosHoras; ?></span></p>
+        				<p><b>Tres horas:</b> <span style="color:#EFC503;">$<?php echo $scort->tresHoras; ?></span></p>
+        				<p><b>La noche:</b> <span style="color:#EFC503;">$<?php echo $scort->laNoche; ?></span></p>
+	        		</div>
+
+	        		<div class="col-sm-12">
+            			<a href="#" data-toggle="modal" id="portada1"><img src="<?php echo $scort->fotoPortada1; ?>" width="100%" data-toggle="modal" href="#portfolioModal2" style="border-radius:10px;"></a><td>
+	        		</div>
+
+	        		<div class="col-sm-12" style="margin-top:17px;">
+            			<a href="#" data-toggle="modal" id="portada2"><img src="<?php echo $scort->fotoPortada2; ?>" width="100%" data-toggle="modal" href="#portfolioModal2" style="border-radius:10px;"></a><td>
+	        		</div>
+
+        		</div><!-- Cierre de la row de datos personales-->	
+          	</div><!-- Cierre del div de datos personales-->	
+
+          	<div class="col-md-2">
+        		
+        		<h4 class="service-heading text-center" style="color:#E0006C;">Servicios</h4>
+
+        		<?php foreach($explode as $servicio): ?>
+        			<p><span style="color:#EFC503;">> </span><?php echo $servicio; ?></p>
+        		<?php endforeach; ?>
+        		
+        		<!--Inicio de publicidad
+	            <a href="modelo"><img src="img/publicidad1.gif" width="100%"></a>
+	            <br>
+	            <br>
+	            <a href="modelo"><img src="img/publicidad2.png" width="100%"></a>
+	            <br>
+	            <br>
+	           	<a href="modelo"><img src="img/publicidad3.png" width="100%"></a>
+	            <br>
+	            <br>
+	           	<a href="modelo"><img src="img/publicidad4.gif" width="100%"></a>
+	          	<br>
+	          	<br>
+	           	<a href="modelo"><img src="img/publicidad5.png" width="100%"></a>
+	           	<br>
+	           	<br>-->
+	        </div>
+
+        </div>
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("footer"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("modals"); ?>
+
+  	<!-- Portfolio Modals -->
+
+	<!-- Modal 1 -->
+	<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content" style="background-color:#1A1A1A;">
+	      <div class="close-modal" style="height:auto;" data-dismiss="modal">
+	      	<div style="color:white;">X</div>
+	      </div>
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-lg-6 mx-auto">
+	            <div class="modal-body">
+
+	              <!-- Project Details Go Here -->
+	              
+	        		<div id="bootstrap-touch-slider" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="false" >
+
+					  	<ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+						</ol>
+
+	            		<div class="carousel-inner" role="listbox" style="margin-top:-20%;">
+					  	
+						    <div class="carousel-item" id="cfotoPerfil">
+			              		<img src="<?php echo $scort->fotoPerfil; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						   	<div class="carousel-item" id="cfoto1">
+			              		<img src="<?php echo $scort->foto1; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						    <div class="carousel-item" id="cfoto2">
+			              		<img src="<?php echo $scort->foto2; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						    <div class="carousel-item" id="cfoto3">
+			              		<img src="<?php echo $scort->foto3; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						    <div class="carousel-item" id="cfoto4">
+			              		<img src="<?php echo $scort->foto4; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						    <div class="carousel-item" id="cfoto5">
+			              		<img src="<?php echo $scort->foto5; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						    <div class="carousel-item" id="cfoto6">
+			              		<img src="<?php echo $scort->foto6; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+					  	</div>
+
+						<a class="carousel-control-prev" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Anterior</span>
+						</a>
+						<a class="carousel-control-next" href="#bootstrap-touch-slider" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Siguiente</span>
+						</a>
+					</div>
+
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+
+	<!-- Modal 2 -->
+	<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content" style="background-color:#1A1A1A;">
+	      <div class="close-modal" style="height:auto;" data-dismiss="modal">
+	      	<div style="color:white;">X</div>
+	      </div>
+	      <div class="container" style="margin-top:-5%;">
+	        <div class="row">
+	          <div class="col-lg-12 mx-auto">
+	            <div class="modal-body">
+
+	              <!-- Project Details Go Here -->
+	              
+	        		<div id="bootstrap-touch-slider2" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="false" >
+
+					  	<ol class="carousel-indicators">
+						    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						</ol>
+
+	            		<div class="carousel-inner" role="listbox" style="margin-top:-8%;">
+					  	
+						    <div class="carousel-item" id="cportada1">
+			              		<img src="<?php echo $scort->fotoPortada1; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer">
+						    </div>
+						   	<div class="carousel-item" id="cportada2" style="">
+			              		<img src="<?php echo $scort->fotoPortada2; ?>" class="img-fluid d-block mx-auto" style="cursor:pointer;">
+						    </div>
+						    
+					  	</div>
+
+						<a class="carousel-control-prev" href="#bootstrap-touch-slider2" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Anterior</span>
+						</a>
+						<a class="carousel-control-next" href="#bootstrap-touch-slider2" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="sr-only">Siguiente</span>
+						</a>
+					</div>
+
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+
+	<!-- Modal login y registro-->
+	<div class="modal fade bs-modal-md" id="login" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  		<div class="modal-dialog modal-md">
+
+    		<div class="modal-content" style="padding:20px;">
+        		<br>
+
+		        <div class="bs-example bs-example-tabs">
+		            <ul id="myTab" class="nav nav-tabs">
+		              <li class="active"><a href="#signin" data-toggle="tab"><button class="btn btn-info" style="cursor:pointer;">Login</button></a></li>
+		              <li><a href="#signup" data-toggle="tab" style="margin-left:5px;"><button class="btn btn-success" style="cursor:pointer;">Regístrate</button></a></li>
+		            </ul>
+		        </div>
+
+
+      			<div class="modal-body">
+
+        			<div id="myTabContent" class="tab-content">
+
+			        	<div class="tab-pane fade active in" id="signin">
+				            <form class="form-horizontal">
+					            <fieldset>
+					            	
+					            <!-- Sign In Form -->
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label" for="userid">Email:</label>
+					              <div class="controls">
+					                <input id="email" name="email" type="email" class="form-control" placeholder="usuario@mail.com" class="input-medium" required="">
+					              </div>
+					            </div>
+
+					            <!-- Password input-->
+					            <div class="control-group">
+					              <label class="control-label" for="passwordinput">Contraseña:</label>
+					              <div class="controls">
+					                <input required="" id="pass" name="pass" class="form-control" type="password" placeholder="********" class="input-medium">
+					              </div>
+					            </div>
+
+					            <!-- Multiple Checkboxes (inline) -->
+					            
+					            
+					            <!-- Button -->
+					            <div class="control-group" style="margin-top:5%;">
+					              <label class="control-label" for="signin"></label>
+					              <div class="controls">
+	      							<center><button type="submit" class="btn btn-primary" style="cursor:pointer">Login</button></center>
+					              </div>
+					            </div>
+					            
+					            
+					            </fieldset>
+				            </form>
+			        	</div>
+
+
+				        <div class="tab-pane fade" id="signup">
+				            <form class="form-horizontal" action="registro-usuario-comentar" method="post">
+					            <fieldset>
+					            	
+					            <!-- Sign Up Form -->
+					            
+					            <input type="hidden" id="idScort" name="idScort" value="<?php echo $scort->id; ?>">
+					            <input type="hidden" id="nombreScort" name="nombreScort" value="<?php echo $scort->nombre; ?>">
+
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label">Usuario:</label>
+					              <div class="controls">
+					                <input id="nick" name="nick" class="form-control" type="text" placeholder="Usuario" class="input-large" required="">
+					              </div>
+					            </div>
+
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label">Edad:</label>
+					              <div class="controls">
+					                <input id="edad" name="edad" class="form-control" type="text" placeholder="Edad" class="input-large" required="">
+					              </div>
+					            </div>
+
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label">Email:</label>
+					              <div class="controls">
+					                <input id="emailUsuario" name="emailUsuario" class="form-control" type="email" placeholder="usuario@mail.com" class="input-large" required="">
+					              </div>
+					            </div>
+					           
+					            <!-- Password input-->
+					            <div class="control-group">
+					              <label class="control-label">Password:</label>
+					              <div class="controls">
+					                <input id="passUsuario" name="passUsuario" class="form-control" type="password" placeholder="********" class="input-large" required="">
+					                
+					              </div>
+					            </div>
+					     
+					            <!-- Button -->
+					            <div class="control-group" style="margin-top:5%;">
+					              <label class="control-label" for="signin"></label>
+					              <div class="controls">
+	      							<center><button type="submit" class="btn btn-primary" style="cursor:pointer">Regístrate</button></center>
+					              </div>
+					            </div>
+					            </fieldset>
+				            </form>
+				      	</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- Modal login y registro correo repetido-->
+	<div class="modal fade bs-modal-md" id="emailRepetido" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  		<div class="modal-dialog modal-md">
+
+    		<div class="modal-content" style="padding:20px;">
+        		<br>
+
+		        <div class="bs-example bs-example-tabs">
+		            <ul id="myTab" class="nav nav-tabs">
+		              <li class="" style="margin-left:12px;"><a href="#signup" data-toggle="tab" style="color:#E0006C;"><B>Regístrate</B></a></li>
+		            </ul>
+		        </div>
+
+
+      			<div class="modal-body">
+
+        			<div id="myTabContent" class="tab-content">
+
+				        <div id="signup">
+				            <form class="form-horizontal" action="registro-usuario-comentar" method="post">
+					            <fieldset>
+					            	<p style="margin-top:-5%;"><center style="color:orange;">El email ya se encuentra registrado</center></p>
+					            <!-- Sign Up Form -->
+					            
+					            <input type="hidden" id="idScort" name="idScort" value="<?php echo $scort->id; ?>">
+					            <input type="hidden" id="nombreScort" name="nombreScort" value="<?php echo $scort->nombre; ?>">
+
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label">Usuario:</label>
+					              <div class="controls">
+					                <input id="nick" name="nick" class="form-control" type="text" placeholder="Usuario" class="input-large" required="">
+					              </div>
+					            </div>
+
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label">Edad:</label>
+					              <div class="controls">
+					                <input id="edad" name="edad" class="form-control" type="text" placeholder="Edad" class="input-large" required="">
+					              </div>
+					            </div>
+
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <label class="control-label">Email:</label>
+					              <div class="controls">
+					                <input id="emailUsuario" name="emailUsuario" class="form-control" type="email" placeholder="usuario@mail.com" class="input-large" required="">
+					              </div>
+					            </div>
+					           
+					            <!-- Password input-->
+					            <div class="control-group">
+					              <label class="control-label">Password:</label>
+					              <div class="controls">
+					                <input id="passUsuario" name="passUsuario" class="form-control" type="password" placeholder="********" class="input-large" required="">
+					                
+					              </div>
+					            </div>
+					     
+					            <!-- Button -->
+					            <div class="control-group" style="margin-top:5%;">
+					              <label class="control-label" for="signin"></label>
+					              <div class="controls">
+	      							<center><button type="submit" class="btn btn-primary" style="cursor:pointer">Regístrate</button></center>
+					              </div>
+					            </div>
+					            </fieldset>
+				            </form>
+				      	</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+		            <button type="button" class="btn btn-danger" data-dismiss="modal" style="cursor:pointer">X</button>	
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!-- Modal para comentario-->
+	<div class="modal fade bs-modal-md" id="agregarComentario" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  		<div class="modal-dialog modal-md">
+
+    		<div class="modal-content" style="padding:20px;">
+        		<br>
+		        
+		        <div class="col-sm-12">
+        			<h4 class="service-heading text-center" style="color:#E0006C;">Has un comentario de <?php echo $scort->nombre; ?></h4>
+        		</div>
+
+      			<div class="modal-body">
+
+        			<div id="myTabContent" class="tab-content">
+
+			        	<div class="tab-pane fade active in" id="signin">
+				            <form class="form-horizontal">
+					            <fieldset>
+					            	
+					            <!-- Sign In Form -->
+					            <!-- Text input-->
+					            <div class="control-group">
+					              <div class="controls">
+					              	<textarea id="comentario" name="comentario" class="form-control" rows="5" placeholder="Comentario..."></textarea>					                  
+					              </div>
+					            </div>
+
+					            <!-- Button -->
+					            <div class="control-group" style="margin-top:5%;">
+					              <label class="control-label" for="signin"></label>
+					              <div class="controls">
+	      							<center><button type="submit" class="btn btn-primary" style="cursor:pointer">Comentar</button></center>
+					              </div>
+					            </div>
+
+					            </fieldset>
+				            </form>
+						</div>
+			    	</div>
+				</div>
+
+				<div class="modal-footer">
+		            <button type="button" class="btn btn-danger" data-dismiss="modal" style="cursor:pointer">X</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("vistasPublicas.masterPublico", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

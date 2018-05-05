@@ -1,0 +1,72 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+         <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Vendedores</h4>
+          <a href="vendedor" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Vendedores</a>
+          <a href="agregar-Vend" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Vendedor</a>
+              </div></center><!-- /showback -->
+
+               <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-suitcase fa-4x"></i><span class='social'>Vendedor</a>
+</div>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Vendedor</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'registroVendedor')); ?>
+
+    
+    <fieldset><br/>
+
+      <?
+      $user=Session::get('id_usuario');
+    ?>
+    <input type="hidden" name="usuario" value=<?php echo $user; ?>>
+      Nombre<br/>
+        <?php echo Form::text('nombre',''); ?>
+
+
+      Codigo<br/>
+        <?php echo Form::text('codigo',''); ?>
+
+
+    Telefono<br/>
+        <?php echo Form::text('telefono',''); ?>
+
+
+    Email<br/>
+        <?php echo Form::text('email',''); ?>
+
+
+    Direccion<br/>
+        <?php echo Form::text('direccion',''); ?>
+
+        
+    <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+
+      <?php echo Form::close(); ?>
+
+
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

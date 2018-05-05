@@ -1,0 +1,70 @@
+
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        
+        $("#agregarCompetencia").click(function(){
+
+            var competencia = $("#competencia").val();
+
+            $.post("registrarCompetencia", {competencia : competencia}, function(data){
+
+                $("#competencia").val("");
+        
+                $("#cajas_competencias").html(data);
+
+            });
+
+        });
+
+    });
+
+</script>
+        <section class="contact" id="ofertas">
+        <div class="noticias">
+
+            <div class="row">
+                <center>
+                    <div class="col-lg-6 col-lg-offset-3">
+                    <img class="img-responsive" src="img/vista4.jpg" alt="logo"><br>
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <div class="panel panel-primary">
+                            <div class="panel panel-heading">
+                                <h5>Competencias y habilidades</h5>
+                            </div>
+                                    <div class="panel-body">
+                                         Escribe tus competencias y habilidades:<input type="text" class="form-control" name="competencia" id="competencia" placeholder="Divida con una , todos los conocimientos que tienes">
+                                         <br>
+                                        <button type="submit" class="btn btn-primary btn-md" id="agregarCompetencia">Añadir</button>
+                                        <br><br>
+
+                                        <div id="cajas_competencias">
+
+                                        </div> 
+                                        <br>
+                                        <form action="finalizarCV" method="post">
+                                            <button type="submit" class="btn btn-primary btn-md" id="finalizar">Finalizar</button>
+                                        </form>
+
+                                    </div>
+                            </div> 
+                    </div>
+                </center>
+            </div>
+            
+            </div>
+</section>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

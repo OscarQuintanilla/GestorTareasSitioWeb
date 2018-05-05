@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bolsa Trabajo | <?php echo Session::get("nombre_usuario"); ?></title>
+  <link rel="icon" href="">
+  <link rel="stylesheet" type="text/css" href="http://theoneflooring.com/profesionall/public/css/responsive.css">
+  <?php echo HTML::style("css/bootstrap.css"); ?>
+
+  <?php echo HTML::style("css/ie10-viewport-bug-workaround.css"); ?>
+
+  <?php echo HTML::style("css/carousel.css"); ?>
+
+  <?php echo HTML::script("js/jquery.js"); ?>
+
+  <style media="screen">
+
+  body{
+      background-color: #f5f5f5;
+      overflow-x: hidden;
+  }
+
+    /* Sidebar navigation */
+    .nav-sidebar {
+      margin-right: -15px; /* 20px padding + 1px border */
+      margin-bottom: 20px;
+      margin-left: -15px;
+      border-right: 2px solid #f5f5f5;
+    }
+
+    .thumbnail {
+      position:relative;
+      overflow:hidden;
+      width: 260.075px;
+      height: 200px;
+      margin: 10px auto;
+    }
+
+    .thumbnail img{
+      width: 260.075px;
+      height: 190px;
+    }
+
+    .caption {
+        position:absolute;
+        top:-100%;
+        right:0;
+        background:rgba(66, 139, 202, 0.75);
+        width:100%;
+        height:100%;
+        padding:2%;
+        text-align:center;
+        color:#fff !important;
+        z-index:2;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .thumbnail:hover .caption {
+        top:0%;
+    }
+    .nav-sidebar > li > a {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    li{
+      margin-top: 7px;
+      margin-bottom: 7px; 
+    }
+    li:hover{
+      background-color: #f5f5f5;
+    }
+  
+    @media (min-width: 1170px) {
+      .sidebar{
+        width: 140px;
+        background-color: #fafafa;
+        border-right: 1px solid #fafafa;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        top: 54px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+      }
+
+      .content{
+        margin-left: 250px;
+      }
+
+    }
+
+    @media (max-width: 1175px){
+
+      .sidebar{
+     
+        width: 100%;
+        align-items: center;
+        margin-top: none;
+        border: none;
+        border-right: none;      }
+
+       .nav-sidebar {
+       width: 100%;
+       display: block;
+    }
+
+    #caja-1{
+      width: 100%;
+    }
+
+    }
+
+    .footer-options{
+      list-style: none;
+      overflow: hidden;
+    }
+    .footer-options li{
+      float: left;
+      padding: 10px;
+    }
+    .social tr>td>a>img:hover{
+      opacity: 0.5;
+    }
+
+    #caja-perfil{
+
+      background-color: white;
+      height: 400px;
+      width: 95%;
+      padding: 25px;
+
+    }
+
+
+    .servicio{
+    background-color: rgb(245, 245, 245);
+    width: 300px;
+    height: 180px;
+    position: relative;
+    text-align: center;
+  }
+  .titlec{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #cc181e;
+    color: white;
+  }
+  .contentc{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+  }
+
+  #contenedor-oferta{
+
+    background-color: white;
+    border: 1px solid white;
+    padding: 20px;
+    margin: 0 auto;
+    margin: 1%;
+    border-right: 4px solid  #0277bd;
+    width: 100%;
+    
+  }
+
+  #ordenar{
+    width: 100%;
+    padding: 20px;
+    background-color: #BDBDBD;
+    margin: 0 auto;
+  }
+
+  label{
+    color: black;
+    font-size: 16px;
+    margin: 1.5%;
+  }
+
+  #select-ordenar{
+
+    width: 25%;
+    padding: 5px;
+    font-size: 15px;
+
+  }
+
+  #caja-1{
+
+    width: 100%;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+
+  }
+
+  #cabeza{
+
+    background-color: #0277bd;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+
+  }
+
+  #cuerpo{
+
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #0277bd;
+
+  }
+
+
+  #izquierda{
+    display: inline-block;
+    width: 30%;
+    border-right: 1px dashed #0277bd;
+    margin-right: 20px;
+  }
+
+  #derecha{
+    display: inline-block;
+    width: 60%;
+ 
+  }
+
+  #img-oferta{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 25px;
+    width: 25px;
+  }
+  
+  .lbl-oferta{
+
+    font-size: 16px;
+    color: #757575;
+  }
+
+  #descripcion-oferta{
+    font-size: 17.5px;
+  }
+
+  #h2-titulo{
+    color: #0277BD;
+    font-size: 22px;
+    margin-top: -10px;
+  }
+
+  #nombre-empresa{
+
+    font-size: 15px;
+  }
+
+
+  #contenedor-info{
+
+    height: auto;
+    background-color: white;
+    border: 3px solid white;
+    margin-top: 35px;
+    width: 105%;
+    padding: 25px;
+    margin-right: 20px;
+
+  }
+
+     #contenedor-ofertas{
+
+    height: auto;
+    background-color: white;
+    border: 3px solid white;
+    margin-top: 15px;
+    width: 105%;
+    padding: 25px;
+
+  }
+
+
+
+
+  </style>
+</head>
+<body>
+   <!-- Inicio del Menú -->
+   <div class="navbar-wrapper">
+     <div class="container">
+
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><?php echo Session::get('nombre_usuario'); ?></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                  <a style="color:orange;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="letter-spacing: 1px;">
+                    <img src="http://theoneflooring.com/profesionallnew/public/<?php echo Session::get('logoEm'); ?>" alt="" width="22px" height="22px" style="margin-right:10px;"><?php echo Session::get("nombre_usuario"); ?><span class="caret" style="margin-left:10px;"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="actualizar"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="margin-right:10px;"></span>Actualizar información</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="cerrar-sesion-usuario"><span class="glyphicon glyphicon-log-out" aria-hidden="true" style="margin-right:10px;"></span>Cerrar sesion</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+     </div>
+   </div>
+
+ <!-- Fin del Menú -->
+
+ <!-- Inicio del Contenedor Principal -->
+ <div class="container-fluid">
+
+    <div class="row" style="margin-top:54px;">
+      <div class="col-lg-1 sidebar">
+        <ul class="nav nav-sidebar">
+           <li style="font-size: 15px;"><a href="inicio-candidato" style="color: #757575;"><div align="center"><img src="http://theoneflooring.com/profesionall/public/img/web.png" style="height:28px; width:26.6px; margin:5px;"><br/>Mi área</div></a></li>
+           <li style="font-size: 15px;"><a href="mi-curriculum" style="color: #757575;"><div align="center"><img src="http://theoneflooring.com/profesionall/public/img/business.png" style="height:28px; width:26.6px; margin:5px;"><br/>Curriculum</div></a></li>
+           <li style="font-size: 15px;"><a href="postularme" style="color: #757575;"><div align="center"><img src="http://theoneflooring.com/profesionall/public/img/suitcase.png" style="height:28px; width:26.6px; margin:5px;"><br/>Trabajos</div></a></li>
+           <li style="font-size: 15px;"><a href="mis-postulaciones" style="color: #757575;"><div align="center"><img src="http://theoneflooring.com/profesionall/public/img/symbols.png" style="height:28px; width:26.6px; margin:5px;"><br/>Postulaciones</div></a></li>
+           <li style="font-size: 15px;"><a href="buscar-ofertas" style="color: #757575;"><div align="center"><img src="http://theoneflooring.com/profesionall/public/img/tool.png" style="height:28px; width:26.6px; margin:5px;"><br/>Buscar ofertas</div></a></li>
+           <li style="font-size: 15px;"><a href="#" style="color: #757575;"><div align="center"><img src="http://theoneflooring.com/profesionall/public/img/book.png" style="height:28px; width:26.6px; margin:5px;"><br/>Cursos en línea</div></a></li>
+        </ul>
+      </div>
+
+
+          <div class="row">
+
+             <div class="col-lg-10 col-lg-offset-2">
+    
+              <div class="col-lg-6">
+
+                <div class="panel-group">
+
+                 <section id="contenedor-info">
+            
+                        
+                          <div align="center">
+
+                           
+                    
+
+                         <img src="http://theoneflooring.com/profesionall/public/img/perfil.png"><br/><br/>
+                         <button class="btn btn-warning">Actualizar información</button><br/><br/>
+                         <p style="font-size: 16px;">Hola <?php echo Session::get('nombre_usuario'); ?> </p><br/>
+                         <?php echo Session::get('email_usuario'); ?><br/><?php echo Session::get('categoria_usuario'); ?><br/><br/>
+
+                         <a href="mi-curriculum">Mejora tu perfil profesional</a>
+
+                         </div>
+
+                </section>
+
+       
+
+                 </div>
+
+              </div>
+
+              <div class="col-lg-5">
+
+                <div class="panel-group">
+
+                 <section id="contenedor-info">
+            
+                        
+                          <div align="center">
+
+                        
+                           <p>Te has postulado a <b><?php echo Session::get('p1'); ?></b> ofertas de empleo. </p>
+                           <p><b><?php echo Session::get('p2'); ?></b> empresas han recibido tu curriculum. </p>
+                           <p><b><?php echo Session::get('p3'); ?></b> empresas te están evaluando. </p>
+                            <p>Eres finalista en <b><?php echo Session::get('p3'); ?></b> ofertas de empleo. </p>
+
+                         </div>
+
+                </section>
+
+                      <section id="contenedor-ofertas">
+            
+                        
+                          <div align="center">
+
+                             <h4>Últimas ofertas según tus intereses:</h4><br/>
+                        
+                              <?php foreach($ofertas as $ofertas): ?> 
+        
+
+                              <h2 id="h2-titulo" style="font-size: 17px;"><?php echo $ofertas->titulo_oferta; ?></h2>
+                              <p><?php echo $ofertas->ciudad; ?></p><br/>
+                           
+
+
+                             <?php endforeach; ?>
+
+                         </div>
+
+                </section>
+
+       
+
+                 </div>
+
+              </div>
+            
+            </div>
+
+          </div>  
+
+            <!-- inicio contenido -->
+      
+          <?php echo $__env->yieldContent('content'); ?>
+
+
+          
+          <!-- FOOTER -->
+
+
+      </div>
+      <!-- fin contenido -->
+
+
+    </div>
+
+
+  <?php echo HTML::script("js/bootstrap.js"); ?>
+
+  <?php echo HTML::script("js/holder.js"); ?>
+
+  <?php echo HTML::script("js/ie10-viewport-bug-workaround.js"); ?>
+
+</body>
+</html>

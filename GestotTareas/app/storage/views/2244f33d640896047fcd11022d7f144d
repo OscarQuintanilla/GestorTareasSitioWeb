@@ -1,0 +1,98 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+    <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Proveedores</h4>
+          <a href="proveedor" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Proveedores</a>
+          <a href="agregar-Prov" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Proveedor</a>
+              </div></center><!-- /showback -->
+
+  <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-child fa-4x"></i><span class='social'>Proveedor</a>
+</div>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Proveedores</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'registro-Prov')); ?>
+
+
+        <fieldset><br/>
+    Registro Fiscal<br/>
+    <input type="text" name="registroFiscal" />
+
+    Nombre Proveedor<br/>
+    <input type="text" name="nombre" />
+
+    NIT<br/>
+    <input type="text" name="nit" />
+
+    Teléfono<br/>
+    <input type="text" name="telefono" />
+
+    Fecha <br/>
+    <input type="date" name="fecha" step="2015-03-12"  /><br/>
+
+    País<br/>  
+			<select name="pais">
+				<option value="guatemala">Guatemala</option>
+				<option value="el salvador">El Salvador</option>
+				<option value="honduras">Honduras</option>
+				<option value="nicaragua">Nicaragua</option>
+				<option value="costa rica">Costa Rica</option>
+				<option value="panamá">Panamá</option>
+			</select> <br/><br/>
+
+	Departamento<br/>  
+			<select name="departamento">
+				<option value="guatemala">Guatemala</option>
+				<option value="san salvador">San Salvador</option>
+				<option value="tegucigalpa">Tegucigalpa</option>
+				<option value="managua">Managua</option>
+				<option value="san jose">San José</option>
+				<option value="panamá">Panamá</option>
+			</select><br/><br/>
+
+	Municipio<br/>
+    <input type="text" name="municipio"/><br/>
+
+    Dirección<br/>
+    <input type="text" name="direccion" /><br/>
+
+    Giro Negocio<br/>
+    <input type="text" name="giroNegocio" /><br/>
+
+    Contacto<br/>
+    <input type="text" name="contacto" /><br/>
+
+    </fieldset>
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+
+      <?php echo Form::close(); ?>
+
+      
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

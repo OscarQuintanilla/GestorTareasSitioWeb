@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/stilee.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styless.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css" />
+
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+                        <!-- Modal -->
+                        <div class="col-lg-4">
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <center><h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4></center>
+                              </div>
+                              <div class="modal-body">
+                                    <p class="centered"><img class="img-circle" width="100" height="75" src="img/bazuca.jpg"></p>
+                                    <form action="ingreso" method="post">
+                                        <span style="font-size:12pt;">Email:</br></span><input type="txt" style="width: 100%; height: 40px;" autocomplete="off" name="email">
+                                        <span style="font-size:12pt;">Contraseña:</span><input type="password" style="width: 100%; height: 40px;" name="password"  autocomplete="off">
+                                      </div>
+                                      <div class="modal-footer centered">
+                                          <button class="btn btn-theme03" type="submit">Iniciar sesión</button> <p>¿Eres nuevo en canchas SV?</p> <a href="#registro" style="font-size:13pt;">Suscríbete ahora</a>
+                                      </div>
+                                    </form>
+                                       
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+
+                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <center><h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4></center>
+                              </div>
+                              <div class="modal-body">
+                                    <p class="centered"><img class="img-circle" width="75" height="75" src="img/user.png"></p>
+                                    <form action="ingreso" method="post">
+                                        <span style="font-size:12pt;">Usuario:</br></span><input type="txt" style="width: 100%; height: 40px;" autocomplete="off" name="email">
+                                        <span style="font-size:12pt;">Contraseña:</span><input type="password" style="width: 100%; height: 40px;" name="password"  autocomplete="off">
+                                      </div>
+                                      <div class="modal-footer centered">
+                                          <a class="btn btn-theme03" href="canchas1">Acceder</a>
+                                      </div>
+                                    </form>
+                                       
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Canchas El Salvador</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#inicio">Inicio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#noticias">Noticias</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#galeria">Galeria</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#registro">Registro</a>
+                    </li>
+                     <li class="page-scroll">
+                        <a href="#about">Acerca de</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contacto</a>
+                    </li>
+                    <li  class="page-scroll">
+                        <button class="btn btn-theme03" style="margin-top:9px;" data-toggle="modal" data-target="#myModal">Login</button>
+                    </li>
+               </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" id="inicio">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">Canchas El Salvador</span>
+                         <?php if(Session::has('msj')): ?>
+                                <div class="alert-danger" style="text-align:center;">
+                                    <strong><span class="fa fa-user-plus" aria-hidden="true"></span></strong>
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong><?php echo Session::get('msj'); ?></strong>
+                                </div>
+                        <?php endif; ?>
+                        <hr class="star-light">
+                        <span class="skills">Reserva tu cancha en el mejor lugar a tan solo $15 la hora</span>
+                    </div>
+
+ <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+ 
+            <div class="item active">
+            
+                <div class="bannerImage">
+                    <a href="#"><img src="img/image1.jpg" width='1200' height='440' alt=""></a>
+                </div>
+                            
+                                                         
+            </div><!-- /Slide1 --> 
+
+            <div class="item">
+            
+                <div class="bannerImage">
+                    <a href="#"><img src="img/image2.jpg" width='1200' height='440' alt=""></a>
+                </div>
+                                                 
+            </div><!-- /Slide2 -->             
+
+            <div class="item">
+            
+                <div class="bannerImage">
+                    <a href="#"><img src="img/image3.jpg" width='1200' height='440'  alt=""></a>
+                </div>
+                                                         
+            </div><!-- /Slide2 -->    
+
+                       <div class="item">
+            
+                <div class="bannerImage">
+                    <a href="#"><img src="img/image4.jpg" width='1200' height='440' alt=""></a>
+                </div>
+                                                 
+            </div><!-- /Slide2 -->             
+
+            <div class="item">
+            
+                <div class="bannerImage">
+                    <a href="#"><img src="img/image5.jpg" width='1200' height='440' alt=""></a>
+                </div>
+        </div>
+        
+        <div class="control-box">                            
+            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+        </div><!-- /.control-box -->   
+                              
+    </div><!-- /#myCarousel -->                  
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- Noticias -->
+    <section class="contact" id="noticias">
+        <div class="noticias">
+            <div class="row">
+                 <div class="col-lg-12 text-center">
+                    <h2>Noticias</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Ultimas noticias el equipo fc bayern va en primer lugar
+                    del torneo matutino</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>El mayor goleador del torneo matutino es Mauricio Portillo</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-success btn-lg">
+                        <i class="fa fa-download"></i>Ver más noticias
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galeria -->
+    <section class="success" id="galeria">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Galeria</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                
+  <div class="col-sm-6 col-md-4">
+    <a href="#" class="thumbnail">
+      <img src="img/galeria/cancha3.jpg" class="img-responsive img-centered" alt="">
+    </a>
+  </div>
+
+    <div class="col-sm-6 col-md-4">
+    <a href="#" class="thumbnail">
+    <img src="img/galeria/cancha.jpg" class="img-responsive img-centered" alt="">
+    </a>
+  </div>
+     <div class="col-sm-6 col-md-4">
+    <a href="#" class="thumbnail">
+    <img src="img/galeria/1.jpg" class="img-responsive img-centered" alt="">
+    </a>
+  </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Registro -->
+    
+    <section class="contact" id="registro">
+        <div class="container">
+             <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Registro</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form action="registro" method="post">
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nombre:</label>
+                                <input type="text" class="form-control" placeholder="Nombres" id="nombre" name="nombre" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Apellidos:</label>
+                                <input type="text" class="form-control" placeholder="Apellidos" id="apellido" name="apellido" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Usuario</label>
+                                <input type="text" class="form-control" placeholder="Usuario" id="usuario" name="usuario" required data-validation-required-message="Por favor ingrese su usuario">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>E-Mail</label>
+                                <input type="tel" class="form-control" placeholder="E-Mail" id="email" name="email" required data-validation-required-message="Por favor ingrese su Correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Dirección</label>
+                                <input type="tel" class="form-control" placeholder="Dirección" id="direccion" name="direccion" required data-validation-required-message="Por favor ingrese su Correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Teléfono</label>
+                                <input type="tel" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" required data-validation-required-message="Por favor ingrese su Correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Contraseña</label>
+                                <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password" required data-validation-required-message="Por favor ingrese su correo">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Registrarme</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+                <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Acerca de</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Somos Canchas El Salvador la mejor opcion para divertirse</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Visitanos sera un placer atenderte</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Reservar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Contactanos</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form name="#" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Correo Electronico</label>
+                                <input type="email" class="form-control" placeholder="Correo" id="email" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Telefono</label>
+                                <input type="tel" class="form-control" placeholder="Telefono" id="phone" required data-validation-required-message="Por favor ingrese su nombre">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Mensaje</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Ingrese el mensaje que desea enviar"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Locación</h3>
+                        <p>San Salvador<br>Primera Calle Norte</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Buscanos En:</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3> Acerca de</h3>
+                        <p>Canchas de El Salvador fue creado en 2015 para el beneficio de todos los clientes y la diversion de los mismos <a href="#">Canchas El Salvador</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Canchas El Salvador 2015 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Ingreso Administradores</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    </div>
+
+       <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/alert.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
+</body>
+
+</html>

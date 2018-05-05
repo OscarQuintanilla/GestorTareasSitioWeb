@@ -1,0 +1,326 @@
+<?php $__env->startSection('content'); ?>
+  <div class="page-header">
+    <h3><span class="glyphicon glyphicon-edit" style="margin-right:10px;"></span>Actualizar datos empresa</h3>
+  </div>
+  <!--  datos de acceso -->
+  <table class="table table-hover">
+    <tr>
+      <th>Datos de acceso</th>
+      <th><a href="#" data-toggle="modal" data-target="#modalAcceso"><span class="glyphicon glyphicon-edit" style="margin-right:5px"></span> Editar datos de acceso</a></th>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><?php echo $dataG->mail; ?></td>
+    </tr>
+  </table>
+  <br>
+  <table class="table table-hover">
+    <tr>
+      <th>Datos de empresa</th>
+      <th><a href="#" data-toggle="modal" data-target="#modalDatosE"><span class="glyphicon glyphicon-edit" style="margin-right:5px"></span> Editar datos de empresa</a></th>
+    </tr>
+    <tr>
+      <td>Nombre:</td>
+      <td><?php echo $dataG->nombre; ?></td>
+    </tr>
+    <tr>
+      <td>Razon social:</td>
+      <td><?php echo $dataG->razon_social; ?></td>
+    </tr>
+    <tr>
+      <td>Nit:</td>
+      <td><?php echo $dataG->nit; ?></td>
+    </tr>
+    <tr>
+      <td>Pais:</td>
+      <td><?php echo $dataG->pais; ?></td>
+    </tr>
+    <tr>
+      <td>Region:</td>
+      <td><?php echo $dataG->region; ?></td>
+    </tr>
+    <tr>
+      <td>Ciudad:</td>
+      <td><?php echo $dataG->ciudad; ?></td>
+    </tr>
+    <tr>
+      <td>Codigo postal:</td>
+      <td><?php echo $dataG->cod_postal; ?></td>
+    </tr>
+    <tr>
+      <td>Direccion:</td>
+      <td><?php echo $dataG->direccion; ?></td>
+    </tr>
+    <tr>
+      <td>Sector:</td>
+      <td><?php echo $dataG->sector; ?></td>
+    </tr>
+    <tr>
+      <td>Num. trabajadores:</td>
+      <td><?php echo $dataG->num_trabajadores; ?></td>
+    </tr>
+  </table>
+  <br>
+  <table class="table table-hover">
+    <tr>
+      <th>Datos de presentacion</th>
+      <th><a href="#" data-toggle="modal" data-target="#modalTipoEm"><span class="glyphicon glyphicon-edit" style="margin-right:5px"></span> Editar datos de presentacion</a></th>
+    </tr>
+    <?php foreach($dataT as $dt): ?>
+    <tr>
+      <td>Tipo de empresa:</td>
+      <td><?php echo $dt->tipo; ?></td>
+    </tr>
+    <tr>
+      <td>Descripcion:</td>
+      <td><?php echo $dt->descripcion; ?></td>
+    </tr>
+    <tr>
+      <td>URL:</td>
+      <td><?php echo $dt->url; ?></td>
+    </tr>
+    <tr>
+      <td>Logo:</td>
+      <td><img src="http://theoneflooring.com/profesionall/public/<?php echo $dt->logo; ?>" alt="" width="22px" height="22px" style="margin-right:10px;"></td>
+    </tr>
+    <?php endforeach; ?>
+  </table>
+  <br>
+  <table class="table table-hover">
+    <tr>
+      <th>Datos de contacto</th>
+      <th><a href="#" data-toggle="modal" data-target="#modalContacto"><span class="glyphicon glyphicon-edit" style="margin-right:5px"></span> Editar datos de contacto</a></th>
+    </tr>
+    <?php foreach($dataC as $dc): ?>
+    <tr>
+      <td>Nombre:</td>
+      <td><?php echo $dc->nombre; ?></td>
+    </tr>
+    <tr>
+      <td>Apellido:</td>
+      <td><?php echo $dc->apellido; ?></td>
+    </tr>
+    <tr>
+      <td>Cargo:</td>
+      <td><?php echo $dc->cargo; ?></td>
+    </tr>
+    <tr>
+      <td>Telefono 1:</td>
+      <td><?php echo $dc->telefono1; ?></td>
+    </tr>
+    <tr>
+      <td>Telefono 2:</td>
+      <td><?php echo $dc->telefono2; ?></td>
+    </tr>
+    <?php endforeach; ?>
+  </table>
+
+
+  <!-- MOdales -->
+  <!-- Modal -->
+<div class="modal fade" id="modalAcceso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Datos de acceso</h4>
+      </div>
+      <?php echo Form::open(array("url" => "editarDatosAcceso")); ?>
+
+      <div class="modal-body">
+        <table class="table table-hover">
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->mail; ?>" name="mail" required /></td>
+          </tr>
+          <tr>
+            <td>Nueva contraseña:</td>
+            <td><input type="password" class="form-control input-md" value="" name="pass" /></td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+      <?php echo Form::close(); ?>
+
+    </div>
+  </div>
+</div>
+
+<!-- datos de empresa -->
+<div class="modal fade" id="modalDatosE" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Datos de empresa</h4>
+      </div>
+      <?php echo Form::open(array("url" => "editarDatosEmpresa")); ?>
+
+      <div class="modal-body">
+        <table class="table table-hover">
+          <tr>
+            <td>Nombre:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->nombre; ?>" name="nombreE" required /></td>
+          </tr>
+          <tr>
+            <td>Razon social:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->razon_social; ?>" name="razonE" required /></td>
+          </tr>
+          <tr>
+            <td>Nit:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->nit; ?>" name="nitE" required /></td>
+          </tr>
+          <tr>
+            <td>Pais:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->pais; ?>" name="paisE" required /></td>
+          </tr>
+          <tr>
+            <td>Region:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->region; ?>" name="regionE" required /></td>
+          </tr>
+          <tr>
+            <td>Ciudad:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->ciudad; ?>" name="ciudadE" required /></td>
+          </tr>
+          <tr>
+            <td>Codigo postal:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->cod_postal; ?>" name="codPE" required /></td>
+          </tr>
+          <tr>
+            <td>Direccion:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->direccion; ?>" name="direccionE" required /></td>
+          </tr>
+          <tr>
+            <td>Sector:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->sector; ?>" name="sectorE" required /></td>
+          </tr>
+          <tr>
+            <td>Num. trabajadores:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dataG->num_trabajadores; ?>" name="numtraE" required /></td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+      <?php echo Form::close(); ?>
+
+    </div>
+  </div>
+</div>
+
+<!-- datos tipo empresa -->
+<div class="modal fade" id="modalTipoEm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Datos de presentacion</h4>
+      </div>
+      <?php echo Form::open(array("url" => "editarDatosTipo", "enctype" => "multipart/form-data")); ?>
+
+      <div class="modal-body">
+        <?php foreach($dataT as $dt): ?>
+          <input type="hidden" name="idTip" class="form-control input-md" value="<?php echo $dt->id; ?>" />
+          <table class="table table-hover">
+            <tr>
+              <td>Tipo:</td>
+              <td>
+              <?php if($dt->tipo == "Empleador directo"): ?>
+                <input type="radio" name="tipoE" class="form-control input-md" value="Empleador directo" checked="true">Empleador directo<br>
+              <?php else: ?>
+                <input type="radio" name="tipoE" class="form-control input-md" value="Empleador directo">Empleador directo<br>
+              <?php endif; ?>
+              <?php if($dt->tipo == "Agencia de reclutamiento"): ?>
+                <input type="radio" name="tipoE" class="form-control input-md" value="Agencia de reclutamiento" checked="true">Agencia de reclutamiento<br>
+              <?php else: ?>
+                <input type="radio" name="tipoE" class="form-control input-md" value="Agencia de reclutamiento" >Agencia de reclutamiento<br>
+              <?php endif; ?>
+              <?php if($dt->tipo == "Servicios temporales"): ?>
+                <input type="radio" name="tipoE" class="form-control input-md" value="Servicios temporales" checked="true">Servicios temporales<br>
+              <?php else: ?>
+                <input type="radio" name="tipoE" class="form-control input-md" value="Servicios temporales">Servicios temporales<br>
+              <?php endif; ?>
+              </td>
+            </tr>
+            <tr>
+              <td>Despcripcion:</td>
+              <td colspan="2">
+                <input type="text" name="descripcionE" class="form-control input-md" class="form-control input-md" value="<?php echo $dt->descripcion; ?>" required />
+              </td>
+            </tr>
+            <tr>
+              <td>URL:</td>
+              <td><input type="text" class="form-control input-md" value="<?php echo $dt->url; ?>" required name="paginaE" /></td>
+            </tr>
+            <tr>
+              <td>Nueva imagen:</td>
+              <td><input type="file" name="logoE"  /></td>
+            </tr>
+          </table>
+        <?php endforeach; ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+      <?php echo Form::close(); ?>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- datos de contacto -->
+<div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Datos de contacto</h4>
+      </div>
+      <?php echo Form::open(array("url" => "editarDatosContacto")); ?>
+
+      <div class="modal-body">
+        <table class="table table-hover">
+          <?php foreach($dataC as $dc): ?>
+          <input type="hidden" name="idCon" class="form-control input-md" value="<?php echo $dc->id; ?>" />
+          <tr>
+            <td>Nombre:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dc->nombre; ?>" name="nombrecE" required /></td>
+          </tr>
+          <tr>
+            <td>Apellido:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dc->apellido; ?>" name="apellidocE" required /></td>
+          </tr>
+          <tr>
+            <td>Cargo:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dc->cargo; ?>" name="cargocE" required /></td>
+          </tr>
+          <tr>
+            <td>Telefono 1:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dc->telefono1; ?>" name="tel1" required /></td>
+          </tr>
+          <tr>
+            <td>Telefono 2:</td>
+            <td><input type="text" class="form-control input-md" value="<?php echo $dc->telefono2; ?>" name="tel2"  /></td>
+          </tr>
+          <?php endforeach; ?>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+      <?php echo Form::close(); ?>
+
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('bolsa-trabajo/empresa.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

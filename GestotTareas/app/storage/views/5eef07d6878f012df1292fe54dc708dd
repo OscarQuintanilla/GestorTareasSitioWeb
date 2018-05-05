@@ -1,0 +1,404 @@
+;
+<style type="text/css">
+  
+  td{
+    padding:5px;
+  }
+
+  input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+  }
+
+</style>
+
+
+<?php $__env->startSection("menu"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("content"); ?>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+        
+        $("#estado").val("<?php echo $scort[0]->estado; ?>");
+        $("#tipo").val("<?php echo $scort[0]->tipo; ?>");
+        $("#nombre").val("<?php echo $scort[0]->nombre; ?>");
+        $("#ubicacion").val("<?php echo $scort[0]->ubicacion; ?>");
+        $("#telefono").val("<?php echo $scort[0]->telefono; ?>");
+        $("#edad").val("<?php echo $scort[0]->edad; ?>");
+        $("#peso").val("<?php echo $scort[0]->peso; ?>");
+        $("#estatura").val("<?php echo $scort[0]->estatura; ?>");
+        $("#medidas").val("<?php echo $scort[0]->medidas; ?>");
+        $("#depilacion").val("<?php echo $scort[0]->depilacion; ?>");
+        $("#colorPiel").val("<?php echo $scort[0]->colorPiel; ?>");
+        $("#colorPelo").val("<?php echo $scort[0]->colorPelo; ?>");
+        $("#descripcion").val("<?php echo $scort[0]->descripcion; ?>");
+        $("#mediaHora").val("<?php echo $scort[0]->mediaHora; ?>");
+        $("#cuarentaMinutos").val("<?php echo $scort[0]->cuarentaMinutos; ?>");
+        $("#unaHora").val("<?php echo $scort[0]->unaHora; ?>");
+        $("#dosHoras").val("<?php echo $scort[0]->dosHoras; ?>");
+        $("#tresHoras").val("<?php echo $scort[0]->tresHoras; ?>");
+        $("#laNoche").val("<?php echo $scort[0]->laNoche; ?>");
+
+        servicios = "<?php echo $scort[0]->servicios; ?>";
+        cadena = servicios.split(",");
+
+        for(i=0;i<=cadena.length;i++){
+          if(cadena[i] == "Sexo vaginal"){
+            $("#sexoVaginal").attr("checked", true);
+          }else{
+            if(cadena[i] == "Sexo oral"){
+              $("#sexoOral").attr("checked", true);
+            }else{
+              if(cadena[i] == "Sexo anal"){
+                $("#sexoAnal").attr("checked", true);
+              }else{
+                if(cadena[i] == "Acabar en boca"){
+                  $("#acabarBoca").attr("checked", true);
+                }else{
+                  if(cadena[i] == "Acabar en cara"){
+                    $("#acabarCara").attr("checked", true);
+                  }else{
+                    if(cadena[i] == "Acabar en pechos"){
+                      $("#acabarPechos").attr("checked", true);
+                    }else{
+                      if(cadena[i] == "Sexo lésbico"){
+                        $("#sexoLesbico").attr("checked", true);
+                      }else{
+                        if(cadena[i] == "Sexo en grupos"){
+                          $("#sexoGrupos").attr("checked", true);
+                        }else{
+                          if(cadena[i] == "Trato de novia"){
+                            $("#tratoNovia").attr("checked", true);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+      });
+  </script>
+
+
+	<div style="margin-top:7%;" class="col-lg-12">
+
+    <?php if(Session::has("msj")): ?>
+     <div id="msj" class="alert alert-primary" role="alert" style="width: 100%; margin-top:-2%;">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <strong><?php echo Session::get("msj"); ?></strong>
+     </div>
+    <?php endif; ?>
+
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading" style="color:#FD61E3;">Modificar Perfil Scort</h2>
+    </div>
+
+    <div class="col-lg-9" style="background-color:#F8F9FA;margin:auto;padding:2%;border-style:solid; border-color:gray; border-width:1px;border-radius:15px;">
+    
+      <form action="modificar-perfil-scort" method="post" enctype="multipart/form-data">
+        <center>
+          <table>
+            <tr>
+              <th>Estado:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="estado" id="estado">
+                    <option value="Activo">Activo</option>
+                    <option value="De baja">De baja</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Tipo:</th>
+              <td class="col-lg-12">
+                  <select name="tipo" id="tipo" class="form-control">
+                    <option value="VIP">VIP</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Silver">Silver</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Nombre:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                  <input type="hidden" name="idScort" id="idScort" value="<?php echo $scort[0]->id; ?>">
+              </td>
+            </tr>
+            <tr>
+              <th>Ubicación:</th>
+              <td class="col-lg-12">
+                  <select name="ubicacion" id="ubicacion" class="form-control">
+                    <option value="Ahuachapán">Ahuachapán</option>
+                    <option value="Sonsonate">Sonsonate</option>
+                    <option value="Santa Ana">Santa Ana</option>
+                    <option value="Cabañas">Cabañas</option>
+                    <option value="Chalatenango">Chalatenango</option>
+                    <option value="Cuscatlán">Cuscatlán</option>
+                    <option value="La Libertad">La Libertad</option>
+                    <option value="La Paz">La Paz</option>
+                    <option value="San Salvador">San Salvador</option>
+                    <option value="San Vicente">San Vicente</option>
+                    <option value="Morazán">Morazán</option>
+                    <option value="San Miguel">San Miguel</option>
+                    <option value="Usulután">Usulután</option>
+                    <option value="La Unión">La Unión</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Teléfono:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="00000000">
+              </td>
+            </tr>
+            <tr>
+              <th>Edad:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="edad" id="edad" placeholder="Edad">
+              </td>
+            </tr>
+            <tr>
+              <th>Peso:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="peso" id="peso" placeholder="En libras">
+              </td>
+            </tr>
+            <tr>
+              <th>Estatura:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="estatura" id="estatura" placeholder="En metros">
+              </td>
+            </tr>
+            <tr>
+              <th>Medidas:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="medidas" id="medidas" placeholder="00-00-00">
+              </td>
+            </tr>
+            <tr>
+              <th>Depilación:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="depilacion" id="depilacion">
+                    <option value="Completa">Completa</option>
+                    <option value="Parcial">Parcial</option>
+                    <option value="Natural">Natural</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Color de piel:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="colorPiel" id="colorPiel">
+                    <option value="Blanca">Blanca</option>
+                    <option value="Trigueña">Trigueña</option>
+                    <option value="Morena">Morena</option>
+                    <option value="Negra">Negra</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Color de pelo:</th>
+              <td class="col-lg-12">
+                  <select class="form-control" name="colorPelo" id="colorPelo">
+                    <option value="Rubio">Rubio</option>
+                    <option value="Pelirrojo">Pelirrojo</option>
+                    <option value="Castaño">Castaño</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Morado">Morado</option>
+                  </select>
+              </td> 
+            </tr>
+            <tr>
+              <th>Descripción:</th>
+              <td class="col-lg-12">
+                  <textarea class="form-control" rows="6" name="descripcion" id="descripcion"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th>Media hora:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="mediaHora" id="mediaHora" placeholder="Media hora">
+              </td> 
+            </tr>
+            <tr>
+              <th>40 minutos:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="cuarentaMinutos" id="cuarentaMinutos" placeholder="Cuarenta minutos">
+              </td> 
+            </tr>
+            <tr>
+              <th>Una hora:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="unaHora" id="unaHora" placeholder="Una hora">
+              </td> 
+            </tr>
+            <tr>
+              <th>Dos horas:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="dosHoras" id="dosHoras" placeholder="Dos horas">
+              </td> 
+            </tr>
+            <tr>
+              <th>Tres horas:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="tresHoras" id="tresHoras" placeholder="Tres horas">
+              </td> 
+            </tr>
+            <tr>
+              <th>La noche:</th>
+              <td class="col-lg-12">
+                  <input type="text" class="form-control" name="laNoche" id="laNoche" placeholder="La noche">
+              </td> 
+            </tr>
+            <tr>
+              <th>Servicios:</th>
+              <td class="col-lg-12">
+                  Sexo vaginal <input type="checkbox" value="Sexo vaginal" name="servicios[]" id="sexoVaginal"><br><br>
+                  Sexo oral <input type="checkbox" value="Sexo oral" name="servicios[]" id="sexoOral"><br><br>
+                  Sexo anal <input type="checkbox" value="Sexo anal" name="servicios[]" id="sexoAnal"><br><br>
+                  Acabar en boca <input type="checkbox" value="Acabar en boca" name="servicios[]" id="acabarBoca"><br><br>
+                  Acabar en cara <input type="checkbox" value="Acabar en cara" name="servicios[]" id="acabarCara"><br><br>
+                  Acabar en pechos <input type="checkbox" value="Acabar en pechos" name="servicios[]" id="acabarPechos"><br><br>
+                  Sexo lésbico <input type="checkbox" value="Sexo lésbico" name="servicios[]" id="sexoLesbico"><br><br>
+                  Sexo en grupos <input type="checkbox" value="Sexo en grupos" name="servicios[]" id="sexoGrupos"><br><br>
+                  Trato de novia <input type="checkbox" value="Trato de novia" name="servicios[]" id="tratoNovia"><br>              
+              </td> 
+            </tr>
+            <tr>
+              <th>Foto banner:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoBanner" id="fotoBanner">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <img src="<?php echo $scort[0]->fotoBanner; ?>" width="100%">
+              </td>
+            </tr>
+            <tr>
+              <th>Foto perfil:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoPerfil" id="fotoPerfil">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->fotoPerfil; ?>" width="15%"></center>
+              </td>
+            </tr>
+            <tr>
+              <th>Foto 1:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto1" id="foto1">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->foto1; ?>" width="15%"></center>
+              </td>
+            </tr>
+            <tr>
+              <th>Foto 2:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto2" id="foto2">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->foto2; ?>" width="15%"></center>
+              </td>
+            </tr>
+            <tr>
+              <th>Foto 3:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto3" id="foto3">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->foto3; ?>" width="15%"></center>
+              </td>
+            </tr> 
+            <tr>
+              <th>Foto 4:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto4" id="foto4">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->foto4; ?>" width="15%"></center>
+              </td>
+            </tr>
+            <tr>
+              <th>Foto 5:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto5" id="foto5">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->foto5; ?>" width="15%"></center>
+              </td>
+            </tr>
+            <tr>
+              <th>Foto 6:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="foto6" id="foto6">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <center><img src="<?php echo $scort[0]->foto6; ?>" width="15%"></center>
+              </td>
+            </tr>
+            <tr>
+              <th>Foto portada 1:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoPortada1" id="fotoPortada1">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <img src="<?php echo $scort[0]->fotoPortada1; ?>" width="100%">
+              </td>
+            </tr>
+            <tr>
+              <th>Foto portada 2:</th>
+              <td class="col-lg-12">
+                  <input type="file" class="form-control" name="fotoPortada2" id="fotoPortada2">
+              </td> 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <img src="<?php echo $scort[0]->fotoPortada2; ?>" width="100%">
+              </td>
+            </tr>
+
+          </table>
+            
+        </center>
+        <br>
+        <center><button type="submit" class="btn btn-lg btn-primary">Modificar</button></center>
+
+      </form>
+
+    </div>
+  </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection("footer"); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make("vistasAdmin.masterAdmin", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

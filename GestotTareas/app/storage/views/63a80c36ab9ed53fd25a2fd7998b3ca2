@@ -1,0 +1,87 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+  <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Productos</h4>
+          <a href="producto" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Productos</a>
+          <a href="agregar-Pro" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Producto</a>
+              </div></center><!-- /showback -->
+
+ <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-child fa-4x"></i><span class='social'>Proveedor</a>
+</div>              
+<div id="envelope">
+<div id="enve">
+
+    <h2>Proveedores</h2>
+
+</div>
+
+<?php echo Form::open(array('url'=>'modificar-Prov')); ?>
+
+
+	<?php echo Form::hidden('idProv',$prov->id); ?>
+
+
+
+        <fieldset><br/>
+    Registro Fiscal<br/>
+    <input type="text" name="registroFiscal" value="<?php echo $prov->registroFiscal; ?>" />
+
+    Nombre Proveedor<br/>
+    <input type="text" name="nombre" value="<?php echo $prov->nombre; ?>" />
+
+    NIT<br/>
+    <input type="text" name="nit" value="<?php echo $prov->nit; ?>" />
+
+    Teléfono<br/>
+    <input type="text" name="telefono" value="<?php echo $prov->telefono; ?>" />
+
+    Fecha <br/>
+    <input type="date" name="fecha"  value="<?php echo $prov->fecha; ?>" /><br/>
+
+    País<br/>  
+      <select name="pais" value="<?php echo $prov->pais; ?>">
+        <option value="guatemala">Guatemala</option>
+        <option value="el salvador">El Salvador</option>
+        <option value="honduras">Honduras</option>
+        <option value="nicaragua">Nicaragua</option>
+        <option value="costa rica">Costa Rica</option>
+        <option value="panamá">Panamá</option>
+      </select> <br/><br/>
+
+  Departamento<br/>  
+      <select name="departamento" value="<?php echo $prov->departamento; ?>">
+        <option value="guatemala">Guatemala</option>
+        <option value="san salvador">San Salvador</option>
+        <option value="tegucigalpa">Tegucigalpa</option>
+        <option value="managua">Managua</option>
+        <option value="san jose">San José</option>
+        <option value="panamá">Panamá</option>
+      </select><br/><br/>
+
+  Municipio<br/>
+    <input type="text" name="municipio" value="<?php echo $prov->municipio; ?>"/><br/>
+
+    Dirección<br/>
+    <input type="text" name="direccion" value="<?php echo $prov->direccion; ?>"/><br/>
+
+    Giro Negocio<br/>
+    <input type="text" name="giroNegocio" value="<?php echo $prov->giroNegocio; ?>"/><br/>
+
+    Contacto<br/>
+    <input type="text" name="contacto" value="<?php echo $prov->contacto; ?>"/><br/>
+
+    </fieldset> 
+  <?php echo Form::submit('Modificar',array('class'=>'')); ?>
+
+
+      <?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

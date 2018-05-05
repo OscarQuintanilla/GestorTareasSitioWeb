@@ -1,0 +1,32 @@
+#navar{
+	z-index: 200;	position: fixed;
+	width: 100%;	font-weight: bold;
+	left: 0%;		top: 0%;
+	font-size: 35px;	
+	background-color: #7e57c2;
+}
+#iconActMen #iconActMenI{
+	color: white;	font-size: 35px;
+	position: fixed;		z-index: 300;
+	top: 0.7%;	left: 2.5%;		border-radius: 100px;
+	background-color: #5e35b1;		padding: 10px;
+}
+#iconActMen #iconActMenI:hover{
+	cursor: pointer;
+	transform: rotate(-180deg);
+}
+#slide-out{
+	background-color: #5e35b1;
+	color: white;
+}
+#slide-out li a{
+	color: white;
+}
+#txtUsernameNav, #txtMailNav{
+	background-color: rgba(0,0,0,0.6);
+	text-align: center;
+}
+#txtUsernameNav{
+	border-top-left-radius: 25px; 
+	border-top-right-radius: 25px;
+}

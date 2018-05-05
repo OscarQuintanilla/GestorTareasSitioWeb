@@ -1,0 +1,32 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-4 col-lg-offset-4">
+<center>
+	<ul class="nav nav-pills">
+	  <li role="presentation" class="active"><a href="cuentaForm">Mis datos</a></li>
+	</ul>
+</center></br>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Saldo Disponible</h3>
+		</div>
+			<div class="panel-body">
+			<center>$<?php echo $saldo[0]->saldo; ?>.00</center>
+			 </div>
+		</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

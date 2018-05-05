@@ -1,0 +1,118 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#codigoP").blur(function(){
+      var codigo_p = $(this).val();
+      $.post("buscarProducto", {codigoPro : codigo_p}, function(data){
+        if(data){
+          producto = eval (data);
+          if(producto[0] == "No se encontró ningún producto con este codigo"){
+            $("#nombreP").val(producto[0]);
+            $("#descripcionP").val("");
+            $("#codigoP").focus();
+          }else{
+            $("#nombreP").val(producto[0]);
+            $("#descripcionP").val(producto[1]);
+            $("#id_producto").val(producto[2]);
+            $("#cantidad_stock").focus();
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<?php
+  $contador = Inventario::where('id_sucursal','=',Session::get('id_sucursal'))->count();
+?>
+
+<?php if(Session::has('c')): ?>
+  <div class="alert alert-success" style="text-align:center;">
+    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong><?php echo Session::get('c'); ?></strong>
+  </div>
+<?php endif; ?>
+
+<?php if($contador == 0): ?>
+  <div id="envelope">
+    <div id="enve">
+        <h2>Inventario</h2>
+    </div>
+      <?php echo Form::open(array('url'=>'registro_inventario')); ?>
+
+        Codigo<?php echo Form::text('codigo',''); ?>
+
+        Nombre Inventario<?php echo Form::text('nombre_inventario',''); ?>
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+      <?php echo Form::close(); ?>  
+  </div>
+<?php endif; ?>
+
+<?php if($contador == 1): ?>
+  <center><div class="showback">
+    <h4><i class="fa fa-angle-right"></i>Menú Detalle Inventario</h4>
+          <a href="inventario" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Detalle Inventario</a>
+          <a href="ver-inventario" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Ver Inventario</a>
+              </div></center><!-- /showback -->
+              <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+                <i class="fa fa-plus-square fa-4x"></i><span class='social'>Detalle Inventario</a>
+              </div>
+  <div id="envelope">
+
+  <div id="enve">
+    <h2>Detalle Inventario</h2>
+  </div>
+      <?php echo Form::open(array('url'=>'registro_detalle')); ?>
+
+
+        Código Producto<br/><input type="text" name="codigoP" id="codigoP">
+
+        Nombre Producto<br/><input type="text" name="nombreP" id="nombreP">
+
+        Descripción Producto<br/><input type="text" name="descripcionP" id="descripcionP">
+
+        Cantidad Stock <input type="text" name="cantidad_stock" id="cantidad_stock">
+
+        <?php
+          $id_inventario = Inventario::where('id_sucursal','=',Session::get('id_sucursal'))->get();
+        ?>
+
+        <?php echo Form::hidden('id_inventario', $id_inventario[0]->id); ?>
+
+
+        <input type="hidden" name="id_producto" id="id_producto">
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+      <?php echo Form::close(); ?>
+
+  <center>Importar CSV con el inventario</center>
+  <br/>
+      <form action="csv" method='post' enctype="multipart/form-data">
+        <?php echo Form::hidden('suc', $id_inventario[0]->id); ?>
+
+        <input type="file" name="archivo" id="archivo">
+        <input type="submit" value="Subir" name="submit">
+      </form> 
+  </div>
+
+<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

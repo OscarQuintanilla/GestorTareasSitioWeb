@@ -1,0 +1,217 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+
+<!--<script type="text/javascript">
+    $(document).ready(function(){
+    cargar_paises();
+    $("#pais").change(function(){dependencia_estado();});
+    $("#estado").change(function(){dependencia_ciudad();});
+    $("#estado").attr("disabled",true);
+    $("#ciudad").attr("disabled",true);
+});
+
+function cargar_paises()
+{
+    $.get("js/cargar-paises.php", function(resultado){
+        if(resultado == false)
+        {
+            alert("Error");
+        }
+        else
+        {
+            $('#pais').append(resultado);           
+        }
+    }); 
+}
+function dependencia_estado()
+{
+    var code = $("#pais").val();
+    $.get("js/dependencia-estado.php", { code: code },
+        function(resultado)
+        {
+            if(resultado == false)
+            {
+                alert("Error");
+            }
+            else
+            {
+                $("#estado").attr("disabled",false);
+                document.getElementById("estado").options.length=1;
+                $('#estado').append(resultado);         
+            }
+        }
+
+    );
+}
+
+function dependencia_ciudad()
+{
+    var code = $("#estado").val();
+    $.get("js/dependencia-ciudades.php?", { code: code }, function(resultado){
+        if(resultado == false)
+        {
+            alert("Error");
+        }
+        else
+        {
+            $("#ciudad").attr("disabled",false);
+            document.getElementById("ciudad").options.length=1;
+            $('#ciudad').append(resultado);         
+        }
+    }); 
+}
+
+</script>-->
+
+        <section class="contact" id="ofertas">
+        <div class="noticias">
+<form action="registrarDataPersonal" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <center>
+                    <div class="col-lg-6 col-lg-offset-3">
+                    <img class="img-responsive" src="img/vista1.jpg" alt="logo"><br>
+                    </div>
+
+                    
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            <h5>Datos Personales</h5>
+                        </div>
+                                <div class="panel-body">
+                                    Nombre: <input type="text" class="form-control input-group-lg" name="nombre" placeholder="Nombre" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+                                    Apellidos:<input type="text" class="form-control" name="apellidos" placeholder="Apellidos" pattern="^[a-zA-Z_áéíóúñ\s]*$" required>
+                                </div>
+                            </div>
+                    </div>
+                </center>
+            </div>
+      
+          <div class="row">
+                <center>
+                        <div class="col-lg-4 col-lg-offset-4">
+                            <div class="panel panel-primary">
+                                    <div class="panel-body">
+                Tipo de identificación:<br><br>
+                <table>
+                <tr>
+                    <th>
+                          <select class="form-control" name="tipo_identificacion" id="sel1">
+                            <option value="DUI">DUI</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="NIT">NIT</option>
+                          </select>
+                    </th>
+                    <th><input type="text" class="form-control" name="numero_identificacion" required></th>
+                </tr>
+                </table>
+                Fecha de Nacimiento:<input type="date" class="form-control" name="fecha_nacimiento" placeholder="Día/Mes/Año">
+                Genero: <div class="form-group">
+                                  <select class="form-control" name="genero" id="sel1">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                  </select>
+                                </div>
+                Estado Civil: <div class="form-group">
+                                  <select class="form-control" name="estado_civil" id="sel1">
+                                    <option value="Soltero(a)">Soltero(a)</option>
+                                    <option value="Casado(a)">Casado(a)</option>
+                                    <option value="Viudo(a)">Viudo(a)</option>
+                                    <option value="Separado(a)/Divorciado(a)">Separado(a)/Divorciado(a)</option>
+                                    <option value="Unión libre">Unión libre</option>
+                                  </select>
+                                </div>
+                Nacionalidad:<input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad">
+                Dirección1: <input type="text" class="form-control" name="direccion1" placeholder="Dirección">
+                Dirección2(opcional): <input type="text" class="form-control" name="direccion2" placeholder="Dirección">
+                <!--País:<div class="form-group">
+                                  <select class="form-control" name="pais" id="pais">
+                                    <option value="0">Seleccione un país</option>
+                                    <option value="2">Seleccione</option>
+
+                                  </select>
+                                </div>
+                Distrito/Provincia:<div class="form-group">
+                                      <select class="form-control" name="distrito_provincia" id="estado">
+                                        <option value="0">Seleccione un distrito/provincia</option>
+                                      </select>
+                                    </div>
+                Ciudad:<div class="form-group">
+                                  <select class="form-control" name="ciudad" id="ciudad">
+                                    <option value="0">Seleccione una ciudad</option>
+                                  </select>
+                                </div>
+                -->
+
+                País:<div class="form-group">
+                        <input type="text" class="form-control" name="pais" placeholder="País">         
+                    </div>
+                Distrito/Provincia:<div class="form-group">
+                                        <input type="text" class="form-control" name="distrito_provincia" placeholder="Distrito/Provincia">         
+                                    </div>
+                Ciudad:<div class="form-group">
+                                    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad">         
+                                </div>
+
+                Código Postal: <input type="text" class="form-control" name="codigo_postal" placeholder="Código Postal">
+                Teléfono Fijo:<input type="text" class="form-control" name="telefono_fijo">
+                Teléfono Móvil:<input type="text" class="form-control" name="telefono_movil">
+                Foto:<input type="file" class="form-control" name="foto">
+                <br>
+                Licencia de Conducir:
+                <br>
+                <table>
+                    <tr>
+                        <td>Licencia Particular</td>
+                        <td><input type="checkbox" name="licencia[]" value="Licencia Particular"></td>
+                    </tr>
+                    <tr>
+                        <td>Licencia Liviana</td>
+                        <td><input type="checkbox" name="licencia[]" value="Licencia Liviana"></td>
+                    </tr>
+                    <tr>
+                        <td>Licencia Pesada</td>
+                        <td><input type="checkbox" name="licencia[]" value="Licencia Pesada"></td>
+                    </tr>
+                    <tr>
+                        <td>Licencia Motocicleta</td>
+                        <td><input type="checkbox" name="licencia[]" value="Licencia Motocicleta"></td>
+                    </tr>
+                </table>
+               <br>
+                Dispone de vehículo propio: <div class="form-group">
+                                <select class="form-control" name="vehiculo_propio" id="sel1">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+            <button type="submit" class="btn btn-primary btn-md">Aceptar</button><br>
+               
+            </div>
+        </div>
+      
+  </div>
+
+  </div>      
+      </div>
+        </center>
+                </div>
+
+
+            </div>
+</form>
+            </div>
+</section>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('plantilla.plantilla-general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

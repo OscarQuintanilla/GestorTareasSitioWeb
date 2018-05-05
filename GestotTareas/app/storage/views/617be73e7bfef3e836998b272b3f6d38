@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bolsa trabajo | Empresa</title>
+  <link rel="icon" href="">
+  <?php echo HTML::style("css/bootstrap.css"); ?>
+
+  <?php echo HTML::style("css/ie10-viewport-bug-workaround.css"); ?>
+
+  <?php echo HTML::style("css/carousel.css"); ?>
+
+  <style media="screen">
+  .footer-options{
+    list-style: none;
+    overflow: hidden;
+  }
+  .footer-options li{
+    float: left;
+    padding: 10px;
+  }
+  .social tr>td>a>img:hover{
+    opacity: 0.5;
+  }
+  </style>
+</head>
+<body>
+
+  <?php $__env->startSection('menu'); ?>
+  <!-- Inicio del Menú -->
+  <div class="navbar-wrapper">
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Profesionall</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="candidato">Candidato</a></li>
+              
+              <li class="active"><a href="empresa">Empresa</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right:35px;">
+              <li><button class="btn btn-md btn-primary" style="margin-top: 8px;" data-toggle="modal" data-target="#logModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true" style="margin-right:10px;"></span>Ingresar</button></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <?php if(Session::has("msj")): ?>
+    <div class="alert alert-success alert-dismissible" role="alert" style="position: fixed;left: 0px;right: 0px;z-index: 1000;top: 50px;text-align: center;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {Session::get("msj")}}
+    </div>
+  <?php endif; ?>
+  <!-- Fin del Menú -->
+  <?php echo $__env->yieldSection(); ?>
+
+  <?php $__env->startSection('carousel'); ?>
+  <!-- Inicio del Carousel -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li class="active" data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+
+    <!-- Imagen del carousel-->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img class="first-slide" src="http://eslibertadcr.org/wp-content/uploads/2015/10/empresa.jpg" alt="First slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <div class="row">
+              <div class="col-lg-12" style="background-color:green; color:white; opacity: 0.65; border-color:green; border-radius:10px; box-shadow: 5px  5px 15px black;">
+                <h2><b>Aquí encuentras el mejor talento humano.</b></h2>
+                <p>Miles de empresas como la tuya ya han tenido éxito contratando los mejores profesionales a través de Profesional.</p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-12">
+               <p>
+                 <?php echo HTML::link("bolsa-trabajo/empresa/acceso","Registrarme",array('class' => 'btn btn-lg btn-primary', 'style' => 'width:auto;font-size:16pt;')); ?>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin del Carousel -->
+  <?php echo $__env->yieldSection(); ?>
+
+
+  <!-- Inicio del Contenedor Principal -->
+  <div class="container marketing">
+    <?php echo $__env->yieldContent('content'); ?>
+  </div>
+
+  <br>
+
+  <?php $__env->startSection('footer'); ?>
+  <!-- FOOTER -->
+  <footer style="padding:40px; background-color:#e5f2f7; color:#333;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="page-header text-center">
+            <ul class="footer-options">
+              <div class="th-hotline">
+              
+                <span style="font-size: 15.5px;">sv@profesionall.com</span>
+              </div> 
+            </ul>
+          </div>
+          <hr style="border-color: rgba(0,0,0,0.1);">
+          </ul>
+        </div>
+
+        <div class="col-md-offset-4 col-md-4">
+          <div class="page-header text-center">
+            <h4>Siguenos en nuestras redes sociales</h4><hr style="border-color: rgba(0,0,0,0.1);margin: 28px 0 0px;">
+          </div>
+          <table style="margin: 0px auto;" class="social">
+            <tr>
+              <td style="padding: 10px;"><a href="https://www.facebook.com/profesionallsv/?fref=ts" target="_Blank"><img src="http://media.infojobs.net/appgrade/icons/ico-social-face-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-twitter-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-gplus-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <?php echo $__env->yieldSection(); ?>
+
+  <?php $__env->startSection('modal'); ?>
+  <!-- Inicio del Modal -->
+  <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Acceso empresa</h4>
+        </div>
+        <br>
+        <?php echo Form::open(array("url" => "logEm", "class" => "form-horizontal", "style" => "margin:0px auto;")); ?>
+
+          <div class="modal-body">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+                    <input type="email" class="form-control" placeholder="Email" name="mail" required >
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                    <input type="password" class="form-control" placeholder="Contraseña" name="pass" required >
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Ingresar</button>
+          </div>
+        <?php echo Form::close(); ?>
+
+      </div>
+    </div>
+  </div>
+   <!-- Fin del Modal -->
+   <?php echo $__env->yieldSection(); ?>
+
+  <?php echo HTML::script("js/jquery.js"); ?>
+
+  <?php echo HTML::script("js/bootstrap.js"); ?>
+
+  <?php echo HTML::script("js/holder.js"); ?>
+
+  <?php echo HTML::script("js/ie10-viewport-bug-workaround.js"); ?>
+
+</body>
+</html>

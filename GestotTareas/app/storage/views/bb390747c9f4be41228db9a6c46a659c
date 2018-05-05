@@ -1,0 +1,61 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	
+	<?php if($saldo[0]->saldo == 0): ?>
+		$<?php echo $saldo[0]->saldo; ?>.00 Saldo agotado, por favor recargue dinero a su cuenta para poder reservar canchas
+	<?php endif; ?>
+
+	<?php if($saldo[0]->saldo < 10 and $saldo[0]->saldo != 0): ?>
+		$<?php echo $saldo[0]->saldo; ?>.00 Saldo insuficiente, por favor recargue dinero a su cuenta para poder reservar canchas.
+	<?php endif; ?>
+
+	<?php if($saldo[0]->saldo >= 10): ?>
+		Saldo: $<?php echo $saldo[0]->saldo; ?>.00
+	<?php endif; ?>
+
+
+	
+	</br>
+	<br>
+
+	<?php echo HTML::script('js/reservar.js'); ?>
+
+
+	<?php if(Session::has('msj')): ?>
+        <div class="alert-danger" style="text-align:center;">
+            <strong><span class="fa fa-user-plus" aria-hidden="true"></span></strong>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong><?php echo Session::get('msj'); ?></strong>
+        </div>
+    <?php endif; ?>
+    
+	<center><select class="btn btn-info" data-style="btn btn-info">
+				    <option>8:00am - 9:00am</option>
+				    <option>10:00am - 11:00am</option>
+				    <option>12:00m - 1:00pm</option>
+				    <option>2:00m - 3:00pm</option>
+				    <option>4:00pm - 5:00pm</option>
+				    <option>6:00pm - 7:00pm</option>
+				    <option>8:00pm - 9:00pm</option>
+				    <option>10:00pm - 11:00pm</option>
+	  		</select>
+	</center>
+
+	<?php echo $canchitas; ?>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,51 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('contenedor'); ?>
+	<br>
+	<br>
+	<h1 class="text-center">Lista de mascotas</h1>
+	<?php if(Session::has("msj")): ?>
+     <div class="alert alert-danger" role="alert" style="width: 100%; margin-top:-2%;">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <strong><?php echo Session::get("msj"); ?></strong>
+     </div>
+   	<?php endif; ?>
+	<table class="table table-bordered table-striped">
+		<tr class="table-primary">
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Tipo</th>
+			<th>Edad</th>
+			<th>Peso</th>
+			<th>Altura</th>
+			<th>Color</th>
+			<th>Descripción</th>
+			<th colspan="2">Operaciones</th>
+		</tr>
+		<?php foreach($mascotas as $mascota): ?>
+		<tr>
+			<td><?php echo $mascota->id; ?></td>
+			<td><?php echo $mascota->nombre; ?></td>
+			<td><?php echo $mascota->raza; ?></td>
+			<td><?php echo $mascota->edad; ?></td>
+			<td><?php echo $mascota->peso; ?></td>
+			<td><?php echo $mascota->altura; ?></td>
+			<td><?php echo $mascota->color; ?></td>
+			<td><?php echo $mascota->descripcion; ?></td>
+			<td><a href="modificar-mascota-form-<?php echo $mascota->id; ?>" style="color:blue;">Modificar</a></td>
+			<td><a href="eliminar-mascota-<?php echo $mascota->id; ?>" style="color:red;">Eliminar</a></td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+	<br>
+	<br>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('masterBladePrivada', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

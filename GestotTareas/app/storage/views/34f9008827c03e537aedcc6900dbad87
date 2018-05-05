@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+		*{
+			font-family: comic sans ms;
+			font-size: 16pt;
+		}
+
+		table{
+			margin: 0px auto;
+			border-style: solid;
+			border-width: 1px;
+			border-color: silver;
+			border-radius: 10px;
+		}
+
+		td{
+			padding: 8px;
+		}
+
+		#boton{
+			background-color: skyblue;
+			border-style: none;
+			border-radius: 6px;
+			color: white;
+			cursor: pointer;
+			padding: 4px;
+		}
+
+	</style>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form action="ingresarSubcategoria" method="post">
+		<table>
+			<tr>
+				<th colspan="2">Sub-Categoria</th>
+			</tr>
+			<tr>
+				<td>Categoría:</td>
+				<td><select name="id_categoria">
+
+				<?php foreach($categorias as $categoria): ?>
+					<option value=<?php echo $categoria->id; ?>><?php echo $categoria->nombre_categoria; ?></option>
+				<?php endforeach; ?>
+				 
+			</select></td>
+			</tr>
+			<tr>
+				<td>Subcategoaría:</td>
+				<td><input type="text" name="nombre_subcategoria"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Ingresar" id="boton"><center></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

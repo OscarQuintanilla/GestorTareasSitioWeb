@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Profesional</title>
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/carousel.css">
+  <style media="screen">
+
+  body{
+     overflow-x: hidden;
+  }
+
+  .thumbnail {
+    position:relative;
+    overflow:hidden;
+    width: 260.075px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .thumbnail img{
+    width: 260.075px;
+    height: 190px;
+  }
+
+  .caption {
+      position:absolute;
+      top:-100%;
+      right:0;
+      background:rgba(66, 139, 202, 0.75);
+      width:100%;
+      height:100%;
+      padding:2%;
+      text-align:center;
+      color:#fff !important;
+      z-index:2;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+  }
+  .thumbnail:hover .caption {
+      top:0%;
+  }
+  .pro{
+    position: relative;
+    margin: 15px auto;
+    box-shadow: 2px 2px 1px silver;
+    width: 220px;
+    height: 350px;
+  }
+  .pro .picturepro{
+    background-color: skyblue;
+    width: 220px;
+    height: 130px;
+  }
+  .pro .picturepro img{
+    width: 220px;
+    height: 130px;
+    opacity: 0.65;
+  }
+  .pro .avatar{
+    position: absolute;
+    border: 2px solid white;
+    width: 110px;
+    height: 110px;
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+  }
+  .pro .avatar img{
+    border: 1px solid white;
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+
+  }
+  .dataP{
+    position: absolute;
+    top: 160px;
+    text-align: center;
+    width: 220px;
+    height: 190px;
+  }
+  .dataP button{
+    border-radius: 0px;
+    width: 220px;
+    height: 55px;
+  }
+  .footer-options{
+    list-style: none;
+    overflow: hidden;
+  }
+  .footer-options li{
+    float: left;
+    padding: 10px;
+  }
+  .social tr>td>a>img:hover{
+    opacity: 0.5;
+  }
+
+  #bannerEquipo{
+    background-image: url("http://www.sv.computrabajo.com/c/ct/img/bg_home.jpg");
+    height: 200px;
+    margin-top: 20px;
+  }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Inicio del Menú -->
+  <div class="navbar-wrapper">
+    <div class="container">
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="inicio">Profesional</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="bolsa-trabajo">Bolsa de Trabajo</a></li>
+            </ul>
+            <div class="row">
+              <button type="button" data-toggle="modal" data-target="#logModal" class="btn btn-md btn-primary col-lg-offset-9" style="margin-top:8px;"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Login</button>
+            </div>
+          </div>
+          </div>
+        </nav>
+
+    </div>
+  </div>
+  <!-- Fin del Menú -->
+
+
+  <!-- Inicio del banner -->
+  <div class="col-leg-12" id="bannerEquipo">
+
+  </div>
+  <!-- Fin del banner -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12" style="background-color:#f7f7f7;">
+        <section class="contact" id="noticias">
+          <div class="noticias">
+            <div class="row">
+              <div class="col-lg-7">
+                <br>
+                <div class="panel panel-default" style="opacity: 0.89;">
+                  <h3 class="text-center"><b>Inserta tu currículum aquí</b></h3>
+  
+                  <form action="registrar-usuario-candidato" method="post">
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                          </span>
+                          <input type="text" class="form-control" placeholder="Nombre" aria-label="..." name="nombre">
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+
+
+                      <div class="col-lg-6">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                          </span>
+                          <input type="text" class="form-control" placeholder="Apellido" aria-label="..." name="apellidos">
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div>
+
+
+                <div class="panel-footer">
+                  <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                      </span>
+                      <input type="text" class="form-control" placeholder="Correo" aria-label="..." name="correo">
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+
+
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+                      </span>
+                      <input type="password" class="form-control" placeholder="Contraseña" aria-label="..." name="contraseña">
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+
+                <br>
+
+                 <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-list"></i>
+                      </span>
+                      <select class="form-control" name="categoria">
+                        <option value="" selected="selected">Selecciona una categoría</option>
+                        <?php foreach($categorias as $categoria): ?>                    
+                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+                        <?php endforeach; ?>                 
+                      </select>
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                  
+
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                <i class="glyphicon glyphicon-globe"></i>
+                      </span>
+                      <select class="form-control" name="distrito">
+                        <option value="" selected="selected">Selecciona un distrito</option>
+                        <?php foreach($distritos as $distrito): ?>                    
+                          <option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+                        <?php endforeach; ?>                 
+                      </select>
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+
+                <br>
+
+                <div class="btn-group col-lg-offset-5">
+                  <button type="submit" class="btn btn-lg btn-primary" style="background-color:#ffa500; border-color:#ffa500;">Continuar</button>
+                </div>
+                </form>
+                <br>
+                <br>
+                <p>Al crear una cuenta, aceptas las <a>Condiciones legales, Reglamento de Prestación de servicios</a> y <a>la Política de privacidad</a> de Profesionales. </p>
+
+              </div>
+              </div>                
+            </div>
+            <br>
+                <div class="col-lg-5">
+                <div class="panel panel-default" style="background-color:green; color:white; opacity: 0.65; border-color:green;">
+                    <h3 class="text-center">El trabajo que buscas está con nosotros</h3> 
+                  
+                    <ul style="text-align:justify;margin-top:25px;">
+                      <li><h4>Postúlate a las mejores ofertas</h4></li>
+                      <li><h4>Sé visible para miles de empresas</h4></li>
+                      <li><h4>Recibe ofertas adecuadas a tu perfil</h4></li>
+                      <li><h4>Sigue el estado de tus postulaciones</h4></li>
+                      <li><h4>Compárate con los demás inscritos</h4></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+                </div>
+                        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="padding:40px; background-color:#e5f2f7; color:#333;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="page-header text-center">
+              <ul class="footer-options">
+                <li><a href="">Soporte 2</a></li>
+                <li><a href="">Equipo 2</a></li>
+                <li><a href="">Colaboraciones 2</a></li>
+                <li><a href="">Blog 2</a></li>
+              </ul>
+            </div>
+            <hr style="border-color: rgba(0,0,0,0.1);">
+            </ul>
+          </div>
+
+          <div class="col-md-offset-4 col-md-4">
+            <div class="page-header text-center">
+              <h4>MANTENTE CONECTADO</h4><hr style="border-color: rgba(0,0,0,0.1);margin: 28px 0 0px;">
+            </div>
+            <table style="margin: 0px auto;" class="social">
+              <tr>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-face-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-twitter-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-gplus-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  
+  <!-- Inicio del Modal -->
+  <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Acceso candidato</h4>
+        </div>
+        <br>
+        <form class="form-horizontal" style="margin:0px auto;" action="login-candidato" method="POST">
+          <div class="modal-body">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                    <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   <!-- Fin del Modal -->
+
+  <script src="js/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/holder.js"></script>
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <svg style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;" preserveAspectRatio="none" viewBox="0 0 500 500" height="500" width="500" xmlns="http://www.w3.org/2000/svg">
+  <defs><style type="text/css"></style></defs>
+  <text style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif" y="25" x="0">500x500</text>
+</body>
+</html>

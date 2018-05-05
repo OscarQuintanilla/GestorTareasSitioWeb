@@ -1,0 +1,32 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+                            <h2>Ver Streaming</h2>
+                            <hr class="star-primary">
+								<p>Disfrute del torneo en vivo a traves de nuestro streaming</p>                            
+								<video width="356" height="200" controls poster="full/http/link/to/image/file.png"  >
+
+								<source src="full/link/to/http/mp4/video/file.mp4" type="video/mp4" />
+
+								<source src="full/link/to/http/ogv/video/file.ogv" type="video/ogg" />
+
+								<source src="full/link/to/http/webm/video/file.wbem" type="video/webm" />
+
+								<em>Sorry, your browser doesn't support HTML5 video.</em>
+
+								</video>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

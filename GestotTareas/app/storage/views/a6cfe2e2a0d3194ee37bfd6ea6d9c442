@@ -1,0 +1,170 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+       <section class="contact">
+        <div class="noticias">
+         <div class="container">
+            <div class="row">
+                <center>
+                <div class="col-md-6 col-md-offset-0">
+            <div class="panel panel-primary">
+            <div class="panel-body">
+                <img src=<?php echo $url_foto; ?> alt="..." class="img-circle"><br>
+
+                <?php echo $nombre; ?><br>
+                <?php echo $titulo_profesional; ?>
+
+            </div>
+                <div class="panel-footer"><a href="#">Actualizar Currículum</a><br>
+                </div>
+        </div>
+  </div>
+
+                <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                    Buscar Ofertas <br>
+                    <input type="text" class="form-control" placeholder="Palabra clave" name="busqueda">
+            </div>
+                <div class="panel-footer">                        
+                    <div class="form-group">
+                          <select class="form-control" id="sel1">
+                            <option>San Salvador</option>
+                            <option>La Libertad</option>
+                            <option>Santa Ana</option>
+                            <option>San Miguel</option>
+                            <option>Morazán</option>
+                            <option>Cabañas</option>
+                            <option>Ahuachapán</option>
+                            <option>Sonsonate</option>
+                            <option>Chalatenango</option>
+                            <option>La Paz</option>
+                            <option>Usulután</option>
+                            <option>San Vicente</option>
+                            <option>Cabañas</option>
+                            <option>Cuscatlán</option>
+                          </select>
+                          <br>
+                        <button type="submit" class="btn btn-info btn-md btn-block">Buscar</button>
+
+                    </div>
+                </div>
+        </div>
+  </div>
+
+            </div>
+                
+                  <div class="row"> 
+                      <div class="col-md-12 col-lg-offset-0">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Mis Aplicaciones</div>
+                        <div class="panel-body">
+                        
+                            <table class="table no-margn">
+                              <thead>
+                                <tr>
+                                  <th>Aplicación</th>
+                                  <th></th>
+                                  <th>Estado</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Programador PHP desde casa</td>
+        <td><a href="#" title="Acceder a sucursal" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a></td>
+                                  <td>Enviada</td>
+                                </tr>
+                                <tr>
+                                  <td>Soporte Técnico</td>
+                                  <td><a href="#" title="Acceder a sucursal" class="btn btn-success btn-xs"><i class="fa fa-check"></i></a></td>
+                                  <td>Proceso finalizado o descartado</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                          </div>
+                    </div>
+                </div>
+                
+                                  <div class="row"> 
+                      <div class="col-md-12 col-lg-offset-0">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Ofertas Sugeridas</div>
+                        <div class="panel-body">
+                            <table class="table no-margn">
+                              <thead>
+                                <tr>
+                                  <th>Oferta</th>
+                                  <th>País</th>
+                                  <th>Día</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><a href="#">Promotor/a asesor de venta - Asesor de ventas de tecnologia</a><br>
+                                    Innocom
+                                </td>
+                                <td>Extranjero</td>
+                                  <td>Ayer, 11:13 a. m.</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="#">Senior Ruby on Rails Developer - Telecommute</a><br>
+                                    Innocom
+                                </td>
+                                <td>Extranjero</td>
+                                  <td>Ayer, 11:13 a. m.</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="#">Ejecutivo de cuentas de Tecnología en Nicaragua</a><br>
+                                    Innocom
+                                </td>
+                                <td>Extranjero</td>
+                                  <td>Ayer, 11:13 a. m.</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                          </div>
+                    </div>
+                </div>
+                                      
+                <div class="row"> 
+                      <div class="col-md-12 col-lg-offset-0">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Mis Alertas</div>
+                        <div class="panel-body">
+                            <table class="table no-margn">
+                              <thead>
+                                <tr>
+                                  <th>Alerta</th>
+                                  <th></th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><a href="#">Servicio al cliente | La Libertad</a></td>
+                                </tr>
+                                <tr>
+                                  <td><a href="#">Soporte Técnico | San Salvador</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                          </div>
+                    </div>
+                </div>
+              </div><!-- /row -->
+        </div>
+            </div>
+        </div>
+        </section>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

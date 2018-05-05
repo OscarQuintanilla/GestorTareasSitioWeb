@@ -1,0 +1,44 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Categorías</h4>
+          <a href="categorias" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Categorias</a>
+          <a href="agregar-Cat" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Categoria</a>
+              </div></center><!-- /showback -->
+              <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-sitemap fa-4x"></i><span class='social'>Categorias</a>
+</div>
+<div id="envelope">
+<div id="enve">
+
+    <h2>Categoria</h2>
+
+</div>
+
+<?php echo Form::open(array('url'=>'modificar-Cat')); ?>
+
+
+	<?php echo Form::hidden('idCat',$cat->id); ?>
+
+
+  <fieldset><br/>
+
+  Codigo<br/>
+  <input type="text" name="codigo" value="<?php echo $cat->codigo; ?>">
+  Nombre Categoria<br/>
+  <input type="text" name="nombre" value="<?php echo $cat->nombre; ?>">
+
+  <?php echo Form::submit('Modificar',array('class'=>'')); ?>
+
+   </fieldset>
+
+      <?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

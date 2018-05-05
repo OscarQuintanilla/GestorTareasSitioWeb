@@ -1,0 +1,249 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="content-panel">
+      <h4><i class="fa fa-angle-right"></i><span class="titleIngreso">Ingresos</span></h4>
+        <table class="table table-striped table-advance table-hover">
+          <tr>
+            <th> Tipo: </th>
+            <td>
+                  <select id="tipoIngreso">
+                    <option value="0">-- Seleccione una opcion --</option>
+                    <option value="devo">Devolucion</option>
+                    <option value="ave">Ingreso por averia</option>
+                    <option value="set">Armador de set</option>
+                    <option value="com">Compras</option>
+                  </select>
+            </td>
+          </tr>
+          <tr id="nuevoFiltro" style="display:none">
+              <td colspan="2"><button id="nuevaBusqueda">Nueva Busqueda</button></td>
+            </tr>
+        </table>
+
+         <?php if(Session::has('IngresoFinalizado')): ?>
+            <table class='table table-striped table-advance table-hover'>
+                <tr>
+                    <td>
+                        <?php echo HTML::link("imprimirIng/".Session::get("IngresoFinalizado"),"Imprimir Ingreso",array("target" => "_blank", "style" => "color:darkblue;")); ?>
+
+                    </td>
+                </tr>
+            </table>
+           <div class="alert alert-info" style="text-align:center;">
+              <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Ingreso realizado exitosamente</strong>
+            </div>
+         <?php endif; ?>
+         <?php if(Session::has('Armado')): ?>
+           <div class="alert alert-info" style="text-align:center;">
+              <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong><?php echo Session::get("Armado"); ?></strong>
+            </div>
+         <?php endif; ?>
+
+      <!-- busqueda -->
+      <div id="busquedaCliente" style="display:none">
+
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i>Busqueda:<span style="float: right; margin-right: 15px;"></h4>
+                    <table class="table table-striped table-advance table-hover">
+                      <tr>
+                        <td>Codigo o nombre de cliente:
+                        <input type="text" id="busquedaCliTxt" value="" /></td>
+                      </tr>
+                    </table>
+                </div>
+
+      </div>
+
+       <!-- devolucion -->
+      <div class="devolucionDataClienteContent" style="display:none;">
+
+                <div class="content-panel">
+                     <h4><i class="fa fa-angle-right"></i>Pertenece a:</h4>
+                      <table class="table table-striped table-advance table-hover">
+                          <tr>
+                            <td>Cliente:</td>
+                            <td><span class="nameCliente" style="color: #0088ce;"></span></td>
+                            <td>Codigo:</td>
+                            <td><span class="codCliente" style="color: #0088ce;"></span></td>
+                            <td>Fecha:</td>
+                            <td><span class="fechaCliente" style="color: #0088ce;"></span></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>Ingreso #: </td>
+                            <td><input type="text" readonly="readonly" readonly="readonly" class="numIngreso" /></td>
+                            <td>Codigo devolucion: </td>
+                            <td><input type="text"  class="codDevolucion" /></td>
+                            <td></td>
+                          </tr>
+                      </table>
+                      <h4><i class="fa fa-angle-right"></i>Devolucion de producto:</h4>
+                      <table class="table table-striped table-advance table-hover">
+                        <tr>
+                          <td>Codigo:</td>
+                          <td><input type="text" id="removerPro" /></td>
+                        </tr>
+                      </table>
+                      <h4><i class="fa fa-angle-right"></i>Detalle productos:</h4>
+                      <div class="detalleProds">No se han ingresado productos</div>
+                      <br><br>
+                       <table class="table table-striped table-advance table-hover">
+                        <?php echo Form::open(array("url" => "finalizarIngreso")); ?>
+
+                        <input type="hidden" id="idIngresoForm" name="idIngreso" value="" />
+                        <tr>
+                          <td><?php echo Form::submit("Finalizar"); ?></td>
+                        </tr>
+                        <?php echo Form::close(); ?>
+
+                      </table>
+                </div>
+
+      </div>
+
+      <!-- armado de set -->
+      <div class="armadoSet" style="display:none;">
+
+                <div class="content-panel">
+                     <h4><i class="fa fa-angle-right"></i>Armado de set:</h4>
+                      <table class="table table-striped table-advance table-hover">
+                        <?php echo Form::open(array("url" => "armadoSet")); ?>
+
+                          <?php
+                            $categorias = Categoria::where("id_sucursal",Session::get("id_sucursal"))->get();
+                          ?>
+                          <tr>
+                            <td>Categoria:</td>
+                            <td><select name="categoria" >
+                                  <?php
+                                      foreach($categorias as $c)
+                                      {
+                                  ?>
+                                      <option value="<?php echo $c->id; ?>"> <?php echo $c->nombre; ?> </option>
+                                  <?php
+                                      }
+                                  ?>
+                                </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Codigo:</td>
+                            <td><input type="text" name="codPro" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td>Nombre:</td>
+                            <td><input type="text" name="nombrePro" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td>Descripcion:</td>
+                            <td><input type="text" name="descripPro" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td>Precio:</td>
+                            <td><input type="text" name="precioPro" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td>Precio Unitario</td>
+                            <td><input type="text" name="precioUPro" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td>Precio mayoria:</td>
+                            <td><input type="text" name="precioMPro" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td>Cantidad en Stock:</td>
+                            <td><input type="text" name="stock" value="" required/></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2"><?php echo Form::submit("Ingresar"); ?></td>
+                          </tr>
+                          <?php echo Form::close(); ?>
+
+                      </table>
+                </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <!-- modal -->
+  <div id="fixed"></div>
+  <div id="modalC">
+    <h4>Resultado de busqueda:</h4><hr>
+    <div class="contentM"></div>
+    <button id="cerrarModal">Cerrar</button>
+  </div>
+
+  <!-- tipo -->
+  <input type="hidden" id="tipoDevo" value="" />
+  <!-- ingreso -->
+  <input type="hidden" id="idIngreso" value="" />
+  <!-- cliente -->
+  <input type="hidden" id="clienteAct" value="" />
+
+  <?php echo HTML::script("js/ingresos.js"); ?>
+
+
+
+
+  <style type="text/css">
+  #fixed{
+      position: fixed;
+      z-index: 5000;
+      background-color: black;
+      display: none;
+      opacity: 0.6;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    #modalC{
+      z-index: 5001;
+      display: none;
+      background-color: white;
+      box-sizing: border-box;
+      border-radius: 5px;
+      height: 400px;
+      width: 600px;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      bottom: 210px;
+      position: absolute;
+      padding: 10px;
+    }
+
+    #modalC .contentM{
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 250px;
+      width: 550px;
+      margin:0px auto;
+    }
+
+    #modalC #cerrarModal{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+</style>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

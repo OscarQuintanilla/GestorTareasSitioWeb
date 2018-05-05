@@ -1,0 +1,87 @@
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<?php
+  $contador = Inventario::where('id_sucursal','=',Session::get('id_sucursal'))->count();
+?>
+
+<?php if(Session::has('c')): ?>
+  <div class="alert alert-success" style="text-align:center;">
+    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong><?php echo Session::get('c'); ?></strong>
+  </div>
+<?php endif; ?>
+
+<?php if($contador == 0): ?>
+  <div id="envelope">
+    <div id="enve">
+        <h2>Inventario</h2>
+    </div>
+      <?php echo Form::open(array('url'=>'registro_inventario')); ?>
+
+        Codigo<?php echo Form::text('codigo',''); ?>
+
+        Nombre Inventario<?php echo Form::text('nombre_inventario',''); ?>
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+      <?php echo Form::close(); ?>  
+  </div>
+<?php endif; ?>
+
+<?php if($contador == 1): ?>
+  <center><div class="showback">
+    <h4><i class="fa fa-angle-right"></i>Menú Detalle Inventario</h4>
+          <a href="inventario" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Detalle Inventario</a>
+          <a href="ver-inventario" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Ver Inventario</a>
+              </div></center><!-- /showback -->
+              <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+                <i class="fa fa-plus-square fa-4x"></i><span class='social'>Modificar Detalle Inventario</a>
+              </div>
+  <div id="envelope">
+
+  <div id="enve">
+    <h2>Modificar Detalle Inventario</h2>
+  </div>
+      <?php echo Form::open(array('url'=>'modificar-detalle-inventario')); ?>
+
+
+        Código Producto<br/><input type="text" name="codigoP" id="codigoP" value=<?php echo $producto[0]->codigo; ?> disabled>
+
+        Nombre Producto<br/><input type="text" name="nombreP" id="nombreP" value=<?php echo $producto[0]->nombre_producto; ?> disabled>
+
+        Descripción Producto<br/><input type="text" name="descripcionP" id="descripcionP" value=<?php echo $producto[0]->descripcion; ?> disabled>
+
+        Cantidad Stock <input type="text" name="cantidad_stock" id="cantidad_stock" value=<?php echo $detalleInventario[0]->cantidad_stock; ?>>
+
+        <?php
+          $id_inventario = Inventario::where('id_sucursal','=',Session::get('id_sucursal'))->get();
+        ?>
+
+        <input type="hidden" name="id_inventario" id="id_inventario" value=<?php echo $id_inventario[0]->id; ?>>
+
+        <input type="hidden" name="codigo2" id="codigo2" value=<?php echo $producto[0]->codigo; ?>>
+
+        <?php echo Form::submit('Modificar',array('class'=>'')); ?>
+
+
+      <?php echo Form::close(); ?>
+
+  </div>
+
+<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

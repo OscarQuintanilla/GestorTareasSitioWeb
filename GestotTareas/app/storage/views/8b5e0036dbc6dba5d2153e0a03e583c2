@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Profesionall - Página de inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
+  <meta name="description" content="Ofertas de empleo">
+  <meta name="author" content="Profesionall">
+  <!--Add css lib--> 
+  <link rel="stylesheet" type="text/css" href="css/style-main.css">  
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:500,300,700,400' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style-main.css">  
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:500,300,700,400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <!--Header: Begin-->
+  <header>
+    <!--Top Header: Begin-->
+    <section id="top-header" class="clearfix">
+      <div class="container">
+        <div class="row">
+          <div class="top-links col-lg-7 col-md-6 col-sm-5 col-xs-6">
+            <ul>
+              <li class="hidden-xs">
+                <a href="href="https://www.facebook.com/profesionallsv/?fref=ts" title="Facebook" target="_Blank"">
+                  <i class="fa fa-facebook"></i>
+                  <!-- Connect with facebook -->
+                </a>
+              </li>
+              <li class="hidden-xs">
+                <a href="#">
+                  <i class="fa fa-twitter"></i> 
+                </a>
+              </li>
+            
+              <li class="hidden-xs">
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-header-right f-right col-lg-5 col-md-6 col-sm-7 col-xs-6">
+            <div class="w-header-right">
+              <div class="th-hotline">
+              
+                <span style="font-size: 15.5px;">sv@profesionall.com</span>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!--Top Header: End-->
+    <!--Main Header: Begin-->
+    <section class="main-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-2 col-sm-4 col-xs-5 w-logo">
+            <div class="logo hd-pd ">
+              <a href="inicio">
+                <img src="img/logo.png" alt="printshop logo" style="height: 40px; width: 150px;">
+              </a>
+            </div>  
+          </div>
+          <div class="col-lg-7 col-md-8 visible-md visible-lg">
+            <nav id="main-menu" class="main-menu clearfix">
+              <ul>
+                <li class="level0 hd-pd">
+                  <a href="candidato" title="Candidato">Candidato</a>
+                </li>
+                <li class="level0 hd-pd">
+                  <a href="empresa" title="Empresa">Empresa</a>
+                </li> 
+
+              <button type="button" data-toggle="modal" data-target="#logModal" class="btn btn-md btn-primary col-lg-offset-4" style="margin-top:25px;">
+              <span class="glyphicon glyphicon-lock" aria-hidden="true" style="color: white;"></span>
+              Login</button>
+              
+              <a href="registro-candidato" class="btn btn-primary btn-md" style="background-color:#FFA500;border-color:#FFA500;margin-top:25px;">Sube tu curriculum</a>
+              
+              </ul>
+            </nav>
+          </div>
+          <div class="col-sm-1 col-sm-offset-5 col-xs-offset-2 col-xs-2 visible-sm visible-xs mbmenu-icon-w">
+            <span class="mbmenu-icon hd-pd">
+              <i class="fa fa-bars"></i>
+            </span>
+          </div>
+      
+          
+          </div>
+        </div>
+      </div>
+    </section><!--Main Header: End-->
+  </header><!--Header: End-->
+
+  <!--Main index : Begin-->
+  <main class="main index">
+    <section style="background:url(img/image_style/bg_capabiliti.jpg) no-repeat center; padding-top:0 !important; background-position: 50% 0; padding-bottom:0 !important; padding: 10%;"><br/>
+      <div class="container">
+        <div class="row">
+          <<div class="block-title-w">
+            <h2 class="block-title" style="color: white;">Encuentra las mejores ofertas sólo en <b>Profesionall</b></h2> 
+          </div>
+
+          <div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
+                 <span style="display: inline-block; background-color: #0288D1; padding: 10px; color: white; border: 1px solid #0288D1;">@</span>
+               <input type="text" id="cargo" placeholder="Cargo u ocupación" style="width: 75%; padding: 10px; border: 1px solid black; color: #37474F;">
+
+          </div>
+
+
+          <div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
+                 <span style="display: inline-block; background-color: #0288D1; padding: 10px; color: white; border: 1px solid #0288D1;">@</span>
+                <select id="area" placeholder="Área" style="width: 75%; padding: 10px; border: 1px solid black;">
+                  
+                  <option>Informática</option>
+                  <option>Administración</option>
+
+                </select>
+
+          </div>
+
+            <div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
+                 
+                 <label style="background-color: #0288D1; padding: 10px; color: white; border: 1px solid #0288D1;">@</label>
+                <select id="area" placeholder="Área" style="width: 75%; padding: 10px; border: 1px solid black;">
+                  
+              <option>San Salvador</option>
+                            <option>La Libertad</option>
+                            <option>Santa Ana</option>
+                            <option>San Miguel</option>
+                            <option>Morazán</option>
+                            <option>Cabañas</option>
+                            <option>Ahuachapán</option>
+                            <option>Sonsonate</option>
+                            <option>Chalatenango</option>
+                            <option>La Paz</option>
+                            <option>Usulután</option>
+                            <option>San Vicente</option>
+                            <option>Cabañas</option>
+                            <option>Cuscatlán</option>
+
+                </select>
+
+          </div>
+
+            <div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
+                
+
+                <button style="padding: 11px; background-color: #0288D1; color: white; width: 100%;">Buscar</button>
+
+             </div>
+
+
+        </div>
+      </div>
+
+
+             <br/><br/>
+             <br/>
+    </section>
+
+    <!--Home out recent : Begin -->
+    <section class="home-out-recent">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12" style="background-color:#f7f7f7;">
+        <section class="contact" id="noticias">
+          <div class="noticias">
+            <div class="row">
+              <div class="col-lg-7">
+                <br>
+                <div class="panel panel-default" style="opacity: 0.89;">
+                  <h3 class="text-center" style="font-size:16pt;"><b>Inserta tu currículum aquí</b></h3>
+  
+                  <form action="registrar-usuario-candidato" method="post">
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                          </span>
+                          <input type="text" class="form-control" placeholder="Nombre" aria-label="..." name="nombre">
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+
+
+                      <div class="col-lg-6">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                          </span>
+                          <input type="text" class="form-control" placeholder="Apellido" aria-label="..." name="apellidos">
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div>
+
+
+                <div class="panel-footer">
+                  <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                      </span>
+                      <input type="text" class="form-control" placeholder="Correo" aria-label="..." name="correo">
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+
+
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+                      </span>
+                      <input type="password" class="form-control" placeholder="Contraseña" aria-label="..." name="contraseña" id="contra"><span class="input-group-addon">
+                        <i class="glyphicon glyphicon-eye-open"><input type="checkbox" id="mostrar_contrasena" style="margin-left:4px;"></i>
+                      </span>
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+
+                <br>
+
+                 <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-list"></i>
+                      </span>
+                      <select class="form-control" name="categoria">
+                        <option value="" selected="selected">Selecciona una categoría</option>
+                        <?php foreach($categorias as $categoria): ?>                    
+                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+                        <?php endforeach; ?>                 
+                      </select>
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                  
+
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                <i class="glyphicon glyphicon-globe"></i>
+                      </span>
+                      <select class="form-control" name="distrito">
+                        <option value="" selected="selected">Selecciona un distrito</option>
+                        <?php foreach($distritos as $distrito): ?>                    
+                          <option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+                        <?php endforeach; ?>                 
+                      </select>
+                    </div><!-- /input-group -->
+                  </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+
+                <br>
+
+                <div class="btn-group col-lg-offset-5">
+                  <button type="submit" class="btn btn-lg btn-primary" style="background-color:#ffa500; border-color:#ffa500;">Continuar</button>
+                </div>
+                </form>
+                <br>
+                <br>
+                <p>Al crear una cuenta, aceptas las <a>Condiciones legales, Reglamento de Prestación de servicios</a> y <a>la Política de privacidad</a> de Profesionales. </p>
+
+              </div>
+              </div>                
+            </div>
+            <br>
+                <div class="col-lg-5">
+                <div class="panel panel-default" style="background-color:green; color:white; opacity: 0.65; border-color:green; padding:10px;">
+                    <h3 class="text-center" style="font-size:14pt; color:white;">El trabajo que buscas está con nosotros</h3> 
+                  
+                    <ul style="text-align:justify;margin-top:25px; font-size:12pt;">
+                      <li><h4>* Postúlate a las mejores ofertas</h4></li>
+                      <li><h4>* Sé visible para miles de empresas</h4></li>
+                      <li><h4>* Recibe ofertas adecuadas a tu perfil</h4></li>
+                      <li><h4>* Sigue el estado de tus postulaciones</h4></li>
+                      <li><h4>* Compárate con los demás inscritos</h4></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+                </div>
+                        </div>
+    </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--Footer : Begin-->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12 about-us footer-col">
+            <h2>Nosotros</h2>
+            <div class="footer-content">
+              <a href="#" title="Cmsmart logo footer" class="logo-footer">
+                
+              </a>
+              <ul class="info">
+                <li>
+                  <i class="fa fa-home"></i>
+                  <span>San Salvador</span>
+                </li>
+                
+                <li>
+                  <i class="fa fa-envelope-o"></i>
+                  <span><a href="mailto:support@netbaseteam.net" title="send mail to Cmsmart">sv@profesionall.com</a></span>
+                </li>
+              </ul>
+              <ul class="footer-social">
+                <li>
+                  <a href="https://www.facebook.com/profesionallsv/?fref=ts" title="Facebook" target="_Blank">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Twiter">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Google plus">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--<div class="col-md-3 col-sm-4 col-xs-12 corporate footer-col">
+            <h2>Candidato</h2>
+            <div class="footer-content">
+              <ul>
+                <li>
+                  <a href="#" title="About us">Registro</a>
+                </li>
+                <li>
+                  <a href="#" title="Green">Ver ofertas</a>
+                </li>
+                <li>
+                  <a href="#" title="Afiliates">Postularme</a>
+                </li>
+                <li>
+                  <a href="#" title="Non-profits and Government">Me siento con suerte</a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12 support footer-col">
+            <h2>Empresa</h2>
+            <div class="footer-content">
+              <ul>
+                <li>
+                  <a href="myaccount-information.html" title="My Account">Registro</a>
+                </li>
+                <li>
+                  <a href="#" title="Design Guide">Publicar oferta</a>
+                </li>
+                <li>
+                  <a href="faq.html" title="Candidatos sobresalientes">Candidatos sobresalientes</a>
+                </li>
+                <li>
+                  <a href="#" title="Comparativas">Com´parativas</a>
+                </li>
+              
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-12 other-info footer-col hidden-sm">
+            <h2>Pagos y publicidad</h2>
+            <div class="footer-content">
+              <p>
+                Puedes hacer pago ya sea para convertirte en una cuenta pro o para publicidad por cualquiera de estos métodos.
+              </p>
+              <img src="img/footer-payment.png" alt="Payment method">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="copy-right">Derechos reservados © 2016 <a href="#" title="Cmsmart - Magento theme">profesionall.com</a></p>
+            <a href="#" id="back-to-top">
+              <i class="fa fa-chevron-up"></i>
+              Inicio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="sitebodyoverlay"></div>
+  <nav id="mb-main-menu" class="main-menu">
+    <div class="mb-menu-title">
+      <h3>Menú</h3>
+      <span id="close-mb-menu">
+        <i class="fa fa-times-circle"></i>
+      </span>
+    </div>
+    <ul  class="cate_list">
+      <li class="level0">
+        <a href="candidato" title="Stickers & Badges">Candidato</a>
+      </li>
+      <li class="level0" title="Promotional">
+        <a href="empresa">Empresa</a>
+      </li>
+
+      <li class="level0" title="Promotional" data-toggle="modal" data-target="#logModal">
+        <a href="#">Login candidato</a>
+      </li>
+    </ul>
+  </nav> 
+  <!--Add js lib-->
+  <script type="text/javascript" src="js/jquery/jquery-1.11.3.min.js"></script> 
+  <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script> 
+    <script type="text/javascript" src="js/doughnutit.js"></script> 
+  <script type="text/javascript" src="js/slideshow/jquery.themepunch.revolution.js"></script>   
+  <script type="text/javascript" src="js/slideshow/jquery.themepunch.plugins.min.js"></script>  
+    <script type="text/javascript" src="js/theme-home.js"></script>   
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</body>
+</html>
+
+  <script type="text/javascript">
+
+     $(document).ready(function(){
+
+       $('#mostrar_contrasena').click(function () {
+          if ($('#mostrar_contrasena').is(':checked')) {
+            $('#contra').attr('type', 'text');
+          } else {
+            $('#contra').attr('type', 'password');
+          }
+        });
+
+      });
+    </script>
+
+    <?php if(Session::has('error')): ?>
+
+      <script type="text/javascript">
+        alert("Este correo ya esta registrado en Profesionall.com");
+      </script>
+
+    <?php endif; ?>
+
+  <!-- Inicio del Modal -->
+  <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Acceso candidato</h4>
+        </div>
+        <br>
+        <form class="form-horizontal" style="margin:0px auto;" action="login-candidato" method="POST">
+          <div class="modal-body">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                    <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   <!-- Fin del Modal -->
+

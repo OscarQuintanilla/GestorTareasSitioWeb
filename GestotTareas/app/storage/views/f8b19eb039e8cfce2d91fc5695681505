@@ -1,0 +1,37 @@
+<?php
+   
+require '/home/progartisan/public_html/Zirconia/zirconia/public/phpGrid/conf.php';  
+?>
+
+
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+<?php
+$dg = new C_DataGrid("SELECT * FROM cliente");
+
+// change column titles
+$dg -> set_col_title("Nombre", "nombre");
+$dg -> set_col_title("Pais", "pais");
+$dg -> set_col_title("Departamento", "departamento");
+$dg -> set_col_title("Municipio", "municipio");
+$dg -> set_col_title("Telefono", "telefono");
+
+
+// change date format of a column
+//$dg -> set_col_date("orderDate", "Y-m-d", "n/j/Y", "yy-mm-dd");
+
+// enable edit
+$dg -> enable_edit("FORM", "CRUD");
+
+$dg->enable_debug(false);
+$dg -> display();
+?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

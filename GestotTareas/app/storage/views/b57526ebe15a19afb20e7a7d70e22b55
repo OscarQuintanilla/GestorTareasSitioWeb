@@ -1,0 +1,54 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">        
+            <div class="col-md-12">
+           <div class="panel panel-default">
+
+              <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Publicaciones</h4>
+              <a href="listaPublicaciones" role="button" class="btn btn-info"><i class="fa fa-tag"></i>Lista de publicaciones</a>
+              <a href="crearPublicaciones" role="button" class="btn btn-info"><i class="fa fa-check"></i>Crear publicacion</a>   
+            </div></center><br/><!-- /showback -->
+        </div>
+
+                <div id="envelope">
+
+<div id="enve">
+
+    <h2> Crear Usuario</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'guardar-publicacion')); ?>
+
+
+        Noticia<?php echo Form::text('noticia',''); ?>
+
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+      <?php echo Form::close(); ?>
+
+      
+          </div>
+
+
+          </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

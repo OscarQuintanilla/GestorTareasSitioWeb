@@ -1,0 +1,117 @@
+<html style="font-family: Lato;color:#2c3e50;backgroud-color:#f8f8f8">
+    <center>
+        <div style="width: 100%;">
+            <div style="color:#2c3e50;background-color: #ffffff;border-color: #1f89c3;">
+                <div style="color: #ffffff;background-color: #1f89c3;border-color: #1f89c3;">
+                    <a href="http://www.progartisan.com/prontotrabajo/public/"><img class="img-responsive" src="img/logoPronto_opt.png" alt="logo"></a>
+                </div>
+                <div style="padding: 5px;border-top: 1px solid #ecf0f1;">
+                    <h5 style="font-size: 15px;font-family:Helvetica Neue;color:#2c3e50";>Hola, Henry Cardoza</h5>
+                    <p>Estás son las últimas 5 ofertas de empleo que se ajustan a tus preferencias</p>
+                </div>
+            </div>
+            <div style="color:#2c3e50;background-color: #ffffff;border-color: #1f89c3;">
+                <div style="border-bottom: solid #D8D8D8;  margin-bottom: 21px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#" style="font-size: 19px;color: #18bc9c;">Publicista estratega y creativo</a><br>
+                                <a href="#" style="color: #18bc9c;">Super Selectos</a> | Santa Ana<br>
+                                <p>Graduado o estudiante de las carreras: técnico o licenciatura en publi.</p>    
+                            </td>
+                            <td><input type="image" src="http://www.progartisan.com/img/flecha1.png" style="margin-left:10px;" title="Ver detalles de la oferta" alt="Submit details" />
+<br>
+                                <center>
+                                    <a href="#" style="color:#9eb40a;">Ver Oferta</a>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="border-bottom: solid #D8D8D8;  margin-bottom: 21px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#" style="font-size: 19px;color: #18bc9c;">Desarrollador Android iOS</a><br>
+                                <a href="#" style="color: #18bc9c;">Industrias Caribe</a> | San Salvador<br>
+                                <p>Graduado o estudiante de las carreras: técnico o licenciatura en comp.</p>    
+                            </td>
+                            <td>
+                                <input type="image" src="http://www.progartisan.com/img/flecha1.png" style="margin-left:10px;" title="Ver detalles de la oferta" alt="Submit details" /><br>
+                                <center>
+                                    <a href="#" style="color:#9eb40a;">Ver Oferta</a>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="color:#2c3e50;background-color: #ffffff;border-color: #1f89c3;">
+                <div style="border-bottom: solid #D8D8D8;  margin-bottom: 21px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#" style="font-size: 19px;color: #18bc9c;">Programador PHP</a><br>
+                                <a href="#" style="color: #18bc9c;">Tigo El Salvador</a> | San Salvador<br>
+                                <p>Se necesita técnico con conocimientos de php con framework laravel.</p>    
+                            </td>
+                            <td>
+                                <input type="image" src="http://www.progartisan.com/img/flecha1.png" style="margin-left:10px;" title="Ver detalles de la oferta" alt="Submit details" /><br>
+                            <center>
+                                <a href="#" style="color:#9eb40a;">Ver Oferta</a>
+                            </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="color:#2c3e50;background-color: #ffffff;border-color: #1f89c3;">
+                <div style="border-bottom: solid #D8D8D8;  margin-bottom: 21px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#" style="font-size: 19px;color: #18bc9c;">Diseñador Web</a><br>
+                                <a href="#" style="color: #18bc9c;">Punto Print</a> | San Salvador<br>
+                                <p>Se necesita técnico o licenciado en diseño para desarrollar plantillas.</p>    
+                            </td>
+                            <td>
+                                <input type="image" src="http://www.progartisan.com/img/flecha1.png" style="margin-left:10px;" title="Ver detalles de la oferta" alt="Submit details" /><br>
+                                <center>
+                                    <a href="#" style="color:#9eb40a;">Ver Oferta</a>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <br>
+                    <button type="submit" style="padding: 18px 27px;font-size: 19px;line-height: 1.3333333;border-radius: 6px;   color: #ffffff;background-color: #fd9323;border-color: #fd9323;">Ver todas las ofertas
+                    </button><br>
+                    ¿Quieres modificar tus preferencias? <a href="#" style="color: #18bc9c;">Preferencias</a>
+                </div>
+                <div style="  padding: 10px 15px;background-color: #ecf0f1;border-top: 1px solid #ecf0f1;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;">
+                    El equipo de ProntoTrabajo te desea mucha suerte en tu proximo empleo.<br>
+                    Este email se ha generado automáticamente. Por favor, no contestes a este email. Si tienes alguna pregunta o necesitas ayuda, por favor haz clic en <a href="#" style="color: #18bc9c;">Ayuda.</a> <br>
+
+Si no deseas recibir más alertas como esta, por favor, haz clic en <a href="#" style="color: #18bc9c;">No recibir más ofertas</a>
+
+
+                </div>
+            </div>
+      </center>
+        </div>
+</html>

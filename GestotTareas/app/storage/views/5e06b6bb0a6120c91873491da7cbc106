@@ -1,0 +1,67 @@
+  
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+  <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Productos</h4>
+          <a href="producto" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Productos</a>
+          <a href="agregar-Pro" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Producto</a>
+              </div></center><!-- /showback -->
+
+              <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-truck fa-4x"></i><span class='social'>Productos</a>
+</div>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Productos</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'registroProducto')); ?>
+
+
+      <br/>
+
+        Codigo<?php echo Form::text('codigo',''); ?>
+
+
+        Nombre Producto<?php echo Form::text('nomProducto',''); ?>
+
+
+        Descripcion<?php echo Form::text('descripcion',''); ?>
+
+
+        Precio<?php echo Form::text('precio',''); ?>
+
+
+        Precio Unitario<?php echo Form::text('precioUnitario',''); ?>
+
+
+        Precio de Mayoreo<?php echo Form::text('precioMayoreo',''); ?>
+
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+
+      <?php echo Form::close(); ?>
+
+      
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

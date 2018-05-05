@@ -1,0 +1,119 @@
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#inicio").addClass("active");
+  });
+</script>
+
+<style media="screen">
+  .servicio{
+    background-color: rgb(245, 245, 245);
+    width: 300px;
+    height: 180px;
+    position: relative;
+    text-align: center;
+  }
+  .titlec{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #cc181e;
+    color: white;
+  }
+  .contentc{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+  }
+
+  #contenedor-detalle_oferta{
+
+  	background-color: #fafafa;
+  	border: 1px solid #f5f5f5;
+  	padding: 20px;
+  	margin: 0 auto;
+  	margin: 1%;
+    border-bottom: 4px solid #03a9f4;
+    
+
+  }
+  
+    #contenedor-info{
+    display: none;
+  }
+</style>
+<script type="text/javascript">
+  //Agregando un idioma
+
+  $(document).ready(function(){
+
+  //Agregando un idioma
+  
+     
+});
+
+
+</script>
+
+
+	  <?php foreach($detalle_oferta as $detalle_oferta): ?>   
+    <div class="row">
+  
+   <div class="col-md-12 col-sm-12 col-xs-12 block-recent" style="padding: 20px;">
+
+        <form action="postularme_a_oferta" method="POST">
+
+          <section id="contenedor-detalle_oferta">
+
+          <b> </b><input type="hidden" value="<?php echo $detalle_oferta->id; ?>" name="id_oferta"><br/><br/>
+          <b></b><input type="hidden" value="<?php echo $detalle_oferta->id_empresa; ?>" name="id_empresa"><br/><br/>
+
+           <div class="col-lg-1">
+             
+              <img src="http://theoneflooring.com/profesionallnew/public/<?php echo $logo; ?>" style="height:84px; width: 84px;" />
+          
+
+           </div>
+
+           <div class="col-lg-11">
+             <div class="col-lg-12">
+                <h1 class="primary" style="color: #1e82c4; font-size: 2em;"><?php echo $nombreEmpresa; ?></h1>
+                <hr>
+             
+           <p><?php echo $descripcion; ?></p><br/><br/>
+           </div>
+
+           </div>
+           <div class="col-lg-1"></div>
+           <div class="col-lg-10">
+            <p><b>Título de la oferta: </b>
+            <br><?php echo $detalle_oferta->titulo_oferta; ?> <br/><br/>
+            <b>Descripción: </b>
+            <br><?php echo $detalle_oferta->descripcion; ?><br/><br/>
+            <b>Jornada: </b>
+            <br><?php echo $detalle_oferta->jornada; ?><br/><br/>
+            <b>Tipo de contrato: </b>
+            <br><?php echo $detalle_oferta->tipo_contrato; ?><br/><br/>
+            <b>Salario: </b>
+            <br><?php echo $detalle_oferta->salario; ?><br/><br/></p>
+          </div>
+          <center>
+            <button type="submit" class="btn btn-primary">Postularme</button>
+          </center>
+          
+    
+          </form>
+
+          </section>
+
+       
+    </div>
+</div>
+
+
+<?php endforeach; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('bolsa-trabajo/candidato.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

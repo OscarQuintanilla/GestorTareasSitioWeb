@@ -1,0 +1,115 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Digitación de Ventas</h2>
+
+</div>
+
+<form>  
+
+        <fieldset><br/>
+
+        <table>
+              <thead>
+                      <tr>
+
+                        <td style="padding-right:5px;">Correlativo <input type="text" name="nCorrelativo"></td>
+
+                        <td style="padding-right:5px;">Tipo <input type="text" name="tipo"></td>
+                        </tr>
+
+                        <tr>
+
+                        <td style="padding-right:5px;"># Factura<input type="text"  name="numFactura"></td>
+
+                         <td style="padding-right:5px;"> Fecha Registro <input type="text"  name="fecha registro"></td>
+                        </tr>
+                        <tr>
+                        <td style="padding-right:5px;">Cliente <input type="text" name="cliente"></td>
+
+                        <td style="padding-right:5px;">Vendedor <input type="text" name="vendedor"></td>
+                    </tr>
+                  <br>Notas<br/>
+                    <input type="text" name="notas"> 
+
+                    Total<br/>
+                    <input type="text" name="total"> 
+                  <button class="btn btn-success">Agregar</button>
+                  <button class="btn btn-danger">Salir</button>
+              </thead>
+        </table>
+              <input type="submit" value="Enviar" id="submit">
+  </fieldset>
+</form>
+
+</div>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Recibo</h2>
+
+</div>
+
+<form>  
+
+        <fieldset><br/>
+
+        <table>
+              <thead>
+                      <tr>
+
+                        <td style="padding-right:5px;">Correlativo <input type="text" name="nCorrelativo"></td>
+
+                        <td style="padding-right:5px;">Fecha <input type="text" name="fecha"></td>
+                        </tr>
+
+                        <tr>
+
+                        <td style="padding-right:5px;">Cliente<input type="text"  name="cliente"></td>
+
+                         <td style="padding-right:5px;">Codigo <input type="text"  name="codigo"></td>
+                        </tr>
+                        <tr>
+                        <td style="padding-right:5px;">Vendedor <input type="text" name="vendedor"></td>
+
+                        <td style="padding-right:5px;">Forma de Pago <input type="text" name="fpago"></td>
+                    </tr>
+                  <br>Total<br/>
+                    <input type="text" name="total"> 
+
+                    Diferencia<br/>
+                    <input type="text" name="diferencia"> 
+                  <button class="btn btn-success">Procesar</button>
+                  <button class="btn btn-danger">Salir</button>
+              </thead>
+        </table>
+              <input type="submit" value="Enviar" id="submit">
+  </fieldset>
+</form>
+
+</div>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,68 @@
+  
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+     <center><div class="showback">
+              <h4><i class="fa fa-angle-right"></i>Menú Supervisores</h4>
+          <a href="supervisor" role="button" class="btn btn-theme03"><i class="fa fa-tag"></i>Lista de Supervisores</a>
+          <a href="agregar-Sup" role="button" class="btn btn-theme03"><i class="fa fa-check"></i>Crear Supervisor</a>
+              </div></center><!-- /showback -->
+
+               <div class='botones-sociales derecha hidden-phone hidden-tablet'>
+<i class="fa fa-users fa-4x"></i><span class='social'>Supervisor</a>
+</div>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Supervisores</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'registroSupervisor')); ?>
+
+
+      <fieldset><br/>
+    <?
+      $user=Session::get('id_usuario');
+    ?>
+      <input type="hidden" name="usuario" value=<?php echo $user; ?>>
+        Nombre<br/>
+        <?php echo Form::text('nombre',''); ?>
+
+
+        Codigo<br/>
+        <?php echo Form::text('codigo',''); ?>
+
+      
+      Telefono<br/>
+        <?php echo Form::text('telefono',''); ?>
+
+
+        Correo<br/>
+        <?php echo Form::text('email',''); ?>
+
+
+      <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+</fieldset>
+      <?php echo Form::close(); ?>
+
+      
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

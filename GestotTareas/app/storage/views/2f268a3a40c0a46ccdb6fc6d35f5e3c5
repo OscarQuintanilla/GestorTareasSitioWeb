@@ -1,0 +1,53 @@
+  
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div id="envelope">
+
+<div id="enve">
+
+    <h2>Usuarios</h2>
+
+</div>
+
+      <?php echo Form::open(array('url'=>'usuario/crear')); ?>
+
+
+        Username<?php echo Form::text('username',''); ?>
+
+
+        Contraseña<?php echo Form::password('contraseña',''); ?>
+
+
+        Confirmar contraseña<?php echo Form::password('confircontra',''); ?>
+
+
+        Tipo Usuario <select name="select">
+                        <option value="value1">SuperUsuario</option> 
+                        <option value="value2" selected>Supervisor</option>
+                        <option value="value3">Vendedor</option>
+                      </select>
+
+        <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+
+      <?php echo Form::close(); ?>
+
+      
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

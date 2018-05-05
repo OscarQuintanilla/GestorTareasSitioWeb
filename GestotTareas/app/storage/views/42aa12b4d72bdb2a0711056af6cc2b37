@@ -1,0 +1,250 @@
+<?php $__env->startSection('content'); ?>
+	<script type="text/javascript">
+		
+	    $(document).ready(function(){
+
+	    	//Agregando una habilidad
+			$("#registrarHabilidad").click(function(){
+
+				var habilidad = $("#habilidad").val();
+	    		
+	    		$.post("registrarHabilidad", {habilidad : habilidad}, function(data){
+
+	    			$("#cajas_habilidades").html(data);
+
+	    			$("#habilidad").val("");
+	    
+	    		});
+
+	    	});
+
+	    	//Agregando un area de interes
+			$("#registrarAreaInteres").click(function(){
+
+				var area_interes = $("#area_interes").val();
+	    		
+	    		$.post("registrarAreaInteres", {area_interes : area_interes}, function(data){
+
+	    			$("#caja_areas_interes").html(data);
+
+	    			
+	    		});
+
+	    	});
+
+
+	    	//Agregando un distrito de interes
+			$("#registrarDistritoInteres").click(function(){
+
+				var distrito_interes = $("#distrito_interes").val();
+	    		
+	    		$.post("registrarDistritoInteres", {distrito_interes : distrito_interes}, function(data){
+
+	    			$("#caja_distritos_interes").html(data);
+
+	    			
+	    		});
+
+	    	});
+
+	    });
+
+	</script>
+
+	<style type="text/css">
+
+		table td{
+
+			padding: 6px;
+			width: 250px;
+		}
+
+		#paso1{
+
+			color:gray;
+			height:60px; 
+			background-color: #dddddd;
+			border-style: solid;
+			border-width: 1px;
+			border-color: white;
+
+		}
+
+		#paso2{
+
+			color:gray;
+			height:60px; 
+			background-color: #dddddd;
+			border-style: solid;
+			border-width: 1px;
+			border-color: white;
+		
+		}
+
+
+		#paso3{
+			color:white;
+			height:60px; 
+			background-color: skyblue;
+			border-style: solid;
+			border-width: 1px;
+			border-color: white;
+		}
+
+	</style>
+
+	<section class="contact" id="ofertas">
+        <div class="noticias">
+			<form action="registrarDataPersonal" method="post" enctype="multipart/form-data">
+            	<div class="row">
+	                <center>
+
+	                	<div class="col-lg-7 col-lg-offset-3">
+
+		                	<h3><b>Completa tu curriculum para ser visible a las empresas</b></h3>
+		                    
+		                    <div class="col-lg-4" id="paso1">
+		                		Paso 1
+		                		<h5><b>Datos de acceso</b></h5>
+		                	</div>
+		                	<div class="col-lg-4" id="paso2">
+		                		Paso 2
+		                		<h5><b>Curriculum</b></h5>
+
+		                	</div>
+		                	<div class="col-lg-4" id="paso3">
+		                		Paso 3
+		                		<h5><b>Conocimientos</b></h5>
+
+		                	</div>
+		                	<br>
+		                	<br>
+		                	<br>
+		                	<br>
+	            
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Conocimientos y habilidades</h4>
+	                        	</div>
+	                            <div class="panel-body">
+
+	                            	<table>
+
+	                            		<tr>
+	                            			<th>Escribe tus conocimientos:</th>
+								            <td>
+						                		<input type="text" class="form-control" name="habilidad" id="habilidad" placeholder="Excel, Márketing, Emprendedor, Autodidacta" required>
+								            </td>
+
+	                            		</tr>
+	                            	</table>
+	                            	<a id="registrarHabilidad" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a>
+	                            		         
+	                            </div>
+	                            <div id="cajas_habilidades">
+	                         		
+           						</div>
+           						<br>
+	                        </div>
+
+
+	                        <div class="panel panel-primary">
+	                        	<div class="panel panel-heading">
+	                            	<h4>Preferencias de trabajo</h4>
+	                        	</div>
+	                            <div class="panel-body">
+	                            	<table>
+	                            		<tr>
+	                            			<th>Situacion actual:</th>
+	                            			<td colspan="4"><select class="form-control" name="situacion_actual" id="situacion_actual">
+	                            					<option selected="selected" value="Situación actual">Situación actual</option>
+	                            					<option value="No tengo empleo">No tengo empleo</option>
+	                            					<option value="Estoy buscando trabajo activamente">Estoy buscando trabajo activamente</option>
+	                            					<option value="Estoy trabajando actualmente">Estoy trabajando actualmente</option>
+	                            					<option value="No busco trabajo pero estoy dispuesto a escuchar ofertas">No busco trabajo pero estoy dispuesto a escuchar ofertas</option>
+	                            					<option value="No tengo ningún interes en un nuevo empleo">No tengo ningún interes en un nuevo empleo</option>
+	                            					
+					                        </select></td>
+					                    </tr>
+					                    <tr>
+					                    	<th>Puesto de trabajo deseado:</th>
+	                            			<td colspan="4"><input type="text" class="form-control" name="puesto_trabajo" id="puesto_trabajo" placeholder="Puesto de trabajo deseado"></td>
+					                    </tr>
+					                    <tr>
+						          			<th>Área:</th>
+						          			<td colspan="3"><select class="form-control" name="area_interes" id="area_interes">
+						                        <option value="" selected="selected">Selecciona una categoría</option>
+						                        <?php foreach($categorias as $categoria): ?>                    
+						                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+						                        <?php endforeach; ?>                 
+						                    </select></td>
+						                    <td><i class="glyphicon glyphicon-plus" id="registrarAreaInteres"><a style="cursor:pointer;">Agregar</i></a></td>
+						                    <tr>
+						                    	<th></th>
+						                    	<td><div id="caja_areas_interes">
+
+						                    	</div></td>
+						                    </tr>
+						                    
+						          		</tr>
+						          		<tr>
+					                    	<th>Salario mínimo aceptado:</th>
+	                            			<td colspan="4"><input type="text" class="form-control" name="salario_minimo_aceptado" id="salario_minimo_aceptado" placeholder="Puesto de trabajo deseado"></td>
+					                    </tr>
+					                    <tr>
+						          			<th>Estado:</th>
+						          			<td colspan="3"><select class="form-control" name="distrito_interes" id="distrito_interes">
+						                        <option value="" selected="selected">Selecciona una categoría</option>
+						                        <?php foreach($distritos as $distrito): ?>                    
+						                          <option value="<?php echo $distrito->nombre_distrito; ?>"><?php echo $distrito->nombre_distrito; ?></option>
+						                        <?php endforeach; ?>                 
+						                    </select></td>
+						                    <td><i class="glyphicon glyphicon-plus" id="registrarDistritoInteres"><a style="cursor:pointer;">Agregar</i></a></td>
+						                    <tr>
+						                    	<th></th>
+						                    	<td><div id="caja_distritos_interes">
+
+						                    	</div></td>
+						                    </tr>
+						          		</tr>
+						          		<tr>
+	                            			<th>Disponibilidad para viajar:</th>
+	                            			<td colspan="4"><select class="form-control" name="disponibilidad_viajar" id="disponibilidad_viajar">
+	                            					<option selected="selected" value="Si">Si</option>
+	                            					<option value="No">No</option>
+					                        </select></td>
+					                    </tr>
+					                    <tr>
+	                            			<th>Disponibilidad para cambiar de residencia:</th>
+	                            			<td colspan="4"><select class="form-control" name="disponibilidad_cambiarcasa" id="disponibilidad_cambiarcasa">
+	                            					<option selected="selected" value="Si">Si</option>
+	                            					<option value="No">No</option>
+					                        </select></td>
+					                    </tr>
+					                </table>
+					                <br>
+            						<a id="agregarFormacion" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a>
+            						
+	                         		
+	                         	</div>
+
+	                         		
+	                    </div>
+	                </center>
+            	</div>
+            </form>
+        </div>
+	</section>
+
+
+	
+
+	<?php $__env->startSection('footer'); ?>
+		@parent
+	<?php $__env->stopSection(); ?>
+	
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('bolsa-trabajo.candidato.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

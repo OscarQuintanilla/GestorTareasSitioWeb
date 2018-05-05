@@ -1,0 +1,128 @@
+
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#inicio").addClass("active");
+  });
+</script>
+
+<style media="screen">
+
+#izquierda{
+  border: none;
+  width: 45%;
+}
+
+#h2-titulo{
+  font-size: 19px;
+  margin-top: 5px;
+}
+
+#derecha{
+  width: 50%;
+  }
+
+
+#contenedor-oferta{
+
+  border-right: 4px solid #4caf50;
+}
+
+article{
+  display: inline-block;
+  background-color: #DBDBDB;
+  padding: 15px;
+  color: #424242;
+  font-size: 16px;
+  margin-top: -15px;
+
+}
+
+article.estado-activo{
+  background-color: #4caf50;
+  display: inline-block;
+  color: white;
+}
+
+  #contenedor-info{
+    display: none;
+  }
+  
+</style>
+
+<script type="text/javascript">
+  //Agregando un idioma
+
+  $(document).ready(function(){
+
+  //Agregando un idioma
+  
+     
+});
+
+
+</script>
+
+  <br/>
+ 
+  <div class="row">
+
+      <div class="col-lg-9 col-lg-offset-2">
+
+        <div class="panel-group">
+
+          <h2>Mis postulaciones</h2>
+
+	  <?php foreach($postulaciones as $postulaciones): ?> 
+        
+
+          <section id="contenedor-oferta">
+
+          <div id="izquierda">
+
+          <h2 id="h2-titulo"><?php echo $postulaciones->titulo_oferta; ?></h2>
+          <p id="descripcion-oferta"><?php echo $postulaciones->ciudad; ?></p>
+
+          <input type="hidden" value="<?php echo $postulaciones->id; ?>"></b>
+
+          </div>
+
+          <div id="derecha">
+            
+            <?php if($postulaciones->estado == 'Sin revisar'): ?>
+          <article class="estado-activo">Recibido</article>
+          <?php else: ?>
+           <article>Recibido</article>
+           <?php endif; ?>
+
+          <?php if($postulaciones->estado == 'Visto'): ?>
+            <article class="estado-activo">Visto</article>
+          <?php else: ?>
+           <article>Visto</article>
+             <?php endif; ?>
+
+          <?php if($postulaciones->estado == 'Finalista'): ?>
+            <article class="estado-activo">Finalista</article>
+          <?php else: ?>
+           <article>Finalista</article>
+          <?php endif; ?>
+
+            <button class="btn btn-danger" style="float: right; display: inline-block;">Eliminar</button> 
+
+          </div>
+
+
+          </section>
+
+
+<?php endforeach; ?>
+
+   </div>
+
+  </div>
+
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('bolsa-trabajo/candidato.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

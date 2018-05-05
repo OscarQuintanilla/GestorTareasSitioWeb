@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1", 'user-scalable=no'/>
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<title><?php $__env->startSection('title'); ?> Zirconia <?php echo $__env->yieldSection(); ?></title>
+	<?php echo HTML::style('css/bootstrap.css'); ?>
+
+	<?php echo HTML::style('css/responsiveform.css'); ?>
+
+  <link href="css/responsiveformmovil.css" rel="stylesheet" type="text/css" media="handheld, only screen and (max-width: 415px) and (min-width: 160px)"/>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+	<?php echo HTML::style('js/gritter/css/jquery.gritter.css'); ?>
+
+	<?php echo HTML::style('css/lineicons/style.css'); ?>
+
+	<?php echo HTML::style('css/style.css'); ?>
+
+  <?php echo HTML::style('css/menu.css'); ?>
+
+	<?php echo HTML::style('css/style-responsive.css'); ?>
+
+  <?php echo HTML::style('font-awesome/css/font-awesome.css'); ?>
+
+
+  <?php echo HTML::style('css/jquery.dataTables.css'); ?>  
+  <?php echo HTML::script('js/jquery.dataTables.js'); ?>
+
+
+  <?php echo HTML::script('js/jquery.js'); ?>
+
+  <?php echo HTML::script('js/jquery-1.8.3.min.js'); ?>
+
+  <?php echo HTML::script('js/bootstrap-alert.js'); ?>
+
+
+  <?php echo HTML::script('js/jquery.js'); ?>
+
+  <?php echo HTML::script('js/jquery-1.8.3.min..js'); ?>
+
+
+
+	<?php echo HTML::script('js/chart-master/Chart.js'); ?>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $(".alert").fadeOut(8000);         
+    });
+    </script>
+
+</head>
+<body>
+	<?php $__env->startSection('header'); ?>
+  <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menú de Navegación"></div>
+              </div>
+            <!--logo start-->
+            <a href="index" class="logo"><b>ZIRCONIA</b></a>
+            <!--logo end-->
+                <!--  notification start -->
+            <div class="top-menu">
+              <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="sc"><i class="fa fa-user fa-fw"></i>Logout</a></li>
+              </ul>
+            </div>
+  </header>
+	
+	<?php echo $__env->yieldSection(); ?>
+	<?php $__env->startSection('menu'); ?>
+	<aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+                  <a href="inicio"><div id="icono"><?php echo HTML::image('img/ui-sam.jpg'); ?></div></a>                   
+                  <li class="mt">
+                      <a class="active" href="#">
+                          <i class="fa fa-cart-plus"></i>
+                          <span>Consignaciones</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-shopping-cart"></i>
+                          <span>Compras</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#">Formulario</a></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-usd"></i>
+                          <span>Ingresos</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#">Formulario</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Liquidaciones</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#">Formulario</a></li>
+                     </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cog fa-spin"></i>
+                          <span>Mantenimientos</span>
+                      </a>
+                      <ul class="sub">
+                          <a  href="producto"><i class="fa fa-diamond"></i>Productos</a>
+                          <a  href="cliente"><i class="fa fa-user-plus"></i>Clientes</a>
+                          <a  href="sucursales"><i class="fa fa-home"></i>Sucursales</a>
+                          <a  href="proveedor"><i class="fa fa-ship"></i>Proveedores</a>
+                          <a  href="categorias"><i class="fa fa-tag"></i>Categorias</a>
+                          <a  href="supervisor"><i class="fa fa-user"></i>Supervisores</a>
+                          <a  href="vendedor"><i class="fa fa-users"></i>Vendedores</a>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="salidas">
+                          <i class="fa fa-cart-arrow-down"></i>
+                          <span>Salidas</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="#">Formulario</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class=" fa fa-bar-chart-o"></i>
+                          <span>Reportes</span>
+                      </a>
+                      <ul class="sub">
+                      </ul>
+                  </li>
+
+                 <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class=" fa fa-user"></i>
+                          <span>Usuarios</span>
+                      </a>
+                      <ul class="sub">
+                          <li><?php echo HTML::link('usuario','Form');; ?></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+
+	<?php echo $__env->yieldSection(); ?>
+	<section id="main-content">
+          <section class="wrapper">
+          	<?php echo $__env->yieldContent('content'); ?>
+      </div>             
+
+      </section>
+	<?php $__env->startSection('footer'); ?>
+      <footer class="site-footer">
+          <div class="text-center">
+              Desarrollado & Diseñado Por: <a href="http://progartisan.com" target="_blank">PROGARTISAN</a>
+              <a href="https://twitter.com/progartisan" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/progartisan/" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="#" title="Volver arriba" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+</div>
+          </div>
+      </footer>
+
+      <?php echo $__env->yieldSection(); ?>
+      <!--footer end-->
+  
+
+  <?php echo HTML::script('js/jquery.js'); ?>
+
+  <?php echo HTML::script('js/jquery-1.8.3.min..js'); ?>
+
+  <?php echo HTML::script('js/bootstrap.min.js'); ?>
+
+  <?php echo HTML::script('js/jquery.dcjqaccordion.2.7.js'); ?>
+
+  <?php echo HTML::script('js/jquery.scrollTo.min.js'); ?>
+
+  <?php echo HTML::script('js/jquery.nicescroll.js'); ?>
+
+  <?php echo HTML::script('js/jquery.sparkline.js'); ?>
+
+  <?php echo HTML::script('js/common-scripts.js'); ?>
+
+  <?php echo HTML::script('js/jquery.gritter.js'); ?>
+
+  <?php echo HTML::script('js/gritter-conf.js'); ?>
+
+  <?php echo HTML::script('js/sparkline-chart.js'); ?>
+
+  <?php echo HTML::script('js/zabuto_calendar.js'); ?>
+
+
+</body>
+</html>

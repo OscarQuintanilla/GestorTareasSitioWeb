@@ -1,0 +1,41 @@
+
+
+<?php $__env->startSection('header'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<center>
+<table border=1 width=1000 margin= 0px auto padding= 10px>
+
+<td width=100>
+<img src="img/reserva/cancha1.jpg" class="img-responsive img-centered" alt="">
+</td>
+
+<td td width=100>
+<img src="img/reserva/cancha1.jpg" class="img-responsive img-centered" alt="">
+</td>
+
+<td width=100>
+<img src="img/reserva/cancha1.jpg" class="img-responsive img-centered" alt="">
+</td>
+
+<td width=100>
+<img src="img/reserva/cancha1.jpg" class="img-responsive img-centered" alt="">
+</td>
+
+</table>
+</center>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+  @parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

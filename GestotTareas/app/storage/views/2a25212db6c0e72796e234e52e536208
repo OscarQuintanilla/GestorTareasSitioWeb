@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bolsa Trabajo | <?php echo Session::get("nombre_usuario"); ?></title>
+  <link rel="icon" href="">
+  <?php echo HTML::style("css/bootstrap.css"); ?>
+
+  <?php echo HTML::style("css/ie10-viewport-bug-workaround.css"); ?>
+
+  <?php echo HTML::style("css/carousel.css"); ?>
+
+  <?php echo HTML::script("js/jquery.js"); ?>
+
+  <style media="screen">
+
+    /* Sidebar navigation */
+    .nav-sidebar {
+      margin-right: -15px; /* 20px padding + 1px border */
+      margin-bottom: 20px;
+      margin-left: -15px;
+    }
+
+    .thumbnail {
+      position:relative;
+      overflow:hidden;
+      width: 260.075px;
+      height: 200px;
+      margin: 10px auto;
+    }
+
+    .thumbnail img{
+      width: 260.075px;
+      height: 190px;
+    }
+
+    .caption {
+        position:absolute;
+        top:-100%;
+        right:0;
+        background:rgba(66, 139, 202, 0.75);
+        width:100%;
+        height:100%;
+        padding:2%;
+        text-align:center;
+        color:#fff !important;
+        z-index:2;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .thumbnail:hover .caption {
+        top:0%;
+    }
+    .nav-sidebar > li > a {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    .nav-sidebar > .active > a,
+    .nav-sidebar > .active > a:hover,
+    .nav-sidebar > .active > a:focus {
+      color: #fff;
+      background-color: #428bca;
+    }
+    .sidebar{
+      background-color: #f5f5f5;
+    }
+    @media (min-width: 1170px) {
+      .sidebar{
+        background-color: #f5f5f5;
+        border-right: 1px solid #eee;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        top: 54px;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .content{
+        margin-left: 250px;
+      }
+    }
+
+    .footer-options{
+      list-style: none;
+      overflow: hidden;
+    }
+    .footer-options li{
+      float: left;
+      padding: 10px;
+    }
+    .social tr>td>a>img:hover{
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+   <!-- Inicio del Menú -->
+   <div class="navbar-wrapper">
+     <div class="container">
+
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><?php echo Session::get('nombre_usuario'); ?></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                  <a style="color:orange;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="letter-spacing: 1px;">
+                    <img src="http://theoneflooring.com/profesionallnew/public/<?php echo Session::get('logoEm'); ?>" alt="" width="22px" height="22px" style="margin-right:10px;"><?php echo Session::get("nombre_usuario"); ?><span class="caret" style="margin-left:10px;"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="actualizar"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="margin-right:10px;"></span>Actualizar información</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="cerrar-sesion-usuario"><span class="glyphicon glyphicon-log-out" aria-hidden="true" style="margin-right:10px;"></span>Cerrar sesion</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+     </div>
+   </div>
+
+ <!-- Fin del Menú -->
+
+ <!-- Inicio del Contenedor Principal -->
+ <div class="container-fluid">
+    <div class="row" style="margin-top:54px;">
+      <div class="col-lg-2 sidebar">
+        <ul class="nav nav-sidebar">
+           <li id="bolsa-trabajo/empresa/inicio"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true" style="margin-right:10px;"></span>Mi area</a></li>
+           <li><a href="mi-curriculum"><span class="glyphicon glyphicon-folder-open" style="margin-right:10px;"></span>Mi curriculum</a></li>
+           <li><a href="postularme"><span class="glyphicon glyphicon-search" style="margin-right:10px;"></span>Buscar empleo</a></li>
+           <li><a href="mis-postulaciones"><span class="glyphicon glyphicon-th-list" style="margin-right:10px;"></span>Mis postulaciones</a></li>
+           <li><a href="buscar-ofertas"><span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Ofertas por email</a></li>
+           <li><a href="#"><span class="glyphicon glyphicon-book" style="margin-right:10px;"></span>Cursos online</a></li>
+          
+        </ul>
+      </div>
+
+ 
+
+  
+      <!-- inicio contenido -->
+      <div class="col-lg-10 content">
+          <?php echo $__env->yieldContent('content'); ?>
+
+          <br><hr><br><br>
+          <!-- FOOTER -->
+          <footer style="padding:20px; background-color:#e5f2f7; color:#333; left: 0px; right: 0px;position: absolute;">
+            <div class="container-fluid">
+              <div class="row text-right">
+                <div class="col-md-6">
+                    <ul class="footer-options">
+                      <li><a href="">Soporte</a></li>
+                      <li><a href="">Equipo</a></li>
+                      <li><a href="">Colaboraciones</a></li>
+                      <li><a href="">Blog</a></li>
+                    </ul>
+                  <hr style="border-color: rgba(0,0,0,0.1);">
+                  </ul>
+                </div>
+                <div class="col-md-offset-2 col-md-4 text-center">
+                    <ul class="footer-options">
+                      <li><a href="#">Contacnto de candidato</a></li>
+                      <li><a href="#">Ayuda de candidato</a></li>
+                    </ul>
+                  <hr style="border-color: rgba(0,0,0,0.1);">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+      </div>
+      <!-- fin contenido -->
+    </div>
+</div>
+
+
+
+  <?php echo HTML::script("js/bootstrap.js"); ?>
+
+  <?php echo HTML::script("js/holder.js"); ?>
+
+  <?php echo HTML::script("js/ie10-viewport-bug-workaround.js"); ?>
+
+</body>
+</html>

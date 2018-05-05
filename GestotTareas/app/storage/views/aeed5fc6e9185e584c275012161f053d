@@ -1,0 +1,74 @@
+
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+       <section class="contact">
+        <div class="noticias">
+         <div class="container">
+            <div class="row">
+                <center>
+                <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS
+                </div>
+            <div class="panel-body">
+                <p> 
+                    Véase también el <a href="#">Aviso Legal</a> <br>
+
+                    
+                <h5>1. Privacidad y protección de datos.</h5>
+La presente Política de Privacidad y Protección de datos regula el tratamiento que damos a la información recibida en el acceso y el uso de los servicios del Sitio Web, sv.prontotrabajo.com
+De acuerdo con la legislación vigente en materia de protección de datos de carácter personal, PRONTOTRABAJO como titular del Sitio Web debe cumplir ciertos requisitos que garantizan que cualquier información que el Usuario nos facilite es tratada con diligencia y confidencialidad.
+                <h5>2. Datos recogidos</h5>
+Si el Usuario se registra en el Sitio Web se le solicitarán datos de carácter personal mediante la cumplimentación de un formulario. Los datos solicitados son los estrictamente necesarios para la consecución de la finalidad del Sitio Web, y serán guardados y procesados exclusivamente con dicho objeto y siempre dentro del marco normativo establecido.
+Los datos personales del particular incluyen nombre, dirección, dirección de correo electrónico, historial de formación y trabajos.
+<h5>3. Finalidad</h5>
+PRONTOTRABAJO recoge datos personales de los Usuarios con la finalidad de facilitar el contacto entre demandantes de trabajo y empleadores, y de ofrecer herramientas y servicios que apoyan los procesos de búsqueda, incluyendo el envío a través del email de ofertas y promociones de servicios de formación u otros productos relacionados que, atendiendo al perfil del Usuario, PRONTOTRABAJO considere pueden ser de su interés.
+<h5>4. Consentimiento del Usuario</h5>
+El uso de la Web y el registro o envío a PRONTOTRABAJO de datos personales supone el consentimiento expreso del Usuario al tratamiento automatizado de los datos personales facilitados, así como al envío de comunicaciones vía electrónica con información relacionada con PRONTOTRABAJO y sus iniciativas. Durante el proceso de registro, el Usuario determina su configuración del nivel de privacidad. El Usuario consiente que sus datos sean cedidos terceros en cumplimiento de las funcionalidades del portal, a menos que haya optado por otra configuración de privacidad. A estos efectos se entiende por Tercero “aquellos Usuarios o entidades que deseen contactar con el Usuario” en relación a los procesos de reclutamiento.
+El Usuario que se registra (tanto particular como profesional) manifiesta su conocimiento y por tanto, consiente expresamente, que sus datos y el contenido que nos facilite serán públicos y visibles en el Sitio Web y en los buscadores de Internet, y que podrán ser facilitados a otras empresas en el marco de la prestación del servicio, como por ejemplo las empresas proveedoras de pasarelas de pago.
+El Usuario consiente expresamente la cesión de sus datos a empresas asociadas o pertenecientes a PRONTOTRABAJO o sus accionistas para el envío de promociones y ofertas propios o de terceros relacionadas con los intereses y perfil del usuario. Los efectos de la presente autorización se extenderán a las partes implicadas en una venta, fusión, transferencia de activos o reorganización empresarial.
+<h5>5. Seguridad</h5>
+La seguridad de sus datos es muy importante para PRONTOTRABAJO.
+PRONTOTRABAJO ha adoptado las medidas de índole técnica y organizativas reglamentariamente establecidas para garantizar la seguridad de los datos de carácter personal y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que estén expuestos.
+Cuando los clientes efectúan pagos on-line en el sitio web, la información de su tarjeta de crédito está encriptada usando el protocolo SSL (Secure socket layer). Este protocolo hace muy difícil que la información de su tarjeta sea interceptada durante la transmisión. Usamos varias empresas especializadas para procesar todos los pagos on-line. Si desea más información sobre las políticas de privacidad y los mecanismos de seguridad de estas empresas, por favor haga clic aquí.
+<h5>6. Configuración de cookies</h5>
+El Portal Computrabajo utiliza cookies para mejorar la experiencia de navegación del usuario. Es la mejor manera de ofrecerle contenido personalizado y de interés a través del Portal.
+¿Qué son las cookies?
+
+Una cookie es un pequeño archivo que se almacena en la computadora, Smartphone o tablet del usuario y recopila información relacionada con su navegación o su dispositivo. Las cookies hacen seguimiento de la sesión de usuario, mejoran el tiempo de carga de una web, evitan mostrar al usuario información reiterativa, etc.
+Cookies del Portal Computrabajo
+
+El usuario es libre de desactivar y/o eliminar cookies, siguiendo las indicaciones de su navegador de Internet. Sin embargo, estas acciones pueden reducir considerablemente la capacidad del usuario para navegar por la web e incluso hacerla incompatible con sus intereses o necesidades. Los usuarios pueden elegir en cualquier momento qué cookies desean activar a través de la configuración de su navegador:<br>
+Chrome, desde <a href="https://support.google.com/chrome/answer/95647?hl=en">https://support.google.com/chrome/answer/95647?hl=en</a><br>
+Explorer, desde <a href="http://windows.microsoft.com/en-us/windows7/how-to-manage-cookies-in-internet-explorer-9">http://windows.microsoft.com/en-us/windows7/how-to-manage-cookies-in-internet-explorer-9</a><br>
+Firefox, desde <a href="http://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences">http://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences</a><br>
+Safari, desde <a href="http://support.apple.com/kb/ph5042">http://support.apple.com/kb/ph5042</a><br>
+
+<h5>7. Derecho de Acceso, Rectificación, Oposición y Cancelación de Datos</h5>
+El Usuario tiene derecho en cualquier momento a acceder a su información, a rectificarla si los datos son erróneos, a cambiar su configuración de privacidad, a oponerse al tratamiento de sus datos y a darse de baja de los servicios de PRONTOTRABAJO.
+Estos derechos pueden hacerse efectivos mediante la propia configuración de la página web. En caso de problemas para la realización efectiva online así como para cualquier tipo de duda o controversia respecto a nuestra política de privacidad pueden contactarnos a: gerencia.prontrotrabajo.com
+                
+<h5>8. Modificación de la Política de Privacidad y Protección de Datos</h5>
+PRONTOTRABAJO se reserva el derecho a modificar la presente política para adaptarla a futuras novedades legislativas o jurisprudenciales.
+Cualquier cambio que no se derive de la adaptación a los cambios legislativos o jurisprudenciales será publicitada en la propia Página Web o, si es significativo, comunicado por email a los Usuarios.
+                
+                </p>
+            </div>
+        </div>
+  </div>
+            </div>
+                </div>
+            </div>
+        </section>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla-condiciones', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

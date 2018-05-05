@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+		*{
+			font-family: comic sans ms;
+			font-size: 16pt;
+		}
+
+		table{
+			margin: 0px auto;
+			border-style: solid;
+			border-width: 1px;
+			border-color: silver;
+			border-radius: 10px;
+		}
+
+		td{
+			padding: 8px;
+		}
+
+		#boton{
+			background-color: skyblue;
+			border-style: none;
+			border-radius: 6px;
+			color: white;
+			cursor: pointer;
+			padding: 4px;
+		}
+
+	</style>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form action="ingresarCiudad" method="post">
+		<table>
+			<tr>
+				<th colspan="2">CIUDADES</th>
+			</tr>
+			<tr>
+				<td>Departamento:</td>
+				<td><select name="id_distrito">
+					<option value="1">Ahuachapán</option>
+					<option value="2">Santa Ana</option>
+					<option value="3">Sonsonate</option>
+					<option value="4">La Libertad</option>
+					<option value="5">Chalatenango</option>
+					<option value="6">Cuscatlán</option>
+					<option value="7">San Salvador</option>
+					<option value="8">La paz</option>
+					<option value="9">Cabañas</option>
+					<option value="10">San Vicente</option>
+					<option value="11">Usulután</option>
+					<option value="12">San Miguel</option>
+					<option value="13">Morazán</option>
+					<option value="14">La Unión</option>
+				<select></td>
+			</tr>
+			<tr>
+				<td>Ciudad:</td>
+				<td><input type="text" name="nombre_ciudad"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Ingresar" id="boton"><center></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

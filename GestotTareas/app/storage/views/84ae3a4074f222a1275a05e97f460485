@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form action="modificar-usuario" method="post">
+		<center>
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td><input type="text" name="nombre" value="<?php echo $usuario[0]->nombre; ?>"></td>
+			</tr>
+			<tr>
+				<td>Apellidos</td>
+				<td><input type="text" name="apellidos" value="<?php echo $usuario[0]->apellidos; ?>"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email" value="<?php echo $usuario[0]->email; ?>"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password" value="<?php echo $usuario[0]->password; ?>"></td>
+			</tr>
+			<input type="hidden" name="id" value="<?php echo $usuario[0]->id; ?>">
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Modificar usuario"></center></td>
+			</tr>
+		</table>
+		</center>
+	</form>
+</body>
+</html>

@@ -1,0 +1,690 @@
+
+
+<?php $__env->startSection('content'); ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#inicio").addClass("active");
+  });
+</script>
+
+<style media="screen">
+  .servicio{
+    background-color: rgb(245, 245, 245);
+    width: 300px;
+    height: 180px;
+    position: relative;
+    text-align: center;
+  }
+  .titlec{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #cc181e;
+    color: white;
+  }
+  .contentc{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+  }
+</style>
+<script type="text/javascript">
+  //Agregando un idioma
+
+  $(document).ready(function(){
+
+  //Agregando un idioma
+      $("#agregarIdioma").click(function(){
+
+          var idioma = $("#idioma").val();
+          var nivel_idioma = $("#nivel_idioma").val();
+          var id_ = $("#id_").val();
+      
+          $.post("agregarIdiomaOferta", {id_ : id_ ,idioma : idioma, nivel_idioma : nivel_idioma}, function(data){
+
+            $("#cajas_idioma").html(data);
+            $("#idioma").val("Idiomas");
+            $("#nivel_idioma").val("Nivel");
+            
+          });
+
+        });
+
+        //Agregando un conocimiento informatico
+      $("#agregarConocimientoInformatico").click(function(){
+
+        var id_ = $("#id_").val();
+        var conocimiento_informatico = $("#conocimiento_informatico").val();
+      
+          $.post("registrarConocimientoInformaticoOferta", {id_ : id_ , conocimiento_informatico : conocimiento_informatico}, function(data){
+
+            $("#cajas_conocimiento").html(data);
+
+            $("#conocimiento_informatico").val("Conocimiento Informático");
+          });
+        });
+  
+     
+});
+
+
+
+
+
+</script>
+
+
+    <div class="row">
+      <div class="col-lg-11">
+         <h4>Mostrar por Estado </h4>
+                        <select class="form-control" name="pais">
+                          <option value="" selected="selected">Activas</option>
+                          <option value="" selected="selected">Caducadas</option>       
+                          <option value="" selected="selected">Archivadas</option>                
+                        </select>  
+      </div>
+    </div>
+    <br><br>
+    <div class="contenedor">
+        <?php foreach($ofertas as $oferta): ?>   
+        <form class="form-horizontal" method="POST">
+        <div class="row">
+          <div class="col-lg-11">
+            <div class="panel-group">
+              <div  id="contenedor<?php echo $oferta->id; ?>"class="panel panel-primary">
+              <?php if($oferta->estado==1): ?>
+                <div class="panel-heading" style="background-color: rgb(0,109,158); ">
+              <?php else: ?>
+                <div class="panel-heading" style="background-color: #2C3E50;">
+              <?php endif; ?>
+
+                
+                  <a data-toggle="collapse" href="#collapse<?php echo $oferta->id; ?>" style="color: #fff;">
+                     <div class="row">
+                    <div class="col-lg-9">
+                      <h4 style="font-size: 14px;"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true" style="margin-right:10px; "></span><?php echo $oferta->pais; ?> - <?php echo $oferta->titulo_oferta; ?></h4>
+                    </div>
+                    <div class="col-lg-2">
+                      <h4 style="font-size: 14px;"><span class="glyphicon glyphicon-eye-close" aria-hidden="true" style="margin-right:10px;"></span><?php echo $oferta->id; ?> dias.</h4>
+                    </div>
+                    <div class="col-lg-1">
+                      <h4 style="font-size: 14px;"><span class="glyphicon glyphicon glyphicon-user" aria-hidden="true" style="margin-right:10px;"></span><?php echo $oferta->id; ?></h4>
+                    </div>
+                    </div>
+                 </a>
+               </div>
+               <div id="collapse<?php echo $oferta->id; ?>" class="panel-collapse collapse">
+                <div class="panel-body">
+                 <div class="col-lg-12">
+                  <div class="col-lg-6">
+                    <b><span class="glyphicon glyphicon-briefcase" aria-hidden="true" style="margin-right:10px;"></span>Tipo de contrato:</b>
+                    <p><?php echo $oferta->tipo_contrato; ?></p>
+                    <b><span class="glyphicon glyphicon-time" aria-hidden="true" style="margin-right:10px;"></span>Jornada:</b>
+                    <p><?php echo $oferta->jornada; ?></p>
+                  </div>
+                  <div class="col-lg-6">
+                      <b><span class="glyphicon glyphicon-globe" aria-hidden="true" style="margin-right:10px;"></span>Ubicacion:</b>
+                    <p><b><?php echo $oferta->pais; ?></b> - <?php echo $oferta->ciudad; ?></p>
+                    <b><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right:10px;"></span>Fecha Publicación:</b>
+                    <p><?php echo $oferta->created_at; ?></p>
+                  </div>
+                </div>
+
+                
+              </div>
+              <div class="panel-footer">
+                <a id="verDetalles<?php echo $oferta->id; ?>" class="btn " data-toggle="modal" data-target="#expLaboralModal" style="border-color:#337ab7;"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true" style="margin-right:10px;"></span>Ver Detalles</a>
+                <a id="modificar<?php echo $oferta->id; ?>" class="btn " style="border-color:#337ab7;"><span class="glyphicon glyphicon-pencil" aria-hidden="true" style="margin-right:10px;"></span>Modificar</a>
+                <a id="archivar<?php echo $oferta->id; ?>" class="btn " style="border-color:#337ab7;"><span class="glyphicon glyphicon-save" aria-hidden="true" style="margin-right:10px;"></span>Archivar</a>
+                <a id="imprimir<?php echo $oferta->id; ?>" class="btn " style="border-color:#337ab7;"><span class="glyphicon glyphicon-print" aria-hidden="true" style="margin-right:10px;"></span>Imprimir</a>
+                <a id="inscritos<?php echo $oferta->id; ?>" class="btn " style="border-color:#337ab7;"><span class="glyphicon glyphicon-user" aria-hidden="true" style="margin-right:10px;"></span>Ver usuarios inscritos</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      //Agregando un idioma
+     // var accion= "ver";
+        $("#archivar<?php echo $oferta->id; ?>").click(function(){
+          //alert("Archivar <?php echo $oferta->id; ?>");
+          $.post('archivarOferta',{id : <?php echo $oferta->id; ?> },function(data){
+              alert("Oferta archivada");
+              $("#contenedor<?php echo $oferta->id; ?>").remove();
+              
+          });
+        });
+
+        $("#modificar<?php echo $oferta->id; ?>").click(function(){
+          alert("modificar <?php echo $oferta->id; ?>");
+        });
+        $("#imprimir<?php echo $oferta->id; ?>").click(function(){
+          alert("imprimir <?php echo $oferta->id; ?>");
+        });
+        $("#inscritos<?php echo $oferta->id; ?>").click(function(){
+          alert("inscritos <?php echo $oferta->id; ?>");
+        });
+
+
+
+        $("#verDetalles<?php echo $oferta->id; ?>").click(function(){
+
+          //$("#allforms :input").prop("disabled", true);
+          //$("#cajas_idioma").prop("disabled", true);
+
+          $("#id_").val("<?php echo $oferta->id; ?>");
+
+
+          $.post("cargarOferta", {id : <?php echo $oferta->id; ?>}, function(data){
+                var datos= eval(data);
+                //Radio Buttons
+                if (datos[0]==="Si") {$("#oferta_destacada_si").prop('checked', true);  } else {$("#oferta_destacada_no").prop('checked', true);} 
+                if (datos[1]==="Si") {$("#mostrar_email_si").prop('checked', true);} else {$("#mostrar_email_no").prop('checked', true);}                
+                
+                //Inputs
+                 $("#titulo").val(datos[2]);  
+                $("#titulo_oferta").val(datos[3]);                                     
+                $("#descripcion").val(datos[4]);                                      
+                $("#pais").val(datos[5]);                                      
+                $("#ciudad").val(datos[6]);                                      
+                $("#jornada").val(datos[7]); 
+                $("#area").val(datos[8]);
+                 $("#region").val(datos[9]);  
+                $("#tipo_contrato").val(datos[10]);   
+                $("#salario").val(datos[11]);                                    
+                                                                               
+                if (datos[12]==="Si") {$("#mostrar_salario").prop('checked', true);}             
+                
+                $("#fecha_contratacion").val(datos[13]);                                     
+                $("#cant_vacantes").val(datos[14]);                                     
+                $("#experiencia").val(datos[15]);                                     
+                $("#edad_minima").val(datos[16]);                                      
+                $("#edad_maxima").val(datos[17]);                                      
+                $("#estudios_minimos").val(datos[18]);                                      
+                if (datos[19]==="Si") {$("#disp_viajar_Si").prop('checked', true);} else {$("#disp_viajar_No").prop('checked', true);}                 
+              //  $("#disp_viajar").val(datos[16]);                                      //17  disp_viajar,
+                if (datos[20]==="Si") {$("#disp_cambio_res_Si").prop('checked', true);} else {$("#disp_cambio_res_No").prop('checked', true);}                 
+               // $("#disp_cambio_res").val(datos[17]);                                      //18  disp_cambio_res,
+                if (datos[21]==="Si") {$("#p_discapacidad_Si").prop('checked', true);} else {$("#p_discapacidad_No").prop('checked', true);}                  
+               // $("#p_discapacidad").val(datos[18]);          
+                                           //19  p_discapacidad
+
+                //-----------------------------------------------------------------------Mostrando los Idiomas
+                var html="";
+                var arrayIdioma= JSON.parse(datos[22]);
+                localStorage.setItem("arrayIdioma", JSON.stringify(arrayIdioma));
+                  jQuery.each( arrayIdioma, function( i, val ) {
+                    html+="<span id='idioma"+val["id"]+"' class='label label-primary'>"+ val["idioma"] +" - "+ val["nivel"]  +"<a><i class='glyphicon glyphicon-remove' id='"+val["id"]+"' style='color:white;cursor:pointer;margin-top:5px;padding:4px;'></i></a></span> ";
+                  });
+                html+="<script> "+
+                        " $(\".glyphicon-remove\").click(function(){ "+
+                            " var id_idioma = $(this).attr('id');"+
+                            " arrayIdioma= JSON.parse(localStorage['arrayIdioma']);"+
+                            " arrayIdioma.splice(id_idioma,1);"+
+                            " localStorage.setItem(\"arrayIdioma\", JSON.stringify(arrayIdioma));"+
+                            " $(\"#json\").val(JSON.stringify(JSON.parse(localStorage['arrayIdioma'])));"+
+                            " $(\"#idioma\"+id_idioma+\"\").remove(); "+
+                            " $(\"#id_idioma\").val(id_idioma);"+
+                            "$.post('eliminarIdiomaOferta',{id_idioma : id_idioma},function(data){"+
+                              
+                            "});"+
+
+                          " });"+
+                      " </scrip"+"t>  ";
+
+                //Guardar todo
+                $("#cajas_idioma").html(html);
+
+                //-----------------------------------------------------------------------Mostrando los Conocimientos
+                html="";
+                var arrayConocimento= JSON.parse(datos[23]);
+                localStorage.setItem("arrayConocimento", JSON.stringify(arrayConocimento));
+                  jQuery.each( arrayConocimento, function( i, val ) {
+                    html+="<span id='Conocimiento"+val["id"]+"' class='label label-primary'>"+ val["tipo"] +"<a><i class='glyphicon glyphicon-remove' id='"+val["id"]+"' style='color:white;cursor:pointer;margin-top:5px;padding:4px;'></i></a></span> ";
+                  });
+                html+="<script> "+
+                        " $(\".glyphicon-remove\").click(function(){ "+
+                            " var id_conocimiento = $(this).attr('id');"+
+                            " arrayConocimento= JSON.parse(localStorage['arrayConocimento']);"+
+                            " arrayConocimento.splice(id_conocimiento,1);"+
+                            " localStorage.setItem(\"arrayConocimento\", JSON.stringify(arrayConocimento));"+
+                            " $(\"#json\").val(JSON.stringify(JSON.parse(localStorage['arrayConocimento'])));"+
+                            " $(\"#Conocimiento\"+id_conocimiento+\"\").remove(); "+
+                            " $(\"#id_conocimiento\").val(id_conocimiento);"+
+                            "$.post('eliminarConocimentoOferta',{id_conocimiento : id_conocimiento},function(data){"+
+                              
+                            "});"+
+
+                          " });"+
+                      " </scrip"+"t>  ";
+
+                //Guardar todo
+                $("#cajas_conocimiento").html(html);
+              });
+        
+    });
+
+        </script>
+
+
+        </form>
+
+<?php endforeach; ?>
+</div>
+
+
+
+  <!-- Inicio del Modal -->
+  <div class="modal fade" id="expLaboralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document" style="width: 90%;">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Experiencia profesional</h4>
+
+        </div>
+        <br>
+
+            <form action="modificar-oferta" id="allforms" method="post">
+                <!--  PANEL DE VISIBILIDAD -->
+                <div class="panel panel-default" style="opacity: 0.89;">
+                  <h3 class="text-center"><b>Visibilidad de la oferta</b></h3>
+                  <div class="panel-footer">
+                    <div class="row">
+                        <input type="hidden" class="form-control" name="id_" id="id_">
+                        <input type="hidden" class="form-control" name="id_idioma" id="id_idioma">
+                        <input type="hidden" class="form-control" name="id_conocimiento" id="id_conocimiento">
+                      <div class="col-lg-6">
+                        <h4>
+                          <br><br>
+                          <!-- Oferta destacada  -->
+                          <div class="col-lg-12">
+                            <div class="col-lg-7">
+                              <b>Oferta destacada</b>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="radio" id="oferta_destacada_si" name="oferta_destacada" value="Si" checked >Si
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="radio" id="oferta_destacada_no" name="oferta_destacada" value="No"  >No
+                            </div>
+                          </div>
+
+                          <br><br>
+                          <!-- Mostrar Email del contacto  -->
+                          <div class="col-lg-12">
+                            <div class="col-lg-7">
+                              <b>Mostrar E-mail del contacto</b>
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="radio" id="mostrar_email_si" name="mostrar_email" value="Si" >Si 
+                            </div>
+                            <div class="col-lg-2">
+                              <input type="radio" id="mostrar_email_no" name="mostrar_email"  value="No" checked >No 
+                            </div>
+                          </div>
+                        </h4>
+                      </div>
+                      
+                      <!-- Mensaje de Promocion para contratar Premium  -->
+                      <div class="col-lg-6">
+                        <h4 class="text-center"><i class="glyphicon glyphicon-lock"></i><b>Ventajas del servicio avanzado:</b></h4> 
+                        <h4 class="text-center">
+                          <p>Publicacion ilimitadas de ofertas</p>
+                          <p>Actualizar ofertas cada 3 dias</p>
+                          <p>Empresas y ofertas destacadas</p>
+                        </h4>
+                      </div>
+
+
+
+                    </div>
+                  </div>
+                </div>
+                <!-- Termina Panel de  visibilidad de la oferta -->
+
+                <!-- PANEL INFORMACION DE LA OFERTA -->
+                <div class="panel panel-default" style="opacity: 0.89;">
+                  <h3 class="text-center"><b>Ingresa los datos de la oferta</b></h3>
+
+                  <div class="panel-footer">
+                    <div class="row">
+
+                      <!-- Select del titulo de la oferta  -->
+                      <div class="col-lg-6">
+                        <h4>Título de la oferta*</h4>
+                        <select class="form-control" name="titulo" id="titulo">
+                          <option value="" selected="selected">Selecciona un Título</option>
+                          <?php foreach($categorias as $categoria): ?>                    
+                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+                          <?php endforeach; ?>                 
+                        </select>    
+                      </div>
+
+                      <!-- Text del complemento del titulo  -->
+                      <div class="col-lg-6">
+                        <h4>Complemento del título*</h4>
+                        <input type="text" class="form-control" placeholder="Complemento al título" aria-label="..." name="titulo_oferta" id="titulo_oferta">
+                      </div>
+
+                      <!-- Select del Area   -->
+                      <div class="col-lg-4">
+                        <h4>Área*</h4>
+                        <select class="form-control" name="area" id="area">
+                          <option value="" selected="selected">Selecciona una Área</option>
+                          <?php foreach($categorias as $categoria): ?>                    
+                          <option value="<?php echo $categoria->nombre_categoria; ?>"><?php echo $categoria->nombre_categoria; ?></option>
+                          <?php endforeach; ?>                 
+                        </select>  
+                      </div>
+
+                      <!-- Select de Jornada Laboral   -->
+                      <div class="col-lg-4">
+                        <h4>Jornada laboral *</h4>
+                        <select class="form-control" name="jornada" id="jornada">
+                          <option value="" selected="selected">Selecciona una Jornada</option>
+                          <option value="Tiempo Completo">Tiempo Completo</option>
+                          <option value="Medio Tiempo">Medio Tiempo</option>
+                          <option value="Por horas">Por horas</option>
+                          <option value="Becas/Prácticas">Becas/Prácticas</option>
+                          <option value="Desde Casa">Desde Casa</option>
+                        </select>  
+                      </div>
+
+                      <!-- Select de Tipo Contrato   -->
+                      <div class="col-lg-4">
+                        <h4>Tipo de contrato*</h4>
+                        <select class="form-control" name="tipo_contrato" id="tipo_contrato">
+                          <option value="" selected="selected">Selecciona un Contrato</option>
+                          <option value="Contrato de Aprendizaje">Contrato de Aprendizaje</option>
+                          <option value="Contrato de obra o labor">Contrato de obra o labor</option>
+                          <option value="Contrato por tiempo determinado">Contrato por tiempo determinado</option>
+                          <option value="Contrato por tiempo indefinido">Contrato por tiempo indefinido</option>
+                          <option value="Otro tipo de contrato">Otro tipo de contrato</option>
+                        </select>  
+                      </div>
+
+                      <!-- Select de pais -->
+                      <div class="col-lg-4">
+                        <h4>País*</h4>
+                        <select class="form-control" name="pais" id="pais">
+                          <option value="" selected="selected">Selecciona un pais</option>
+                          <?php foreach($pais as $paises): ?>                    
+                          <option value="<?php echo $paises->nombre_pais; ?>"><?php echo $paises->nombre_pais; ?></option>
+                          <?php endforeach; ?>                 
+                        </select>  
+                      </div>
+
+                      <!-- Select de ciudad -->
+                      <div class="col-lg-4">
+                        <h4>Ciudad *</h4>
+                        <select class="form-control" name="ciudad" id="ciudad">
+                          <option value="" selected="selected">Selecciona una ciudad</option>
+                          <?php foreach($ciudad as $ciudades): ?>                    
+                          <option value="<?php echo $ciudades->nombre_ciudad; ?>"><?php echo $ciudades->nombre_ciudad; ?></option>
+                          <?php endforeach; ?>                 
+                        </select> 
+                      </div>
+
+                      <!-- Select de Region -->
+                      <div class="col-lg-4">
+                        <h4>Región*</h4>
+                        <select class="form-control" name="region" id="region">
+                          <option value="" selected="selected">Selecciona una Región</option>
+                          <?php foreach($ciudad as $ciudades): ?>                    
+                          <option value="<?php echo $ciudades->nombre_ciudad; ?>"><?php echo $ciudades->nombre_ciudad; ?></option>
+                          <?php endforeach; ?>                 
+                        </select> 
+                      </div>
+
+                      <!-- Textarea de la Descripción de Actividades -->
+                      <div class="col-lg-6" >
+                        <h4>Descripción de tareas</h4>
+                        <textarea class="form-control"  name="descripcion" id="descripcion" rows="7"></textarea>
+                      </div>
+
+                      <!-- input number de salario-->
+                      <div class="col-lg-6">
+                        <h4>Salario (neto mensual)*</h4>
+                          <div class="col-lg-4">
+                            <div class="checkbox">
+                              <label><input type="checkbox" name="mostrar_salario" id="mostrar_salario" value="Si">Mostrar Salario</label>
+                            </div>
+                          </div>
+                          <input type="number" class="form-control" min="0" placeholder="Salario (neto mensual)**" aria-label="..." id="salario" name="salario">
+                      </div>
+
+                      <!-- input date de fecha contratacion-->
+                      <div class="col-lg-6">
+                        <h4>Fecha de contratación</h4>
+                        <input type="date" class="form-control"  aria-label="..." name="fecha_contratacion" id="fecha_contratacion">
+                      </div>
+
+                      <!-- input number de cantidad de vacantes-->
+                      <div class="col-lg-6">
+                        <h4>Cantidad de vacantes *</h4>
+                        <input type="number" class="form-control" min="1" placeholder="1" aria-label="..." name="cant_vacantes" id="cant_vacantes">
+                      </div>
+
+                    </div><!-- /.row -->
+                    <br>
+
+                </div>
+                <!-- Termina panel de informacion de la oferta -->
+                <br>
+                <!-- PANEL REQUERIMIENTOS -->
+                <div class="panel panel-default" style="opacity: 0.89;">
+                  <h3 class="text-center"><b>Ingresa los requerimientos</b></h3>
+
+                  <div class="panel-footer">
+                    <div class="row">
+
+                      <!-- Select Años de Experiencia -->
+                      <div class="col-lg-6">
+                        <h4>Años de Experiencia *</h4>
+                        <select class="form-control" name="experiencia" id="experiencia">
+                          <option value="0" selected="selected">Sin Expreciencia</option>
+                          <?php for($i = 1; $i <= 30; $i++): ?>
+                          <option value="<?php echo $i; ?>"><?php echo $i; ?> años</option>
+                          <?php endfor; ?>      
+                        </select> 
+                      </div>
+
+                      <!-- Selects Edad -->
+                      <div class="col-lg-6">
+                        <h4>Edad</h4>
+                        <!-- Select Edad Minima -->
+                        <div class="col-lg-6">
+                          <select class="form-control" name="edad_minima" id="edad_minima">
+                            <option value="" selected="selected">Edad Minima</option>
+                            <?php for($i = 14; $i < 100; $i++): ?>
+                            <option value="<?php echo $i; ?>"><?php echo $i; ?> años</option>
+                            <?php endfor; ?>      
+                          </select> 
+                        </div>
+                        <!-- Select Edad Maxima -->
+                        <div class="col-lg-6">
+                         <select class="form-control" name="edad_maxima" id="edad_maxima">
+                          <option value="" selected="selected">Edad Maxima</option>
+                          <?php for($i = 14; $i < 100; $i++): ?>
+                          <option value="<?php echo $i; ?>"><?php echo $i; ?> años</option>
+                          <?php endfor; ?>      
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Select Estudios Minimos -->
+                    <div class="col-lg-6">
+                      <h4>Estudios minimos*</h4>
+                      <select class="form-control" name="estudios_minimos" id="estudios_minimos">
+                        <option value="" selected="selected">Selecciona una categoría</option>
+                        <option value="Educación Básica Primaria">Educación Básica Primaria</option>
+                        <option value="Educación Básica Secundaria">Educación Básica Secundaria</option>
+                        <option value="Bachillerato /Educación Media">Bachillerato /Educación Media</option>
+                        <option value="Educacíon Técnico/Profesional">Educacíon Técnico/Profesional</option>
+                        <option value="Universidad">Universidad</option>
+                        <option value="Postgrado">Postgrado</option>
+                      </select>  
+                    </div>
+
+                    <!-- Seccion de Radios btn -->
+                    <div class="col-lg-6">
+                      <!-- Radio Disp. viajar-->
+                      <br>
+                      <div class="col-lg-7">
+                        <b>Disponibilidad a viajar</b>
+                      </div>
+                      <div class="col-lg-2">
+                        <input type="radio"  name="disp_viajar" id="disp_viajar_Si" value="Si" >Si
+                      </div>
+                      <div class="col-lg-2">
+                        <input type="radio"  name="disp_viajar"  id="disp_viajar_No" value="No" checked >No
+                      </div>
+                      <!-- Radio Disp. cambio Residencia-->
+                      <br>
+                      <div class="col-lg-7">
+                        <b>Disponibilidad a cambio de residencia</b>
+                      </div>
+                      <div class="col-lg-2">
+                        <input type="radio"  name="disp_cambio_res" id="disp_cambio_res_Si" value="Si" >Si
+                      </div>
+                      <div class="col-lg-2">
+                        <input type="radio"  name="disp_cambio_res" id="disp_cambio_res_No" value="No" checked >No
+                      </div>
+                      <!-- Radio Personas cons discapacidad-->
+                      <br>
+                      <div class="col-lg-7">
+                        <b>Personas con discapacidad</b>
+                      </div>
+                      <div class="col-lg-2">
+                        <input type="radio"  name="p_discapacidad" id="p_discapacidad_Si" value="Si" >Si
+                      </div>
+                      <div class="col-lg-2">
+                        <input type="radio"  name="p_discapacidad" id="p_discapacidad_No" value="No" checked>No
+                      </div>
+                    </div><!-- Fin seccion de radios -->
+
+                    <!-- Selects Idioma -->
+                    <div class="col-lg-6">
+                      <h4>Idiomas</h4>
+                      <div class="col-lg-6">
+                        <select class="form-control" name="idioma" id="idioma">
+                          <option selected="selected" value="Idiomas">Idiomas</option>
+                          <option value="Español">Español</option>
+                          <option value="Inglés">Ingles</option>
+                          <option value="Frances">Frances</option>
+                          <option value="Portugués">Portugués</option>
+                        </select>
+
+                            <!-- Para el ajax -->
+                      <div id="cajas_idioma">
+                              
+                      </div>
+
+
+                      </div>
+                      <div class="col-lg-6">
+                        <select class="form-control" name="nivel_idioma" id="nivel_idioma">
+                          <option selected="selected" value="Nivel">Nivel</option>
+                          <option value="Múy Básico">Múy Básico</option>
+                          <option value="Básico">Básico</option>
+                          <option value="Intermedio">Intermedio</option>
+                          <option value="Avanzado">Avanzado</option>
+                          <option value="Nativo">Nativo</option>
+                        </select>
+                      </div>
+                      <br><br><br>
+                      <center><a id="agregarIdioma" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a></center>
+                    </div>
+
+                    <!-- Selects Conocimientos Informaticos -->
+                    <div class="col-lg-6">
+                      <h4>Conocimientos informáticos</h4>
+                      <select class="form-control" name="conocimiento_informatico" id="conocimiento_informatico">
+                        <option selected="selected" value="Conocimiento Informático">Conocimiento Informático</option>
+                        <option value="LibreOffice">LibreOffice</option>
+                        <option value="Microsoft Access">Microsoft Access</option>
+                        <option value="Microsoft Excel">Microsoft Excel</option>
+                        <option value="Microsoft Outlook">Microsoft Outlook</option>
+                        <option value="Microsoft PowerPoint">Microsoft PowerPoint</option>
+                        <option value="Microsoft Word">Microsoft Word</option>
+                        <option value="Open Office">Open Office</option>
+                        <option value="StarOffice">StarOffice</option>
+                        <option value="Pages">Pages</option>
+                        <option value="Numbers">Numbers</option>
+                        <option value="Keynote">Keynote</option>
+                      </select>
+                             <!-- Para el ajax -->
+                      <div id="cajas_conocimiento">
+                              
+                      </div>
+
+                      <a id="agregarConocimientoInformatico" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Agregar</a>
+                    </div>
+
+                    <!-- Seccion de checkboxes de licencia de conducir -->
+                    <div class="col-lg-12">
+                      <h4>Licencia de Conducir *</h4>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia"  id="licencia_motocícletas" value="motocícletas">motocícletas</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia" id="licencia_automóviles_/_carros"  value="automóviles / carros">automóviles / carros</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia" id="licencia_vehículos"  value="vehículos para transporte de personas">vehículos para transporte de personas</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia" id="licencia_camiones"  value="camiones de carga">camiones de carga</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia" id="licencia_vehículos_agrícolas"  value="vehículos agrícolas">vehículos agrícolas</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia" id="licencia_vehículos_industriales"  value="vehículos industriales">vehículos industriales</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="licencia" id="licencia_Sin_permiso"  value="Sin permiso">Sin permiso</label>
+                        </div>
+                      </div>
+                    </div><!-- fin checkboxes -->
+                  </div><!-- /.row -->
+                  <br>
+                 
+                </div>
+
+              </div>
+               <div class="btn-group col-lg-offset-5">
+                    <button type="submit" class="btn btn-lg btn-primary" style="background-color:#ffa500; border-color:#ffa500;">Continuar</button>
+                  </div>
+                  <br>
+                  <br>
+                  <p>Al crear una cuenta, aceptas las <a>Condiciones legales, Reglamento de Prestación de servicios</a> y <a>la Política de privacidad</a> de Profesionales. </p>
+            </form>
+        
+      </div>
+    </div>
+  </div>
+   <!-- Fin del Modal -->
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('bolsa-trabajo/empresa.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

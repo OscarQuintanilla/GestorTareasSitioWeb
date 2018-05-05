@@ -1,0 +1,133 @@
+<?php
+	$supervisor = Supervisor::where('id_usuario','=',Session::get('id_usuario'))->count();
+
+    $vendedor = Vendedor::where('id_usuario','=',Session::get('id_usuario'))->count();
+
+    $tipoUsuario = Usuario::where('id','=',Session::get('id_usuario'))->get();
+
+?>
+
+<?php $__env->startSection('header'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+ 		<?php if(Session::has('c')): ?>
+                <div class="alert alert-success" style="text-align:center;">
+                    <strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><?php echo Session::get('c'); ?></strong>
+                </div>
+        <?php endif; ?>
+
+<div class="col-md-12">
+	<div class="showback">
+						    				
+     </div><!-- /showback -->
+		<br>
+	<?php if($supervisor == 0 and $tipoUsuario[0]->tipo == "supervisor" ): ?>
+		<div id="envelope">
+			<div id="enve">
+	    		<h2>Mis datos de Supervisor</h2>
+			</div>
+	     	<?php echo Form::open(array('url'=>'registroSupervisor')); ?>
+
+	      		<fieldset><br/>
+			    	<?
+			      		$user = Session::get('id_usuario');
+			      		$id_sucursal = Session::get('id_sucursal');
+			    	?>
+		      		<input type="hidden" name="usuario" value=<?php echo $user; ?>>
+		      		<input type="hidden" name="sucursal" value=<?php echo $id_sucursal; ?>>
+
+			        Nombre<br/>
+			        <?php echo Form::text('nombre',''); ?>
+
+			        Codigo<br/>
+			        <?php echo Form::text('codigo',''); ?>		      
+			      	Telefono<br/>
+			        <?php echo Form::text('telefono',''); ?>
+
+			        Correo<br/>
+			        <?php echo Form::text('email',''); ?>
+
+
+		      		<?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+				</fieldset>
+	      <?php echo Form::close(); ?>
+
+		</div>
+	<?php endif; ?>
+
+	<?php if($vendedor == 0 and $tipoUsuario[0]->tipo == "vendedor" ): ?>
+		<div id="envelope">
+			<div id="enve">
+			    <h2>Mis datos de vendedor</h2>
+			</div>
+      		<?php echo Form::open(array('url'=>'registroVendedor')); ?>
+
+    		<fieldset><br/>
+			 <?
+			    $user=Session::get('id_usuario');
+			    $id_sucursal = Session::get('id_sucursal');
+
+			 ?>
+		    <input type="hidden" name="usuario" value=<?php echo $user; ?>>
+		    <input type="hidden" name="sucursal" value=<?php echo $id_sucursal; ?>>
+
+		    Nombre<br/>
+		    <?php echo Form::text('nombre',''); ?>
+
+
+		    Codigo<br/>
+		    <?php echo Form::text('codigo',''); ?>
+
+
+		    Telefono<br/>
+		    <?php echo Form::text('telefono',''); ?>
+
+
+		    Email<br/>
+		    <?php echo Form::text('email',''); ?>
+
+
+		    Direccion<br/>
+		    <?php echo Form::text('direccion',''); ?>
+
+		        
+		    <?php echo Form::submit('Agregar',array('class'=>'')); ?>
+
+
+		    <?php echo Form::close(); ?>
+
+
+		</div>
+	<?php endif; ?>
+
+	<?php if($supervisor == 1): ?>
+		<img src="http://www.progartisan.com/sistema/zirconia/public/img/blue.jpg" class="img-responsive">
+	<?php endif; ?>
+
+	<?php if($vendedor == 1): ?>
+		<img src="http://www.progartisan.com/sistema/zirconia/public/img/blue.jpg" class="img-responsive">
+	<?php endif; ?>
+
+	<?php if($tipoUsuario[0]->tipo == "SuperAdmin"): ?>
+		<img src="http://www.progartisan.com/sistema/zirconia/public/img/blue.jpg" class="img-responsive">
+	<?php endif; ?>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+@parent
+  </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

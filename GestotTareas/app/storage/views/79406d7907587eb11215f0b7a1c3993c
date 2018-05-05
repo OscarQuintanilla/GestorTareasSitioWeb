@@ -1,0 +1,195 @@
+
+
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<style type="text/css">
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#caja-ofertas{
+  border-bottom: 2px solid #E0E0E0;
+   height: 25px;
+ 
+}
+</style>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-6 block-recent" align="center">
+       <?php if(Session::get('foto_usuario') != null): ?>
+        <center><div style="width:115px;"><img src="<?php echo Session::get('foto_usuario'); ?>"></div></center>
+      <?php endif; ?>
+
+      <?php if(Session::get('foto_usuario') == null): ?>
+        <center><div style="width:115px;"><?php echo HTML::image('img/candidato.png'); ?></div></center>
+      <?php endif; ?>
+
+          <br>
+        <form action="fotoCandidato" method="POST" enctype="multipart/form-data">
+          <span class="btn btn-default btn-file">
+            Seleccionar tu foto de perfil 
+            <input type="file" name="foto">
+          </span><br><br>
+          <button style="padding: 11px; background-color: #0288D1; color: white; width: 100%;" type="submit">Sube tu Foto</button>
+        </form>
+      <br>
+
+       <h1 style="font-size:12pt;"><?php echo Session::get('nombre_usuario'); ?></h1>
+      <a href="mi-curriculum">Mejorar mi Curriculum</a><br/><br/>
+
+      <?php if($porcentaje == 26): ?>
+        <div class="progress">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:26%">
+            26% Perfil completado
+          </div>
+        </div>
+      <?php endif; ?>
+
+      <?php if($porcentaje == 65): ?>
+        <div class="progress">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+            65% Perfil completado
+          </div>
+        </div>
+      <?php endif; ?>
+
+      <?php if($porcentaje == 100): ?>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            100% Perfil completado
+          </div>
+        </div>
+      <?php endif; ?>
+      
+    </div>
+
+
+
+        <div class="col-md-8 col-sm-12 col-xs-12 block-recent">
+     
+          <div class="row">
+      
+       <div class="col-md-4 col-sm-6 block-trust trust-col-quantity">
+      <input type="text" class="form-control" placeholder="Palabra clave">    
+    </div>
+
+    <div class="col-md-4 col-sm-6 block-trust trust-col-quantity">
+    
+      <select class="form-control">
+        <option>Departamento</option>
+        <option>San Salvador</option>
+        <option>La Libertad</option>
+        <option>Santa Ana</option>
+        <option>San Miguel</option>
+        <option>Morazán</option>
+        <option>Cabañas</option>
+        <option>Ahuachapán</option>
+        <option>Sonsonate</option>
+        <option>Chalatenango</option>
+        <option>La Paz</option>
+        <option>Usulután</option>
+        <option>San Vicente</option>
+        <option>Cabañas</option>
+        <option>Cuscatlán</option> 
+      </select>
+
+    </div>
+
+    <div class="col-md-4 col-sm-6 block-trust trust-col-quantity">
+      <button style="padding: 7px; background-color: #0288D1; color: white; width: 100%; border-radius: 5px;">Buscar</button>
+    </div>
+    
+    </div><br/><br/>
+
+    <div style="border-style:solid; border-width:1px; border-color:silver; border-radius:6px; padding:25px; height: 250px;">
+
+
+       <center><b style="text-transform: uppercase;">Ofertas que se adaptan a tu perfil Profesionall</b></center>
+    
+                    
+                      <?php foreach($ofertas as $ofertas): ?> 
+        
+                      <section id="caja-ofertas" style="padding: 20px;">
+
+                      <div class="row">
+                        
+                        <div class="col-lg-12">
+                            
+                      <label style="font-size: 15px; display: inline-block; color: #0277BD;"><?php echo $ofertas->titulo_oferta; ?></label> - 
+                       <p style="font-size: 14px; display: inline-block;"><?php echo $ofertas->ciudad; ?></p>
+
+                         </div>
+            
+
+                      </div>
+
+
+                     </section>
+
+                     <?php endforeach; ?>
+
+
+
+    </div>
+    
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12 block-recent" style="border-style:solid; border-width:1px; border-color:silver; border-radius:6px; padding:10px;">
+     <center><h2><b>Resumen de mis postulaciones</b></h2>
+      <br>
+      <br>
+
+
+          <p>Te has postulado a <b><?php echo $p1; ?></b> ofertas de empleo. </p>
+          <p><b><?php echo $p2; ?></b> empresas han recibido tu curriculum. </p>
+          <p><b><?php echo $p3; ?></b> empresas te están evaluando. </p>
+           <p>Eres finalista en <b><?php echo $p4; ?></b> ofertas de empleo. </p>
+
+
+    </div>
+
+     <div class="col-md-8 col-sm-12 col-xs-12 block-recent" style="margin-left: 15px; border-style:solid; border-width:1px; border-color:silver; border-radius:6px; padding:10px; width: 64%;">
+     <center><h2><b>Cursos recomendados</b></h2>
+      <br>
+      <br>
+
+
+
+
+    </div>
+
+
+
+  </div>
+                
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('footer'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('bolsa-trabajo/candidato.dashboard', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

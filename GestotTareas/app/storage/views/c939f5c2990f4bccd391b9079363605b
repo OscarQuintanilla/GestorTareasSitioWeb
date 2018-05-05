@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Profesional</title>
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/carousel.css">
+  <style media="screen">
+
+  body{
+     overflow-x: hidden;
+  }
+
+  .thumbnail {
+    position:relative;
+    overflow:hidden;
+    width: 260.075px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .thumbnail img{
+    width: 260.075px;
+    height: 190px;
+  }
+
+  .caption {
+      position:absolute;
+      top:-100%;
+      right:0;
+      background:rgba(66, 139, 202, 0.75);
+      width:100%;
+      height:100%;
+      padding:2%;
+      text-align:center;
+      color:#fff !important;
+      z-index:2;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+  }
+  .thumbnail:hover .caption {
+      top:0%;
+  }
+  .pro{
+    position: relative;
+    margin: 15px auto;
+    box-shadow: 2px 2px 1px silver;
+    width: 220px;
+    height: 350px;
+  }
+  .pro .picturepro{
+    background-color: skyblue;
+    width: 220px;
+    height: 130px;
+  }
+  .pro .picturepro img{
+    width: 220px;
+    height: 130px;
+    opacity: 0.65;
+  }
+  .pro .avatar{
+    position: absolute;
+    border: 2px solid white;
+    width: 110px;
+    height: 110px;
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+  }
+  .pro .avatar img{
+    border: 1px solid white;
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+
+  }
+  .dataP{
+    position: absolute;
+    top: 160px;
+    text-align: center;
+    width: 220px;
+    height: 190px;
+  }
+  .dataP button{
+    border-radius: 0px;
+    width: 220px;
+    height: 55px;
+  }
+  .footer-options{
+    list-style: none;
+    overflow: hidden;
+  }
+  .footer-options li{
+    float: left;
+    padding: 10px;
+  }
+  .social tr>td>a>img:hover{
+    opacity: 0.5;
+  }
+
+  #bannerEquipo{
+    background-image: url("http://www.sv.computrabajo.com/c/ct/img/bg_home.jpg");
+    height: 225px;
+    margin-top: 51px;
+  }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Inicio del Menú -->
+  <div class="navbar-wrapper">
+    <div class="container">
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="inicio">Profesional</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="inicio">Inicio</a></li>
+              <li class="active"><a href="bolsa-trabajo">Bolsa de Trabajo</a></li>
+              <li><a href="#">Freelance</a></li>
+              <li><a href="#">Formaciones</a></li>
+              <li><a href="bolsa-trabajo/empresa">Zona Empresa</a></li>
+            </ul>
+            <div class="row">
+              <button type="button" data-toggle="modal" data-target="#logModal" class="btn btn-md btn-primary col-lg-offset-4" style="margin-top:8px;"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Login</button>
+              <a href="registro-candidato" class="btn btn-primary btn-md" style="background-color:#FFA500;border-color:#FFA500;margin-top:8px;">Sube tu curriculum</a>
+            </div>
+          </div>
+          </div>
+        </nav>
+
+    </div>
+  </div>
+  <!-- Fin del Menú -->
+
+
+  <!-- Inicio del banner -->
+  <div class="col-leg-12" id="bannerEquipo">
+
+  </div>
+  <!-- Fin del banner -->
+
+
+  <!-- Inicio del formulario de búsqueda -->
+    <div class="row text-center">
+      <div class="col-lg-offset-2 col-lg-8" style="margin-top:-170px;">
+        <form class="form-inline" style="background-color: aliceblue;padding: 35px;border-radius: 0px;border: 0.1px solid aliceblue;box-shadow: 2px 2px 2px silver; opacity: 0.9;">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+            <input type="text" class="form-control input-lg" id="cargoBusqueda" name="cargoBusqueda" placeholder="Cargo o Area profesional">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></div>
+            <select name="" id="" class="form-control input-lg">
+              <option value="">-- Selecione area de busqueda --</option>
+              <option value="">Bolsa de trabajo</option>
+              <option value="">Freelance</option>
+              <option value="">Formacion</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></div>
+            <select name="" id="" class="form-control input-lg">
+              <option value="">-- Ciudad --</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+        </form>
+      </div>
+    </div>
+    <!-- Fin del formulario de búsqueda -->
+
+
+     <!-- Inicio de estadísticas -->
+    <div class="row row col-lg-offset-0">
+      <div class="col-md-3">
+        <div class="page-header text-center">
+          <h3 style="color:#1e82c4"><span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="margin-right:7px;"></span>1,200 Ofertas de empleos</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="page-header text-center">
+          <h3 style="color:orange"><span class="glyphicon glyphicon-user" aria-hidden="true" style="margin-right:7px;"></span>676 Marketing y ventas</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="page-header text-center">
+          <h3 style="color:#353e4a"><span class="glyphicon glyphicon-user" aria-hidden="true" style="margin-right:7px;"></span>Adminstrativos</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="page-header text-center">
+          <h3 style="color:orange"><span class="glyphicon glyphicon-user" aria-hidden="true" style="margin-right:7px;"></span>Ingenieros</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Fin de estadísticas -->
+
+
+    <!--Inicio de ayuda -->
+
+    <div class="row col-lg-offset-0">
+      <div class="page-header text-center">
+        <h2>¿Como me puede ayudar Profesional?</h2>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img class="img-circle" src="http://media.infojobs.net/appgrade/pictures/pic-value-offers.png" alt="Generic placeholder image" height="140" width="140">
+        <h2>Ofertas para ti cada dia</h2>
+        <p>Dinos el trabajo que buscas y te enviamos las mejores ofertas.</p>
+        <p><a class="btn btn-default" href="#" role="button">Ver detalles »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4 text-center">
+        <img class="img-circle" src="http://media.infojobs.net/appgrade/pictures/pic-value-visibility.png" alt="Generic placeholder image" height="140" width="140">
+        <h2>Deja que te encuentren</h2>
+        <p>Regístrate, sube tu CV y hazte visible a miles de empresas.</p>
+        <p><a class="btn btn-default" href="#" role="button">Ver detalles »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4 text-center">
+        <img class="img-circle" src="http://media.infojobs.net/appgrade/pictures/pic-value-hired.png" alt="Generic placeholder image" height="140" width="140">
+        <h2>Tu nuevo trabajo, aqu&iacute;</h2>
+        <p>7 de cada 10 ofertas de empleo en Internet están en Profeisionall</p>
+        <p><a class="btn btn-default" href="#" role="button">Ver detalles »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <!-- Fin de ayuda -->
+
+    <br>
+    <br>
+
+    <!-- Inicio barra -->
+    <div class="row text-center">
+      <div class="col-lg-offset-0">
+       <h3>Te ayudamos a encontrar tu trabajo ideal</h3>
+       <h4>Postúlate ante miles de empresas</h4>
+          <a href="registro-candidato" class="btn btn-primary btn-lg" style="background-color:#FFA500;border-color:#FFA500;">Sube tu curriculum</a>
+      </div>
+    </div>
+    <!-- Fin de barra -->
+
+    <br>
+    <!-- FOOTER -->
+    <footer style="padding:40px; background-color:#e5f2f7; color:#333;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="page-header text-center">
+              <ul class="footer-options">
+                <li><a href="">Soporte</a></li>
+                <li><a href="">Equipo</a></li>
+                <li><a href="">Colaboraciones</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>
+            </div>
+            <hr style="border-color: rgba(0,0,0,0.1);">
+            </ul>
+          </div>
+
+          <div class="col-md-offset-4 col-md-4">
+            <div class="page-header text-center">
+              <h4>MANTENTE CONECTADO</h4><hr style="border-color: rgba(0,0,0,0.1);margin: 28px 0 0px;">
+            </div>
+            <table style="margin: 0px auto;" class="social">
+              <tr>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-face-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-twitter-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+                <td style="padding: 10px;"><a href="#"><img src="http://media.infojobs.net/appgrade/icons/ico-social-gplus-footer.png" alt="" style="width: 30px; height: 30px; background-size: 100%" /></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  
+  <!-- Inicio del Modal -->
+  <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2C3E50; color:white; text-align:center;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Acceso candidato</h4>
+        </div>
+        <br>
+        <form class="form-horizontal" style="margin:0px auto;" action="login-candidato" method="POST">
+          <div class="modal-body">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                    <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" style="background-color:#FFA500;border-color:#FFA500;">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   <!-- Fin del Modal -->
+
+  <script src="js/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/holder.js"></script>
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <svg style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;" preserveAspectRatio="none" viewBox="0 0 500 500" height="500" width="500" xmlns="http://www.w3.org/2000/svg">
+  <defs><style type="text/css"></style></defs>
+  <text style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif" y="25" x="0">500x500</text>
+</body>
+</html>

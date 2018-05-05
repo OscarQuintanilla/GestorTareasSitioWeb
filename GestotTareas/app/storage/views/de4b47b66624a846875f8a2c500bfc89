@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+		*{
+			font-family: comic sans ms;
+			font-size: 16pt;
+		}
+
+		table{
+			margin: 0px auto;
+			border-style: solid;
+			border-width: 1px;
+			border-color: silver;
+			border-radius: 10px;
+		}
+
+		td{
+			padding: 8px;
+		}
+
+		#boton{
+			background-color: skyblue;
+			border-style: none;
+			border-radius: 6px;
+			color: white;
+			cursor: pointer;
+			padding: 4px;
+		}
+
+	</style>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form action="ingresarCategoria" method="post">
+		<table>
+			<tr>
+				<th colspan="2">Categorias</th>
+			</tr>
+
+			<tr>
+				<td>Categoria:</td>
+				<td><input type="text" name="nombre_categoria"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Ingresar" id="boton"><center></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

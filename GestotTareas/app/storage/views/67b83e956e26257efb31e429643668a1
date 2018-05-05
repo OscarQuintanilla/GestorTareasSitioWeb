@@ -1,0 +1,47 @@
+<?php $__env->startSection('menu'); ?>
+	@parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<div id='cssmenu' >
+        <ul>
+          <li class='has-sub'><a href='categorias'>Lista de Categoria</a></li>
+          <li class='has-sub '><a href='agregar-Cat'>Crear Categoria</a></li>
+     </ul>
+  </div>
+		<table class="table table-bordered" style="margin-top:80px; width:1070px;margin-left:30px;">
+				<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Nombre</th>
+					<th colspan="2">Acciones</th>
+				</tr>
+				</thead>
+				<tbody>
+					<?php foreach($categoria as $cat): ?>
+					<tr>
+						<td><?php echo $cat->codigo; ?></td>
+						<td><?php echo $cat->nomProducto; ?></td>
+						<?php echo Form::open(array('url'=>'take-Cat')); ?>
+
+						<?php echo Form::hidden('idCat',$cat->id); ?>
+
+						<td><?php echo Form::submit('Modificar',array('class'=>'testbutton')); ?></td>
+						<?php echo Form::close(); ?>
+
+						<?php echo Form::open(array('url'=>'eliminar-Cat')); ?>
+
+						<?php echo Form::hidden('idCat',$cat->id); ?>
+
+						<td><?php echo Form::submit('Eliminar',array('class'=>'myButton')); ?></td>
+						<?php echo Form::close(); ?>
+
+					</tr>
+					<?php endforeach; ?>
+				</tbody>
+		</table>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('plantilla.plantilla', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
